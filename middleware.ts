@@ -2,6 +2,8 @@ import createMiddleware from "next-intl/middleware";
 import { NextRequest } from "next/server";
 import { routing } from "./i18n/routing";
 
+const VALID_CURRENCIES = new Set(["BRL", "EUR", "USD"]);
+
 // América Latina de língua espanhola (Espanha fica de fora, tratada à parte).
 const SPANISH_LATAM = new Set([
   "MX", "AR", "CO", "CL", "PE", "VE", "EC", "GT", "CU", "BO",
@@ -45,8 +47,19 @@ function resolveLocaleAndCurrency(req: NextRequest): { locale: string; currency:
 
 const handleI18nRouting = createMiddleware(routing);
 
+// Override de teste: ?currency=eur na URL força a moeda dessa visita,
+// sem precisar trocar de país/geolocalização real. Ex.: /es?currency=usd
+function getCurrencyOverride(request: NextRequest): string | null {
+  const raw = request.nextUrl.searchParams.get("currency");
+  if (!raw) return null;
+  const currency = raw.toUpperCase();
+  return VALID_CURRENCIES.has(currency) ? currency : null;
+}
+
 export default function middleware(request: NextRequest) {
   const { locale, currency } = resolveLocaleAndCurrency(request);
+  const currencyOverride = getCurrencyOverride(request);
+  const resolvedCurrency = currencyOverride ?? currency;
 
   const alreadyHasLocaleCookie = request.cookies.has("NEXT_LOCALE");
   const headers = new Headers(request.headers);
@@ -60,8 +73,8 @@ export default function middleware(request: NextRequest) {
   if (!alreadyHasLocaleCookie) {
     response.cookies.set("NEXT_LOCALE", locale, { maxAge: 60 * 60 * 24 * 365, path: "/" });
   }
-  if (!request.cookies.has("NEXT_CURRENCY")) {
-    response.cookies.set("NEXT_CURRENCY", currency, { maxAge: 60 * 60 * 24 * 365, path: "/" });
+  if (currencyOverride || !request.cookies.has("NEXT_CURRENCY")) {
+    response.cookies.set("NEXT_CURRENCY", resolvedCurrency, { maxAge: 60 * 60 * 24 * 365, path: "/" });
   }
 
   return response;
