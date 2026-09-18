@@ -1,5 +1,6 @@
 import { Container } from "./Container";
 import { Reveal } from "./Reveal";
+import { CtaLink } from "./CtaLink";
 
 export function FinalCta() {
   return (
@@ -18,12 +19,13 @@ export function FinalCta() {
           <p className="mt-3 text-brand-50">
             Comece a testar agora, sem cartão de crédito.
           </p>
-          <a
+          <CtaLink
             href="#"
+            source="final_cta"
             className="mt-8 inline-flex h-12 items-center justify-center rounded-md bg-white px-8 text-[15px] font-semibold text-brand-700 shadow-xl shadow-black/10 transition-all hover:-translate-y-0.5 hover:bg-brand-50 hover:shadow-2xl"
           >
             Testar grátis
-          </a>
+          </CtaLink>
         </Reveal>
       </Container>
     </section>

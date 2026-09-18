@@ -1,5 +1,6 @@
 import { Container } from "./Container";
 import { Reveal } from "./Reveal";
+import { CtaLink } from "./CtaLink";
 import {
   Megaphone,
   CheckCheck,
@@ -38,12 +39,13 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a
+            <CtaLink
               href="#cta"
+              source="hero"
               className="inline-flex h-12 items-center justify-center rounded-md bg-brand-600 px-6 text-[15px] font-semibold text-white shadow-lg shadow-brand-600/25 transition-all hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-xl hover:shadow-brand-600/30"
             >
               Testar grátis
-            </a>
+            </CtaLink>
             <a
               href="#como-funciona"
               className="inline-flex h-12 items-center justify-center rounded-md border border-gray-200 bg-white px-6 text-[15px] font-semibold text-gray-700 transition-all hover:-translate-y-0.5 hover:border-gray-300 hover:shadow-md"

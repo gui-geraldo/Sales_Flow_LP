@@ -1,5 +1,6 @@
 import { Container } from "./Container";
 import { Reveal } from "./Reveal";
+import { CtaLink } from "./CtaLink";
 import { Check, Info } from "lucide-react";
 
 const plans = [
@@ -93,8 +94,9 @@ export function Pricing() {
                 ))}
               </ul>
 
-              <a
+              <CtaLink
                 href="#cta"
+                source={`pricing_${plan.name.toLowerCase()}`}
                 className={`mt-7 flex h-10 items-center justify-center rounded-md px-4 text-sm font-semibold transition-colors ${
                   plan.highlighted
                     ? "bg-brand-600 text-white hover:bg-brand-700"
@@ -102,7 +104,7 @@ export function Pricing() {
                 }`}
               >
                 {plan.highlighted ? "Testar grátis" : "Falar com a gente"}
-              </a>
+              </CtaLink>
             </Reveal>
           ))}
         </div>

@@ -1,5 +1,6 @@
 import { Container } from "./Container";
 import { Logo } from "./Logo";
+import { CtaLink } from "./CtaLink";
 
 export function Header() {
   return (
@@ -27,12 +28,13 @@ export function Header() {
           </a>
         </nav>
 
-        <a
+        <CtaLink
           href="#cta"
+          source="header"
           className="inline-flex h-10 items-center rounded-md bg-brand-600 px-4 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700"
         >
           Testar grátis
-        </a>
+        </CtaLink>
       </Container>
     </header>
   );
