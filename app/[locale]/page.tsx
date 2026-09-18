@@ -10,6 +10,10 @@ import { Faq } from "@/components/Faq";
 import { FinalCta } from "@/components/FinalCta";
 import { Footer } from "@/components/Footer";
 
+// A seção de preços lê o cookie de moeda por requisição (geolocalização),
+// então a página não pode ser pré-renderizada estaticamente no build.
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   return (
     <main>

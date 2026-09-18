@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "title": "Sales Flow — Del anuncio a la venta, en una sola conversación de WhatsApp",
+    "description": "CRM, atención e IA en un solo lugar. Sabé de qué anuncio vino cada cliente y no vuelvas a perder el hilo de la conversación en WhatsApp."
+  },
+  "nav": {
+    "whatItDoes": "Qué hace",
+    "howItWorks": "Cómo funciona",
+    "pricing": "Precios",
+    "faq": "Preguntas",
+    "ctaFree": "Probar gratis"
+  },
+  "hero": {
+    "badge": "Anuncios + WhatsApp + CRM, en un solo lugar",
+    "titleStart": "Del anuncio a la venta,",
+    "titleEmphasis": "en una sola conversación",
+    "titleEnd": "de WhatsApp",
+    "subtitle": "Dejá de perder clientes que hicieron clic en tu anuncio y desaparecieron en WhatsApp. Sales Flow junta atención, CRM e IA en un solo lugar — cada conversación ya llega sabiendo de qué anuncio vino.",
+    "ctaPrimary": "Probar gratis",
+    "ctaSecondary": "Ver cómo funciona",
+    "noCreditCard": "Sin tarjeta de crédito para empezar a probar.",
+    "phone": {
+      "contactName": "Comercial",
+      "adOrigin": "Vino del anuncio \"Promoción de septiembre\"",
+      "messageIncoming": "¡Hola! Vi el anuncio de ustedes, ¿todavía tienen lugar esta semana?",
+      "messageOutgoing": "¡Sí! Puedo agendarte el jueves a las 14h, ¿te queda bien?",
+      "messageConfirm": "¡Perfecto! Confirmalo por acá 👍",
+      "aiTag": "Lead clasificado como caliente por la IA",
+      "inputPlaceholder": "Escribe un mensaje..."
+    },
+    "floatingAi": {
+      "title": "IA por bandeja",
+      "description": "Clasifica la temperatura del lead sola"
+    },
+    "floatingStart": {
+      "title": "Empezá hoy",
+      "description": "Sin esperar la aprobación de Meta para empezar a usarlo"
+    }
+  },
+  "trustBar": {
+    "clientsLabel": "Ya ayuda a negocios de rubros diferentes",
+    "integrationsLabel": "Conectado con lo que tu negocio ya usa"
+  },
+  "problem": {
+    "title": "Tu anuncio genera un clic, el clic se convierte en una charla de WhatsApp... ¿y después?",
+    "subtitle": "¿Planilla? ¿Cuaderno? ¿Cada vendedor a su manera? Es fácil perder el hilo — y junto con él, la venta que ya pagaste para atraer.",
+    "withoutLabel": "Sin Sales Flow",
+    "withoutItems": [
+      "El cliente hace clic en el anuncio, nadie sabe en cuál",
+      "Cada vendedor atiende a su manera, sin historial",
+      "Nadie sabe cuánto vendió realmente cada anuncio"
+    ],
+    "withLabel": "Con Sales Flow",
+    "withItems": [
+      "Cada conversación llega ya con el anuncio de origen",
+      "Todo el equipo ve el mismo historial, organizado",
+      "El panel muestra exactamente qué vendió cada anuncio"
+    ]
+  },
+  "differentiators": {
+    "eyebrow": "Por qué Sales Flow",
+    "title": "Todo lo que necesitás para no perder clientes en el camino",
+    "subtitle": "Sin jerga técnica. Solo lo que cambia tu día a día de atención y ventas.",
+    "items": [
+      {
+        "title": "Sabe de qué anuncio vino cada cliente",
+        "description": "La conversación llega a WhatsApp ya sabiendo de qué anuncio hizo clic el cliente — sin planillas, sin adivinar.",
+        "tag": "\"Promoción de septiembre\""
+      },
+      {
+        "title": "Empezá hoy, sin esperar la aprobación de nadie",
+        "description": "Usá el número de WhatsApp que ya tenés, sin cola de aprobación. Cuando quieras, migrás a la API oficial.",
+        "tag": "Activo en minutos, sin fila de espera"
+      },
+      {
+        "title": "La IA ya separa quién está caliente de quién solo pregunta",
+        "description": "Cada bandeja de atención tiene su propia IA, configurada a tu manera, que clasifica al lead sola.",
+        "hot": "Caliente",
+        "warm": "Tibio",
+        "cold": "Frío"
+      },
+      {
+        "title": "El número de ventas del panel siempre es el correcto",
+        "description": "Cada venta tiene un identificador único garantizado por la base de datos — nunca cuenta la misma venta dos veces.",
+        "tag": "Ingresos 1:1 con lo que realmente entró"
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "Cómo funciona",
+    "subtitle": "Tres pasos, sin complicaciones.",
+    "steps": [
+      {
+        "title": "Conectá tu WhatsApp y tus anuncios",
+        "description": "Usá el número que ya tenés, sin esperar aprobación. Conectá tu cuenta de Meta Ads en pocos clics."
+      },
+      {
+        "title": "Cada conversación llega con contexto",
+        "description": "Tu equipo ve de qué anuncio vino el cliente, y la IA ayuda a responder y separar a quién ya está listo para comprar."
+      },
+      {
+        "title": "Seguí todo desde un solo panel",
+        "description": "Del clic en el anuncio a la venta cerrada, sin cambiar de herramienta ni perder información en el camino."
+      }
+    ]
+  },
+  "security": {
+    "eyebrow": "Dato sensible, tratado en serio",
+    "title": "Estás manejando conversaciones y datos reales de clientes. Nos lo tomamos en serio.",
+    "subtitle": "No se trata solo de vender más — se trata de no poner en riesgo la confianza que tu cliente depositó en vos.",
+    "items": [
+      {
+        "title": "Dato cifrado, siempre",
+        "description": "Los mensajes y datos personales de tus clientes quedan cifrados en la base de datos, nunca en texto plano."
+      },
+      {
+        "title": "Aislamiento total por cuenta",
+        "description": "Tus datos nunca se mezclan con los de otro negocio que usa Sales Flow — cada cuenta es un espacio aislado."
+      },
+      {
+        "title": "Baja de contacto respetada de verdad",
+        "description": "Quien pide salir o queda bloqueado nunca más recibe un mensaje, ni siquiera en envíos masivos."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Un precio simple, sin letra chica",
+    "subtitle": "Suscripción fija mensual. Sin sorpresas, sin plan escondido detrás de \"hablá con ventas\" para todo.",
+    "popular": "Más popular",
+    "placeholderNotice": "El precio para esta región todavía está en definición — los valores mostrados son ilustrativos.",
+    "plans": [
+      {
+        "name": "Profesional",
+        "period": "/mes",
+        "description": "Para negocios que ya anuncian y venden por WhatsApp todos los días.",
+        "highlighted": true,
+        "features": [
+          "Seguimiento ilimitado de anuncios (Meta Ads y Google Ads)",
+          "2 bandejas de atención (ej.: Comercial, Soporte)",
+          "Hasta 10 personas del equipo",
+          "IA por bandeja, con seguimiento automático",
+          "Automatizaciones de pago y cobro"
+        ],
+        "cta": "Probar gratis"
+      },
+      {
+        "name": "Escala",
+        "price": "A consultar",
+        "period": "",
+        "description": "Para operaciones más grandes, con necesidades a medida.",
+        "highlighted": false,
+        "features": [
+          "Todo lo del plan Profesional",
+          "Incorporación asistida por nuestro equipo",
+          "Integraciones personalizadas",
+          "Límites de bandejas y equipo acordados con vos"
+        ],
+        "cta": "Hablar con nosotros"
+      }
+    ],
+    "usageNote": "Además de la suscripción, cada automatización (seguimiento enviado, envío por contacto o webhook activado) cuesta <strong>{fee}</strong>. El envío del mensaje en sí ya lo pagás directo a Meta, sin intermediarios nuestros — cobramos solo por la orquestación."
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "items": [
+      {
+        "question": "¿Necesito la API oficial de Meta para empezar?",
+        "answer": "No. Podés empezar hoy mismo con el número que ya usás, sin esperar aprobación. Cuando tenga sentido para tu negocio, podés migrar a la API oficial de WhatsApp."
+      },
+      {
+        "question": "¿Mis datos y los de mis clientes están seguros?",
+        "answer": "Sí. Los mensajes y datos personales están protegidos, y cada cuenta tiene sus datos aislados del resto de los clientes de Sales Flow."
+      },
+      {
+        "question": "¿Puedo usar el número que ya uso hoy?",
+        "answer": "Sí. No necesitás cambiar de número ni migrar tu base de contactos para empezar a usar Sales Flow."
+      },
+      {
+        "question": "¿Necesito saber programar o de tecnología?",
+        "answer": "No. El panel está hecho para que el dueño del negocio y el equipo de atención lo configuren solos, sin programador."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "¿Listo para dejar de perder clientes en WhatsApp?",
+    "subtitle": "Empezá a probarlo ahora, sin tarjeta de crédito.",
+    "cta": "Probar gratis"
+  },
+  "footer": {
+    "description": "Marketing, atención y CRM en un solo lugar, del anuncio a la venta, por WhatsApp.",
+    "productColumn": "Producto",
+    "companyColumn": "Empresa",
+    "links": {
+      "whatItDoes": "Qué hace",
+      "howItWorks": "Cómo funciona",
+      "pricing": "Precios",
+      "security": "Seguridad",
+      "faq": "Preguntas frecuentes",
+      "talkToUs": "Hablar con nosotros"
+    },
+    "rights": "Todos los derechos reservados.",
+    "madeIn": "Hecho en Brasil, para negocios que venden por WhatsApp."
+  },
+  "languageSwitcher": {
+    "label": "Idioma"
+  }
+}

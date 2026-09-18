@@ -1,26 +1,29 @@
+import { useTranslations } from "next-intl";
 import { Container } from "./Container";
 import { Logo } from "./Logo";
 
-const columns = [
-  {
-    title: "Produto",
-    links: [
-      { label: "O que faz", href: "#diferenciais" },
-      { label: "Como funciona", href: "#como-funciona" },
-      { label: "Preços", href: "#precos" },
-      { label: "Segurança", href: "#seguranca" },
-    ],
-  },
-  {
-    title: "Empresa",
-    links: [
-      { label: "Dúvidas frequentes", href: "#faq" },
-      { label: "Falar com a gente", href: "#cta" },
-    ],
-  },
-];
-
 export function Footer() {
+  const t = useTranslations("footer");
+
+  const columns = [
+    {
+      title: t("productColumn"),
+      links: [
+        { label: t("links.whatItDoes"), href: "#diferenciais" },
+        { label: t("links.howItWorks"), href: "#como-funciona" },
+        { label: t("links.pricing"), href: "#precos" },
+        { label: t("links.security"), href: "#seguranca" },
+      ],
+    },
+    {
+      title: t("companyColumn"),
+      links: [
+        { label: t("links.faq"), href: "#faq" },
+        { label: t("links.talkToUs"), href: "#cta" },
+      ],
+    },
+  ];
+
   return (
     <footer className="border-t border-gray-200 bg-gray-25 pt-14">
       <Container>
@@ -33,8 +36,7 @@ export function Footer() {
               </span>
             </div>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-gray-500">
-              Marketing, atendimento e CRM num lugar só, do anúncio à venda,
-              via WhatsApp.
+              {t("description")}
             </p>
           </div>
 
@@ -60,8 +62,10 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-gray-200 py-6 text-sm text-gray-500 md:flex-row">
-          <p>&copy; {new Date().getFullYear()} Sales Flow. Todos os direitos reservados.</p>
-          <p className="text-gray-400">Feito no Brasil, para negócios que vendem no WhatsApp.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Sales Flow. {t("rights")}
+          </p>
+          <p className="text-gray-400">{t("madeIn")}</p>
         </div>
       </Container>
     </footer>

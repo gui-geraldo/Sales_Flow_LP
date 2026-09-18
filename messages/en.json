@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "title": "Sales Flow — From the ad to the sale, in one WhatsApp conversation",
+    "description": "CRM, support and AI in one place. Know exactly which ad brought each customer and never lose the thread of a WhatsApp conversation again."
+  },
+  "nav": {
+    "whatItDoes": "What it does",
+    "howItWorks": "How it works",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "ctaFree": "Try for free"
+  },
+  "hero": {
+    "badge": "Ads + WhatsApp + CRM, all in one place",
+    "titleStart": "From the ad to the sale,",
+    "titleEmphasis": "in one conversation",
+    "titleEnd": "on WhatsApp",
+    "subtitle": "Stop losing customers who clicked your ad and disappeared into WhatsApp. Sales Flow brings support, CRM and AI together in one place — every conversation already knows which ad it came from.",
+    "ctaPrimary": "Try for free",
+    "ctaSecondary": "See how it works",
+    "noCreditCard": "No credit card required to start testing.",
+    "phone": {
+      "contactName": "Sales",
+      "adOrigin": "Came from the \"September Sale\" ad",
+      "messageIncoming": "Hi! I saw your ad, do you still have openings this week?",
+      "messageOutgoing": "Yes! I can fit you in Thursday at 2pm, does that work?",
+      "messageConfirm": "Perfect! Please confirm 👍",
+      "aiTag": "Lead classified as hot by the AI",
+      "inputPlaceholder": "Type a message..."
+    },
+    "floatingAi": {
+      "title": "AI per inbox",
+      "description": "Classifies lead temperature on its own"
+    },
+    "floatingStart": {
+      "title": "Start today",
+      "description": "No need to wait for Meta's approval to get going"
+    }
+  },
+  "trustBar": {
+    "clientsLabel": "Already helping businesses across different niches",
+    "integrationsLabel": "Connected to what your business already uses"
+  },
+  "problem": {
+    "title": "Your ad gets a click, the click becomes a WhatsApp chat... then what?",
+    "subtitle": "A spreadsheet? A notebook? Every salesperson doing it their own way? It's easy to lose the thread — and with it, the sale you already paid to attract.",
+    "withoutLabel": "Without Sales Flow",
+    "withoutItems": [
+      "A customer clicks the ad, nobody knows which one",
+      "Every salesperson handles it their own way, with no history",
+      "Nobody knows how much each ad actually sold"
+    ],
+    "withLabel": "With Sales Flow",
+    "withItems": [
+      "Every conversation arrives with its source ad attached",
+      "The whole team sees the same organized history",
+      "The dashboard shows exactly what each ad sold"
+    ]
+  },
+  "differentiators": {
+    "eyebrow": "Why Sales Flow",
+    "title": "Everything you need to stop losing customers along the way",
+    "subtitle": "No tech jargon. Just what actually changes your day-to-day support and sales.",
+    "items": [
+      {
+        "title": "Knows which ad brought each customer",
+        "description": "The conversation arrives on WhatsApp already knowing which ad the customer clicked — no spreadsheets, no guessing.",
+        "tag": "\"September Sale\""
+      },
+      {
+        "title": "Start today, no approval needed from anyone",
+        "description": "Use the WhatsApp number you already have, no approval queue. Migrate to the official API whenever you're ready.",
+        "tag": "Live in minutes, no waiting line"
+      },
+      {
+        "title": "AI already tells hot leads from casual questions",
+        "description": "Every inbox has its own AI, configured your way, that classifies leads on its own.",
+        "hot": "Hot",
+        "warm": "Warm",
+        "cold": "Cold"
+      },
+      {
+        "title": "The revenue number on your dashboard is always right",
+        "description": "Every sale has a unique identifier guaranteed by the database — it never counts the same sale twice.",
+        "tag": "Revenue that matches what actually came in"
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "subtitle": "Three steps, no complications.",
+    "steps": [
+      {
+        "title": "Connect your WhatsApp and your ads",
+        "description": "Use the number you already have, no approval needed. Connect your Meta Ads account in a few clicks."
+      },
+      {
+        "title": "Every conversation arrives with context",
+        "description": "Your team sees which ad the customer came from, and the AI helps reply and tell who's ready to buy."
+      },
+      {
+        "title": "Track everything in a single dashboard",
+        "description": "From the ad click to the closed sale, without switching tools or losing information along the way."
+      }
+    ]
+  },
+  "security": {
+    "eyebrow": "Sensitive data, taken seriously",
+    "title": "You're handling real customer conversations and data. We take that seriously.",
+    "subtitle": "It's not just about selling more — it's about not putting at risk the trust your customer placed in you.",
+    "items": [
+      {
+        "title": "Data encrypted, always",
+        "description": "Your customers' messages and personal data are encrypted in the database, never stored as plain text."
+      },
+      {
+        "title": "Full isolation per account",
+        "description": "Your data never mixes with another business using Sales Flow — every account is its own isolated space."
+      },
+      {
+        "title": "Opt-out actually respected",
+        "description": "Anyone who opts out or is blocked never receives a message again, even during bulk campaigns."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Simple pricing, no fine print",
+    "subtitle": "Fixed monthly subscription. No surprises, no plan hidden behind \"talk to sales\" for everything.",
+    "popular": "Most popular",
+    "placeholderNotice": "Pricing for this region is still being finalized — values shown are illustrative.",
+    "plans": [
+      {
+        "name": "Professional",
+        "period": "/mo",
+        "description": "For businesses already advertising and selling on WhatsApp every day.",
+        "highlighted": true,
+        "features": [
+          "Unlimited ad tracking (Meta Ads and Google Ads)",
+          "2 support inboxes (e.g. Sales, Support)",
+          "Up to 10 team members",
+          "AI per inbox, with automatic follow-up",
+          "Billing and payment automations"
+        ],
+        "cta": "Try for free"
+      },
+      {
+        "name": "Scale",
+        "price": "Custom",
+        "period": "",
+        "description": "For larger operations that need something tailor-made.",
+        "highlighted": false,
+        "features": [
+          "Everything in Professional",
+          "Assisted onboarding by our team",
+          "Custom integrations",
+          "Inbox and team limits agreed with you"
+        ],
+        "cta": "Talk to us"
+      }
+    ],
+    "usageNote": "On top of the subscription, each automation (follow-up sent, per-contact broadcast, or webhook triggered) costs <strong>{fee}</strong>. You already pay Meta directly for the message delivery itself — we only charge for the orchestration."
+  },
+  "faq": {
+    "title": "Common questions",
+    "items": [
+      {
+        "question": "Do I need Meta's official API to get started?",
+        "answer": "No. You can start today with the number you already use, with no approval wait. When it makes sense for your business, you can migrate to WhatsApp's official API."
+      },
+      {
+        "question": "Is my data and my customers' data safe?",
+        "answer": "Yes. Messages and personal data are protected, and every account's data is isolated from other Sales Flow customers."
+      },
+      {
+        "question": "Can I use the number I already use today?",
+        "answer": "Yes. You don't need to switch numbers or migrate your contact base to start using Sales Flow."
+      },
+      {
+        "question": "Do I need to know how to code or handle tech stuff?",
+        "answer": "No. The dashboard was built for business owners and support teams to set up on their own, no developer needed."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Ready to stop losing customers on WhatsApp?",
+    "subtitle": "Start testing now, no credit card required.",
+    "cta": "Try for free"
+  },
+  "footer": {
+    "description": "Marketing, support and CRM in one place, from the ad to the sale, over WhatsApp.",
+    "productColumn": "Product",
+    "companyColumn": "Company",
+    "links": {
+      "whatItDoes": "What it does",
+      "howItWorks": "How it works",
+      "pricing": "Pricing",
+      "security": "Security",
+      "faq": "FAQ",
+      "talkToUs": "Talk to us"
+    },
+    "rights": "All rights reserved.",
+    "madeIn": "Made in Brazil, for businesses that sell on WhatsApp."
+  },
+  "languageSwitcher": {
+    "label": "Language"
+  }
+}
