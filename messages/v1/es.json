@@ -1,0 +1,212 @@
+{
+  "meta": {
+    "title": "Sales Flow — Ningún lead de tu anuncio se queda sin respuesta",
+    "description": "La IA responde y califica cada conversación de WhatsApp, el seguimiento corre solo y ves de qué anuncio vino cada venta."
+  },
+  "nav": {
+    "features": "Qué hace",
+    "steps": "Cómo funciona",
+    "pricing": "Precios",
+    "faq": "Dudas",
+    "cta": "Diagnosticar mi atención"
+  },
+  "hero": {
+    "eyebrow": "Anuncio → WhatsApp → venta, sin perder el hilo",
+    "title": "Ningún lead de tu anuncio se queda *sin respuesta* en WhatsApp.",
+    "subtitle": "La IA responde y califica cada conversación, el seguimiento corre solo y ves de qué anuncio vino cada venta. Tu equipo entra cuando el cliente ya está listo.",
+    "ctaPrimary": "Diagnosticar mi atención",
+    "ctaSecondary": "Ver cómo funciona",
+    "note": "Sin tarjeta de crédito para empezar a probar.",
+    "phone": {
+      "contactName": "Comercial",
+      "adOrigin": "Vino del anuncio \"Promo de septiembre\"",
+      "incoming": "¡Hola! Vi su anuncio, ¿todavía hay cupo esta semana?",
+      "outgoing": "¡Sí! Te puedo agendar el jueves a las 14h, ¿te funciona?",
+      "confirm": "¡Perfecto! Puedes confirmar 👍",
+      "aiTag": "Lead clasificado como caliente por la IA",
+      "placeholder": "Escribe un mensaje..."
+    },
+    "live": {
+      "title": "IA activa",
+      "description": "Respondiendo y calificando ahora"
+    }
+  },
+  "contrast": {
+    "eyebrow": "La diferencia",
+    "title": "Tu CRM guarda lo que ya pasó. Sales Flow *actúa ahora*.",
+    "subtitle": "La mayoría de las herramientas cuenta lo que ocurrió cuando el cliente ya se enfrió. Aquí, la conversación se trabaja mientras sigue caliente.",
+    "leftLabel": "Herramientas que solo registran",
+    "leftItems": [
+      "Anotan la conversación cuando ya se enfrió",
+      "Cada vendedor atiende a su manera",
+      "Descubres el lead perdido recién a fin de mes"
+    ],
+    "rightLabel": "Sales Flow",
+    "rightItems": [
+      "Responde y clasifica mientras el cliente sigue en WhatsApp",
+      "Seguimiento automático, en el momento justo, sin depender de recordar",
+      "Ves el lead detenido y el anuncio que lo trajo, al instante"
+    ],
+    "reframeTitle": "Un lead no se pierde por falta de esfuerzo.",
+    "reframeText": "Se pierde en el intervalo entre el clic y la primera respuesta. Es un problema de proceso, no de personas — y el proceso se puede automatizar."
+  },
+  "features": {
+    "eyebrow": "En la práctica",
+    "title": "Mira cuándo y cómo actúa cada parte",
+    "illustrative": "Ejemplo ilustrativo",
+    "items": [
+      {
+        "label": "01 · ORIGEN",
+        "title": "Cada conversación llega sabiendo de qué *anuncio* vino",
+        "description": "Sin hoja de cálculo y sin preguntar \"¿cómo llegaste a nosotros?\". El origen ya está en la conversación.",
+        "timeline": [
+          { "time": "14:02", "text": "El cliente hace clic en el anuncio \"Promo de septiembre\"" },
+          { "time": "14:02", "text": "WhatsApp se abre con la conversación ya marcada con el origen" },
+          { "time": "14:03", "text": "Tu equipo ve el anuncio arriba de la atención" }
+        ]
+      },
+      {
+        "label": "02 · FUERA DE HORARIO",
+        "title": "La IA atiende cuando *nadie* está",
+        "description": "Cada bandeja tiene su propia IA, configurada a tu manera, para responder y separar a quien está listo de quien solo pregunta.",
+        "timeline": [
+          { "time": "23:47", "text": "El lead pregunta el precio tras ver el anuncio" },
+          { "time": "23:47", "text": "La IA responde con lo que configuraste" },
+          { "time": "23:49", "text": "Lead clasificado como caliente" },
+          { "time": "08:30", "text": "El equipo toma el control con todo el contexto" }
+        ]
+      },
+      {
+        "label": "03 · SEGUIMIENTO",
+        "title": "Quien se enfrió *vuelve a la conversación*",
+        "description": "El seguimiento automático retoma al cliente que dejó de responder, sin depender de que alguien se acuerde.",
+        "timeline": [
+          { "time": "Día 0 · 18:10", "text": "El cliente recibe el presupuesto y desaparece" },
+          { "time": "Día 1 · 10:00", "text": "Se envía el seguimiento automático" },
+          { "time": "Día 1 · 10:12", "text": "El cliente responde y la conversación vuelve al equipo" }
+        ]
+      },
+      {
+        "label": "04 · RESULTADO",
+        "title": "Sabes lo que cada anuncio *realmente vendió*",
+        "description": "Del clic a la venta cerrada, en un solo panel. Cada venta tiene identificador único y nunca se cuenta dos veces.",
+        "timeline": [
+          { "time": "Panel", "text": "Conversaciones abiertas por anuncio" },
+          { "time": "Panel", "text": "Ventas cerradas por anuncio" },
+          { "time": "Panel", "text": "Ingreso real de cada campaña" }
+        ]
+      }
+    ]
+  },
+  "steps": {
+    "eyebrow": "Cómo funciona",
+    "title": "Tres pasos, sin complicaciones",
+    "items": [
+      {
+        "title": "Conecta tu WhatsApp y tus anuncios",
+        "description": "Usa el número que ya tienes, sin esperar aprobación. Conecta tu cuenta de Meta Ads en pocos clics."
+      },
+      {
+        "title": "Cada conversación llega con contexto",
+        "description": "Tu equipo ve de qué anuncio vino el cliente, y la IA ayuda a responder y a separar a quien está listo para comprar."
+      },
+      {
+        "title": "Sigue todo en un solo panel",
+        "description": "Del clic en el anuncio hasta la venta cerrada, sin cambiar de herramienta ni perder información en el camino."
+      }
+    ]
+  },
+  "objection": {
+    "title": "Funciona con lo que *ya tienes*.",
+    "items": ["Sin cambiar de número", "Sin migrar tu base de contactos", "Sin necesitar programador"]
+  },
+  "security": {
+    "eyebrow": "Datos de clientes, tomados en serio",
+    "title": "Manejas conversaciones y datos de clientes reales. Lo tomamos en serio.",
+    "items": [
+      {
+        "tag": "CIFRADO",
+        "title": "Datos cifrados, siempre",
+        "description": "Los mensajes y datos personales de tus clientes se guardan cifrados, no en texto abierto."
+      },
+      {
+        "tag": "AISLADO",
+        "title": "Aislamiento total por cuenta",
+        "description": "Tus datos nunca se mezclan con los de otro negocio que usa Sales Flow."
+      },
+      {
+        "tag": "OPT-OUT",
+        "title": "Opt-out respetado de verdad",
+        "description": "Quien pide salir o es bloqueado nunca vuelve a recibir mensajes, ni siquiera en envíos masivos."
+      }
+    ]
+  },
+  "risk": {
+    "title": "Prueba antes de decidir.",
+    "text": "Empieza sin tarjeta de crédito y mira Sales Flow funcionando en tu propio WhatsApp. Si no tiene sentido, no pierdes nada.",
+    "cta": "Empezar la prueba"
+  },
+  "pricing": {
+    "title": "Un precio simple, sin letra pequeña",
+    "subtitle": "Suscripción fija mensual. Sin plan escondido detrás de \"habla con ventas\" para todo.",
+    "popular": "Más popular",
+    "placeholderNotice": "El precio en esta moneda aún está en definición — el valor mostrado es un ejemplo.",
+    "plans": [
+      {
+        "name": "Profesional",
+        "period": "/mes",
+        "description": "Para negocios que ya anuncian y venden por WhatsApp todos los días.",
+        "highlighted": true,
+        "features": [
+          "Rastreo ilimitado de anuncios (Meta Ads y Google Ads)",
+          "2 bandejas de atención (ej.: Comercial, Soporte)",
+          "Hasta 10 personas en el equipo",
+          "IA por bandeja, con seguimiento automático",
+          "Automatizaciones de pago y cobro"
+        ],
+        "cta": "Probar gratis"
+      },
+      {
+        "name": "Escala",
+        "price": "A consultar",
+        "period": "",
+        "description": "Para operaciones más grandes, con necesidad de algo a medida.",
+        "highlighted": false,
+        "features": [
+          "Todo lo del Profesional",
+          "Onboarding asistido por nuestro equipo",
+          "Integraciones personalizadas",
+          "Límites de bandejas y equipo acordados contigo"
+        ],
+        "cta": "Hablar con nosotros"
+      }
+    ],
+    "usageNote": "Además de la suscripción, cada automatización (seguimiento enviado, envío por contacto o webhook activado) cuesta <strong>{fee}</strong>. El envío del mensaje en sí ya lo pagas directamente a Meta, sin intermediario nuestro — cobramos solo por la orquestación."
+  },
+  "faq": {
+    "title": "Dudas comunes",
+    "items": [
+      {
+        "question": "¿Necesito la API oficial de Meta para empezar?",
+        "answer": "No. Puedes empezar hoy mismo con el número que ya usas, sin esperar aprobación. Cuando tenga sentido para tu negocio, puedes migrar a la API oficial de WhatsApp."
+      },
+      {
+        "question": "¿Y si mi equipo no adopta la herramienta?",
+        "answer": "La IA y el seguimiento corren solos, así que el proceso no depende de que todos cambien de hábito. El equipo entra cuando el lead ya está calificado."
+      },
+      {
+        "question": "¿Mis datos y los de mis clientes están seguros?",
+        "answer": "Sí. Los mensajes y datos personales están protegidos, y cada cuenta tiene sus datos aislados de los demás clientes de Sales Flow."
+      },
+      {
+        "question": "¿Necesito saber programar o ser técnico?",
+        "answer": "No. El panel fue hecho para que dueños de negocio y equipos de atención lo configuren solos, sin programador."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Descubre cuántos leads estás perdiendo *hoy*.",
+    "subtitle": "Empieza la prueba sin tarjeta de crédito.",
+    "cta": "Diagnosticar mi atención"
+  }
+}

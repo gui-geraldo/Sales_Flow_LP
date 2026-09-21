@@ -1,0 +1,212 @@
+{
+  "meta": {
+    "title": "Sales Flow — Nenhum lead do anúncio fica sem resposta",
+    "description": "A IA responde e qualifica cada conversa no WhatsApp, o follow-up roda sozinho e você vê de qual anúncio veio cada venda."
+  },
+  "nav": {
+    "features": "O que faz",
+    "steps": "Como funciona",
+    "pricing": "Preços",
+    "faq": "Dúvidas",
+    "cta": "Diagnosticar meu atendimento"
+  },
+  "hero": {
+    "eyebrow": "Anúncio → WhatsApp → venda, sem perder o fio",
+    "title": "Nenhum lead do seu anúncio fica *sem resposta* no WhatsApp.",
+    "subtitle": "A IA responde e qualifica cada conversa, o follow-up roda sozinho e você vê de qual anúncio veio cada venda. Sua equipe entra quando o cliente já está pronto.",
+    "ctaPrimary": "Diagnosticar meu atendimento",
+    "ctaSecondary": "Ver como funciona",
+    "note": "Sem cartão de crédito para começar a testar.",
+    "phone": {
+      "contactName": "Comercial",
+      "adOrigin": "Veio do anúncio \"Promoção de setembro\"",
+      "incoming": "Oi! Vi o anúncio de vocês, ainda tem vaga essa semana?",
+      "outgoing": "Tem sim! Consigo te encaixar na quinta às 14h, funciona pra você?",
+      "confirm": "Perfeito! Pode confirmar 👍",
+      "aiTag": "Lead classificado como quente pela IA",
+      "placeholder": "Digite uma mensagem..."
+    },
+    "live": {
+      "title": "IA ativa",
+      "description": "Respondendo e qualificando agora"
+    }
+  },
+  "contrast": {
+    "eyebrow": "A diferença",
+    "title": "Seu CRM guarda o que já passou. O Sales Flow *age agora*.",
+    "subtitle": "A maioria das ferramentas conta o que aconteceu depois que o cliente esfriou. Aqui, a conversa é trabalhada enquanto ainda está quente.",
+    "leftLabel": "Ferramentas que só registram",
+    "leftItems": [
+      "Anotam a conversa depois que ela esfriou",
+      "Cada vendedor segue o próprio jeito de atender",
+      "Você descobre o lead perdido só no fim do mês"
+    ],
+    "rightLabel": "Sales Flow",
+    "rightItems": [
+      "Responde e classifica enquanto o cliente ainda está no WhatsApp",
+      "Follow-up automático, no tempo certo, sem depender de lembrar",
+      "Você vê o lead parado e o anúncio que o trouxe, na hora"
+    ],
+    "reframeTitle": "Lead não some por falta de esforço.",
+    "reframeText": "Ele some no intervalo entre o clique e a primeira resposta. É um problema de processo, não de gente — e processo dá pra automatizar."
+  },
+  "features": {
+    "eyebrow": "Na prática",
+    "title": "Veja quando e como cada parte age",
+    "illustrative": "Exemplo ilustrativo",
+    "items": [
+      {
+        "label": "01 · ORIGEM",
+        "title": "Cada conversa chega sabendo de qual *anúncio* veio",
+        "description": "Sem planilha e sem perguntar \"como você chegou até nós?\". A origem já está na conversa.",
+        "timeline": [
+          { "time": "14:02", "text": "Cliente clica no anúncio \"Promoção de setembro\"" },
+          { "time": "14:02", "text": "O WhatsApp abre com a conversa já marcada com a origem" },
+          { "time": "14:03", "text": "Sua equipe vê o anúncio no topo do atendimento" }
+        ]
+      },
+      {
+        "label": "02 · FORA DO HORÁRIO",
+        "title": "A IA atende quando *ninguém* está",
+        "description": "Cada caixa tem sua própria IA, configurada do seu jeito, para responder e separar quem está pronto de quem só pergunta.",
+        "timeline": [
+          { "time": "23:47", "text": "Lead pergunta o preço depois de ver o anúncio" },
+          { "time": "23:47", "text": "A IA responde com o que você configurou" },
+          { "time": "23:49", "text": "Lead classificado como quente" },
+          { "time": "08:30", "text": "Equipe assume com o contexto completo" }
+        ]
+      },
+      {
+        "label": "03 · FOLLOW-UP",
+        "title": "Quem esfriou *volta pra conversa*",
+        "description": "O follow-up automático retoma o cliente que parou de responder, sem depender de alguém lembrar.",
+        "timeline": [
+          { "time": "Dia 0 · 18:10", "text": "Cliente recebe o orçamento e some" },
+          { "time": "Dia 1 · 10:00", "text": "Follow-up automático é enviado" },
+          { "time": "Dia 1 · 10:12", "text": "Cliente responde e a conversa volta pra equipe" }
+        ]
+      },
+      {
+        "label": "04 · RESULTADO",
+        "title": "Você sabe o que cada anúncio *realmente vendeu*",
+        "description": "Do clique à venda fechada, num painel só. Cada venda tem identificador único e nunca é contada duas vezes.",
+        "timeline": [
+          { "time": "Painel", "text": "Conversas abertas por anúncio" },
+          { "time": "Painel", "text": "Vendas fechadas por anúncio" },
+          { "time": "Painel", "text": "Receita real de cada campanha" }
+        ]
+      }
+    ]
+  },
+  "steps": {
+    "eyebrow": "Como funciona",
+    "title": "Três passos, sem complicação",
+    "items": [
+      {
+        "title": "Conecte seu WhatsApp e seus anúncios",
+        "description": "Use o número que já tem, sem esperar aprovação. Conecte sua conta de Meta Ads em poucos cliques."
+      },
+      {
+        "title": "Cada conversa já chega com contexto",
+        "description": "Sua equipe vê de qual anúncio o cliente veio, e a IA ajuda a responder e separar quem está pronto pra comprar."
+      },
+      {
+        "title": "Acompanhe tudo em um painel só",
+        "description": "Do clique no anúncio até a venda fechada, sem trocar de ferramenta nem perder informação pelo caminho."
+      }
+    ]
+  },
+  "objection": {
+    "title": "Funciona com o que você *já tem*.",
+    "items": ["Sem trocar de número", "Sem migrar sua base de contatos", "Sem precisar de programador"]
+  },
+  "security": {
+    "eyebrow": "Dado de cliente, tratado a sério",
+    "title": "Você lida com conversa e dado de cliente real. Levamos isso a sério.",
+    "items": [
+      {
+        "tag": "CIFRADO",
+        "title": "Dado cifrado, sempre",
+        "description": "Mensagens e dados pessoais dos seus clientes ficam cifrados no banco, não em texto aberto."
+      },
+      {
+        "tag": "ISOLADO",
+        "title": "Isolamento total por conta",
+        "description": "Seus dados nunca se misturam com os de outro negócio que usa o Sales Flow."
+      },
+      {
+        "tag": "OPT-OUT",
+        "title": "Opt-out respeitado de verdade",
+        "description": "Quem pede pra sair ou é bloqueado nunca mais recebe mensagem, mesmo em disparos em massa."
+      }
+    ]
+  },
+  "risk": {
+    "title": "Teste antes de decidir.",
+    "text": "Comece sem cartão de crédito e veja o Sales Flow rodando no seu próprio WhatsApp. Se não fizer sentido, você não perdeu nada.",
+    "cta": "Começar o teste"
+  },
+  "pricing": {
+    "title": "Um preço simples, sem letra miúda",
+    "subtitle": "Assinatura fixa mensal. Sem plano escondido atrás de \"fale com vendas\" pra tudo.",
+    "popular": "Mais popular",
+    "placeholderNotice": "O preço nessa moeda ainda está em definição — o valor mostrado é um exemplo.",
+    "plans": [
+      {
+        "name": "Profissional",
+        "period": "/mês",
+        "description": "Pra negócios que já anunciam e vendem pelo WhatsApp todo dia.",
+        "highlighted": true,
+        "features": [
+          "Rastreamento ilimitado de anúncios (Meta Ads e Google Ads)",
+          "2 caixas de atendimento (ex.: Comercial, Suporte)",
+          "Até 10 pessoas da equipe",
+          "IA por caixa, com follow-up automático",
+          "Automações de pagamento e cobrança"
+        ],
+        "cta": "Testar grátis"
+      },
+      {
+        "name": "Escala",
+        "price": "Sob consulta",
+        "period": "",
+        "description": "Pra operações maiores, com necessidade de algo sob medida.",
+        "highlighted": false,
+        "features": [
+          "Tudo do Profissional",
+          "Onboarding assistido pela nossa equipe",
+          "Integrações personalizadas",
+          "Limites de caixas e equipe combinados com você"
+        ],
+        "cta": "Falar com a gente"
+      }
+    ],
+    "usageNote": "Além da assinatura, cada automação (follow-up enviado, disparo por contato ou webhook acionado) custa <strong>{fee}</strong>. O envio da mensagem em si você já paga direto à Meta, sem intermediário nosso — cobramos só pela orquestração."
+  },
+  "faq": {
+    "title": "Dúvidas comuns",
+    "items": [
+      {
+        "question": "Preciso da API oficial da Meta pra começar?",
+        "answer": "Não. Você pode começar hoje mesmo com o número que já usa, sem esperar aprovação. Quando fizer sentido pro seu negócio, dá pra migrar para a API oficial do WhatsApp."
+      },
+      {
+        "question": "E se minha equipe não adotar a ferramenta?",
+        "answer": "A IA e o follow-up rodam sozinhos, então o processo não depende de todo mundo mudar de hábito. A equipe entra quando o lead já está qualificado."
+      },
+      {
+        "question": "Meus dados e os dos meus clientes ficam seguros?",
+        "answer": "Sim. Mensagens e dados pessoais são protegidos, e cada conta tem seus dados isolados dos demais clientes do Sales Flow."
+      },
+      {
+        "question": "Preciso saber programar ou mexer com tecnologia?",
+        "answer": "Não. O painel foi feito pra dono de negócio e equipe de atendimento configurarem sozinhos, sem programador."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Descubra quantos leads você está perdendo *hoje*.",
+    "subtitle": "Comece o teste sem cartão de crédito.",
+    "cta": "Diagnosticar meu atendimento"
+  }
+}

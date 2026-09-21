@@ -1,0 +1,212 @@
+{
+  "meta": {
+    "title": "Sales Flow — No ad lead goes unanswered",
+    "description": "AI answers and qualifies every WhatsApp conversation, follow-ups run on their own, and you see which ad drove each sale."
+  },
+  "nav": {
+    "features": "What it does",
+    "steps": "How it works",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "cta": "Diagnose my support flow"
+  },
+  "hero": {
+    "eyebrow": "Ad → WhatsApp → sale, without losing the thread",
+    "title": "No lead from your ads goes *unanswered* on WhatsApp.",
+    "subtitle": "AI answers and qualifies every conversation, follow-ups run on their own, and you see which ad drove each sale. Your team steps in when the customer is ready.",
+    "ctaPrimary": "Diagnose my support flow",
+    "ctaSecondary": "See how it works",
+    "note": "No credit card needed to start testing.",
+    "phone": {
+      "contactName": "Sales",
+      "adOrigin": "Came from the ad \"September promo\"",
+      "incoming": "Hi! I saw your ad, do you still have availability this week?",
+      "outgoing": "We do! I can fit you in Thursday at 2pm, does that work?",
+      "confirm": "Perfect! Please confirm 👍",
+      "aiTag": "Lead ranked as hot by AI",
+      "placeholder": "Type a message..."
+    },
+    "live": {
+      "title": "AI active",
+      "description": "Answering and qualifying right now"
+    }
+  },
+  "contrast": {
+    "eyebrow": "The difference",
+    "title": "Your CRM stores what already happened. Sales Flow *acts now*.",
+    "subtitle": "Most tools tell you what happened after the customer went cold. Here, the conversation is worked while it is still hot.",
+    "leftLabel": "Tools that only record",
+    "leftItems": [
+      "Log the conversation after it went cold",
+      "Each rep handles customers their own way",
+      "You find the lost lead only at month end"
+    ],
+    "rightLabel": "Sales Flow",
+    "rightItems": [
+      "Answers and ranks while the customer is still on WhatsApp",
+      "Automatic follow-up at the right time, no one has to remember",
+      "You see the stalled lead and the ad that brought it, instantly"
+    ],
+    "reframeTitle": "Leads don't disappear from lack of effort.",
+    "reframeText": "They disappear in the gap between the click and the first reply. It's a process problem, not a people problem — and process can be automated."
+  },
+  "features": {
+    "eyebrow": "In practice",
+    "title": "See when and how each part acts",
+    "illustrative": "Illustrative example",
+    "items": [
+      {
+        "label": "01 · ORIGIN",
+        "title": "Every conversation arrives knowing which *ad* it came from",
+        "description": "No spreadsheet, no asking \"how did you find us?\". The origin is already in the conversation.",
+        "timeline": [
+          { "time": "14:02", "text": "Customer clicks the \"September promo\" ad" },
+          { "time": "14:02", "text": "WhatsApp opens with the conversation already tagged with its origin" },
+          { "time": "14:03", "text": "Your team sees the ad at the top of the chat" }
+        ]
+      },
+      {
+        "label": "02 · AFTER HOURS",
+        "title": "AI answers when *no one* is around",
+        "description": "Each inbox has its own AI, set up your way, to answer and separate who is ready from who is just asking.",
+        "timeline": [
+          { "time": "23:47", "text": "Lead asks the price after seeing the ad" },
+          { "time": "23:47", "text": "AI replies with what you configured" },
+          { "time": "23:49", "text": "Lead ranked as hot" },
+          { "time": "08:30", "text": "Team takes over with the full context" }
+        ]
+      },
+      {
+        "label": "03 · FOLLOW-UP",
+        "title": "Customers who went cold *come back to the chat*",
+        "description": "Automatic follow-up re-engages the customer who stopped replying, without anyone having to remember.",
+        "timeline": [
+          { "time": "Day 0 · 18:10", "text": "Customer gets the quote and goes quiet" },
+          { "time": "Day 1 · 10:00", "text": "Automatic follow-up is sent" },
+          { "time": "Day 1 · 10:12", "text": "Customer replies and the chat returns to the team" }
+        ]
+      },
+      {
+        "label": "04 · RESULT",
+        "title": "You know what each ad *really sold*",
+        "description": "From click to closed sale, in one dashboard. Each sale has a unique ID and is never counted twice.",
+        "timeline": [
+          { "time": "Dashboard", "text": "Conversations opened per ad" },
+          { "time": "Dashboard", "text": "Sales closed per ad" },
+          { "time": "Dashboard", "text": "Real revenue of each campaign" }
+        ]
+      }
+    ]
+  },
+  "steps": {
+    "eyebrow": "How it works",
+    "title": "Three steps, no hassle",
+    "items": [
+      {
+        "title": "Connect your WhatsApp and your ads",
+        "description": "Use the number you already have, no approval wait. Connect your Meta Ads account in a few clicks."
+      },
+      {
+        "title": "Every conversation arrives with context",
+        "description": "Your team sees which ad the customer came from, and AI helps reply and separate who is ready to buy."
+      },
+      {
+        "title": "Track everything in one dashboard",
+        "description": "From the ad click to the closed sale, without switching tools or losing information along the way."
+      }
+    ]
+  },
+  "objection": {
+    "title": "Works with what you *already have*.",
+    "items": ["No need to change numbers", "No need to migrate your contacts", "No developer needed"]
+  },
+  "security": {
+    "eyebrow": "Customer data, taken seriously",
+    "title": "You handle real customer conversations and data. We take that seriously.",
+    "items": [
+      {
+        "tag": "ENCRYPTED",
+        "title": "Data encrypted, always",
+        "description": "Messages and personal data of your customers are stored encrypted, not in plain text."
+      },
+      {
+        "tag": "ISOLATED",
+        "title": "Full account isolation",
+        "description": "Your data never mixes with another business that uses Sales Flow."
+      },
+      {
+        "tag": "OPT-OUT",
+        "title": "Opt-out truly respected",
+        "description": "Anyone who asks to leave or is blocked never receives a message again, even in mass sends."
+      }
+    ]
+  },
+  "risk": {
+    "title": "Test before you decide.",
+    "text": "Start with no credit card and see Sales Flow running on your own WhatsApp. If it doesn't make sense, you lost nothing.",
+    "cta": "Start the test"
+  },
+  "pricing": {
+    "title": "One simple price, no fine print",
+    "subtitle": "Fixed monthly subscription. No plan hidden behind \"talk to sales\" for everything.",
+    "popular": "Most popular",
+    "placeholderNotice": "The price in this currency is still being defined — the amount shown is an example.",
+    "plans": [
+      {
+        "name": "Professional",
+        "period": "/mo",
+        "description": "For businesses that already advertise and sell on WhatsApp every day.",
+        "highlighted": true,
+        "features": [
+          "Unlimited ad tracking (Meta Ads and Google Ads)",
+          "2 inboxes (e.g. Sales, Support)",
+          "Up to 10 team members",
+          "AI per inbox, with automatic follow-up",
+          "Payment and billing automations"
+        ],
+        "cta": "Try for free"
+      },
+      {
+        "name": "Scale",
+        "price": "Custom",
+        "period": "",
+        "description": "For larger operations that need something tailored.",
+        "highlighted": false,
+        "features": [
+          "Everything in Professional",
+          "Assisted onboarding by our team",
+          "Custom integrations",
+          "Inbox and team limits agreed with you"
+        ],
+        "cta": "Talk to us"
+      }
+    ],
+    "usageNote": "On top of the subscription, each automation (follow-up sent, per-contact send or webhook triggered) costs <strong>{fee}</strong>. You already pay Meta directly for the message itself, with no middleman from us — we only charge for the orchestration."
+  },
+  "faq": {
+    "title": "Common questions",
+    "items": [
+      {
+        "question": "Do I need the official Meta API to start?",
+        "answer": "No. You can start today with the number you already use, without waiting for approval. When it makes sense for your business, you can migrate to the official WhatsApp API."
+      },
+      {
+        "question": "What if my team doesn't adopt the tool?",
+        "answer": "AI and follow-up run on their own, so the process doesn't depend on everyone changing habits. The team steps in when the lead is already qualified."
+      },
+      {
+        "question": "Are my data and my customers' data safe?",
+        "answer": "Yes. Messages and personal data are protected, and each account's data is isolated from other Sales Flow customers."
+      },
+      {
+        "question": "Do I need to code or be technical?",
+        "answer": "No. The dashboard was built so business owners and support teams can set it up themselves, no developer needed."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Find out how many leads you are losing *today*.",
+    "subtitle": "Start the test with no credit card.",
+    "cta": "Diagnose my support flow"
+  }
+}
