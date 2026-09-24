@@ -8,23 +8,26 @@
     "howItWorks": "Como funciona",
     "pricing": "Preços",
     "faq": "Dúvidas",
-    "ctaFree": "Testar grátis"
+    "ctaFree": "Teste hoje mesmo"
   },
   "hero": {
     "badge": "Anúncio + WhatsApp + CRM, no mesmo lugar",
     "titleStart": "Do anúncio à venda,",
     "titleEmphasis": "numa conversa só",
     "titleEnd": "de WhatsApp",
-    "subtitle": "Pare de perder cliente que clicou no seu anúncio e sumiu no WhatsApp. O Sales Flow junta atendimento, CRM e IA num único lugar — e cada conversa já chega sabendo de qual anúncio veio.",
-    "ctaPrimary": "Testar grátis",
+    "subtitle": "Pare de perder cliente que clicou no seu anúncio e sumiu no WhatsApp. O Sales Flow junta atendimento, CRM e IA num único lugar, pensado pra negócios que vendem todo dia pelo WhatsApp.",
+    "ctaPrimary": "Teste hoje mesmo",
     "ctaSecondary": "Ver como funciona",
     "noCreditCard": "Sem cartão de crédito para começar a testar.",
+    "screenshotBrief": "Ideal: print real do painel de conversas, mostrando a etiqueta do anúncio de origem numa conversa e a classificação de temperatura da IA na lista ao lado.",
     "phone": {
       "contactName": "Comercial",
       "adOrigin": "Veio do anúncio \"Promoção de setembro\"",
       "messageIncoming": "Oi! Vi o anúncio de vocês, ainda tem vaga essa semana?",
       "messageOutgoing": "Tem sim! Consigo te encaixar na quinta às 14h, funciona pra você?",
       "messageConfirm": "Perfeito! Pode confirmar 👍",
+      "messageAudioReply": "Sim, tem estacionamento aqui na frente e é gratuito",
+      "messageSeeYou": "Te espero na quinta!",
       "aiTag": "Lead classificado como quente pela IA",
       "inputPlaceholder": "Digite uma mensagem..."
     },
@@ -41,6 +44,10 @@
     "clientsLabel": "Já ajuda negócios de nichos diferentes",
     "integrationsLabel": "Conectado com o que seu negócio já usa"
   },
+  "trust": {
+    "label": "Já em produção em negócios de nichos diferentes",
+    "names": ["VetApp — veterinária", "HOC — odontologia", "CETAO DON — odontologia"]
+  },
   "problem": {
     "title": "Seu anúncio gera clique, o clique vira conversa no WhatsApp... e depois?",
     "subtitle": "Planilha? Caderno? Cada vendedor com seu jeito? É fácil perder o fio — e junto com ele, a venda que você já pagou pra atrair.",
@@ -48,13 +55,13 @@
     "withoutItems": [
       "Cliente clica no anúncio, ninguém sabe de qual",
       "Cada vendedor atende do seu jeito, sem histórico",
-      "Ninguém sabe quanto o anúncio realmente vendeu"
+      "Ninguém sabe quanto os anúncios realmente venderam"
     ],
     "withLabel": "Com Sales Flow",
     "withItems": [
-      "Toda conversa chega já com o anúncio de origem",
+      "Conversas que vieram de anúncio já chegam tageadas com o anúncio",
       "Equipe inteira vê o mesmo histórico, organizado",
-      "Painel mostra exatamente o que cada anúncio vendeu"
+      "Painel mostra exatamente o que seus anúncios venderam"
     ]
   },
   "differentiators": {
@@ -77,12 +84,14 @@
         "description": "Cada caixa de atendimento tem sua própria IA, configurada do seu jeito, e classifica o lead sozinha.",
         "hot": "Quente",
         "warm": "Morno",
-        "cold": "Frio"
+        "cold": "Frio",
+        "problem": "Problema",
+        "paid": "Pago"
       },
       {
-        "title": "O número de venda no painel é sempre o número certo",
-        "description": "Toda venda tem um identificador único garantido pelo banco — nunca conta a mesma venda duas vezes.",
-        "tag": "Receita 1:1 com o que entrou de verdade"
+        "title": "Agende mensagens pra enviar na hora certa",
+        "description": "Agende uma mensagem pra enviar depois, sempre que quiser — sem precisar lembrar de mandar na hora.",
+        "tag": "Envio agendado pra quinta 14h"
       }
     ]
   },
@@ -106,20 +115,20 @@
   },
   "security": {
     "eyebrow": "Dado sensível, tratado a sério",
-    "title": "Você está lidando com conversa e dado de cliente real. Levamos isso a sério.",
+    "title": "Você leva seus dados a sério. Nós também.",
     "subtitle": "Não é só sobre vender mais — é sobre não colocar em risco a confiança que seu cliente depositou em você.",
     "items": [
       {
         "title": "Dado cifrado, sempre",
-        "description": "Mensagens e dados pessoais dos seus clientes ficam cifrados no banco, não em texto aberto."
+        "description": "Mensagens e dados pessoais dos seus clientes ficam cifrados no banco."
       },
       {
-        "title": "Isolamento total por conta",
-        "description": "Seus dados nunca se misturam com os de outro negócio que usa o Sales Flow — cada conta é um espaço isolado."
+        "title": "Hospedado na União Europeia",
+        "description": "Seus dados ficam sob as regras mais rígidas de proteção de dados que existem, o padrão europeu (GDPR)."
       },
       {
-        "title": "Opt-out respeitado de verdade",
-        "description": "Quem pede pra sair ou é bloqueado nunca mais recebe mensagem, mesmo em disparos em massa."
+        "title": "Você controla quem vê o quê",
+        "description": "Defina níveis de acesso pra cada pessoa da equipe — nem todo mundo precisa ver tudo."
       }
     ]
   },
@@ -136,12 +145,12 @@
         "highlighted": true,
         "features": [
           "Rastreamento ilimitado de anúncios (Meta Ads e Google Ads)",
-          "2 caixas de atendimento (ex.: Comercial, Suporte)",
+          "Suporte a API oficial e não oficial",
           "Até 10 pessoas da equipe",
           "IA por caixa, com follow-up automático",
           "Automações de pagamento e cobrança"
         ],
-        "cta": "Testar grátis"
+        "cta": "Teste hoje mesmo"
       },
       {
         "name": "Escala",
@@ -158,7 +167,9 @@
         "cta": "Falar com a gente"
       }
     ],
-    "usageNote": "Além da assinatura, cada automação (follow-up enviado, disparo por contato ou webhook acionado) custa <strong>{fee}</strong>. O envio da mensagem em si você já paga direto à Meta, sem intermediário nosso — cobramos só pela orquestração."
+    "commissionTitle": "Comissão sobre mensagens? Aqui não.",
+    "commissionNote": "Suas mensagens via template oficial são faturadas diretamente com a Meta — a gente não coloca nenhum percentual em cima.",
+    "usageNote": "Cada automação (webhook acionado, disparo ou follow-up enviado) custa <strong>{fee}</strong>."
   },
   "faq": {
     "title": "Dúvidas comuns",
@@ -183,8 +194,8 @@
   },
   "finalCta": {
     "title": "Pronto pra parar de perder cliente no WhatsApp?",
-    "subtitle": "Comece a testar agora, sem cartão de crédito.",
-    "cta": "Testar grátis"
+    "subtitle": "Comece a testar agora.",
+    "cta": "Teste hoje mesmo"
   },
   "footer": {
     "description": "Marketing, atendimento e CRM num lugar só, do anúncio à venda, via WhatsApp.",

@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  @apply bg-white text-gray-900 antialiased;
+  @apply bg-gray-950 text-gray-100 antialiased;
 }
 
 ::selection {
@@ -42,4 +42,27 @@ body {
 
 .animate-float-delayed {
   animation: float-delayed 6s ease-in-out infinite;
+}
+
+/* Continuous left-to-right marquee: the track holds the item list twice,
+   so sliding from -50% back to 0 loops without a visible seam. Items use
+   padding (not gap) for spacing so the -50% point lands exactly on the
+   start of the second copy. */
+@keyframes marquee-right {
+  from { transform: translate3d(-50%, 0, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+.animate-marquee-right {
+  animation: marquee-right 40s linear infinite;
+}
+
+.animate-marquee-right.is-paused {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-right {
+    animation: none;
+  }
 }

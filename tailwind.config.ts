@@ -18,6 +18,7 @@ const config: Config = {
           900: "#14532D",
         },
         gray: {
+          950: "#0A0C0E",
           0: "#FFFFFF",
           25: "#FCFCFD",
           50: "#F9FAFB",
@@ -45,6 +46,7 @@ const config: Config = {
           "Segoe UI",
           "sans-serif",
         ],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
       },
       borderRadius: {
         sm: "6px",

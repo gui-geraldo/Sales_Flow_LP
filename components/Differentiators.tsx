@@ -3,7 +3,6 @@ import { Container } from "./Container";
 import { Reveal } from "./Reveal";
 import { Megaphone, Zap, Sparkles, BadgeCheck, ArrowRight } from "lucide-react";
 
-const icons = [Megaphone, Zap, Sparkles, BadgeCheck];
 const backgrounds = ["bg-info-bg", "bg-warning-bg", "bg-purple-bg", "bg-success-bg"];
 
 type Item = {
@@ -13,6 +12,8 @@ type Item = {
   hot?: string;
   warm?: string;
   cold?: string;
+  problem?: string;
+  paid?: string;
 };
 
 export function Differentiators() {
@@ -20,26 +21,22 @@ export function Differentiators() {
   const items = t.raw("items") as Item[];
 
   return (
-    <section id="diferenciais" className="py-20">
+    <section id="diferenciais" className="border-b border-white/10 bg-gray-950 py-14">
       <Container>
-        <Reveal className="mx-auto max-w-xl text-center">
-          <span className="inline-flex items-center rounded-full border border-gray-200 bg-white px-3 py-1 text-xs font-semibold text-gray-600">
-            {t("eyebrow")}
-          </span>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-gray-900">
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-white">
             {t("title")}
           </h2>
-          <p className="mt-3 text-gray-600">{t("subtitle")}</p>
+          <p className="mt-3 text-gray-400 sm:whitespace-nowrap">{t("subtitle")}</p>
         </Reveal>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
           {items.map((item, i) => {
-            const Icon = icons[i];
             const bg = backgrounds[i];
 
             return (
               <Reveal delay={i * 0.08} key={item.title}>
-                <div className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <div className="group overflow-hidden rounded-xl border border-white/10 bg-gray-900 transition-all duration-300 hover:-translate-y-1 hover:border-white/20">
                   <div
                     className={`flex h-28 items-center justify-center px-6 transition-transform duration-300 group-hover:scale-[1.03] ${bg}`}
                   >
@@ -61,15 +58,21 @@ export function Differentiators() {
                       </div>
                     )}
                     {i === 2 && (
-                      <div className="flex items-center gap-1.5">
-                        <span className="rounded-full bg-success-bg px-2.5 py-1 text-[10px] font-semibold text-success-text">
-                          {item.hot}
+                      <div className="flex flex-wrap items-center justify-center gap-1.5">
+                        <span className="rounded-full bg-gray-100 px-2.5 py-1 text-[10px] font-semibold text-gray-500">
+                          {item.cold}
                         </span>
                         <span className="rounded-full bg-warning-bg px-2.5 py-1 text-[10px] font-semibold text-warning-text">
                           {item.warm}
                         </span>
-                        <span className="rounded-full bg-gray-100 px-2.5 py-1 text-[10px] font-semibold text-gray-500">
-                          {item.cold}
+                        <span className="rounded-full bg-success-bg px-2.5 py-1 text-[10px] font-semibold text-success-text">
+                          {item.hot}
+                        </span>
+                        <span className="rounded-full bg-info-bg px-2.5 py-1 text-[10px] font-semibold text-info-text">
+                          {item.paid}
+                        </span>
+                        <span className="rounded-full bg-error-bg px-2.5 py-1 text-[10px] font-semibold text-error-text">
+                          {item.problem}
                         </span>
                       </div>
                     )}
@@ -81,13 +84,10 @@ export function Differentiators() {
                     )}
                   </div>
                   <div className="p-6">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-md bg-gray-50 text-gray-500">
-                      <Icon size={18} strokeWidth={1.8} />
-                    </div>
-                    <h3 className="mt-4 text-[15px] font-semibold text-gray-900">
+                    <h3 className="text-[15px] font-semibold text-white">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                    <p className="mt-2 text-sm leading-relaxed text-gray-400">
                       {item.description}
                     </p>
                   </div>

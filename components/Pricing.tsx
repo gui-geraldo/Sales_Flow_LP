@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { Container } from "./Container";
 import { Reveal } from "./Reveal";
 import { CtaLink } from "./CtaLink";
-import { Check, Info, AlertCircle } from "lucide-react";
+import { Check, Info } from "lucide-react";
 import { getCurrencyConfig, type Currency } from "@/lib/pricing";
 
 type Plan = {
@@ -25,18 +25,20 @@ export async function Pricing() {
   const { amount, checkoutUrl, isPlaceholder, automationFee } = getCurrencyConfig(currency);
 
   return (
-    <section id="precos" className="bg-gray-25 py-20">
+    <section id="precos" className="border-b border-white/10 bg-gray-950 py-14">
       <Container>
-        <Reveal className="mx-auto max-w-xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900">
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-white">
             {t("title")}
           </h2>
-          <p className="mt-3 text-gray-600">{t("subtitle")}</p>
+          <p className="mx-auto mt-3 w-fit whitespace-nowrap text-gray-400">
+            {t("subtitle")}
+          </p>
         </Reveal>
 
         {isPlaceholder && (
-          <Reveal className="mx-auto mt-6 flex max-w-3xl items-start gap-2.5 rounded-lg border border-warning/30 bg-warning-bg px-4 py-3 text-sm text-warning-text">
-            <AlertCircle size={16} className="mt-0.5 shrink-0" />
+          <Reveal className="mx-auto mt-6 flex max-w-3xl items-start gap-2.5 rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-gray-400">
+            <Info size={16} className="mt-0.5 shrink-0 text-gray-500" />
             <p>{t("placeholderNotice")}</p>
           </Reveal>
         )}
@@ -50,22 +52,22 @@ export async function Pricing() {
               <Reveal
                 delay={i * 0.1}
                 key={plan.name}
-                className={`rounded-xl border bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+                className={`rounded-xl border p-7 transition-all duration-300 hover:-translate-y-1 ${
                   isHighlighted
-                    ? "border-brand-600 ring-1 ring-brand-600"
-                    : "border-gray-200"
+                    ? "border-brand-500 bg-brand-500/[0.06]"
+                    : "border-white/10 bg-white/[0.03]"
                 }`}
               >
                 {isHighlighted && (
-                  <span className="mb-3 inline-block rounded-full bg-brand-100 px-2.5 py-0.5 text-xs font-semibold text-brand-700">
+                  <span className="mb-3 inline-block rounded-full bg-brand-500/15 px-2.5 py-0.5 text-xs font-semibold text-brand-400">
                     {t("popular")}
                   </span>
                 )}
-                <h3 className="text-[15px] font-semibold text-gray-900">
+                <h3 className="text-[15px] font-semibold text-white">
                   {plan.name}
                 </h3>
                 <p className="mt-2">
-                  <span className="text-3xl font-bold text-gray-900">
+                  <span className="text-3xl font-bold text-white">
                     {price}
                   </span>
                   {plan.period && (
@@ -74,17 +76,17 @@ export async function Pricing() {
                     </span>
                   )}
                 </p>
-                <p className="mt-2 text-sm text-gray-500">{plan.description}</p>
+                <p className="mt-2 text-sm text-gray-400">{plan.description}</p>
 
                 <ul className="mt-6 space-y-3">
                   {plan.features.map((feature) => (
                     <li
                       key={feature}
-                      className="flex items-start gap-2 text-sm text-gray-600"
+                      className="flex items-start gap-2 text-sm text-gray-300"
                     >
                       <Check
                         size={16}
-                        className="mt-0.5 shrink-0 text-brand-600"
+                        className="mt-0.5 shrink-0 text-brand-400"
                         strokeWidth={2}
                       />
                       {feature}
@@ -95,10 +97,10 @@ export async function Pricing() {
                 <CtaLink
                   href={isHighlighted && checkoutUrl ? checkoutUrl : "#cta"}
                   source={`pricing_${plan.name.toLowerCase()}_${currency}`}
-                  className={`mt-7 flex h-10 items-center justify-center rounded-md px-4 text-sm font-semibold transition-colors ${
+                  className={`mt-7 flex h-10 items-center justify-center rounded px-4 text-sm font-semibold transition-colors ${
                     isHighlighted
-                      ? "bg-brand-600 text-white hover:bg-brand-700"
-                      : "border border-gray-200 text-gray-700 hover:bg-gray-50"
+                      ? "bg-brand-500 text-gray-950 hover:bg-brand-400"
+                      : "border border-white/15 text-gray-200 hover:bg-white/5"
                   }`}
                 >
                   {plan.cta}
@@ -108,14 +110,19 @@ export async function Pricing() {
           })}
         </div>
 
-        <Reveal delay={0.2} className="mx-auto mt-6 flex max-w-3xl items-start gap-2.5 rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-600">
-          <Info size={16} className="mt-0.5 shrink-0 text-gray-400" />
-          <p>
-            {t.rich("usageNote", {
-              strong: (chunks) => <strong>{chunks}</strong>,
-              fee: automationFee,
-            })}
+        <Reveal delay={0.2} className="mx-auto mt-6 max-w-3xl rounded-lg border border-white/10 bg-white/[0.03] p-5 text-center">
+          <p className="text-sm font-semibold text-white">
+            {t("commissionTitle")}
           </p>
+          <p className="mt-1.5 text-sm text-gray-400">{t("commissionNote")}</p>
+          <div className="mt-4 border-t border-white/10 pt-4 text-sm text-gray-400">
+            <p>
+              {t.rich("usageNote", {
+                strong: (chunks) => <strong className="text-gray-200">{chunks}</strong>,
+                fee: automationFee,
+              })}
+            </p>
+          </div>
         </Reveal>
       </Container>
     </section>

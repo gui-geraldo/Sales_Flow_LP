@@ -3,28 +3,116 @@
     "title": "Sales Flow — Del anuncio a la venta, en una sola conversación de WhatsApp",
     "description": "CRM, atención e IA en un solo lugar. Sabé de qué anuncio vino cada cliente y no vuelvas a perder el hilo de la conversación en WhatsApp."
   },
+  "clinic": {
+    "meta": {
+      "title": "Sales Flow — El anuncio trae al paciente, tu clínica no pierde el hilo",
+      "description": "CRM, atención e IA para clínicas. Cada consulta que llega por WhatsApp ya sabe de qué anuncio vino, con historial completo del paciente."
+    },
+    "hero": {
+      "badge": "WhatsApp · CRM · Clínicas",
+      "titleStart": "El anuncio trae al paciente.",
+      "titleEmphasis": "Tu clínica",
+      "titleEnd": "no pierde el hilo.",
+      "subtitle": "Sales Flow junta atención, CRM e IA en un solo lugar. Cada consulta que llega por WhatsApp ya sabe de qué anuncio vino, y tu equipo nunca pierde el historial del paciente.",
+      "ctaPrimary": "Probá hoy mismo",
+      "ctaSecondary": "Ver cómo funciona",
+      "noCreditCard": "Sin tarjeta de crédito para empezar a probar.",
+      "photoLabel": "Foto de la clínica — placeholder",
+      "photoCaption": "Ideal: foto de la recepción de tu clínica, o una captura del panel mostrando una conversación real con un paciente.",
+      "proof": "Ya en producción en clínicas de rubros distintos — veterinaria, odontología y estética."
+    },
+    "problem": {
+      "title": "En la clínica, el paciente se pierde siempre de la misma forma",
+      "subtitle": "El anuncio genera un clic, el clic se convierte en un WhatsApp — ¿y después? Bandeja mezclada, secretaria distinta en cada turno, ningún historial. Es fácil perder al paciente, y con él la consulta que ya pagaste por atraer.",
+      "withoutLabel": "Sin Sales Flow",
+      "withoutItems": [
+        "El paciente escribe por WhatsApp y se mezcla con el resto de las consultas",
+        "Cada profesional atiende como puede, sin historial del paciente",
+        "No sabés qué campaña realmente te trae pacientes nuevos"
+      ],
+      "withLabel": "Con Sales Flow",
+      "withItems": [
+        "Cada conversación de paciente queda organizada, con historial completo",
+        "La IA identifica quién ya quiere agendar una consulta",
+        "Sabés exactamente cuántos pacientes trajo cada campaña"
+      ]
+    },
+    "differentiators": {
+      "eyebrow": "Por qué Sales Flow",
+      "title": "Todo lo que tu clínica necesita para no perder pacientes en el camino",
+      "subtitle": "Sin jerga técnica. Solo lo que cambia el día a día de tu recepción y tu equipo.",
+      "items": [
+        {
+          "title": "Sabés de qué anuncio vino cada paciente",
+          "description": "La conversación llega a WhatsApp ya sabiendo de qué anuncio hizo clic el paciente — sin planillas, sin adivinar.",
+          "tag": "\"Promoción de septiembre\""
+        },
+        {
+          "title": "Empezá hoy, con el WhatsApp que ya usás en la clínica",
+          "description": "Usá el número que ya tenés, sin cola de aprobación. Cuando quieras, migrás a la API oficial.",
+          "tag": "Activo en minutos, sin esperas"
+        },
+        {
+          "title": "La IA ya distingue quién quiere agendar de quién solo pregunta",
+          "description": "Cada caja de atención tiene su propia IA, que clasifica al paciente sola.",
+          "hot": "Caliente",
+          "warm": "Tibio",
+          "cold": "Frío",
+          "problem": "Problema",
+          "paid": "Pagó"
+        },
+        {
+          "title": "Programá el mensaje para el momento justo",
+          "description": "Programá un mensaje para enviarlo después, cuando quieras — sin tener que acordarte de mandarlo a tiempo.",
+          "tag": "Programado para el jueves 14h"
+        }
+      ]
+    },
+    "trust": {
+      "label": "Ya en producción en clínicas de distintos rubros",
+      "names": ["VetApp — veterinaria", "HOC — odontología", "CETAO DON — odontología"]
+    },
+    "about": {
+      "eyebrow": "Quiénes somos",
+      "title": "Una plataforma construida para hablar con millones",
+      "stats": [
+        { "value": "+2M", "label": "mensajes procesados" },
+        { "value": "+50 mil", "label": "pacientes atendidos" },
+        { "value": "+120 mil", "label": "disparos automatizados" }
+      ],
+      "photoLabel": "Foto del equipo — placeholder",
+      "photoCaption": "Foto del equipo o de un evento reciente.",
+      "photoAlt": "Equipo de Sales Flow",
+      "carouselToggle": "Pausar o reanudar el carrusel",
+      "videoLabel": "Video del equipo — placeholder",
+      "videoCaption": "Clip corto (6–7s) de un evento o feria.",
+      "text": "Nacimos en Brasil, un país de 220 millones de habitantes y uno de los que más usan WhatsApp en el mundo. Desarrollamos una plataforma lista para hablar con millones de personas — y ahora estamos trayendo nuestra tecnología a Europa."
+    }
+  },
   "nav": {
     "whatItDoes": "Qué hace",
     "howItWorks": "Cómo funciona",
     "pricing": "Precios",
     "faq": "Preguntas",
-    "ctaFree": "Probar gratis"
+    "ctaFree": "Probá hoy mismo"
   },
   "hero": {
     "badge": "Anuncios + WhatsApp + CRM, en un solo lugar",
     "titleStart": "Del anuncio a la venta,",
     "titleEmphasis": "en una sola conversación",
     "titleEnd": "de WhatsApp",
-    "subtitle": "Dejá de perder clientes que hicieron clic en tu anuncio y desaparecieron en WhatsApp. Sales Flow junta atención, CRM e IA en un solo lugar — cada conversación ya llega sabiendo de qué anuncio vino.",
-    "ctaPrimary": "Probar gratis",
+    "subtitle": "Dejá de perder clientes que hicieron clic en tu anuncio y desaparecieron en WhatsApp. Sales Flow junta atención, CRM e IA en un solo lugar.",
+    "ctaPrimary": "Probá hoy mismo",
     "ctaSecondary": "Ver cómo funciona",
-    "noCreditCard": "Sin tarjeta de crédito para empezar a probar.",
+    "screenshotBrief": "Ideal: una captura real del panel de conversaciones, mostrando la etiqueta del anuncio de origen en una conversación y la clasificación de temperatura de la IA en la lista al lado.",
     "phone": {
       "contactName": "Comercial",
       "adOrigin": "Vino del anuncio \"Promoción de septiembre\"",
       "messageIncoming": "¡Hola! Vi el anuncio de ustedes, ¿todavía tienen lugar esta semana?",
       "messageOutgoing": "¡Sí! Puedo agendarte el jueves a las 14h, ¿te queda bien?",
       "messageConfirm": "¡Perfecto! Confirmalo por acá 👍",
+      "messageAudioReply": "Sí, hay estacionamiento gratis justo enfrente",
+      "messageSeeYou": "¡Te espero el jueves!",
       "aiTag": "Lead clasificado como caliente por la IA",
       "inputPlaceholder": "Escribe un mensaje..."
     },
@@ -48,13 +136,13 @@
     "withoutItems": [
       "El cliente hace clic en el anuncio, nadie sabe en cuál",
       "Cada vendedor atiende a su manera, sin historial",
-      "Nadie sabe cuánto vendió realmente cada anuncio"
+      "Nadie sabe cuánto vendieron realmente los anuncios"
     ],
     "withLabel": "Con Sales Flow",
     "withItems": [
-      "Cada conversación llega ya con el anuncio de origen",
+      "Las conversaciones que vienen de un anuncio ya llegan etiquetadas con ese anuncio",
       "Todo el equipo ve el mismo historial, organizado",
-      "El panel muestra exactamente qué vendió cada anuncio"
+      "El panel muestra exactamente qué vendieron tus anuncios"
     ]
   },
   "differentiators": {
@@ -77,12 +165,14 @@
         "description": "Cada bandeja de atención tiene su propia IA, configurada a tu manera, que clasifica al lead sola.",
         "hot": "Caliente",
         "warm": "Tibio",
-        "cold": "Frío"
+        "cold": "Frío",
+        "problem": "Problema",
+        "paid": "Pagó"
       },
       {
-        "title": "El número de ventas del panel siempre es el correcto",
-        "description": "Cada venta tiene un identificador único garantizado por la base de datos — nunca cuenta la misma venta dos veces.",
-        "tag": "Ingresos 1:1 con lo que realmente entró"
+        "title": "Programá mensajes para el momento justo",
+        "description": "Programá un mensaje para enviarlo después, cuando quieras — sin tener que acordarte de mandarlo a tiempo.",
+        "tag": "Programado para el jueves 14h"
       }
     ]
   },
@@ -106,20 +196,20 @@
   },
   "security": {
     "eyebrow": "Dato sensible, tratado en serio",
-    "title": "Estás manejando conversaciones y datos reales de clientes. Nos lo tomamos en serio.",
+    "title": "Vos te tomás tus datos en serio. Nosotros también.",
     "subtitle": "No se trata solo de vender más — se trata de no poner en riesgo la confianza que tu cliente depositó en vos.",
     "items": [
       {
         "title": "Dato cifrado, siempre",
-        "description": "Los mensajes y datos personales de tus clientes quedan cifrados en la base de datos, nunca en texto plano."
+        "description": "Los mensajes y datos personales de tus clientes quedan cifrados en la base de datos."
       },
       {
-        "title": "Aislamiento total por cuenta",
-        "description": "Tus datos nunca se mezclan con los de otro negocio que usa Sales Flow — cada cuenta es un espacio aislado."
+        "title": "Alojado en la Unión Europea",
+        "description": "Tus datos quedan bajo uno de los estándares de protección de datos más estrictos que existen, el europeo (GDPR)."
       },
       {
-        "title": "Baja de contacto respetada de verdad",
-        "description": "Quien pide salir o queda bloqueado nunca más recibe un mensaje, ni siquiera en envíos masivos."
+        "title": "Vos controlás quién ve qué",
+        "description": "Definí niveles de acceso para cada persona del equipo — no todos necesitan ver todo."
       }
     ]
   },
@@ -136,12 +226,13 @@
         "highlighted": true,
         "features": [
           "Seguimiento ilimitado de anuncios (Meta Ads y Google Ads)",
-          "2 bandejas de atención (ej.: Comercial, Soporte)",
+          "Soporte para API oficial y no oficial",
           "Hasta 10 personas del equipo",
           "IA por bandeja, con seguimiento automático",
-          "Automatizaciones de pago y cobro"
+          "Automatizaciones de pago y cobro",
+          "10.000 mensajes / mes"
         ],
-        "cta": "Probar gratis"
+        "cta": "Probá hoy mismo"
       },
       {
         "name": "Escala",
@@ -158,7 +249,9 @@
         "cta": "Hablar con nosotros"
       }
     ],
-    "usageNote": "Además de la suscripción, cada automatización (seguimiento enviado, envío por contacto o webhook activado) cuesta <strong>{fee}</strong>. El envío del mensaje en sí ya lo pagás directo a Meta, sin intermediarios nuestros — cobramos solo por la orquestación."
+    "commissionTitle": "¿Comisión sobre tus mensajes? Acá no.",
+    "commissionNote": "Tus mensajes por plantilla oficial se facturan directo con Meta — nosotros no le agregamos ningún porcentaje.",
+    "usageNote": "Cada automatización (webhook, envío de plantilla o follow-up) cuesta <strong>{fee}</strong>."
   },
   "faq": {
     "title": "Preguntas frecuentes",
@@ -183,8 +276,8 @@
   },
   "finalCta": {
     "title": "¿Listo para dejar de perder clientes en WhatsApp?",
-    "subtitle": "Empezá a probarlo ahora, sin tarjeta de crédito.",
-    "cta": "Probar gratis"
+    "subtitle": "Empezá a probarlo ahora.",
+    "cta": "Probá hoy mismo"
   },
   "footer": {
     "description": "Marketing, atención y CRM en un solo lugar, del anuncio a la venta, por WhatsApp.",

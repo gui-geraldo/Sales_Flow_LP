@@ -8,23 +8,26 @@
     "howItWorks": "How it works",
     "pricing": "Pricing",
     "faq": "FAQ",
-    "ctaFree": "Try for free"
+    "ctaFree": "Try it today"
   },
   "hero": {
     "badge": "Ads + WhatsApp + CRM, all in one place",
     "titleStart": "From the ad to the sale,",
     "titleEmphasis": "in one conversation",
     "titleEnd": "on WhatsApp",
-    "subtitle": "Stop losing customers who clicked your ad and disappeared into WhatsApp. Sales Flow brings support, CRM and AI together in one place — every conversation already knows which ad it came from.",
-    "ctaPrimary": "Try for free",
+    "subtitle": "Stop losing customers who clicked your ad and disappeared into WhatsApp. Sales Flow brings support, CRM and AI together in one place, built for businesses that sell over WhatsApp every day.",
+    "ctaPrimary": "Try it today",
     "ctaSecondary": "See how it works",
     "noCreditCard": "No credit card required to start testing.",
+    "screenshotBrief": "Ideal: a real screenshot of the conversation panel, showing the source-ad tag on a conversation and the AI's temperature classification in the list beside it.",
     "phone": {
       "contactName": "Sales",
       "adOrigin": "Came from the \"September Sale\" ad",
       "messageIncoming": "Hi! I saw your ad, do you still have openings this week?",
       "messageOutgoing": "Yes! I can fit you in Thursday at 2pm, does that work?",
       "messageConfirm": "Perfect! Please confirm 👍",
+      "messageAudioReply": "Yes, there's free parking right out front",
+      "messageSeeYou": "See you Thursday!",
       "aiTag": "Lead classified as hot by the AI",
       "inputPlaceholder": "Type a message..."
     },
@@ -37,6 +40,10 @@
       "description": "No need to wait for Meta's approval to get going"
     }
   },
+  "trust": {
+    "label": "Already in production across different niches",
+    "names": ["VetApp — veterinary", "HOC — dentistry", "CETAO DON — dentistry"]
+  },
   "trustBar": {
     "clientsLabel": "Already helping businesses across different niches",
     "integrationsLabel": "Connected to what your business already uses"
@@ -48,13 +55,13 @@
     "withoutItems": [
       "A customer clicks the ad, nobody knows which one",
       "Every salesperson handles it their own way, with no history",
-      "Nobody knows how much each ad actually sold"
+      "Nobody knows how much the ads actually sold"
     ],
     "withLabel": "With Sales Flow",
     "withItems": [
-      "Every conversation arrives with its source ad attached",
+      "Conversations from ads arrive already tagged with the ad",
       "The whole team sees the same organized history",
-      "The dashboard shows exactly what each ad sold"
+      "The dashboard shows exactly what your ads sold"
     ]
   },
   "differentiators": {
@@ -77,12 +84,14 @@
         "description": "Every inbox has its own AI, configured your way, that classifies leads on its own.",
         "hot": "Hot",
         "warm": "Warm",
-        "cold": "Cold"
+        "cold": "Cold",
+        "problem": "Issue",
+        "paid": "Paid"
       },
       {
-        "title": "The revenue number on your dashboard is always right",
-        "description": "Every sale has a unique identifier guaranteed by the database — it never counts the same sale twice.",
-        "tag": "Revenue that matches what actually came in"
+        "title": "Schedule messages to go out at the right time",
+        "description": "Schedule a message to send later, whenever you want — no need to remember to send it yourself.",
+        "tag": "Scheduled for Thursday 2pm"
       }
     ]
   },
@@ -106,20 +115,20 @@
   },
   "security": {
     "eyebrow": "Sensitive data, taken seriously",
-    "title": "You're handling real customer conversations and data. We take that seriously.",
+    "title": "You take your data seriously. So do we.",
     "subtitle": "It's not just about selling more — it's about not putting at risk the trust your customer placed in you.",
     "items": [
       {
         "title": "Data encrypted, always",
-        "description": "Your customers' messages and personal data are encrypted in the database, never stored as plain text."
+        "description": "Your customers' messages and personal data are encrypted in the database."
       },
       {
-        "title": "Full isolation per account",
-        "description": "Your data never mixes with another business using Sales Flow — every account is its own isolated space."
+        "title": "Hosted in the European Union",
+        "description": "Your data sits under one of the strictest data protection standards out there, the European one (GDPR)."
       },
       {
-        "title": "Opt-out actually respected",
-        "description": "Anyone who opts out or is blocked never receives a message again, even during bulk campaigns."
+        "title": "You control who sees what",
+        "description": "Set access levels for each person on your team — not everyone needs to see everything."
       }
     ]
   },
@@ -136,12 +145,12 @@
         "highlighted": true,
         "features": [
           "Unlimited ad tracking (Meta Ads and Google Ads)",
-          "2 support inboxes (e.g. Sales, Support)",
+          "Official and unofficial API support",
           "Up to 10 team members",
           "AI per inbox, with automatic follow-up",
           "Billing and payment automations"
         ],
-        "cta": "Try for free"
+        "cta": "Try it today"
       },
       {
         "name": "Scale",
@@ -158,7 +167,9 @@
         "cta": "Talk to us"
       }
     ],
-    "usageNote": "On top of the subscription, each automation (follow-up sent, per-contact broadcast, or webhook triggered) costs <strong>{fee}</strong>. You already pay Meta directly for the message delivery itself — we only charge for the orchestration."
+    "commissionTitle": "A cut of your messages? Not here.",
+    "commissionNote": "Your official template messages are billed directly by Meta — we don't add any percentage on top.",
+    "usageNote": "Each automation (webhook triggered, broadcast, or follow-up sent) costs <strong>{fee}</strong>."
   },
   "faq": {
     "title": "Common questions",
@@ -183,8 +194,8 @@
   },
   "finalCta": {
     "title": "Ready to stop losing customers on WhatsApp?",
-    "subtitle": "Start testing now, no credit card required.",
-    "cta": "Try for free"
+    "subtitle": "Start testing now.",
+    "cta": "Try it today"
   },
   "footer": {
     "description": "Marketing, support and CRM in one place, from the ad to the sale, over WhatsApp.",

@@ -8,9 +8,9 @@ type CurrencyConfig = {
 };
 
 const DEFAULTS: Record<Currency, string> = {
-  BRL: "R$ 497",
-  EUR: "€ ---",
-  USD: "US$ ---",
+  BRL: "R$ 599",
+  EUR: "€ 129",
+  USD: "US$ 129",
 };
 
 const AUTOMATION_FEE: Record<Currency, string> = {

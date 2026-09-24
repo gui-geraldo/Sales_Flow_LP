@@ -4,3 +4,6 @@
 .env*.local
 .DS_Store
 next-env.d.ts
+
+# originais pesados das midias (versoes otimizadas ficam em public/team)
+/_midia_originais/
