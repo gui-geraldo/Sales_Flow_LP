@@ -8,7 +8,6 @@ import { Pricing } from "@/components/Pricing";
 import { Faq } from "@/components/Faq";
 import { FinalCta } from "@/components/FinalCta";
 import { Footer } from "@/components/Footer";
-import { Trust } from "@/components/Trust";
 import { ClinicHero } from "@/components/clinic/ClinicHero";
 import { ClinicAbout } from "@/components/clinic/ClinicAbout";
 import { ClinicResults } from "@/components/clinic/ClinicResults";
@@ -49,13 +48,12 @@ export default async function Home({
   }
 
   // Português: página genérica de sempre, só com os dois mockups da
-  // plataforma (conversa no Hero, Resultados logo abaixo da prova social).
-  // Sem "Quiénes somos"/carrossel.
+  // plataforma (conversa no Hero, Resultados logo abaixo). Sem "Quiénes
+  // somos"/carrossel e sem a faixa de prova social (removida a pedido).
   return (
     <main>
       <Header />
       <Hero />
-      <Trust />
       <ClinicResults namespace="results" />
       <Problem />
       <Differentiators />
