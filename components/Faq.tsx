@@ -9,7 +9,7 @@ export function Faq() {
   const items = t.raw("items") as FaqItem[];
 
   return (
-    <section id="faq" className="bg-gray-950 py-14">
+    <section id="faq" className="bg-gray-950 py-10 md:py-12">
       <Container className="max-w-2xl">
         <Reveal>
           <h2 className="text-center text-3xl font-bold text-white">

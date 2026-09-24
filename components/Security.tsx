@@ -12,7 +12,7 @@ export function Security() {
   const items = t.raw("items") as Item[];
 
   return (
-    <section id="seguranca" className="border-b border-white/10 bg-gray-950 py-14">
+    <section id="seguranca" className="border-b border-white/10 bg-gray-950 py-10 md:py-12">
       <Container className="grid items-center gap-12 md:grid-cols-2">
         <Reveal>
           <p className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">

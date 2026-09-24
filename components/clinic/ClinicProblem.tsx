@@ -28,13 +28,14 @@ export function ClinicProblem() {
   const yRight = useTransform(scrollYProgress, [0, 1], [-24, 32]);
 
   return (
-    <section className="border-b border-white/10 bg-gray-950 pb-14 pt-16">
+    <section className="border-b border-white/10 bg-gray-950 py-10 md:py-12">
       <Container>
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold leading-snug tracking-[-0.02em] text-white md:text-4xl">
+        {/* título estreito (2 linhas), subtítulo largo pra caber em 2 linhas */}
+        <Reveal className="text-center">
+          <h2 className="mx-auto max-w-2xl text-3xl font-bold leading-snug tracking-[-0.02em] text-white md:text-4xl">
             {t("title")}
           </h2>
-          <p className="mt-4 text-lg text-gray-400">{t("subtitle")}</p>
+          <p className="mt-4 text-[17px] leading-relaxed text-gray-400">{t("subtitle")}</p>
         </Reveal>
 
         <div

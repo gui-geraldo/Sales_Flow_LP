@@ -2,13 +2,14 @@ import { useTranslations } from "next-intl";
 import { Container } from "./Container";
 import { Reveal } from "./Reveal";
 import { CtaLink } from "./CtaLink";
+import { PlatformMockup } from "./mockup/PlatformMockup";
 
 export function Hero() {
   const t = useTranslations("hero");
 
   return (
-    <section className="border-b border-white/10 bg-gray-950 pt-16 md:pt-20">
-      <Container className="grid items-start gap-14 pb-16 md:grid-cols-2 md:pb-20">
+    <section className="border-b border-white/10 bg-gray-950 pt-8 md:pt-10">
+      <Container className="grid items-start gap-14 pb-10 md:grid-cols-2 md:pb-12">
         <Reveal className="flex flex-col md:min-h-[480px] md:justify-between">
           <p className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
             <span className="h-px w-7 bg-brand-500" aria-hidden="true" />
@@ -45,21 +46,11 @@ export function Hero() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.15}>
+        {/* Mockup animado da bandeja real da plataforma (components/mockup),
+            avançando pela margem direita no desktop como no Hero de clínica. */}
+        <Reveal delay={0.15} className="hero-bleed-right">
           <figure className="overflow-hidden rounded-lg border border-white/10 bg-gray-900 shadow-lg">
-            <div className="flex items-center gap-1.5 border-b border-white/10 bg-white/[0.03] px-4 py-2.5">
-              <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
-              <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
-              <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
-            </div>
-            <div className="flex aspect-[4/3] flex-col items-center justify-center gap-3 border-2 border-dashed border-white/10 bg-white/[0.02] p-8 text-center">
-              <span className="text-xs font-semibold uppercase tracking-wide text-gray-500">
-                Print do produto — placeholder
-              </span>
-              <p className="max-w-xs text-base leading-snug text-gray-400">
-                {t("screenshotBrief")}
-              </p>
-            </div>
+            <PlatformMockup />
           </figure>
         </Reveal>
       </Container>

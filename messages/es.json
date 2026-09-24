@@ -1,29 +1,29 @@
 {
   "meta": {
-    "title": "Sales Flow — Del anuncio a la venta, en una sola conversación de WhatsApp",
+    "title": "Sales Flow | Del anuncio a la venta, en una sola conversación de WhatsApp",
     "description": "CRM, atención e IA en un solo lugar. Sabé de qué anuncio vino cada cliente y no vuelvas a perder el hilo de la conversación en WhatsApp."
   },
   "clinic": {
     "meta": {
-      "title": "Sales Flow — El anuncio trae al paciente, tu clínica no pierde el hilo",
+      "title": "Sales Flow | El anuncio trae al paciente, tu clínica no pierde el hilo",
       "description": "CRM, atención e IA para clínicas. Cada consulta que llega por WhatsApp ya sabe de qué anuncio vino, con historial completo del paciente."
     },
     "hero": {
       "badge": "WhatsApp · CRM · Clínicas",
       "titleStart": "El anuncio trae al paciente.",
       "titleEmphasis": "Tu clínica",
-      "titleEnd": "no pierde el hilo.",
+      "titleEnd": "no pierde el hilo",
       "subtitle": "Sales Flow junta atención, CRM e IA en un solo lugar. Cada consulta que llega por WhatsApp ya sabe de qué anuncio vino, y tu equipo nunca pierde el historial del paciente.",
       "ctaPrimary": "Probá hoy mismo",
       "ctaSecondary": "Ver cómo funciona",
       "noCreditCard": "Sin tarjeta de crédito para empezar a probar.",
-      "photoLabel": "Foto de la clínica — placeholder",
+      "photoLabel": "Foto de la clínica (placeholder)",
       "photoCaption": "Ideal: foto de la recepción de tu clínica, o una captura del panel mostrando una conversación real con un paciente.",
-      "proof": "Ya en producción en clínicas de rubros distintos — veterinaria, odontología y estética."
+      "proof": "Ya en producción en clínicas de rubros distintos: veterinaria, odontología y estética."
     },
     "problem": {
       "title": "En la clínica, el paciente se pierde siempre de la misma forma",
-      "subtitle": "El anuncio genera un clic, el clic se convierte en un WhatsApp — ¿y después? Bandeja mezclada, secretaria distinta en cada turno, ningún historial. Es fácil perder al paciente, y con él la consulta que ya pagaste por atraer.",
+      "subtitle": "El anuncio genera un clic, el clic se convierte en un WhatsApp. ¿Y después? Bandeja mezclada, secretaria distinta en cada turno, ningún historial. Es fácil perder al paciente, y con él la consulta que ya pagaste por atraer.",
       "withoutLabel": "Sin Sales Flow",
       "withoutItems": [
         "El paciente escribe por WhatsApp y se mezcla con el resto de las consultas",
@@ -44,7 +44,7 @@
       "items": [
         {
           "title": "Sabés de qué anuncio vino cada paciente",
-          "description": "La conversación llega a WhatsApp ya sabiendo de qué anuncio hizo clic el paciente — sin planillas, sin adivinar.",
+          "description": "La conversación llega a WhatsApp ya sabiendo de qué anuncio hizo clic el paciente, sin planillas y sin adivinar.",
           "tag": "\"Promoción de septiembre\""
         },
         {
@@ -63,14 +63,14 @@
         },
         {
           "title": "Programá el mensaje para el momento justo",
-          "description": "Programá un mensaje para enviarlo después, cuando quieras — sin tener que acordarte de mandarlo a tiempo.",
+          "description": "Programá un mensaje para enviarlo después, cuando quieras, sin tener que acordarte de mandarlo a tiempo.",
           "tag": "Programado para el jueves 14h"
         }
       ]
     },
     "trust": {
       "label": "Ya en producción en clínicas de distintos rubros",
-      "names": ["VetApp — veterinaria", "HOC — odontología", "CETAO DON — odontología"]
+      "names": ["VetApp (veterinaria)", "HOC (odontología)", "CETAO DON (odontología)"]
     },
     "about": {
       "eyebrow": "Quiénes somos",
@@ -80,13 +80,23 @@
         { "value": "+50 mil", "label": "pacientes atendidos" },
         { "value": "+120 mil", "label": "disparos automatizados" }
       ],
-      "photoLabel": "Foto del equipo — placeholder",
+      "photoLabel": "Foto del equipo (placeholder)",
       "photoCaption": "Foto del equipo o de un evento reciente.",
       "photoAlt": "Equipo de Sales Flow",
       "carouselToggle": "Pausar o reanudar el carrusel",
-      "videoLabel": "Video del equipo — placeholder",
-      "videoCaption": "Clip corto (6–7s) de un evento o feria.",
-      "text": "Nacimos en Brasil, un país de 220 millones de habitantes y uno de los que más usan WhatsApp en el mundo. Desarrollamos una plataforma lista para hablar con millones de personas — y ahora estamos trayendo nuestra tecnología a Europa."
+      "videoLabel": "Video del equipo (placeholder)",
+      "videoCaption": "Clip corto (6 a 7 s) de un evento o feria.",
+      "text": "Nacimos en Brasil, un país de 220 millones de habitantes y uno de los que más usan WhatsApp en el mundo. Desarrollamos una plataforma lista para hablar con millones de personas y ahora estamos trayendo nuestra tecnología a Europa."
+    },
+    "results": {
+      "eyebrow": "Resultados",
+      "title": "Cuánto invertiste, cuánto vendiste y de dónde vino cada paciente",
+      "subtitle": "Inversión en anuncios, ventas y retorno del período en una sola pantalla. Sin planillas ni cuentas a mano.",
+      "bullets": [
+        "Inversión y ventas por día, lado a lado",
+        "Embudo completo: del alcance del anuncio a la compra",
+        "El origen de cada venta: anuncio de Meta, Google, Instagram o acceso directo"
+      ]
     }
   },
   "nav": {
@@ -131,7 +141,7 @@
   },
   "problem": {
     "title": "Tu anuncio genera un clic, el clic se convierte en una charla de WhatsApp... ¿y después?",
-    "subtitle": "¿Planilla? ¿Cuaderno? ¿Cada vendedor a su manera? Es fácil perder el hilo — y junto con él, la venta que ya pagaste para atraer.",
+    "subtitle": "¿Planilla? ¿Cuaderno? ¿Cada vendedor a su manera? Es fácil perder el hilo y, junto con él, la venta que ya pagaste para atraer.",
     "withoutLabel": "Sin Sales Flow",
     "withoutItems": [
       "El cliente hace clic en el anuncio, nadie sabe en cuál",
@@ -152,7 +162,7 @@
     "items": [
       {
         "title": "Sabe de qué anuncio vino cada cliente",
-        "description": "La conversación llega a WhatsApp ya sabiendo de qué anuncio hizo clic el cliente — sin planillas, sin adivinar.",
+        "description": "La conversación llega a WhatsApp ya sabiendo de qué anuncio hizo clic el cliente, sin planillas y sin adivinar.",
         "tag": "\"Promoción de septiembre\""
       },
       {
@@ -171,14 +181,14 @@
       },
       {
         "title": "Programá mensajes para el momento justo",
-        "description": "Programá un mensaje para enviarlo después, cuando quieras — sin tener que acordarte de mandarlo a tiempo.",
+        "description": "Programá un mensaje para enviarlo después, cuando quieras, sin tener que acordarte de mandarlo a tiempo.",
         "tag": "Programado para el jueves 14h"
       }
     ]
   },
   "howItWorks": {
     "title": "Cómo funciona",
-    "subtitle": "Tres pasos, sin complicaciones.",
+    "subtitle": "Tres pasos, sin complicaciones",
     "steps": [
       {
         "title": "Conectá tu WhatsApp y tus anuncios",
@@ -196,8 +206,8 @@
   },
   "security": {
     "eyebrow": "Dato sensible, tratado en serio",
-    "title": "Vos te tomás tus datos en serio. Nosotros también.",
-    "subtitle": "No se trata solo de vender más — se trata de no poner en riesgo la confianza que tu cliente depositó en vos.",
+    "title": "Vos te tomás tus datos en serio. Nosotros también",
+    "subtitle": "No se trata solo de vender más. Se trata de no poner en riesgo la confianza que tu cliente depositó en vos.",
     "items": [
       {
         "title": "Dato cifrado, siempre",
@@ -209,7 +219,7 @@
       },
       {
         "title": "Vos controlás quién ve qué",
-        "description": "Definí niveles de acceso para cada persona del equipo — no todos necesitan ver todo."
+        "description": "Definí niveles de acceso para cada persona del equipo: no todos necesitan ver todo."
       }
     ]
   },
@@ -217,7 +227,7 @@
     "title": "Un precio simple, sin letra chica",
     "subtitle": "Suscripción fija mensual. Sin sorpresas, sin plan escondido detrás de \"hablá con ventas\" para todo.",
     "popular": "Más popular",
-    "placeholderNotice": "El precio para esta región todavía está en definición — los valores mostrados son ilustrativos.",
+    "placeholderNotice": "El precio para esta región todavía está en definición. Los valores mostrados son ilustrativos.",
     "plans": [
       {
         "name": "Profesional",
@@ -249,9 +259,9 @@
         "cta": "Hablar con nosotros"
       }
     ],
-    "commissionTitle": "¿Comisión sobre tus mensajes? Acá no.",
-    "commissionNote": "Tus mensajes por plantilla oficial se facturan directo con Meta — nosotros no le agregamos ningún porcentaje.",
-    "usageNote": "Cada automatización (webhook, envío de plantilla o follow-up) cuesta <strong>{fee}</strong>."
+    "commissionTitle": "¿Comisión sobre tus mensajes? ¡Acá no!",
+    "commissionNote": "Tus mensajes por plantilla oficial se facturan directo con Meta. Nosotros no les agregamos ningún porcentaje.",
+    "usageNote": "Cada automatización ejecutada por Sales Flow (webhook, envío de plantilla o follow-up) cuesta <strong>{fee}</strong>."
   },
   "faq": {
     "title": "Preguntas frecuentes",
@@ -276,7 +286,7 @@
   },
   "finalCta": {
     "title": "¿Listo para dejar de perder clientes en WhatsApp?",
-    "subtitle": "Empezá a probarlo ahora.",
+    "subtitle": "Empezá a probarlo ahora",
     "cta": "Probá hoy mismo"
   },
   "footer": {
@@ -296,5 +306,160 @@
   },
   "languageSwitcher": {
     "label": "Idioma"
+  },
+  "mockup": {
+    "ui": {
+      "search": "Buscar por nombre o teléfono",
+      "filters": "Filtros",
+      "allInboxes": "Todos los Inbox ({count})",
+      "selectConversation": "Selecciona una conversación",
+      "composer": "Escribe un mensaje…",
+      "aiOn": "IA activa",
+      "today": "Hoy",
+      "yesterday": "Ayer",
+      "audio": "Audio",
+      "inbox": "WhatsApp · Clínica Sonrisa",
+      "suggestionTitle": "La IA captó algo diferente:",
+      "nameField": "Nombre",
+      "useThis": "Usar este",
+      "identifiedTitle": "Identificado por la IA:",
+      "identifiedBody": "lead caliente · Limpieza dental"
+    },
+    "temperature": {
+      "cold": "Frío",
+      "warm": "Tibio",
+      "hot": "Caliente",
+      "problem": "Problema",
+      "paid": "Pagado"
+    },
+    "contact": {
+      "initialName": "Jo",
+      "capturedName": "Josefina Ortega"
+    },
+    "tags": {
+      "urgency": "Urgencia",
+      "orthodontics": "Ortodoncia",
+      "implants": "Implantes",
+      "whitening": "Blanqueamiento",
+      "cleaning": "Limpieza dental"
+    },
+    "queue": {
+      "q1": {
+        "name": "Javier Soto",
+        "preview": "Me duele desde ayer, ¿pueden verme hoy?"
+      },
+      "q2": {
+        "name": "Carlos Méndez",
+        "preview": "¿Trabajan con seguro médico?"
+      },
+      "q3": {
+        "name": "María José Ruiz",
+        "preview": "Perfecto, nos vemos el martes 👍"
+      },
+      "q4": {
+        "name": "Pablo Navarro",
+        "preview": "La factura llegó con otro importe"
+      },
+      "q5": {
+        "name": "Ana Beltrán",
+        "preview": "Hola, info por favor"
+      },
+      "q6": {
+        "name": "Elena Castro",
+        "preview": "Te envío la ubicación de la clínica"
+      }
+    },
+    "messages": {
+      "m1": "¡Hola! ¿Cuánto cuesta la limpieza del anuncio? 😊",
+      "m2": "¡Hola! La limpieza completa cuesta 60 €. ¿Me dices tu nombre para reservarte un horario?",
+      "m3": "Soy Josefina Ortega 😊",
+      "m4": "¡Gracias, Josefina! Tengo el jueves a las 17:30 o a las 19:00. ¿Cuál prefieres?",
+      "m6": "¡Perfecto! Te reservo el jueves 12 a las 19:00 con la Dra. Martínez 😊",
+      "m7": "¡Genial, muchas gracias! 🙌"
+    },
+    "notes": {
+      "origin": {
+        "title": "Origen:",
+        "body": "anuncio «Limpieza dental» · Instagram"
+      },
+      "audio": {
+        "title": "Audio transcrito:",
+        "body": "«Mejor a las 19, salgo tarde del trabajo»"
+      },
+      "booked": {
+        "title": "Cita acordada por la IA",
+        "body": "en 2 minutos"
+      }
+    }
+  },
+  "roiMockup": {
+    "currency": "EUR",
+    "moneyFactor": "1",
+    "title": "Resultados",
+    "range": "Del {from} al {to}",
+    "period": {
+      "today": "Hoy",
+      "last24h": "24 horas",
+      "days7": "7 días",
+      "days30": "30 días",
+      "days90": "90 días",
+      "custom": "Personalizado"
+    },
+    "cards": {
+      "sales": "Ventas",
+      "salesSub": "{revenue} en ventas",
+      "spend": "Inversión en anuncios",
+      "spendSub": "Gasto en Meta en el período",
+      "return": "Retorno general",
+      "returnSubShort": "Ventas ÷ inversión en anuncios",
+      "costPerSale": "Costo por venta",
+      "costPerSaleSub": "Inversión en anuncios ÷ ventas",
+      "vsPrevious": "vs. período anterior"
+    },
+    "charts": {
+      "sales": "Ventas por día",
+      "spend": "Inversión por día"
+    },
+    "chart": {
+      "viewTable": "Ver como tabla"
+    },
+    "funnel": {
+      "title": "Embudo",
+      "intro": "En cantidad de personas, del alcance a la compra.",
+      "stages": {
+        "audience": "Audiencia",
+        "visitors": "Visitantes",
+        "leads": "Leads",
+        "purchases": "Compras"
+      },
+      "groups": {
+        "top": "ARRIBA",
+        "middle": "MEDIO",
+        "bottom": "ABAJO"
+      }
+    },
+    "origins": {
+      "title": "De dónde vinieron las ventas",
+      "intro": "El último camino que cada comprador usó para llegar al sitio en los {days} días antes de comprar.",
+      "labels": {
+        "meta_ads": "Anuncio de Meta",
+        "instagram": "Meta - Bio y orgánico",
+        "google_ads": "Anuncio de Google",
+        "direct": "Acceso directo",
+        "unknown": "Sin origen identificado"
+      },
+      "hints": {
+        "meta_ads": "Hizo clic en un anuncio de Meta.",
+        "instagram": "Enlace de la bio, perfil, publicación o anuncio sin campaña identificada.",
+        "google_ads": "Hizo clic en un anuncio de Google.",
+        "direct": "Abrió el sitio escribiendo la dirección o desde un favorito, sin señal de origen.",
+        "unknown": "Ninguna visita registrada antes de la compra."
+      },
+      "salesCount": "{count} ventas",
+      "coverage": "Origen identificado en {identified} de {total} ventas ({pct}%). El resto no tiene ninguna visita registrada antes de la compra."
+    },
+    "notes": {
+      "origins": "Origen de cada venta, identificado automáticamente"
+    }
   }
 }

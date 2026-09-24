@@ -7,7 +7,7 @@ export function Trust() {
   const names = t.raw("names") as string[];
 
   return (
-    <section className="border-b border-white/10 bg-gray-950 py-10">
+    <section className="border-b border-white/10 bg-gray-950 py-8">
       <Container>
         <Reveal className="flex flex-col items-center gap-5 text-center">
           <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">

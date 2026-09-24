@@ -27,7 +27,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({
     locale,
-    namespace: locale === "es" ? "clinic.meta" : "meta",
+    namespace: locale === "es" || locale === "en" ? "clinic.meta" : "meta",
   });
 
   return {

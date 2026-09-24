@@ -1,6 +1,9 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  // Only the platform mockup (components/mockup) uses `dark:` — it mirrors the
+  // real app's light/dark themes by toggling a `.dark` class on its own root.
+  darkMode: "class",
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {

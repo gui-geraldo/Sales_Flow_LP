@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Sales Flow — From the ad to the sale, in one WhatsApp conversation",
+    "title": "Sales Flow | From the ad to the sale, in one WhatsApp conversation",
     "description": "CRM, support and AI in one place. Know exactly which ad brought each customer and never lose the thread of a WhatsApp conversation again."
   },
   "nav": {
@@ -42,7 +42,7 @@
   },
   "trust": {
     "label": "Already in production across different niches",
-    "names": ["VetApp — veterinary", "HOC — dentistry", "CETAO DON — dentistry"]
+    "names": ["VetApp (veterinary)", "HOC (dentistry)", "CETAO DON (dentistry)"]
   },
   "trustBar": {
     "clientsLabel": "Already helping businesses across different niches",
@@ -50,7 +50,7 @@
   },
   "problem": {
     "title": "Your ad gets a click, the click becomes a WhatsApp chat... then what?",
-    "subtitle": "A spreadsheet? A notebook? Every salesperson doing it their own way? It's easy to lose the thread — and with it, the sale you already paid to attract.",
+    "subtitle": "A spreadsheet? A notebook? Every salesperson doing it their own way? It's easy to lose the thread, and with it the sale you already paid to attract.",
     "withoutLabel": "Without Sales Flow",
     "withoutItems": [
       "A customer clicks the ad, nobody knows which one",
@@ -71,7 +71,7 @@
     "items": [
       {
         "title": "Knows which ad brought each customer",
-        "description": "The conversation arrives on WhatsApp already knowing which ad the customer clicked — no spreadsheets, no guessing.",
+        "description": "The conversation arrives on WhatsApp already knowing which ad the customer clicked. No spreadsheets, no guessing.",
         "tag": "\"September Sale\""
       },
       {
@@ -90,7 +90,7 @@
       },
       {
         "title": "Schedule messages to go out at the right time",
-        "description": "Schedule a message to send later, whenever you want — no need to remember to send it yourself.",
+        "description": "Schedule a message to send later, whenever you want, with no need to remember to send it yourself.",
         "tag": "Scheduled for Thursday 2pm"
       }
     ]
@@ -116,7 +116,7 @@
   "security": {
     "eyebrow": "Sensitive data, taken seriously",
     "title": "You take your data seriously. So do we.",
-    "subtitle": "It's not just about selling more — it's about not putting at risk the trust your customer placed in you.",
+    "subtitle": "It's not just about selling more. It's about not putting at risk the trust your customer placed in you.",
     "items": [
       {
         "title": "Data encrypted, always",
@@ -128,7 +128,7 @@
       },
       {
         "title": "You control who sees what",
-        "description": "Set access levels for each person on your team — not everyone needs to see everything."
+        "description": "Set access levels for each person on your team: not everyone needs to see everything."
       }
     ]
   },
@@ -136,7 +136,7 @@
     "title": "Simple pricing, no fine print",
     "subtitle": "Fixed monthly subscription. No surprises, no plan hidden behind \"talk to sales\" for everything.",
     "popular": "Most popular",
-    "placeholderNotice": "Pricing for this region is still being finalized — values shown are illustrative.",
+    "placeholderNotice": "Pricing for this region is still being finalized. Values shown are illustrative.",
     "plans": [
       {
         "name": "Professional",
@@ -168,7 +168,7 @@
       }
     ],
     "commissionTitle": "A cut of your messages? Not here.",
-    "commissionNote": "Your official template messages are billed directly by Meta — we don't add any percentage on top.",
+    "commissionNote": "Your official template messages are billed directly by Meta. We don't add any percentage on top.",
     "usageNote": "Each automation (webhook triggered, broadcast, or follow-up sent) costs <strong>{fee}</strong>."
   },
   "faq": {
@@ -214,5 +214,269 @@
   },
   "languageSwitcher": {
     "label": "Language"
+  },
+  "mockup": {
+    "ui": {
+      "search": "Search by name or phone",
+      "filters": "Filters",
+      "allInboxes": "All Inboxes ({count})",
+      "selectConversation": "Select a conversation",
+      "composer": "Write a message…",
+      "aiOn": "AI on",
+      "today": "Today",
+      "yesterday": "Yesterday",
+      "audio": "Audio",
+      "inbox": "WhatsApp · Bright Smile Clinic",
+      "suggestionTitle": "The AI picked up something different:",
+      "nameField": "Name",
+      "useThis": "Use this",
+      "identifiedTitle": "Identified by AI:",
+      "identifiedBody": "hot lead · Teeth cleaning"
+    },
+    "temperature": {
+      "cold": "Cold",
+      "warm": "Warm",
+      "hot": "Hot",
+      "problem": "Problem",
+      "paid": "Paid"
+    },
+    "contact": {
+      "initialName": "Jo",
+      "capturedName": "Josephine Owens"
+    },
+    "tags": {
+      "urgency": "Urgent",
+      "orthodontics": "Orthodontics",
+      "implants": "Implants",
+      "whitening": "Whitening",
+      "cleaning": "Teeth cleaning"
+    },
+    "queue": {
+      "q1": {
+        "name": "James Porter",
+        "preview": "My tooth has hurt since yesterday, can you see me today?"
+      },
+      "q2": {
+        "name": "Chris Miller",
+        "preview": "Do you accept dental insurance?"
+      },
+      "q3": {
+        "name": "Mary Johnson",
+        "preview": "Perfect, see you Tuesday 👍"
+      },
+      "q4": {
+        "name": "Paul Nash",
+        "preview": "The invoice came with a different amount"
+      },
+      "q5": {
+        "name": "Anna Bell",
+        "preview": "Hi, can I get some info?"
+      },
+      "q6": {
+        "name": "Ellen Carter",
+        "preview": "Sending you the clinic's location"
+      }
+    },
+    "messages": {
+      "m1": "Hi! How much is the teeth cleaning from the ad? 😊",
+      "m2": "Hi! A full cleaning is $80. Could you tell me your name so I can book you in?",
+      "m3": "I'm Josephine Owens 😊",
+      "m4": "Nice to meet you, Josephine! I have Thursday at 5:30 pm or 7:00 pm. Which works better?",
+      "m6": "Perfect! You're booked for Thursday the 12th at 7:00 pm with Dr. Martin 😊",
+      "m7": "Great, thank you so much! 🙌"
+    },
+    "notes": {
+      "origin": {
+        "title": "Source:",
+        "body": "“Teeth cleaning” ad · Instagram"
+      },
+      "audio": {
+        "title": "Audio transcribed:",
+        "body": "“7 is better, I get off work late”"
+      },
+      "booked": {
+        "title": "Appointment booked by AI",
+        "body": "in 2 minutes"
+      }
+    }
+  },
+  "roiMockup": {
+    "currency": "USD",
+    "moneyFactor": "1.1",
+    "title": "Results",
+    "range": "From {from} to {to}",
+    "period": {
+      "today": "Today",
+      "last24h": "24 hours",
+      "days7": "7 days",
+      "days30": "30 days",
+      "days90": "90 days",
+      "custom": "Custom"
+    },
+    "cards": {
+      "sales": "Sales",
+      "salesSub": "{revenue} in sales",
+      "spend": "Ad spend",
+      "spendSub": "Spent on Meta in the period",
+      "return": "Overall return",
+      "returnSubShort": "Sales ÷ ad spend",
+      "costPerSale": "Cost per sale",
+      "costPerSaleSub": "Ad spend ÷ sales",
+      "vsPrevious": "vs. previous period"
+    },
+    "charts": {
+      "sales": "Sales per day",
+      "spend": "Spend per day"
+    },
+    "chart": {
+      "viewTable": "View as table"
+    },
+    "funnel": {
+      "title": "Funnel",
+      "intro": "In number of people, from reach to purchase.",
+      "stages": {
+        "audience": "Audience",
+        "visitors": "Visitors",
+        "leads": "Leads",
+        "purchases": "Purchases"
+      },
+      "groups": {
+        "top": "TOP",
+        "middle": "MIDDLE",
+        "bottom": "BOTTOM"
+      }
+    },
+    "origins": {
+      "title": "Where sales came from",
+      "intro": "The last path each buyer used to reach the site in the {days} days before buying.",
+      "labels": {
+        "meta_ads": "Meta ad",
+        "instagram": "Meta - Bio and organic",
+        "google_ads": "Google ad",
+        "direct": "Direct access",
+        "unknown": "Origin not identified"
+      },
+      "hints": {
+        "meta_ads": "Clicked a Meta ad.",
+        "instagram": "Bio link, profile, post, or ad with no campaign identified.",
+        "google_ads": "Clicked a Google ad.",
+        "direct": "Opened the site by typing the address or from a bookmark, with no origin signal.",
+        "unknown": "No visit recorded before the purchase."
+      },
+      "salesCount": "{count} sales",
+      "coverage": "Origin identified for {identified} of {total} sales ({pct}%). The rest have no recorded visit before the purchase."
+    },
+    "notes": {
+      "origins": "Origin of every sale, identified automatically"
+    }
+  },
+  "clinic": {
+    "meta": {
+      "title": "Sales Flow | The ad brings the patient, your clinic never loses the thread",
+      "description": "CRM, customer service and AI for clinics. Every inquiry that arrives on WhatsApp already knows which ad it came from, with the patient's full history."
+    },
+    "hero": {
+      "badge": "WhatsApp · CRM · Clinics",
+      "titleStart": "The ad brings the patient.",
+      "titleEmphasis": "Your clinic",
+      "titleEnd": "never loses the thread",
+      "subtitle": "Sales Flow brings customer service, CRM and AI together in one place. Every inquiry that arrives on WhatsApp already knows which ad it came from, and your team never loses the patient's history.",
+      "ctaPrimary": "Try it today",
+      "ctaSecondary": "See how it works",
+      "noCreditCard": "No credit card required to start testing.",
+      "photoLabel": "Clinic photo (placeholder)",
+      "photoCaption": "Ideal: a photo of your clinic's front desk, or a screenshot of the panel showing a real conversation with a patient.",
+      "proof": "Already in production at clinics across different specialties: veterinary, dentistry and aesthetics."
+    },
+    "problem": {
+      "title": "At the clinic, patients get lost the same way every time",
+      "subtitle": "The ad gets a click, the click becomes a WhatsApp message. And then? A mixed-up inbox, a different receptionist every shift, no history. It's easy to lose the patient, and with them the appointment you already paid to attract.",
+      "withoutLabel": "Without Sales Flow",
+      "withoutItems": [
+        "The patient writes on WhatsApp and gets mixed up with every other inquiry",
+        "Each staff member handles it as best they can, with no patient history",
+        "You don't know which campaign actually brings you new patients"
+      ],
+      "withLabel": "With Sales Flow",
+      "withItems": [
+        "Every patient conversation stays organized, with full history",
+        "The AI spots who already wants to book an appointment",
+        "You know exactly how many patients each campaign brought in"
+      ]
+    },
+    "differentiators": {
+      "eyebrow": "Why Sales Flow",
+      "title": "Everything your clinic needs to stop losing patients along the way",
+      "subtitle": "No technical jargon. Just what changes day to day for your front desk and your team.",
+      "items": [
+        {
+          "title": "You know which ad each patient came from",
+          "description": "The conversation reaches WhatsApp already knowing which ad the patient clicked. No spreadsheets, no guessing.",
+          "tag": "\"September promotion\""
+        },
+        {
+          "title": "Start today, with the WhatsApp you already use at the clinic",
+          "description": "Use the number you already have, with no approval queue. Whenever you want, move to the official API.",
+          "tag": "Live in minutes, no waiting"
+        },
+        {
+          "title": "The AI already tells who wants to book from who's just asking",
+          "description": "Each inbox has its own AI, which classifies the patient on its own.",
+          "hot": "Hot",
+          "warm": "Warm",
+          "cold": "Cold",
+          "problem": "Problem",
+          "paid": "Paid"
+        },
+        {
+          "title": "Schedule the message for the right moment",
+          "description": "Schedule a message to send later, whenever you want, without having to remember to send it on time.",
+          "tag": "Scheduled for Thursday 2 pm"
+        }
+      ]
+    },
+    "trust": {
+      "label": "Already in production at clinics across different specialties",
+      "names": [
+        "VetApp (veterinary)",
+        "HOC (dentistry)",
+        "CETAO DON (dentistry)"
+      ]
+    },
+    "about": {
+      "eyebrow": "Who we are",
+      "title": "A platform built to talk to millions",
+      "stats": [
+        {
+          "value": "+2M",
+          "label": "messages processed"
+        },
+        {
+          "value": "+50K",
+          "label": "patients served"
+        },
+        {
+          "value": "+120K",
+          "label": "automated sends"
+        }
+      ],
+      "photoLabel": "Team photo (placeholder)",
+      "photoCaption": "Team photo or a recent event.",
+      "photoAlt": "Sales Flow team",
+      "carouselToggle": "Pause or resume the carousel",
+      "videoLabel": "Team video (placeholder)",
+      "videoCaption": "Short clip (6 to 7 s) from an event or fair.",
+      "text": "We were born in Brazil, a country of 220 million people and one of the heaviest WhatsApp users in the world. We built a platform ready to talk to millions of people, and now we're bringing our technology to Europe."
+    },
+    "results": {
+      "eyebrow": "Results",
+      "title": "How much you invested, how much you sold and where each patient came from",
+      "subtitle": "Ad spend, sales and return for the period on a single screen. No spreadsheets, no manual math.",
+      "bullets": [
+        "Spend and sales per day, side by side",
+        "The full funnel: from ad reach to purchase",
+        "Where each sale came from: Meta ad, Google, Instagram or direct access"
+      ]
+    }
   }
 }

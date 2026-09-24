@@ -11,6 +11,7 @@ import { Footer } from "@/components/Footer";
 import { Trust } from "@/components/Trust";
 import { ClinicHero } from "@/components/clinic/ClinicHero";
 import { ClinicAbout } from "@/components/clinic/ClinicAbout";
+import { ClinicResults } from "@/components/clinic/ClinicResults";
 import { ClinicProblem } from "@/components/clinic/ClinicProblem";
 import { ClinicDifferentiators } from "@/components/clinic/ClinicDifferentiators";
 
@@ -25,16 +26,16 @@ export default async function Home({
 }) {
   const { locale } = await params;
 
-  // Variante independente para o público de língua espanhola: mesma
-  // estrutura de página, mas hero/problema/diferenciais falam de clínica
-  // (dor real desse segmento), com prova social dos clientes de clínica
-  // que já usam o produto. Controlada só pelo locale "es", sem rota própria.
-  if (locale === "es") {
+  // Variante de clínica (espanhol e inglês): hero/problema/diferenciais
+  // falam de clínica, com "Quiénes somos" + carrossel e a tela de
+  // Resultados. Controlada só pelo locale, sem rota própria.
+  if (locale === "es" || locale === "en") {
     return (
       <main>
         <Header />
         <ClinicHero />
         <ClinicAbout />
+        <ClinicResults />
         <ClinicProblem />
         <ClinicDifferentiators />
         <HowItWorks />
@@ -47,11 +48,15 @@ export default async function Home({
     );
   }
 
+  // Português: página genérica de sempre, só com os dois mockups da
+  // plataforma (conversa no Hero, Resultados logo abaixo da prova social).
+  // Sem "Quiénes somos"/carrossel.
   return (
     <main>
       <Header />
       <Hero />
       <Trust />
+      <ClinicResults namespace="results" />
       <Problem />
       <Differentiators />
       <HowItWorks />

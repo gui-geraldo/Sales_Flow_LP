@@ -1,14 +1,20 @@
-﻿"use client";
+"use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
-// Placeholder-aware media tile: renders a photo (next/image) or a short
-// looping video (native <video>, muted/autoplay/loop, no player chrome)
-// once real files exist, and falls back to a dashed placeholder box until
-// then. Video only starts fetching once it scrolls near the viewport
-// (IntersectionObserver), so a page full of these never front-loads bytes
-// nobody has scrolled to yet.
+// Placeholder-aware media tile: renders a photo or a short looping video
+// (native <video>, muted/autoplay/loop, no player chrome) once real files
+// exist, and falls back to a dashed placeholder box until then.
+//
+// Loading: files in /public/team are already pre-optimized (720×720 JPG,
+// ~100 KB), so images skip the next/image optimizer (`unoptimized`) and come
+// straight from the static CDN — no on-demand processing delay. Photos and
+// posters load eagerly at low priority; videos start on whichever comes
+// first: window load, or MEDIA_WARMUP_EVENT (fired by the section when its
+// stats row scrolls into view).
+export const MEDIA_WARMUP_EVENT = "sf:media-warmup";
+
 type MediaClipProps = {
   type: "photo" | "video";
   src?: string;
@@ -38,7 +44,15 @@ export function MediaClip({ type, src, poster, alt, label, caption, className }:
   if (type === "photo") {
     return (
       <figure className={`${wrapperClass} bg-gray-900`}>
-        <Image src={src} alt={alt ?? ""} fill sizes="(min-width: 640px) 340px, 62vw" className="object-cover" />
+        <Image
+          src={src}
+          alt={alt ?? ""}
+          fill
+          unoptimized
+          loading="eager"
+          fetchPriority="low"
+          className="object-cover"
+        />
       </figure>
     );
   }
@@ -47,34 +61,34 @@ export function MediaClip({ type, src, poster, alt, label, caption, className }:
 }
 
 function VideoTile({ src, poster, className }: { src: string; poster?: string; className: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [inView, setInView] = useState(false);
+  const [ready, setReady] = useState(false);
 
+  // Viewport-based lazy loading doesn't work here: inside the overflow-hidden
+  // marquee, off-screen tiles never "intersect" until they are already
+  // visible. So the video mounts on page load or on the section's warm-up
+  // signal, whichever happens first.
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "600px" }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
+    if (document.readyState === "complete") {
+      setReady(true);
+      return;
+    }
+    const start = () => setReady(true);
+    window.addEventListener("load", start, { once: true });
+    window.addEventListener(MEDIA_WARMUP_EVENT, start, { once: true });
+    return () => {
+      window.removeEventListener("load", start);
+      window.removeEventListener(MEDIA_WARMUP_EVENT, start);
+    };
   }, []);
 
-  // The poster renders through next/image straight away (optimized, same
-  // lazy loading as the photos), so the tile is never an empty box; the
-  // video mounts on top of it once near the viewport.
+  // The poster shows straight away, so the tile is never an empty box; the
+  // video mounts on top of it once it's allowed to start.
   return (
-    <div ref={ref} className={`${className} bg-gray-900`}>
+    <div className={`${className} bg-gray-900`}>
       {poster && (
-        <Image src={poster} alt="" fill sizes="(min-width: 640px) 340px, 62vw" className="object-cover" />
+        <Image src={poster} alt="" fill unoptimized loading="eager" fetchPriority="low" className="object-cover" />
       )}
-      {inView && (
+      {ready && (
         <video
           className="absolute inset-0 h-full w-full object-cover"
           src={src}

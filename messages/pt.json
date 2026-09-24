@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Sales Flow — Do anúncio à venda, numa conversa só de WhatsApp",
+    "title": "Sales Flow | Do anúncio à venda, numa conversa só de WhatsApp",
     "description": "CRM, atendimento e IA em um só lugar. Saiba de qual anúncio veio cada cliente e nunca mais perca o fio da conversa no WhatsApp."
   },
   "nav": {
@@ -46,11 +46,11 @@
   },
   "trust": {
     "label": "Já em produção em negócios de nichos diferentes",
-    "names": ["VetApp — veterinária", "HOC — odontologia", "CETAO DON — odontologia"]
+    "names": ["VetApp (veterinária)", "HOC (odontologia)", "CETAO DON (odontologia)"]
   },
   "problem": {
     "title": "Seu anúncio gera clique, o clique vira conversa no WhatsApp... e depois?",
-    "subtitle": "Planilha? Caderno? Cada vendedor com seu jeito? É fácil perder o fio — e junto com ele, a venda que você já pagou pra atrair.",
+    "subtitle": "Planilha? Caderno? Cada vendedor com seu jeito? É fácil perder o fio e, junto com ele, a venda que você já pagou pra atrair.",
     "withoutLabel": "Sem Sales Flow",
     "withoutItems": [
       "Cliente clica no anúncio, ninguém sabe de qual",
@@ -71,7 +71,7 @@
     "items": [
       {
         "title": "Sabe de qual anúncio veio cada cliente",
-        "description": "A conversa já chega no WhatsApp sabendo de qual anúncio o cliente clicou — sem planilha, sem achismo.",
+        "description": "A conversa já chega no WhatsApp sabendo de qual anúncio o cliente clicou, sem planilha e sem achismo.",
         "tag": "\"Promoção de setembro\""
       },
       {
@@ -90,7 +90,7 @@
       },
       {
         "title": "Agende mensagens pra enviar na hora certa",
-        "description": "Agende uma mensagem pra enviar depois, sempre que quiser — sem precisar lembrar de mandar na hora.",
+        "description": "Agende uma mensagem pra enviar depois, sempre que quiser, sem precisar lembrar de mandar na hora.",
         "tag": "Envio agendado pra quinta 14h"
       }
     ]
@@ -116,7 +116,7 @@
   "security": {
     "eyebrow": "Dado sensível, tratado a sério",
     "title": "Você leva seus dados a sério. Nós também.",
-    "subtitle": "Não é só sobre vender mais — é sobre não colocar em risco a confiança que seu cliente depositou em você.",
+    "subtitle": "Não é só sobre vender mais. É sobre não colocar em risco a confiança que seu cliente depositou em você.",
     "items": [
       {
         "title": "Dado cifrado, sempre",
@@ -128,7 +128,7 @@
       },
       {
         "title": "Você controla quem vê o quê",
-        "description": "Defina níveis de acesso pra cada pessoa da equipe — nem todo mundo precisa ver tudo."
+        "description": "Defina níveis de acesso pra cada pessoa da equipe: nem todo mundo precisa ver tudo."
       }
     ]
   },
@@ -136,7 +136,7 @@
     "title": "Um preço simples, sem letra miúda",
     "subtitle": "Assinatura fixa mensal. Sem surpresa, sem plano escondido atrás de \"fale com vendas\" pra tudo.",
     "popular": "Mais popular",
-    "placeholderNotice": "O preço nessa moeda ainda está em definição — o valor mostrado é um exemplo.",
+    "placeholderNotice": "O preço nessa moeda ainda está em definição. O valor mostrado é um exemplo.",
     "plans": [
       {
         "name": "Profissional",
@@ -168,7 +168,7 @@
       }
     ],
     "commissionTitle": "Comissão sobre mensagens? Aqui não.",
-    "commissionNote": "Suas mensagens via template oficial são faturadas diretamente com a Meta — a gente não coloca nenhum percentual em cima.",
+    "commissionNote": "Suas mensagens via template oficial são faturadas diretamente com a Meta. A gente não coloca nenhum percentual em cima.",
     "usageNote": "Cada automação (webhook acionado, disparo ou follow-up enviado) custa <strong>{fee}</strong>."
   },
   "faq": {
@@ -214,5 +214,170 @@
   },
   "languageSwitcher": {
     "label": "Idioma"
+  },
+  "mockup": {
+    "ui": {
+      "search": "Buscar por nome ou telefone",
+      "filters": "Filtros",
+      "allInboxes": "Todos os Inbox ({count})",
+      "selectConversation": "Selecione uma conversa",
+      "composer": "Escreva uma mensagem…",
+      "aiOn": "IA ativa",
+      "today": "Hoje",
+      "yesterday": "Ontem",
+      "audio": "Áudio",
+      "inbox": "WhatsApp · Clínica Sorriso",
+      "suggestionTitle": "A IA captou algo diferente:",
+      "nameField": "Nome",
+      "useThis": "Usar este",
+      "identifiedTitle": "Identificado pela IA:",
+      "identifiedBody": "lead quente · Limpeza dental"
+    },
+    "temperature": {
+      "cold": "Frio",
+      "warm": "Morno",
+      "hot": "Quente",
+      "problem": "Problema",
+      "paid": "Pago"
+    },
+    "contact": {
+      "initialName": "Jo",
+      "capturedName": "Joana Oliveira"
+    },
+    "tags": {
+      "urgency": "Urgência",
+      "orthodontics": "Ortodontia",
+      "implants": "Implantes",
+      "whitening": "Clareamento",
+      "cleaning": "Limpeza dental"
+    },
+    "queue": {
+      "q1": {
+        "name": "Rafael Souza",
+        "preview": "Estou com dor desde ontem, dá pra me atender hoje?"
+      },
+      "q2": {
+        "name": "Carlos Mendes",
+        "preview": "Vocês atendem convênio?"
+      },
+      "q3": {
+        "name": "Mariana Costa",
+        "preview": "Perfeito, nos vemos na terça 👍"
+      },
+      "q4": {
+        "name": "Paulo Nunes",
+        "preview": "O boleto veio com outro valor"
+      },
+      "q5": {
+        "name": "Ana Beatriz Lima",
+        "preview": "Oi, quero informações"
+      },
+      "q6": {
+        "name": "Helena Castro",
+        "preview": "Te mando a localização da clínica"
+      }
+    },
+    "messages": {
+      "m1": "Oi! Quanto custa a limpeza do anúncio? 😊",
+      "m2": "Oi! A limpeza completa custa R$ 180. Pode me dizer seu nome para eu reservar um horário?",
+      "m3": "Sou a Joana Oliveira 😊",
+      "m4": "Prazer, Joana! Tenho quinta às 17:30 ou às 19:00. Qual você prefere?",
+      "m6": "Perfeito! Reservei quinta, dia 12, às 19:00 com a Dra. Martins 😊",
+      "m7": "Ótimo, muito obrigada! 🙌"
+    },
+    "notes": {
+      "origin": {
+        "title": "Origem:",
+        "body": "anúncio “Limpeza dental” · Instagram"
+      },
+      "audio": {
+        "title": "Áudio transcrito:",
+        "body": "“Melhor às 19, saio tarde do trabalho”"
+      },
+      "booked": {
+        "title": "Consulta combinada pela IA",
+        "body": "em 2 minutos"
+      }
+    }
+  },
+  "roiMockup": {
+    "currency": "BRL",
+    "moneyFactor": "3",
+    "title": "Resultados",
+    "range": "De {from} a {to}",
+    "period": {
+      "today": "Hoje",
+      "last24h": "24 horas",
+      "days7": "7 dias",
+      "days30": "30 dias",
+      "days90": "90 dias",
+      "custom": "Personalizado"
+    },
+    "cards": {
+      "sales": "Vendas",
+      "salesSub": "{revenue} em vendas",
+      "spend": "Investimento em anúncios",
+      "spendSub": "Gasto no Meta no período",
+      "return": "Retorno geral",
+      "returnSubShort": "Vendas ÷ investimento em anúncios",
+      "costPerSale": "Custo por venda",
+      "costPerSaleSub": "Investimento em anúncios ÷ vendas",
+      "vsPrevious": "vs. período anterior"
+    },
+    "charts": {
+      "sales": "Vendas por dia",
+      "spend": "Investimento por dia"
+    },
+    "chart": {
+      "viewTable": "Ver como tabela"
+    },
+    "funnel": {
+      "title": "Funil",
+      "intro": "Em quantidade de pessoas, do alcance até a compra.",
+      "stages": {
+        "audience": "Audiência",
+        "visitors": "Visitantes",
+        "leads": "Leads",
+        "purchases": "Compras"
+      },
+      "groups": {
+        "top": "TOPO",
+        "middle": "MEIO",
+        "bottom": "FUNDO"
+      }
+    },
+    "origins": {
+      "title": "De onde vieram as vendas",
+      "intro": "O último caminho que cada comprador usou para chegar ao site nos {days} dias antes de comprar.",
+      "labels": {
+        "meta_ads": "Anúncio do Meta",
+        "instagram": "Meta - Bio e orgânico",
+        "google_ads": "Anúncio do Google",
+        "direct": "Acesso direto",
+        "unknown": "Sem origem identificada"
+      },
+      "hints": {
+        "meta_ads": "Clicou em um anúncio do Meta.",
+        "instagram": "Link da bio, perfil, publicação ou anúncio sem campanha identificada.",
+        "google_ads": "Clicou em um anúncio do Google.",
+        "direct": "Abriu o site digitando o endereço ou de um favorito, sem nenhum sinal de origem.",
+        "unknown": "Nenhuma visita registrada antes da compra."
+      },
+      "salesCount": "{count} vendas",
+      "coverage": "Origem identificada em {identified} de {total} vendas ({pct}%). As demais não têm nenhuma visita registrada antes da compra."
+    },
+    "notes": {
+      "origins": "Origem de cada venda, identificada automaticamente"
+    }
+  },
+  "results": {
+    "eyebrow": "Resultados",
+    "title": "Quanto você investiu, quanto vendeu e de onde veio cada cliente",
+    "subtitle": "Investimento em anúncios, vendas e retorno do período em uma tela só. Sem planilha nem conta de cabeça.",
+    "bullets": [
+      "Investimento e vendas por dia, lado a lado",
+      "Funil completo: do alcance do anúncio até a compra",
+      "A origem de cada venda: anúncio do Meta, Google, Instagram ou acesso direto"
+    ]
   }
 }

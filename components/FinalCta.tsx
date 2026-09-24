@@ -7,7 +7,7 @@ export function FinalCta() {
   const t = useTranslations("finalCta");
 
   return (
-    <section id="cta" className="border-t border-white/10 bg-gray-950 py-16">
+    <section id="cta" className="border-t border-white/10 bg-gray-950 py-10 md:py-12">
       <Container className="max-w-xl text-center">
         <Reveal>
           <h2 className="text-3xl font-bold text-white">{t("title")}</h2>

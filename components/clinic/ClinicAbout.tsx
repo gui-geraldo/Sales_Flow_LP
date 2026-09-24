@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Container } from "../Container";
-import { MediaClip } from "../MediaClip";
+import { MEDIA_WARMUP_EVENT, MediaClip } from "../MediaClip";
 
 const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
 
@@ -13,24 +13,43 @@ type Stat = { value: string; label: string };
 // Mezcla de fotos y videos cortos de equipo/eventos. Sin `src`, cada slot
 // muestra el placeholder; para publicar el archivo real, poné el video o
 // la foto en /public y completá `src` (y `poster` para el video) acá.
+// Fotos já otimizadas (720×720 JPG, ~100 KB) — servidas direto, sem esperar
+// o otimizador do next/image; originais pesados em /_midia_originais.
 const mediaSlots: { type: "photo" | "video"; src?: string; poster?: string }[] = [
   { type: "video", src: "/team/Video_1.mp4", poster: "/team/Video_1_Cover.jpg" },
-  { type: "photo", src: "/team/Photos_1.png" },
-  { type: "photo", src: "/team/Photos_2.png" },
-  { type: "photo", src: "/team/Photos_3.png" },
-  { type: "photo", src: "/team/Photos_5.jpg" },
-  { type: "photo", src: "/team/Photo_4.png" },
+  { type: "photo", src: "/team/Photo_1.jpg" },
+  { type: "photo", src: "/team/Photo_2.jpg" },
+  { type: "photo", src: "/team/Photo_3.jpg" },
+  { type: "photo", src: "/team/Photo_5.jpg" },
+  { type: "photo", src: "/team/Photo_4.jpg" },
   { type: "video", src: "/team/Video_2.mp4", poster: "/team/Video_2_Cover.jpg" },
-  { type: "photo", src: "/team/Photo_7.png" },
+  { type: "photo", src: "/team/Photo_7.jpg" },
 ];
 
 export function ClinicAbout() {
   const t = useTranslations("clinic.about");
   const stats = t.raw("stats") as Stat[];
   const [paused, setPaused] = useState(false);
+  const statsRef = useRef<HTMLDivElement>(null);
+
+  // Quando a linha de números entra na tela, avisa os vídeos do carrossel
+  // pra começarem a carregar já (se a página ainda não tiver terminado de
+  // carregar e disparado isso antes).
+  useEffect(() => {
+    const el = statsRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        window.dispatchEvent(new Event(MEDIA_WARMUP_EVENT));
+        observer.disconnect();
+      }
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="border-b border-white/10 bg-gray-950 py-16 md:py-20">
+    <section className="border-b border-white/10 bg-gray-950 py-10 md:py-12">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -48,6 +67,7 @@ export function ClinicAbout() {
         </motion.div>
 
         <motion.div
+          ref={statsRef}
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px", amount: 0.3 }}
@@ -69,11 +89,14 @@ export function ClinicAbout() {
           ))}
         </motion.div>
 
+        {/* Revela antes de entrar na tela (margem de 300px abaixo do
+            viewport ≈ quando a linha de números aparece) — antes esperava
+            30% do carrossel visível e parecia uma faixa vazia até a metade. */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px", amount: 0.3 }}
-          transition={{ duration: 0.55, delay: 0.16, ease: EASE_OUT_EXPO }}
+          viewport={{ once: true, margin: "0px 0px 300px 0px" }}
+          transition={{ duration: 0.55, ease: EASE_OUT_EXPO }}
           className="mx-auto mt-10 max-w-5xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]"
         >
           {/* The list is rendered twice so the marquee loops seamlessly; the
@@ -119,7 +142,7 @@ export function ClinicAbout() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px", amount: 0.3 }}
           transition={{ duration: 0.55, delay: 0.24, ease: EASE_OUT_EXPO }}
-          className="mx-auto mt-10 max-w-2xl text-center text-[15px] leading-relaxed text-gray-400"
+          className="mx-auto mt-10 max-w-5xl text-center text-[15px] leading-relaxed text-gray-400"
         >
           {t("text")}
         </motion.p>

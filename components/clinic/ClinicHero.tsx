@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Container } from "../Container";
 import { CtaLink } from "../CtaLink";
+import { PlatformMockup } from "../mockup/PlatformMockup";
 
 // Exponential ease-out (Emil Kowalski / craft-floor guidance: strong ease-out
 // reads as "already in motion", never sluggish ease-in). One authored
@@ -31,8 +32,8 @@ export function ClinicHero() {
   const t = useTranslations("clinic.hero");
 
   return (
-    <section className="border-b border-white/10 bg-gray-950 pt-16 selection:bg-brand-500/30 selection:text-white md:pt-20">
-      <Container className="grid items-start gap-14 pb-16 md:grid-cols-2 md:pb-20">
+    <section className="border-b border-white/10 bg-gray-950 pt-8 selection:bg-brand-500/30 selection:text-white md:pt-10">
+      <Container className="grid items-start gap-14 pb-10 md:grid-cols-2 md:pb-12">
         <motion.div
           variants={stagger}
           initial="hidden"
@@ -89,21 +90,11 @@ export function ClinicHero() {
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "-40px", amount: 0.2 }}
           transition={{ duration: 0.6, delay: 0.12, ease: EASE_OUT_EXPO }}
+          className="hero-bleed-right"
         >
+          {/* Mockup animado da bandeja real da plataforma (components/mockup). */}
           <figure className="overflow-hidden rounded-lg border border-white/10 bg-gray-900 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.55)]">
-            <div className="flex items-center gap-1.5 border-b border-white/10 bg-white/[0.03] px-4 py-2.5">
-              <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
-              <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
-              <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
-            </div>
-            <div className="flex aspect-[4/3] flex-col items-center justify-center gap-3 border-2 border-dashed border-white/10 bg-white/[0.02] p-8 text-center">
-              <span className="text-xs font-semibold uppercase tracking-wide text-gray-500">
-                {t("photoLabel")}
-              </span>
-              <p className="max-w-xs text-base leading-snug text-gray-400">
-                {t("photoCaption")}
-              </p>
-            </div>
+            <PlatformMockup />
           </figure>
         </motion.div>
       </Container>

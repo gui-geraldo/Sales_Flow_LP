@@ -21,7 +21,7 @@ export function Differentiators() {
   const items = t.raw("items") as Item[];
 
   return (
-    <section id="diferenciais" className="border-b border-white/10 bg-gray-950 py-14">
+    <section id="diferenciais" className="border-b border-white/10 bg-gray-950 py-10 md:py-12">
       <Container>
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white">

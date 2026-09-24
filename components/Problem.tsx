@@ -25,7 +25,7 @@ export function Problem() {
   const yRight = useTransform(scrollYProgress, [0, 1], [-40, 40]);
 
   return (
-    <section className="border-b border-white/10 bg-gray-950 py-14">
+    <section className="border-b border-white/10 bg-gray-950 py-10 md:py-12">
       <Container>
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold leading-snug tracking-tight text-white md:text-4xl">

@@ -61,6 +61,39 @@ body {
   animation-play-state: paused;
 }
 
+/* Hero mockup bleeding into the right page margin on desktop: the column
+   keeps its grid width and grows by the space between the 1120px container
+   and the viewport edge. 100vw counts the scrollbar, so the extra half
+   scrollbar keeps a small gap from the edge instead of overflowing. Capped
+   so it doesn't get huge on very wide screens. */
+@media (min-width: 768px) {
+  .hero-bleed-right {
+    margin-right: min(0px, calc((1120px - 100vw) / 2));
+    max-width: 820px;
+  }
+}
+
+/* Mirror of .hero-bleed-right: a mockup on the left side bleeding into the
+   left page margin (ROI section). */
+@media (min-width: 768px) {
+  .bleed-left {
+    margin-left: min(0px, calc((1120px - 100vw) / 2));
+  }
+}
+
+/* Chat background of the platform mockup — same colour + doodle pattern as
+   `.chat-bg` in the real app (auto_agendador apps/web/src/app/globals.css). */
+.mock-chat-bg {
+  background-color: #efe7de;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22140%22%20height%3D%22140%22%20viewBox%3D%220%200%20140%20140%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-opacity%3D%220.045%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M18%2026c4-6%2010-6%2014%200M96%2014c5%203%206%209%202%2013M40%2096c6-2%2011%202%2011%208%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22112%22%20cy%3D%2262%22%20r%3D%225%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%2230%22%20cy%3D%22120%22%20r%3D%223.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M62%2042h12v9h-5l-4%204v-4h-3z%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M118%20104h14v10h-6l-4%204v-4h-4z%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M74%2078c3-4%209-4%2012%200%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%3C%2Fsvg%3E");
+  background-repeat: repeat;
+}
+
+.dark .mock-chat-bg {
+  background-color: #0b141a;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22140%22%20height%3D%22140%22%20viewBox%3D%220%200%20140%20140%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-opacity%3D%220.05%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M18%2026c4-6%2010-6%2014%200M96%2014c5%203%206%209%202%2013M40%2096c6-2%2011%202%2011%208%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22112%22%20cy%3D%2262%22%20r%3D%225%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%2230%22%20cy%3D%22120%22%20r%3D%223.5%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M62%2042h12v9h-5l-4%204v-4h-3z%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M118%20104h14v10h-6l-4%204v-4h-4z%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M74%2078c3-4%209-4%2012%200%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%3C%2Fsvg%3E");
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee-right {
     animation: none;
