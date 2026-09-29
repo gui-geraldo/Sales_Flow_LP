@@ -1,6 +1,7 @@
 import { Container } from "@/components/Container";
 import { Logo, Wordmark } from "@/components/Logo";
 import { COMPANY, LEGAL_UPDATED_AT, type LegalDoc, type LegalVariant } from "@/lib/legal";
+import { SITE_URL } from "@/lib/site";
 
 // Página de texto legal (política de privacidade e termos de uso): cabeçalho
 // simples, sumário com âncoras e seções numeradas.
@@ -24,18 +25,20 @@ function withEmailLink(text: string) {
   );
 }
 
-export function LegalDocument({ doc, variant }: { doc: LegalDoc; variant: LegalVariant }) {
+export function LegalDocument({ doc, variant, path }: { doc: LegalDoc; variant: LegalVariant; path: string }) {
   const updated = new Intl.DateTimeFormat(variant, { dateStyle: "long" }).format(
     new Date(`${LEGAL_UPDATED_AT}T12:00:00`),
   );
 
   return (
     <main className="min-h-screen bg-gray-950 text-gray-300">
+      {/* og:url igual ao canonical (/privacy, /terms); o React 19 leva pro <head>. */}
+      <meta property="og:url" content={`${SITE_URL}${path}`} />
       <header className="border-b border-white/10">
         <Container className="flex h-16 items-center justify-between">
           <a href="/" className="flex items-center gap-2.5">
             <Logo size={30} />
-            <Wordmark compact />
+            <Wordmark />
           </a>
           <a href="/" className="text-sm text-gray-400 hover:text-white">
             {doc.back}

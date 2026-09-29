@@ -376,11 +376,11 @@
   },
   "clinic": {
     "meta": {
-      "title": "Sales Flow by Talker Flow | The ad brings the patient, your clinic never loses the thread",
-      "description": "CRM, customer service and AI for clinics. Every inquiry that arrives on WhatsApp already knows which ad it came from, with the patient's full history."
+      "title": "Sales Flow | WhatsApp CRM with AI for Clinics | Talker Flow",
+      "description": "Sales Flow is a WhatsApp CRM with AI for clinics: your team's patient conversations in one inbox, full patient history, automatic follow-ups and the ad behind every inquiry."
     },
     "hero": {
-      "badge": "WhatsApp · CRM · Clinics",
+      "badge": "WhatsApp CRM with AI for clinics",
       "titleStart": "The ad brings the patient.",
       "titleEmphasis": "Your clinic",
       "titleEnd": "never loses the thread",

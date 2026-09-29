@@ -37,7 +37,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2.5">
               <Logo size={28} />
-              <Wordmark />
+              <Wordmark withCompany />
             </div>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-gray-500">
               {t("description")}

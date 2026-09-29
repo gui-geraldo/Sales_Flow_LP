@@ -5,11 +5,11 @@
   },
   "clinic": {
     "meta": {
-      "title": "Sales Flow by Talker Flow | El anuncio trae al paciente, tu clínica no pierde el hilo",
-      "description": "CRM, atención e IA para clínicas. Cada consulta que llega por WhatsApp ya sabe de qué anuncio vino, con historial completo del paciente."
+      "title": "Sales Flow | CRM de WhatsApp con IA para clínicas | Talker Flow",
+      "description": "Sales Flow es un CRM de WhatsApp con IA para clínicas: atención del equipo en un solo lugar, historial del paciente, seguimiento automático y origen de cada consulta."
     },
     "hero": {
-      "badge": "WhatsApp · CRM · Clínicas",
+      "badge": "CRM de WhatsApp con IA para clínicas",
       "titleStart": "El anuncio trae al paciente.",
       "titleEmphasis": "Tu clínica",
       "titleEnd": "no pierde el hilo",

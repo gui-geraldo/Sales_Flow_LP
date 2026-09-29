@@ -219,15 +219,16 @@ function LeadDialog({
         {done ? (
           <div>
             <p className="mt-2 text-[15px] leading-relaxed text-gray-400">{t("successBody")}</p>
-            <a
-              href={done.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 flex h-12 items-center justify-center gap-2 rounded bg-brand-500 px-6 text-[15px] font-semibold text-gray-950 transition-colors hover:bg-brand-400"
+            {/* Botão, não link wa.me: o widget do Sales Flow intercepta todo
+                <a href="wa.me…"> e abriria um segundo formulário. */}
+            <button
+              type="button"
+              onClick={() => window.open(done.url, "_blank", "noopener")}
+              className="mt-6 flex h-12 w-full items-center justify-center gap-2 rounded bg-brand-500 px-6 text-[15px] font-semibold text-gray-950 transition-colors hover:bg-brand-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
             >
               <WhatsAppIcon className="h-5 w-5" />
               {t("openWhatsapp")}
-            </a>
+            </button>
           </div>
         ) : (
           <>

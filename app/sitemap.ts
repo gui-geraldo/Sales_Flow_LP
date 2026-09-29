@@ -1,16 +1,19 @@
 import type { MetadataRoute } from "next";
 import { LEGAL_UPDATED_AT } from "@/lib/legal";
-import { SITE_URL, VARIANTS, homeAlternates, variantPath } from "@/lib/site";
+import { LANGS, SITE_URL, langAlternates, langPath } from "@/lib/site";
 
-// O Next não escapa as URLs no XML do sitemap; o "&" de ?lang=..&currency=..
-// precisa virar "&amp;", senão o arquivo fica inválido.
+// Só as URLs que queremos indexadas: a raiz (x-default), uma por idioma e
+// as páginas legais. Combinações de moeda não entram: o texto é o mesmo.
+
+// O Next não escapa as URLs no XML do sitemap; se uma URL tiver "&" um dia,
+// ele precisa virar "&amp;", senão o arquivo fica inválido.
 const xml = (url: string) => url.replace(/&/g, "&amp;");
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const languages = Object.fromEntries(Object.entries(homeAlternates()).map(([k, v]) => [k, xml(v)]));
+  const languages = Object.fromEntries(Object.entries(langAlternates("/")).map(([k, v]) => [k, xml(v)]));
   const home = [
     { url: `${SITE_URL}/`, priority: 1 },
-    ...VARIANTS.map((v) => ({ url: xml(`${SITE_URL}${variantPath(v.lang, v.currency)}`), priority: 0.9 })),
+    ...LANGS.map((lang) => ({ url: xml(`${SITE_URL}${langPath("/", lang)}`), priority: 0.9 })),
   ].map((entry) => ({
     ...entry,
     lastModified: new Date(),

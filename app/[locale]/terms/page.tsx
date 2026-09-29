@@ -18,5 +18,5 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function TermsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale, variant } = await variantFor(params);
   setRequestLocale(locale);
-  return <LegalDocument doc={TERMS[variant]} variant={variant} />;
+  return <LegalDocument doc={TERMS[variant]} variant={variant} path="/terms" />;
 }

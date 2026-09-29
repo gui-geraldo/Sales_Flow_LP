@@ -19,5 +19,5 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale, variant } = await variantFor(params);
   setRequestLocale(locale);
-  return <LegalDocument doc={PRIVACY[variant]} variant={variant} />;
+  return <LegalDocument doc={PRIVACY[variant]} variant={variant} path="/privacy" />;
 }

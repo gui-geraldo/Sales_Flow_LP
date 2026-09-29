@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Analytics } from "@/components/Analytics";
 import { CookieBanner } from "@/components/CookieBanner";
-import { BRAND, SITE_URL } from "@/lib/site";
+import { PRODUCT, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -38,14 +38,14 @@ export async function generateMetadata({
     metadataBase: new URL(SITE_URL),
     title: t("title"),
     description: t("description"),
-    applicationName: BRAND,
+    applicationName: PRODUCT,
     openGraph: {
       type: "website",
-      siteName: BRAND,
+      siteName: PRODUCT,
       title: t("title"),
       description: t("description"),
       locale: ogLocale,
-      images: [{ url: "/og.png", width: 1200, height: 630, alt: BRAND }],
+      images: [{ url: "/og.png", width: 1200, height: 630, alt: PRODUCT }],
     },
     twitter: {
       card: "summary_large_image",
@@ -73,6 +73,12 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${inter.variable} ${instrumentSerif.variable}`}>
+      <head>
+        {/* Widget de rastreamento do Sales Flow (conta w=507cba10…), pedido do
+            usuário: tag exatamente como fornecida, uma vez, em todas as páginas.
+            Não baixar, reescrever nem substituir. */}
+        <script src="https://staging.talkerflow.me/api/widget.js?w=507cba10-f4db-41f7-b764-26867166750d" defer></script>
+      </head>
       <body className="font-sans">
         <NextIntlClientProvider>
           {children}

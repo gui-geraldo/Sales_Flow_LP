@@ -165,7 +165,7 @@ export function RoiMockup({
         <main ref={innerRef} className="select-none space-y-5 bg-slate-50 p-6 font-sans text-slate-900 dark:bg-slate-950">
           {/* Cabeçalho + 1ª linha do seletor de período, na mesma altura do título */}
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <h1 className="text-2xl font-semibold dark:text-slate-100">{t("title")}</h1>
+            <p className="text-2xl font-semibold dark:text-slate-100">{t("title")}</p>
             <PeriodChips active={period} pressed={pressed} onPick={pick} t={t} />
           </div>
 
@@ -176,7 +176,7 @@ export function RoiMockup({
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col gap-4">
               <div className="rounded-[12px] border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-                <h2 className="mb-2 text-sm font-medium dark:text-slate-100">{t("charts.spend")}</h2>
+                <p className="mb-2 text-sm font-medium dark:text-slate-100">{t("charts.spend")}</p>
                 <DailyBars
                   key={`spend-${period}`}
                   values={data.days.map((d) => d.spendCents)}
@@ -188,7 +188,7 @@ export function RoiMockup({
                 />
               </div>
               <div className="rounded-[12px] border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-                <h2 className="mb-2 text-sm font-medium dark:text-slate-100">{t("charts.sales")}</h2>
+                <p className="mb-2 text-sm font-medium dark:text-slate-100">{t("charts.sales")}</p>
                 <DailyBars
                   key={`sales-${period}`}
                   values={data.days.map((d) => d.sales)}
@@ -502,7 +502,7 @@ function Funnel({ values, t, locale }: { values: [number, number, number, number
 
   return (
     <section className="flex h-full flex-col rounded-[12px] border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-      <h2 className="text-sm font-medium dark:text-slate-100">{t("funnel.title")}</h2>
+      <p className="text-sm font-medium dark:text-slate-100">{t("funnel.title")}</p>
       <div className="mt-2 flex flex-1 items-center justify-center">
         <svg viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} className="w-full max-w-[560px]">
           {lineYs.map((y, i) => (
@@ -624,7 +624,7 @@ function Origins({
 
   return (
     <section className="relative rounded-[12px] border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-      <h2 className="text-sm font-medium dark:text-slate-100">{t("origins.title")}</h2>
+      <p className="text-sm font-medium dark:text-slate-100">{t("origins.title")}</p>
 
       {/* anotação do mockup: aparece a cada troca de período */}
       <AnimatePresence mode="wait">

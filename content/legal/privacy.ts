@@ -9,7 +9,7 @@ import { COMPANY, type LegalDoc, type LegalVariant } from "@/lib/legal";
 const { name, cnpj, email, site } = COMPANY;
 
 const ptBR: LegalDoc = {
-  metaTitle: "Política de privacidade | Sales Flow by Talker Flow",
+  metaTitle: "Política de privacidade | Sales Flow | Talker Flow",
   title: "Política de privacidade",
   updated: "Última atualização: {date}",
   back: "Voltar ao início",
@@ -89,12 +89,13 @@ const ptBR: LegalDoc = {
         [
           "sf_consent (nosso, 6 meses): guarda a sua escolha no aviso de cookies.",
           "NEXT_LOCALE e NEXT_CURRENCY (nossos, 1 ano): idioma e moeda da página.",
-          "sf_aid e a origem da primeira e da última visita no armazenamento do navegador (nossos, 1 ano): para saber qual anúncio trouxe você se depois falar com a gente.",
+          "sf_aid (nosso, 1 ano): identificador anônimo da visita, gravado pela nossa ferramenta de atendimento (Sales Flow) ao abrir a página. Registra dados como idioma, aparelho e parâmetros de campanha do link, sem nome, e-mail ou telefone.",
+          "Origem da primeira e da última visita no armazenamento do navegador (nossos, 1 ano, só se você não recusar os cookies): para saber qual anúncio trouxe você se depois falar com a gente.",
           "_ga e _ga_* (Google Analytics, até 2 anos): estatísticas de visita.",
           "_gcl_* (Google Ads, até 90 dias): medição de anúncios do Google.",
           "_fbp e _fbc (Meta, até 90 dias): medição de anúncios do Facebook e do Instagram.",
         ],
-        "Você pode recusar os cookies de medição no aviso de cookies ou mudar a escolha quando quiser no link \"Cookies\" no rodapé. Se recusar, eles não são gravados e o Google só recebe sinais sem cookies. Também é possível apagar tudo nas configurações do navegador.",
+        "Você pode recusar os cookies de medição no aviso de cookies ou mudar a escolha quando quiser no link \"Cookies\" no rodapé. Se recusar, os cookies do Google e da Meta e a origem das visitas não são gravados, e o Google só recebe sinais sem cookies. Também é possível apagar tudo nas configurações do navegador.",
       ],
     },
     {
@@ -134,7 +135,7 @@ const ptBR: LegalDoc = {
 };
 
 const ptPT: LegalDoc = {
-  metaTitle: "Política de privacidade | Sales Flow by Talker Flow",
+  metaTitle: "Política de privacidade | Sales Flow | Talker Flow",
   title: "Política de privacidade",
   updated: "Última atualização: {date}",
   back: "Voltar ao início",
@@ -214,12 +215,13 @@ const ptPT: LegalDoc = {
         [
           "sf_consent (próprio, 6 meses, necessário): guarda a sua escolha no aviso de cookies.",
           "NEXT_LOCALE e NEXT_CURRENCY (próprios, 1 ano, necessários): idioma e moeda da página.",
-          "sf_aid e a origem da primeira e da última visita no armazenamento do navegador (próprios, 1 ano, só com consentimento): para saber que anúncio o trouxe se depois nos contactar.",
+          "sf_aid (próprio, 1 ano): identificador anónimo da visita, gravado pela nossa ferramenta de atendimento (Sales Flow) ao abrir a página. Regista dados como idioma, dispositivo e parâmetros de campanha do link, sem nome, e-mail ou telefone.",
+          "Origem da primeira e da última visita no armazenamento do navegador (próprios, 1 ano, só com consentimento): para saber que anúncio o trouxe se depois nos contactar.",
           "_ga e _ga_* (Google Analytics, até 2 anos, só com consentimento): estatísticas de visita.",
           "_gcl_* (Google Ads, até 90 dias, só com consentimento): medição de anúncios da Google.",
           "_fbp e _fbc (Meta, até 90 dias, só com consentimento): medição de anúncios do Facebook e do Instagram.",
         ],
-        "Pode aceitá-los ou rejeitá-los no aviso de cookies e mudar a sua escolha quando quiser no link \"Cookies\" no rodapé. Se os rejeitar, não são guardados e a Google só recebe sinais sem cookies. Também os pode apagar nas definições do navegador.",
+        "Pode aceitá-los ou rejeitá-los no aviso de cookies e mudar a sua escolha quando quiser no link \"Cookies\" no rodapé. Se os rejeitar, os cookies da Google e da Meta e a origem das visitas não são guardados, e a Google só recebe sinais sem cookies. Também os pode apagar nas definições do navegador.",
       ],
     },
     {
@@ -260,7 +262,7 @@ const ptPT: LegalDoc = {
 };
 
 const es: LegalDoc = {
-  metaTitle: "Política de privacidad | Sales Flow by Talker Flow",
+  metaTitle: "Política de privacidad | Sales Flow | Talker Flow",
   title: "Política de privacidad",
   updated: "Última actualización: {date}",
   back: "Volver al inicio",
@@ -340,12 +342,13 @@ const es: LegalDoc = {
         [
           "sf_consent (propia, 6 meses, necesaria): guarda tu elección en el aviso de cookies.",
           "NEXT_LOCALE y NEXT_CURRENCY (propias, 1 año, necesarias): idioma y moneda de la página.",
-          "sf_aid y el origen de tu primera y última visita en el almacenamiento del navegador (propias, 1 año, solo con consentimiento): para saber qué anuncio te trajo si después nos escribes.",
+          "sf_aid (propia, 1 año): identificador anónimo de la visita, que guarda nuestra herramienta de atención (Sales Flow) al abrir la página. Registra datos como idioma, dispositivo y parámetros de campaña del enlace, sin nombre, email ni teléfono.",
+          "Origen de tu primera y última visita en el almacenamiento del navegador (propias, 1 año, solo con consentimiento): para saber qué anuncio te trajo si después nos escribes.",
           "_ga y _ga_* (Google Analytics, hasta 2 años, solo con consentimiento): estadísticas de visitas.",
           "_gcl_* (Google Ads, hasta 90 días, solo con consentimiento): medición de anuncios de Google.",
           "_fbp y _fbc (Meta, hasta 90 días, solo con consentimiento): medición de anuncios de Facebook e Instagram.",
         ],
-        "Puedes aceptarlas o rechazarlas en el aviso de cookies y cambiar tu elección cuando quieras en el enlace «Cookies» al pie de la página. Si las rechazas, no se guardan y Google solo recibe señales sin cookies. También puedes borrarlas desde la configuración de tu navegador.",
+        "Puedes aceptarlas o rechazarlas en el aviso de cookies y cambiar tu elección cuando quieras en el enlace «Cookies» al pie de la página. Si las rechazas, las cookies de Google y Meta y el origen de las visitas no se guardan, y Google solo recibe señales sin cookies. También puedes borrarlas desde la configuración de tu navegador.",
       ],
     },
     {
@@ -386,7 +389,7 @@ const es: LegalDoc = {
 };
 
 const en: LegalDoc = {
-  metaTitle: "Privacy policy | Sales Flow by Talker Flow",
+  metaTitle: "Privacy policy | Sales Flow | Talker Flow",
   title: "Privacy policy",
   updated: "Last updated: {date}",
   back: "Back to home",
@@ -466,12 +469,13 @@ const en: LegalDoc = {
         [
           "sf_consent (ours, 6 months, necessary): stores your choice in the cookie notice.",
           "NEXT_LOCALE and NEXT_CURRENCY (ours, 1 year, necessary): page language and currency.",
-          "sf_aid and the source of your first and latest visit in browser storage (ours, 1 year, consent only): so we know which ad brought you if you contact us later.",
+          "sf_aid (ours, 1 year): anonymous visit identifier, set by our customer service tool (Sales Flow) when the page opens. It records data such as language, device and link campaign parameters, without name, email or phone number.",
+          "Source of your first and latest visit in browser storage (ours, 1 year, consent only): so we know which ad brought you if you contact us later.",
           "_ga and _ga_* (Google Analytics, up to 2 years, consent only): visit statistics.",
           "_gcl_* (Google Ads, up to 90 days, consent only): Google ad measurement.",
           "_fbp and _fbc (Meta, up to 90 days, consent only): Facebook and Instagram ad measurement.",
         ],
-        "You can accept or reject them in the cookie notice and change your choice at any time with the \"Cookies\" link in the page footer. If you reject them, nothing is stored and Google only receives cookieless signals. You can also delete them in your browser settings.",
+        "You can accept or reject them in the cookie notice and change your choice at any time with the \"Cookies\" link in the page footer. If you reject them, Google and Meta cookies and the visit source are not stored, and Google only receives cookieless signals. You can also delete them in your browser settings.",
       ],
     },
     {

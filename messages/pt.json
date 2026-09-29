@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Sales Flow by Talker Flow | Do anúncio à venda, numa conversa só de WhatsApp",
-    "description": "CRM, atendimento e IA em um só lugar. Saiba de qual anúncio veio cada cliente e nunca mais perca o fio da conversa no WhatsApp."
+    "title": "Sales Flow | CRM para WhatsApp com IA | Talker Flow",
+    "description": "Sales Flow é um CRM para WhatsApp com IA: atendimento da equipe num só lugar, histórico de cada cliente, follow-up automático e o anúncio de origem de cada conversa."
   },
   "nav": {
     "whatItDoes": "O que faz",
@@ -11,7 +11,7 @@
     "ctaFree": "Teste hoje mesmo"
   },
   "hero": {
-    "badge": "Anúncio + WhatsApp + CRM, no mesmo lugar",
+    "badge": "CRM para WhatsApp com IA",
     "titleStart": "Do anúncio à venda,",
     "titleEmphasis": "numa conversa só",
     "titleEnd": "de WhatsApp",

@@ -9,7 +9,7 @@ import { COMPANY, type LegalDoc, type LegalVariant } from "@/lib/legal";
 const { name, cnpj, email, site } = COMPANY;
 
 const ptBR: LegalDoc = {
-  metaTitle: "Termos de uso | Sales Flow by Talker Flow",
+  metaTitle: "Termos de uso | Sales Flow | Talker Flow",
   title: "Termos de uso",
   updated: "Última atualização: {date}",
   back: "Voltar ao início",
@@ -154,7 +154,7 @@ const ptBR: LegalDoc = {
 };
 
 const ptPT: LegalDoc = {
-  metaTitle: "Termos de utilização | Sales Flow by Talker Flow",
+  metaTitle: "Termos de utilização | Sales Flow | Talker Flow",
   title: "Termos de utilização",
   updated: "Última atualização: {date}",
   back: "Voltar ao início",
@@ -299,7 +299,7 @@ const ptPT: LegalDoc = {
 };
 
 const es: LegalDoc = {
-  metaTitle: "Términos de uso | Sales Flow by Talker Flow",
+  metaTitle: "Términos de uso | Sales Flow | Talker Flow",
   title: "Términos de uso",
   updated: "Última actualización: {date}",
   back: "Volver al inicio",
@@ -444,7 +444,7 @@ const es: LegalDoc = {
 };
 
 const en: LegalDoc = {
-  metaTitle: "Terms of use | Sales Flow by Talker Flow",
+  metaTitle: "Terms of use | Sales Flow | Talker Flow",
   title: "Terms of use",
   updated: "Last updated: {date}",
   back: "Back to home",
