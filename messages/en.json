@@ -168,9 +168,9 @@
         "cta": "Talk to us"
       }
     ],
-    "commissionTitle": "A cut of your messages? Not here",
+    "commissionTitle": "A cut of your messages? Not here!",
     "commissionNote": "Your official template messages are billed directly by Meta. We don't add any percentage on top.",
-    "usageNote": "Each automation (webhook triggered, broadcast, or follow-up sent) costs <strong>{fee}</strong>."
+    "usageNote": "Each automation (webhook triggered, broadcast, or follow-up sent) costs <strong>{fee}</strong>"
   },
   "faq": {
     "title": "Common questions",

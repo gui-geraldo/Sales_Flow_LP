@@ -167,9 +167,9 @@
         "cta": "Falar com a gente"
       }
     ],
-    "commissionTitle": "Comissão sobre mensagens? Aqui não.",
+    "commissionTitle": "Comissão sobre mensagens? Aqui não!",
     "commissionNote": "Suas mensagens via template oficial são faturadas diretamente com a Meta. A gente não coloca nenhum percentual em cima.",
-    "usageNote": "Cada automação (webhook acionado, disparo ou follow-up enviado) custa <strong>{fee}</strong>."
+    "usageNote": "Cada automação (webhook acionado, disparo ou follow-up enviado) custa <strong>{fee}</strong>"
   },
   "faq": {
     "title": "Dúvidas comuns",

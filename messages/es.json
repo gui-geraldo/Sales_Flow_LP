@@ -259,9 +259,9 @@
         "cta": "Hablar con nosotros"
       }
     ],
-    "commissionTitle": "¿Comisión sobre tus mensajes? Aquí no",
+    "commissionTitle": "¿Comisión sobre tus mensajes? ¡Aquí no!",
     "commissionNote": "Tus mensajes por plantilla oficial se facturan directo con Meta. Nosotros no añadimos ningún porcentaje.",
-    "usageNote": "Cada automatización ejecutada por Sales Flow (webhook, envío de plantilla o follow-up) cuesta <strong>{fee}</strong>."
+    "usageNote": "Cada automatización ejecutada por Sales Flow (webhook, envío de plantilla o follow-up) cuesta <strong>{fee}</strong>"
   },
   "faq": {
     "title": "Preguntas frecuentes",
