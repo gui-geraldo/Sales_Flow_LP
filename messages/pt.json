@@ -397,14 +397,13 @@
     "emailPlaceholder": "voce@empresa.com.br",
     "phoneLabel": "Celular (WhatsApp)",
     "phonePlaceholder": "(11) 91234-5678",
-    "consent": "Aceito que a Sales Flow use estes dados para entrar em contato comigo sobre o serviço, conforme a <link>política de privacidade</link>.",
-    "consentPlain": "Aceito que a Sales Flow use estes dados para entrar em contato comigo sobre o serviço, conforme a política de privacidade.",
+    "consent": "Ao continuar, você aceita que a Sales Flow use estes dados para entrar em contato sobre o serviço, conforme a <link>política de privacidade</link>.",
+    "consentPlain": "Ao continuar, você aceita que a Sales Flow use estes dados para entrar em contato sobre o serviço, conforme a política de privacidade.",
     "submit": "Continuar no WhatsApp",
     "errors": {
       "name": "Escreva seu nome",
       "email": "Confira o e-mail",
-      "phone": "Confira o número com DDD. Se não for do Brasil, inclua o código do país",
-      "consent": "Precisamos da sua autorização para entrar em contato"
+      "phone": "Confira o número com DDD. Se não for do Brasil, inclua o código do país"
     },
     "successTitle": "Pronto, {name}!",
     "successBody": "Abrimos o WhatsApp em outra aba para seguir a conversa. Se não abriu, use o botão.",
@@ -444,14 +443,13 @@
     "emailPlaceholder": "o.seu@email.pt",
     "phoneLabel": "Telemóvel (WhatsApp)",
     "phonePlaceholder": "912 345 678",
-    "consent": "Aceito que a Sales Flow use estes dados para me contactar sobre o serviço, conforme a <link>política de privacidade</link>.",
-    "consentPlain": "Aceito que a Sales Flow use estes dados para me contactar sobre o serviço, conforme a política de privacidade.",
+    "consent": "Ao continuar, aceita que a Sales Flow use estes dados para o contactar sobre o serviço, conforme a <link>política de privacidade</link>.",
+    "consentPlain": "Ao continuar, aceita que a Sales Flow use estes dados para o contactar sobre o serviço, conforme a política de privacidade.",
     "submit": "Continuar no WhatsApp",
     "errors": {
       "name": "Escreva o seu nome",
       "email": "Verifique o e-mail",
-      "phone": "Verifique o número. Se não for de Portugal, inclua o indicativo do país",
-      "consent": "Precisamos da sua autorização para o contactar"
+      "phone": "Verifique o número. Se não for de Portugal, inclua o indicativo do país"
     },
     "successTitle": "Pronto, {name}!",
     "successBody": "Abrimos o WhatsApp noutro separador para continuar a conversa. Se não abriu, use o botão.",

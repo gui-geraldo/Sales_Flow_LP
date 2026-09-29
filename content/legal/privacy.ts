@@ -41,7 +41,8 @@ const ptBR: LegalDoc = {
       title: "Bases legais",
       body: [
         [
-          "Consentimento (art. 7º, I, da LGPD): para o formulário de contato e para comunicações de marketing. Você pode revogá-lo quando quiser.",
+          "Procedimentos preliminares a um contrato, a seu pedido (art. 7º, V, da LGPD): para responder ao formulário de contato e falar com você sobre o serviço que você pediu para conhecer.",
+          "Consentimento (art. 7º, I): para comunicações de marketing. Você pode revogá-lo quando quiser.",
           "Execução de contrato (art. 7º, V): para os dados necessários à prestação do serviço aos clientes.",
           "Cumprimento de obrigação legal (art. 7º, II): para os registros de acesso e dados fiscais.",
           "Legítimo interesse (art. 7º, IX): para medir o desempenho das nossas campanhas e melhorar o site e a plataforma, sempre respeitando os seus direitos. Os cookies de medição podem ser recusados no aviso de cookies.",
@@ -165,7 +166,8 @@ const ptPT: LegalDoc = {
       title: "Fundamento jurídico",
       body: [
         [
-          "Consentimento (artigo 6.º, n.º 1, alínea a) do RGPD): para o formulário de contacto, para comunicações de marketing e para os cookies de medição e publicidade (artigo 5.º da Lei n.º 41/2004). Pode retirá-lo quando quiser, sem afetar o tratamento feito antes.",
+          "Diligências pré-contratuais a seu pedido (artigo 6.º, n.º 1, alínea b) do RGPD): para responder ao formulário de contacto sobre o serviço que pediu para conhecer.",
+          "Consentimento (alínea a)): para comunicações de marketing e para os cookies de medição e publicidade (artigo 5.º da Lei n.º 41/2004). Pode retirá-lo quando quiser, sem afetar o tratamento feito antes.",
           "Execução de contrato (alínea b)): para os dados necessários à prestação do serviço aos clientes.",
           "Obrigação legal (alínea c)): para dados fiscais e contabilísticos.",
           "Interesse legítimo (alínea f)): para os dados de campanha que acompanham o formulário, a segurança do site e a melhoria da plataforma.",
@@ -290,7 +292,8 @@ const es: LegalDoc = {
       title: "Base legal",
       body: [
         [
-          "Consentimiento (artículo 6.1.a del RGPD): para el formulario de contacto, las comunicaciones comerciales y las cookies de medición y publicidad (artículo 22.2 de la LSSI). Puedes retirarlo cuando quieras, sin que afecte a lo tratado antes.",
+          "Aplicación de medidas precontractuales a petición tuya (artículo 6.1.b del RGPD): para responder al formulario de contacto sobre el servicio que pediste conocer.",
+          "Consentimiento (artículo 6.1.a): para las comunicaciones comerciales y las cookies de medición y publicidad (artículo 22.2 de la LSSI). Puedes retirarlo cuando quieras, sin que afecte a lo tratado antes.",
           "Ejecución de un contrato (artículo 6.1.b): para los datos necesarios para prestar el servicio a los clientes.",
           "Obligación legal (artículo 6.1.c): para los datos fiscales y contables.",
           "Interés legítimo (artículo 6.1.f): para los datos de campaña que acompañan al formulario, la seguridad de la web y la mejora de la plataforma.",
@@ -415,7 +418,8 @@ const en: LegalDoc = {
       title: "Legal basis",
       body: [
         [
-          "Consent (Article 6(1)(a) GDPR): for the contact form, marketing messages and measurement and advertising cookies (under the ePrivacy rules). You can withdraw it at any time, without affecting earlier processing.",
+          "Steps taken at your request before entering into a contract (Article 6(1)(b) GDPR): to respond to the contact form about the service you asked to learn about.",
+          "Consent (Article 6(1)(a)): for marketing messages and measurement and advertising cookies (under the ePrivacy rules). You can withdraw it at any time, without affecting earlier processing.",
           "Performance of a contract (Article 6(1)(b)): for the data needed to provide the service to customers.",
           "Legal obligation (Article 6(1)(c)): for tax and accounting records.",
           "Legitimate interest (Article 6(1)(f)): for the campaign data sent with the form, website security and improving the platform.",

@@ -479,14 +479,13 @@
     "emailPlaceholder": "tu@clinica.com",
     "phoneLabel": "Teléfono (WhatsApp)",
     "phonePlaceholder": "600 000 000",
-    "consent": "Acepto que Sales Flow use estos datos para contactarme sobre el servicio, según la <link>política de privacidad</link>.",
-    "consentPlain": "Acepto que Sales Flow use estos datos para contactarme sobre el servicio, según la política de privacidad.",
+    "consent": "Al continuar, aceptas que Sales Flow use estos datos para contactarte sobre el servicio, según la <link>política de privacidad</link>.",
+    "consentPlain": "Al continuar, aceptas que Sales Flow use estos datos para contactarte sobre el servicio, según la política de privacidad.",
     "submit": "Continuar en WhatsApp",
     "errors": {
       "name": "Escribe tu nombre",
       "email": "Revisa el email",
-      "phone": "Revisa el número. Si no es de España, incluye el prefijo del país",
-      "consent": "Necesitamos tu autorización para contactarte"
+      "phone": "Revisa el número. Si no es de España, incluye el prefijo del país"
     },
     "successTitle": "¡Listo, {name}!",
     "successBody": "Abrimos WhatsApp en otra pestaña para seguir la conversación. Si no se abrió, usa el botón.",

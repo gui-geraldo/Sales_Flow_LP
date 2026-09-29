@@ -497,14 +497,13 @@
     "emailPlaceholder": "you@clinic.com",
     "phoneLabel": "Phone (WhatsApp)",
     "phonePlaceholder": "+34 600 000 000",
-    "consent": "I agree that Sales Flow may use this information to contact me about the service, as described in the <link>privacy policy</link>.",
-    "consentPlain": "I agree that Sales Flow may use this information to contact me about the service, as described in the privacy policy.",
+    "consent": "By continuing, you agree that Sales Flow may use this information to contact you about the service, as described in the <link>privacy policy</link>.",
+    "consentPlain": "By continuing, you agree that Sales Flow may use this information to contact you about the service, as described in the privacy policy.",
     "submit": "Continue on WhatsApp",
     "errors": {
       "name": "Enter your name",
       "email": "Check your email",
-      "phone": "Check the number, including the country code (e.g. +34)",
-      "consent": "We need your permission to contact you"
+      "phone": "Check the number, including the country code (e.g. +34)"
     },
     "successTitle": "All set, {name}!",
     "successBody": "We opened WhatsApp in a new tab to continue the conversation. If it didn't open, use the button.",

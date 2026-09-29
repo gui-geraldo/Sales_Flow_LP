@@ -85,7 +85,7 @@ export function LeadProvider({
   );
 }
 
-type FieldError = "name" | "email" | "phone" | "consent";
+type FieldError = "name" | "email" | "phone";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -95,7 +95,6 @@ function validate(form: FormData): FieldError[] {
   if (!EMAIL_RE.test(String(form.get("email") ?? "").trim())) errors.push("email");
   const digits = String(form.get("phone") ?? "").replace(/\D/g, "");
   if (digits.length < 8 || digits.length > 15) errors.push("phone");
-  if (form.get("consent") !== "on") errors.push("consent");
   return errors;
 }
 
@@ -281,32 +280,6 @@ function LeadDialog({
                 <input id="lead-website" name="website" tabIndex={-1} autoComplete="off" />
               </div>
 
-              <div>
-                <label className="flex items-start gap-2.5 text-sm leading-snug text-gray-400">
-                  <input
-                    type="checkbox"
-                    name="consent"
-                    aria-invalid={hasError("consent")}
-                    className="mt-0.5 h-4 w-4 shrink-0 accent-brand-500"
-                  />
-                  <span>
-                    {t.rich("consent", {
-                      link: (chunks) => (
-                        <a
-                          href={privacyHref}
-                          target="_blank"
-                          rel="noopener"
-                          className="text-gray-200 underline underline-offset-2 hover:text-white"
-                        >
-                          {chunks}
-                        </a>
-                      ),
-                    })}
-                  </span>
-                </label>
-                {hasError("consent") && <p className="mt-1 text-xs text-red-400">{t("errors.consent")}</p>}
-              </div>
-
               <button
                 type="submit"
                 className="flex h-12 w-full items-center justify-center gap-2 rounded bg-brand-500 px-6 text-[15px] font-semibold text-gray-950 transition-[background-color,transform] duration-200 ease-out hover:bg-brand-400 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
@@ -314,6 +287,23 @@ function LeadDialog({
                 <WhatsAppIcon className="h-5 w-5" />
                 {t("submit")}
               </button>
+
+              {/* Aviso, sem caixa pra marcar: a base legal é o próprio pedido de
+                  contato (medidas pré-contratuais), não o consentimento. */}
+              <p className="text-center text-xs leading-relaxed text-gray-500">
+                {t.rich("consent", {
+                  link: (chunks) => (
+                    <a
+                      href={privacyHref}
+                      target="_blank"
+                      rel="noopener"
+                      className="text-gray-300 underline underline-offset-2 hover:text-white"
+                    >
+                      {chunks}
+                    </a>
+                  ),
+                })}
+              </p>
             </form>
           </>
         )}
