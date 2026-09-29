@@ -1,6 +1,6 @@
 import { COMPANY } from "@/lib/legal";
 import { getCurrencyConfig } from "@/lib/pricing";
-import { BRAND, SITE_URL, VARIANTS, variantPath } from "@/lib/site";
+import { BRAND, SITE_URL, SOCIAL_PROFILES, VARIANTS, variantPath } from "@/lib/site";
 
 // Resumo em texto puro pra agentes de IA (proposta llms.txt). Efeito pequeno
 // nos buscadores, mas custa nada e ajuda agentes que leem o arquivo a
@@ -48,6 +48,7 @@ ${VARIANTS.map((v) => `- [${LANGUAGE_NAMES[v.hreflang]}](${SITE_URL}${variantPat
 ## Contact
 
 - Email: ${COMPANY.email}
+- Instagram: ${SOCIAL_PROFILES[0]}
 - Demos and sales happen on WhatsApp after a short form on the website.
 `;
 

@@ -3,6 +3,9 @@
 export const SITE_URL = "https://www.talkerflow.me";
 export const BRAND = "Sales Flow by Talker Flow";
 
+// Perfis oficiais (entram no "sameAs" do JSON-LD e no llms.txt).
+export const SOCIAL_PROFILES = ["https://www.instagram.com/talkerflow/"];
+
 // Uma URL por idioma e moeda, pros buscadores e robôs de IA (que visitam
 // quase sempre dos EUA e sem os parâmetros só veriam a versão em inglês).
 // Quem entra pela raiz continua recebendo o idioma e a moeda do seu país.

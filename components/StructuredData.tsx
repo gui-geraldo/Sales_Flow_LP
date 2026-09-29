@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { COMPANY } from "@/lib/legal";
 import { getCurrencyConfig, type Currency } from "@/lib/pricing";
-import { BRAND, SITE_URL, variantPath } from "@/lib/site";
+import { BRAND, SITE_URL, SOCIAL_PROFILES, variantPath } from "@/lib/site";
 
 // Dados estruturados (schema.org em JSON-LD) da home: quem é a empresa, o
 // que é o produto, quanto custa e as perguntas frequentes. Ajudam buscadores
@@ -34,6 +34,7 @@ export async function StructuredData({ locale, currency }: { locale: string; cur
       logo: `${SITE_URL}/logo-badge.png`,
       email: COMPANY.email,
       taxID: COMPANY.cnpj,
+      sameAs: SOCIAL_PROFILES,
       address: { "@type": "PostalAddress", addressLocality: "São Paulo", addressRegion: "SP", addressCountry: "BR" },
       brand: { "@type": "Brand", name: BRAND, logo: `${SITE_URL}/logo-badge.png` },
     },
