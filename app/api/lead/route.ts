@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { normalizePhone } from "@/lib/phone";
+import { getCurrencyConfig, type Currency } from "@/lib/pricing";
+
+const VALID_CURRENCIES = new Set(["BRL", "EUR", "USD"]);
 
 // Recebe o formulário curto (nome, e-mail, telefone) e repassa ao webhook
 // configurado na Vercel (LEAD_WEBHOOK_URL), junto com tudo o que o navegador
@@ -66,37 +69,54 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, error: "rate_limited" }, { status: 429 });
   }
 
+  // Chave criada quando o formulário abriu: o mesmo lead enviado duas vezes
+  // chega com a mesma chave (o n8n usa pra não duplicar).
+  const clientKey = str(body.idempotencyKey, 64);
+  const leadId = /^[\w-]{8,64}$/.test(clientKey) ? clientKey : crypto.randomUUID();
+
+  // A origem calculada no navegador sobe pro topo do payload (fácil de filtrar no n8n).
+  const { origin: rawOrigin, ...clientContext } = (body.context ?? {}) as Record<string, unknown>;
+  const origin = typeof rawOrigin === "string" ? rawOrigin : null;
+  const context = body.context ? clientContext : null;
+
+  // Plano do botão clicado (demo e WhatsApp não são de um plano) e o preço
+  // do Profissional que a página mostrou nessa moeda.
+  const plan = intent === "subscribe" ? "profissional" : intent === "sales" ? "escala" : null;
+  const priceShown = VALID_CURRENCIES.has(currency)
+    ? getCurrencyConfig(currency as Currency).amount
+    : null;
+
   const city = req.headers.get("x-vercel-ip-city");
+  // Todos os campos vão sempre; o que não existe vai como null.
   const payload = {
     event: "lead",
-    leadId: crypto.randomUUID(),
+    leadId,
     receivedAt: new Date().toISOString(),
     lead: {
       name,
       email,
       phone,
-      phoneAsTyped: str(body.phone, 40),
+      phoneAsTyped: str(body.phone, 40) || null,
       consent: true,
-      consentText: str(body.consentText, 500),
+      consentText: str(body.consentText, 500) || null,
     },
+    origin,
     intent,
-    source: str(body.source, 80),
+    plan,
+    priceShown,
+    source: str(body.source, 80) || null,
     locale,
     currency,
     // Menos de 2 s entre abrir e enviar é suspeito de robô: vai marcado, não barrado.
     formFillSeconds: Math.round(fillMs / 100) / 10,
     suspectedBot: fillMs > 0 && fillMs < 2000,
-    context: body.context ?? null,
+    context,
     server: {
-      ip,
+      ip: ip || null,
       country: req.headers.get("x-vercel-ip-country"),
       region: req.headers.get("x-vercel-ip-country-region"),
       city: city ? decodeURIComponent(city) : null,
-      latitude: req.headers.get("x-vercel-ip-latitude"),
-      longitude: req.headers.get("x-vercel-ip-longitude"),
       timezone: req.headers.get("x-vercel-ip-timezone"),
-      userAgent: req.headers.get("user-agent"),
-      acceptLanguage: req.headers.get("accept-language"),
     },
   };
 
@@ -111,6 +131,7 @@ export async function POST(req: NextRequest) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "X-Idempotency-Key": leadId,
         ...(WEBHOOK_SECRET ? { "X-Webhook-Secret": WEBHOOK_SECRET } : {}),
       },
       body: JSON.stringify(payload),

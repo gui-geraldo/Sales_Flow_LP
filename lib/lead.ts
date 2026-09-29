@@ -25,14 +25,22 @@ const ATTRIBUTION_PARAMS = [
   "ad_id",
 ] as const;
 
-type Attribution = Partial<Record<(typeof ATTRIBUTION_PARAMS)[number], string>>;
+// Todos os parâmetros vão sempre no webhook; o que não veio vai como null
+// (combinado com o usuário: nunca omitir a chave).
+type Attribution = Record<(typeof ATTRIBUTION_PARAMS)[number], string | null>;
 
 type Touch = {
   at: string;
   url: string;
-  referrer: string;
+  referrer: string | null;
   params: Attribution;
 };
+
+function emptyAttribution(): Attribution {
+  return Object.fromEntries(ATTRIBUTION_PARAMS.map((key) => [key, null])) as Attribution;
+}
+
+const hasAnyParam = (params: Attribution) => Object.values(params).some(Boolean);
 
 const KEY_FIRST_TOUCH = "sf_first_touch";
 const KEY_LAST_TOUCH = "sf_last_touch";
@@ -74,7 +82,7 @@ function writeCookie(name: string, value: string, days: number) {
 
 function readAttribution(): Attribution {
   const query = new URLSearchParams(window.location.search);
-  const out: Attribution = {};
+  const out = emptyAttribution();
   for (const key of ATTRIBUTION_PARAMS) {
     const value = query.get(key);
     if (value) out[key] = value.slice(0, 300);
@@ -86,18 +94,126 @@ function currentTouch(): Touch {
   return {
     at: new Date().toISOString(),
     url: window.location.href.slice(0, 500),
-    referrer: (document.referrer || "").slice(0, 500),
+    referrer: document.referrer ? document.referrer.slice(0, 500) : null,
     params: readAttribution(),
   };
 }
 
+// Visitas gravadas por versões antigas não tinham todas as chaves: completa com null.
 function parseTouch(raw: string | null): Touch | null {
   if (!raw) return null;
   try {
-    return JSON.parse(raw) as Touch;
+    const touch = JSON.parse(raw) as Partial<Touch>;
+    return {
+      at: touch.at ?? "",
+      url: touch.url ?? "",
+      referrer: touch.referrer || null,
+      params: { ...emptyAttribution(), ...(touch.params ?? {}) },
+    };
   } catch {
     return null;
   }
+}
+
+// Um campo só com a origem do lead, pra filtrar e rotear no n8n. Mesma
+// separação da tela de Resultados: anúncio pago x orgânico x direto.
+export type LeadOrigin =
+  | "google_ads"
+  | "meta_ads"
+  | "instagram"
+  | "facebook"
+  | "tiktok_ads"
+  | "bing_ads"
+  | "google_organic"
+  | "other_utm"
+  | "referral"
+  | "direct";
+
+function leadOrigin(a: Attribution, referrer: string | null): LeadOrigin {
+  const source = (a.utm_source ?? "").toLowerCase();
+  const medium = (a.utm_medium ?? "").toLowerCase();
+  const paidMedium = /cpc|ppc|paid|ads?$|display|cpm/.test(medium);
+  const metaSource = /^(fb|facebook|ig|instagram|meta)$/.test(source);
+  const ref = (referrer ?? "").toLowerCase();
+
+  if (a.gclid || a.gbraid || a.wbraid || (source === "google" && paidMedium)) return "google_ads";
+  if ((a.fbclid || metaSource) && (a.campaign_id || a.adset_id || a.ad_id || paidMedium)) return "meta_ads";
+  if (a.ttclid) return "tiktok_ads";
+  if (a.msclkid) return "bing_ads";
+  if (/^(ig|instagram)$/.test(source) || ref.includes("instagram.com")) return "instagram";
+  if (/^(fb|facebook)$/.test(source) || /facebook\.com|fb\.com|fb\.me/.test(ref)) return "facebook";
+  if (a.fbclid) return "facebook";
+  if (source) return "other_utm";
+  if (/\/\/(www\.)?google\./.test(ref)) return "google_organic";
+  if (ref && !ref.includes(window.location.hostname)) return "referral";
+  return "direct";
+}
+
+// Aparelho legível pra humano no CRM (o user-agent cru segue junto).
+function deviceInfo() {
+  const ua = navigator.userAgent;
+  const touch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+  // iPad com iPadOS se apresenta como Mac; o toque denuncia.
+  const iPadOS = /Macintosh/.test(ua) && navigator.maxTouchPoints > 1;
+
+  const inApp = /Instagram/.test(ua)
+    ? "instagram"
+    : /FBAN|FBAV|FB_IAB/.test(ua)
+      ? "facebook"
+      : /TikTok|musical_ly|BytedanceWebview/.test(ua)
+        ? "tiktok"
+        : /LinkedInApp/.test(ua)
+          ? "linkedin"
+          : null;
+
+  const os = /iPhone|iPod/.test(ua)
+    ? "iOS"
+    : /iPad/.test(ua) || iPadOS
+      ? "iPadOS"
+      : /Android/.test(ua)
+        ? "Android"
+        : /Windows/.test(ua)
+          ? "Windows"
+          : /CrOS/.test(ua)
+            ? "ChromeOS"
+            : /Mac OS X/.test(ua)
+              ? "macOS"
+              : /Linux/.test(ua)
+                ? "Linux"
+                : null;
+
+  const browser = /Edg(e|A|iOS)?\//.test(ua)
+    ? "Edge"
+    : /OPR\/|Opera/.test(ua)
+      ? "Opera"
+      : /SamsungBrowser/.test(ua)
+        ? "Samsung Internet"
+        : /CriOS|Chrome\//.test(ua)
+          ? "Chrome"
+          : /FxiOS|Firefox\//.test(ua)
+            ? "Firefox"
+            : /Safari\//.test(ua)
+              ? "Safari"
+              : null;
+
+  const type =
+    /iPad|Tablet/.test(ua) || iPadOS || (/Android/.test(ua) && !/Mobile/.test(ua))
+      ? "tablet"
+      : /Mobi|iPhone|iPod|Android/.test(ua)
+        ? "mobile"
+        : "desktop";
+
+  return {
+    type,
+    os,
+    browser,
+    inApp,
+    userAgent: ua,
+    language: navigator.language || null,
+    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || null,
+    screen: `${window.screen.width}x${window.screen.height}`,
+    touch,
+  };
 }
 
 // Sem consentimento de cookies, não cria o identificador (só lê um que já exista).
@@ -147,7 +263,7 @@ export function initLeadTracking() {
 
   anonymousId();
   const touch = currentTouch();
-  const hasCampaign = Object.keys(touch.params).length > 0;
+  const hasCampaign = hasAnyParam(touch.params);
 
   if (!safeGet(localStorage, KEY_FIRST_TOUCH)) {
     safeSet(localStorage, KEY_FIRST_TOUCH, JSON.stringify(touch));
@@ -165,7 +281,7 @@ export function initLeadTracking() {
 
 // Cookie _fbc que o Pixel da Meta criaria; montado a partir do fbclid
 // quando o Pixel ainda não rodou (serve pra API de Conversões depois).
-function metaClickCookie(fbclid: string | undefined): string | null {
+function metaClickCookie(fbclid: string | null): string | null {
   const existing = readCookie("_fbc");
   if (existing) return existing;
   return fbclid ? `fb.1.${Date.now()}.${fbclid}` : null;
@@ -178,13 +294,13 @@ export function collectLeadContext() {
   const current = currentTouch();
   // Parâmetros da URL atual têm prioridade; se a pessoa navegou e a URL
   // perdeu os UTMs, vale a última visita com campanha.
-  const attribution: Attribution = {
-    ...(lastTouch?.params ?? {}),
-    ...current.params,
-  };
+  const fromUrl = hasAnyParam(current.params);
+  const attribution = fromUrl || !lastTouch ? current.params : lastTouch.params;
+  const referrer = fromUrl ? current.referrer : (current.referrer ?? lastTouch?.referrer ?? null);
   const sessionStart = Number(safeGet(sessionStorage, KEY_SESSION_START) || pageLoadedAt);
 
   return {
+    origin: leadOrigin(attribution, referrer),
     anonymousId: anonymousId(),
     attribution,
     firstTouch,
@@ -202,16 +318,7 @@ export function collectLeadContext() {
       visitCount: Number(safeGet(localStorage, KEY_VISITS) || "1"),
       sessionStartedAt: new Date(sessionStart).toISOString(),
     },
-    device: {
-      userAgent: navigator.userAgent,
-      language: navigator.language,
-      languages: navigator.languages?.slice(0, 5) ?? [],
-      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-      screen: `${window.screen.width}x${window.screen.height}`,
-      viewport: `${window.innerWidth}x${window.innerHeight}`,
-      pixelRatio: window.devicePixelRatio,
-      touch: "ontouchstart" in window || navigator.maxTouchPoints > 0,
-    },
+    device: deviceInfo(),
     cookies: {
       fbp: readCookie("_fbp"),
       fbc: metaClickCookie(attribution.fbclid),

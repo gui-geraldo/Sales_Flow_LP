@@ -112,6 +112,9 @@ function LeadDialog({
   const t = useTranslations(isPortugal(locale, currency) ? "leadFormPT" : "leadForm");
   const dialogRef = useRef<HTMLDialogElement>(null);
   const openedAt = useRef(0);
+  // Uma chave por abertura do formulário: clique duplo ou reenvio chegam ao
+  // n8n com a mesma chave e ele reconhece o lead repetido.
+  const idempotencyKey = useRef("");
   const [errors, setErrors] = useState<FieldError[]>([]);
   const [done, setDone] = useState<{ name: string; url: string } | null>(null);
 
@@ -120,6 +123,8 @@ function LeadDialog({
     if (!dialog) return;
     if (request && !dialog.open) {
       openedAt.current = Date.now();
+      idempotencyKey.current =
+        crypto.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(36).slice(2)}`;
       setErrors([]);
       setDone(null);
       dialog.showModal();
@@ -144,6 +149,7 @@ function LeadDialog({
 
     const name = String(form.get("name")).trim();
     const body = {
+      idempotencyKey: idempotencyKey.current,
       name,
       email: String(form.get("email")).trim(),
       phone: String(form.get("phone")).trim(),
