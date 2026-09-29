@@ -15,6 +15,7 @@ export function FinalCta() {
           <CtaLink
             href="#"
             source="final_cta"
+            intent="demo"
             className="mt-8 inline-flex h-12 items-center justify-center rounded bg-brand-500 px-8 text-[15px] font-semibold text-gray-950 transition-colors hover:bg-brand-400"
           >
             {t("cta")}

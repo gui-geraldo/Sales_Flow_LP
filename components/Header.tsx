@@ -35,6 +35,7 @@ export function Header() {
           <CtaLink
             href="#cta"
             source="header"
+            intent="demo"
             className="inline-flex h-10 items-center rounded bg-brand-500 px-4 text-sm font-semibold text-gray-950 transition-colors hover:bg-brand-400"
           >
             {t("ctaFree")}

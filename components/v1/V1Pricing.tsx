@@ -1,10 +1,10 @@
-import { cookies } from "next/headers";
 import { getTranslations } from "next-intl/server";
 import { Check, Info, AlertCircle } from "lucide-react";
 import { Container } from "../Container";
 import { Reveal } from "../Reveal";
 import { CtaLink } from "../CtaLink";
-import { getCurrencyConfig, type Currency } from "@/lib/pricing";
+import { getCurrencyConfig } from "@/lib/pricing";
+import { getRequestCurrency } from "@/lib/request-currency";
 
 type Plan = {
   name: string;
@@ -20,8 +20,7 @@ export async function V1Pricing() {
   const t = await getTranslations("v1.pricing");
   const plans = t.raw("plans") as Plan[];
 
-  const cookieStore = await cookies();
-  const currency = (cookieStore.get("NEXT_CURRENCY")?.value as Currency) || "BRL";
+  const currency = await getRequestCurrency();
   const { amount, checkoutUrl, isPlaceholder, automationFee } = getCurrencyConfig(currency);
 
   return (

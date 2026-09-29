@@ -1,8 +1,10 @@
 import createMiddleware from "next-intl/middleware";
 import { NextRequest } from "next/server";
 import { routing } from "./i18n/routing";
+import { CURRENCY_HEADER } from "./lib/pricing";
 
 const VALID_CURRENCIES = new Set(["BRL", "EUR", "USD"]);
+const VALID_LOCALES = new Set<string>(routing.locales);
 
 // América Latina de língua espanhola (Espanha fica de fora, tratada à parte).
 const SPANISH_LATAM = new Set([
@@ -10,10 +12,15 @@ const SPANISH_LATAM = new Set([
   "DO", "HN", "PY", "SV", "NI", "CR", "PA", "UY", "PR", "GQ",
 ]);
 
+// Idioma e moeda saem do país da visita, a cada requisição, e a URL fica
+// sempre na raiz (sem /es). Só ?lang= e ?currency= na própria URL forçam
+// outra combinação (ex.: /?lang=es&currency=eur); sem eles, volta ao país.
+type Resolved = { locale: string; currency: string };
+
 // Regras de negócio (confirmadas com o usuário):
 // Brasil → pt + BRL · Espanha → es + EUR · Portugal → pt + EUR
 // América Latina hispânica (exceto Brasil) → es + USD · resto do mundo → en + USD
-function resolveFromCountry(country: string | null): { locale: string; currency: string } | null {
+function resolveFromCountry(country: string | null): Resolved | null {
   if (!country) return null;
   if (country === "BR") return { locale: "pt", currency: "BRL" };
   if (country === "PT") return { locale: "pt", currency: "EUR" };
@@ -22,60 +29,50 @@ function resolveFromCountry(country: string | null): { locale: string; currency:
   return { locale: "en", currency: "USD" };
 }
 
-function resolveFromAcceptLanguage(acceptLanguage: string): { locale: string; currency: string } {
+// Sem país (localhost): idioma do navegador. Espanhol sem país fica em USD,
+// português sem país fica em BRL, como antes.
+function resolveFromAcceptLanguage(acceptLanguage: string): Resolved {
   if (/^pt/i.test(acceptLanguage)) return { locale: "pt", currency: "BRL" };
   if (/^es/i.test(acceptLanguage)) return { locale: "es", currency: "USD" };
   return { locale: "en", currency: "USD" };
 }
 
-// Hierarquia: 1) escolha manual do visitante (cookies) 2) geolocalização
-// (país, via header de edge do Vercel) 3) idioma do navegador 4) padrão (pt/BRL).
-function resolveLocaleAndCurrency(req: NextRequest): { locale: string; currency: string } {
-  const manualLocale = req.cookies.get("NEXT_LOCALE")?.value;
-  const manualCurrency = req.cookies.get("NEXT_CURRENCY")?.value;
-  if (manualLocale && manualCurrency) {
-    return { locale: manualLocale, currency: manualCurrency };
-  }
-
-  const country = req.headers.get("x-vercel-ip-country");
-  const fromGeo = resolveFromCountry(country);
-  if (fromGeo) return fromGeo;
-
-  const acceptLanguage = req.headers.get("accept-language") ?? "";
-  return resolveFromAcceptLanguage(acceptLanguage);
+function resolveOverride(req: NextRequest): Partial<Resolved> {
+  const params = req.nextUrl.searchParams;
+  const locale = params.get("lang")?.toLowerCase();
+  const currency = params.get("currency")?.toUpperCase();
+  return {
+    locale: locale && VALID_LOCALES.has(locale) ? locale : undefined,
+    currency: currency && VALID_CURRENCIES.has(currency) ? currency : undefined,
+  };
 }
 
 const handleI18nRouting = createMiddleware(routing);
 
-// Override de teste: ?currency=eur na URL força a moeda dessa visita,
-// sem precisar trocar de país/geolocalização real. Ex.: /es?currency=usd
-function getCurrencyOverride(request: NextRequest): string | null {
-  const raw = request.nextUrl.searchParams.get("currency");
-  if (!raw) return null;
-  const currency = raw.toUpperCase();
-  return VALID_CURRENCIES.has(currency) ? currency : null;
-}
-
 export default function middleware(request: NextRequest) {
-  const { locale, currency } = resolveLocaleAndCurrency(request);
-  const currencyOverride = getCurrencyOverride(request);
-  const resolvedCurrency = currencyOverride ?? currency;
+  const fromGeo =
+    resolveFromCountry(request.headers.get("x-vercel-ip-country")) ??
+    resolveFromAcceptLanguage(request.headers.get("accept-language") ?? "");
+  const override = resolveOverride(request);
+  const locale = override.locale ?? fromGeo.locale;
+  const currency = override.currency ?? fromGeo.currency;
 
-  const alreadyHasLocaleCookie = request.cookies.has("NEXT_LOCALE");
+  // O next-intl decide o idioma pelo cookie NEXT_LOCALE da requisição; aqui
+  // ele é sempre substituído pelo resolvido, e a moeda vai num header que o
+  // visitante não controla (lib/request-currency.ts).
   const headers = new Headers(request.headers);
-  if (!alreadyHasLocaleCookie) {
-    headers.set("cookie", `${request.headers.get("cookie") ?? ""}; NEXT_LOCALE=${locale}`);
-  }
+  const otherCookies = (request.headers.get("cookie") ?? "")
+    .split(/;\s*/)
+    .filter((c) => c && !c.startsWith("NEXT_LOCALE="));
+  headers.set("cookie", [...otherCookies, `NEXT_LOCALE=${locale}`].join("; "));
+  headers.set(CURRENCY_HEADER, currency);
 
-  const requestWithLocale = new NextRequest(request.nextUrl, { headers });
-  const response = handleI18nRouting(requestWithLocale);
+  const response = handleI18nRouting(new NextRequest(request.nextUrl, { headers }));
 
-  if (!alreadyHasLocaleCookie) {
-    response.cookies.set("NEXT_LOCALE", locale, { maxAge: 60 * 60 * 24 * 365, path: "/" });
-  }
-  if (currencyOverride || !request.cookies.has("NEXT_CURRENCY")) {
-    response.cookies.set("NEXT_CURRENCY", resolvedCurrency, { maxAge: 60 * 60 * 24 * 365, path: "/" });
-  }
+  const year = 60 * 60 * 24 * 365;
+  response.cookies.set("NEXT_LOCALE", locale, { maxAge: year, path: "/" });
+  // Só informativo pro navegador (aviso de cookies); o servidor não lê.
+  response.cookies.set("NEXT_CURRENCY", currency, { maxAge: year, path: "/" });
 
   return response;
 }

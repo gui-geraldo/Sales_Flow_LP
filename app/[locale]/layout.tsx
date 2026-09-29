@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Analytics } from "@/components/Analytics";
+import { CookieBanner } from "@/components/CookieBanner";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -56,6 +57,7 @@ export default async function LocaleLayout({
       <body className="font-sans">
         <NextIntlClientProvider>
           {children}
+          <CookieBanner />
           <Analytics />
         </NextIntlClientProvider>
       </body>

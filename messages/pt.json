@@ -207,7 +207,10 @@
       "pricing": "Preços",
       "security": "Segurança",
       "faq": "Dúvidas frequentes",
-      "talkToUs": "Falar com a gente"
+      "talkToUs": "Falar com a gente",
+      "privacy": "Privacidade",
+      "terms": "Termos de uso",
+      "cookies": "Cookies"
     },
     "rights": "Todos os direitos reservados.",
     "madeIn": "Feito no Brasil, para negócios que vendem no WhatsApp."
@@ -379,5 +382,87 @@
       "Funil completo: do alcance do anúncio até a compra",
       "A origem de cada venda: anúncio do Meta, Google, Instagram ou acesso direto"
     ]
+  },
+  "leadForm": {
+    "title": {
+      "demo": "Mostramos o Sales Flow em 15 minutos",
+      "whatsapp": "Fale com a gente pelo WhatsApp",
+      "subscribe": "Comece com o plano Profissional",
+      "sales": "Vamos falar do plano Escala"
+    },
+    "subtitle": "Deixe seus dados e seguimos a conversa pelo WhatsApp.",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Seu nome e sobrenome",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "voce@empresa.com.br",
+    "phoneLabel": "Celular (WhatsApp)",
+    "phonePlaceholder": "(11) 91234-5678",
+    "consent": "Aceito que a Sales Flow use estes dados para entrar em contato comigo sobre o serviço, conforme a <link>política de privacidade</link>.",
+    "consentPlain": "Aceito que a Sales Flow use estes dados para entrar em contato comigo sobre o serviço, conforme a política de privacidade.",
+    "submit": "Continuar no WhatsApp",
+    "errors": {
+      "name": "Escreva seu nome",
+      "email": "Confira o e-mail",
+      "phone": "Confira o número com DDD. Se não for do Brasil, inclua o código do país",
+      "consent": "Precisamos da sua autorização para entrar em contato"
+    },
+    "successTitle": "Pronto, {name}!",
+    "successBody": "Abrimos o WhatsApp em outra aba para seguir a conversa. Se não abriu, use o botão.",
+    "openWhatsapp": "Abrir WhatsApp",
+    "close": "Fechar",
+    "floatLabel": "Fale com a gente pelo WhatsApp",
+    "whatsappText": {
+      "demo": "Olá, sou {name}. Quero ver a demonstração do Sales Flow.",
+      "whatsapp": "Olá, sou {name}. Vim pelo site do Sales Flow.",
+      "subscribe": "Olá, sou {name}. Quero contratar o plano Profissional do Sales Flow.",
+      "sales": "Olá, sou {name}. Quero falar sobre o plano Escala do Sales Flow."
+    }
+  },
+  "cookieBanner": {
+    "label": "Aviso de cookies",
+    "text": "Usamos cookies próprios e de terceiros (Google e Meta) para medir as visitas e saber quais anúncios funcionam. Você pode aceitar ou recusar. Saiba mais na <link>política de privacidade</link>.",
+    "reject": "Recusar",
+    "accept": "Aceitar"
+  },
+  "cookieBannerPT": {
+    "label": "Aviso de cookies",
+    "text": "Utilizamos cookies próprios e de terceiros (Google e Meta) para medir as visitas e saber que anúncios funcionam. Pode aceitá-los ou rejeitá-los. Saiba mais na <link>política de privacidade</link>.",
+    "reject": "Rejeitar",
+    "accept": "Aceitar"
+  },
+  "leadFormPT": {
+    "title": {
+      "demo": "Mostramos o Sales Flow em 15 minutos",
+      "whatsapp": "Fale connosco pelo WhatsApp",
+      "subscribe": "Comece com o plano Profissional",
+      "sales": "Vamos falar do plano Escala"
+    },
+    "subtitle": "Deixe os seus dados e continuamos a conversa pelo WhatsApp.",
+    "nameLabel": "Nome",
+    "namePlaceholder": "O seu nome e apelido",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "o.seu@email.pt",
+    "phoneLabel": "Telemóvel (WhatsApp)",
+    "phonePlaceholder": "912 345 678",
+    "consent": "Aceito que a Sales Flow use estes dados para me contactar sobre o serviço, conforme a <link>política de privacidade</link>.",
+    "consentPlain": "Aceito que a Sales Flow use estes dados para me contactar sobre o serviço, conforme a política de privacidade.",
+    "submit": "Continuar no WhatsApp",
+    "errors": {
+      "name": "Escreva o seu nome",
+      "email": "Verifique o e-mail",
+      "phone": "Verifique o número. Se não for de Portugal, inclua o indicativo do país",
+      "consent": "Precisamos da sua autorização para o contactar"
+    },
+    "successTitle": "Pronto, {name}!",
+    "successBody": "Abrimos o WhatsApp noutro separador para continuar a conversa. Se não abriu, use o botão.",
+    "openWhatsapp": "Abrir WhatsApp",
+    "close": "Fechar",
+    "floatLabel": "Fale connosco pelo WhatsApp",
+    "whatsappText": {
+      "demo": "Olá, sou {name}. Quero ver a demo do Sales Flow.",
+      "whatsapp": "Olá, sou {name}. Venho do site do Sales Flow.",
+      "subscribe": "Olá, sou {name}. Quero contratar o plano Profissional do Sales Flow.",
+      "sales": "Olá, sou {name}. Quero falar sobre o plano Escala do Sales Flow."
+    }
   }
 }

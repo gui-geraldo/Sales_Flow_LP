@@ -56,12 +56,12 @@ export function ClinicAbout() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px", amount: 0.3 }}
           transition={{ duration: 0.55, ease: EASE_OUT_EXPO }}
-          className="mx-auto max-w-2xl text-center"
+          className="mx-auto max-w-3xl text-center"
         >
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
             {t("eyebrow")}
           </p>
-          <h2 className="mt-4 text-3xl font-bold tracking-[-0.02em] text-white sm:whitespace-nowrap">
+          <h2 className="mt-4 text-balance text-3xl font-bold tracking-[-0.02em] text-white">
             {t("title")}
           </h2>
         </motion.div>

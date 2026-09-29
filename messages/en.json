@@ -8,7 +8,7 @@
     "howItWorks": "How it works",
     "pricing": "Pricing",
     "faq": "FAQ",
-    "ctaFree": "Try it today"
+    "ctaFree": "Book a demo"
   },
   "hero": {
     "badge": "Ads + WhatsApp + CRM, all in one place",
@@ -16,9 +16,9 @@
     "titleEmphasis": "in one conversation",
     "titleEnd": "on WhatsApp",
     "subtitle": "Stop losing customers who clicked your ad and disappeared into WhatsApp. Sales Flow brings support, CRM and AI together in one place, built for businesses that sell over WhatsApp every day.",
-    "ctaPrimary": "Try it today",
+    "ctaPrimary": "Book a demo",
     "ctaSecondary": "See how it works",
-    "noCreditCard": "No credit card required to start testing.",
+    "noCreditCard": "Set up in 48 hours. No lock-in",
     "screenshotBrief": "Ideal: a real screenshot of the conversation panel, showing the source-ad tag on a conversation and the AI's temperature classification in the list beside it.",
     "phone": {
       "contactName": "Sales",
@@ -97,30 +97,30 @@
   },
   "howItWorks": {
     "title": "How it works",
-    "subtitle": "Three steps, no complications.",
+    "subtitle": "Three steps, no complications",
     "steps": [
       {
         "title": "Connect your WhatsApp and your ads",
-        "description": "Use the number you already have, no approval needed. Connect your Meta Ads account in a few clicks."
+        "description": "Use the number you already have, no approval needed. We connect your Meta Ads lead forms for you."
       },
       {
         "title": "Every conversation arrives with context",
-        "description": "Your team sees which ad the customer came from, and the AI helps reply and tell who's ready to buy."
+        "description": "Your team sees which ad the patient came from, and the AI helps reply and spot who's ready to book."
       },
       {
         "title": "Track everything in a single dashboard",
-        "description": "From the ad click to the closed sale, without switching tools or losing information along the way."
+        "description": "From the ad click to the booked appointment, without switching tools or losing information along the way."
       }
     ]
   },
   "security": {
     "eyebrow": "Sensitive data, taken seriously",
-    "title": "You take your data seriously. So do we.",
-    "subtitle": "It's not just about selling more. It's about not putting at risk the trust your customer placed in you.",
+    "title": "You take your patients' data seriously. So do we",
+    "subtitle": "It's not just about selling more. It's about not putting at risk the trust your patients place in you.",
     "items": [
       {
         "title": "Data encrypted, always",
-        "description": "Your customers' messages and personal data are encrypted in the database."
+        "description": "Your patients' messages and personal data are encrypted in the database."
       },
       {
         "title": "Hosted in the European Union",
@@ -141,33 +141,34 @@
       {
         "name": "Professional",
         "period": "/mo",
-        "description": "For businesses already advertising and selling on WhatsApp every day.",
+        "description": "For clinics already investing in ads and talking to patients on WhatsApp every day.",
         "highlighted": true,
         "features": [
-          "Unlimited ad tracking (Meta Ads and Google Ads)",
+          "Meta ad tracking",
           "Official and unofficial API support",
           "Up to 10 team members",
           "AI per inbox, with automatic follow-up",
-          "Billing and payment automations"
+          "Automatic WhatsApp replies to leads from your ads",
+          "Set up by our team in 48 hours"
         ],
-        "cta": "Try it today"
+        "cta": "Book a demo"
       },
       {
         "name": "Scale",
         "price": "Custom",
         "period": "",
-        "description": "For larger operations that need something tailor-made.",
+        "description": "For clinic groups or larger operations that need something tailor-made.",
         "highlighted": false,
         "features": [
           "Everything in Professional",
-          "Assisted onboarding by our team",
+          "Dedicated support from our team",
           "Custom integrations",
           "Inbox and team limits agreed with you"
         ],
         "cta": "Talk to us"
       }
     ],
-    "commissionTitle": "A cut of your messages? Not here.",
+    "commissionTitle": "A cut of your messages? Not here",
     "commissionNote": "Your official template messages are billed directly by Meta. We don't add any percentage on top.",
     "usageNote": "Each automation (webhook triggered, broadcast, or follow-up sent) costs <strong>{fee}</strong>."
   },
@@ -176,29 +177,29 @@
     "items": [
       {
         "question": "Do I need Meta's official API to get started?",
-        "answer": "No. You can start today with the number you already use, with no approval wait. When it makes sense for your business, you can migrate to WhatsApp's official API."
+        "answer": "No. You can start today with the number you already use, with no approval wait. When it makes sense for your clinic, you can move to WhatsApp's official API."
       },
       {
-        "question": "Is my data and my customers' data safe?",
-        "answer": "Yes. Messages and personal data are protected, and every account's data is isolated from other Sales Flow customers."
+        "question": "Is my data and my patients' data safe?",
+        "answer": "Yes. Your patients' messages and personal data are encrypted, and every account's data is isolated from other Sales Flow customers."
       },
       {
         "question": "Can I use the number I already use today?",
         "answer": "Yes. You don't need to switch numbers or migrate your contact base to start using Sales Flow."
       },
       {
-        "question": "Do I need to know how to code or handle tech stuff?",
-        "answer": "No. The dashboard was built for business owners and support teams to set up on their own, no developer needed."
+        "question": "Do I need to be good with tech?",
+        "answer": "No. Our team sets everything up with you, and after that the dashboard is easy for your front desk and the rest of the team to use, no developer needed."
       }
     ]
   },
   "finalCta": {
-    "title": "Ready to stop losing customers on WhatsApp?",
-    "subtitle": "Start testing now.",
-    "cta": "Try it today"
+    "title": "Ready to stop losing patients along the way?",
+    "subtitle": "We'll show you in 15 minutes",
+    "cta": "Book a demo"
   },
   "footer": {
-    "description": "Marketing, support and CRM in one place, from the ad to the sale, over WhatsApp.",
+    "description": "Customer service, CRM and AI in one place, from the ad to the appointment, over WhatsApp.",
     "productColumn": "Product",
     "companyColumn": "Company",
     "links": {
@@ -207,10 +208,13 @@
       "pricing": "Pricing",
       "security": "Security",
       "faq": "FAQ",
-      "talkToUs": "Talk to us"
+      "talkToUs": "Talk to us",
+      "privacy": "Privacy",
+      "terms": "Terms of use",
+      "cookies": "Cookies"
     },
     "rights": "All rights reserved.",
-    "madeIn": "Made in Brazil, for businesses that sell on WhatsApp."
+    "madeIn": "Made in Brazil, for clinics that talk to patients on WhatsApp."
   },
   "languageSwitcher": {
     "label": "Language"
@@ -338,7 +342,7 @@
         "audience": "Audience",
         "visitors": "Visitors",
         "leads": "Leads",
-        "purchases": "Purchases"
+        "purchases": "Booked"
       },
       "groups": {
         "top": "TOP",
@@ -381,12 +385,12 @@
       "titleEmphasis": "Your clinic",
       "titleEnd": "never loses the thread",
       "subtitle": "Sales Flow brings customer service, CRM and AI together in one place. Every inquiry that arrives on WhatsApp already knows which ad it came from, and your team never loses the patient's history.",
-      "ctaPrimary": "Try it today",
+      "ctaPrimary": "Book a demo",
       "ctaSecondary": "See how it works",
-      "noCreditCard": "No credit card required to start testing.",
+      "noCreditCard": "Set up in 48 hours. No lock-in",
       "photoLabel": "Clinic photo (placeholder)",
       "photoCaption": "Ideal: a photo of your clinic's front desk, or a screenshot of the panel showing a real conversation with a patient.",
-      "proof": "Already in production at clinics across different specialties: veterinary, dentistry and aesthetics."
+      "proof": "Already in use at dental and veterinary clinics."
     },
     "problem": {
       "title": "At the clinic, patients get lost the same way every time",
@@ -395,13 +399,13 @@
       "withoutItems": [
         "The patient writes on WhatsApp and gets mixed up with every other inquiry",
         "Each staff member handles it as best they can, with no patient history",
-        "You don't know which campaign actually brings you new patients"
+        "You don't know which campaign brings patients who actually book"
       ],
       "withLabel": "With Sales Flow",
       "withItems": [
         "Every patient conversation stays organized, with full history",
-        "The AI spots who already wants to book an appointment",
-        "You know exactly how many patients each campaign brought in"
+        "The AI replies, spots who wants to book and alerts your team",
+        "You know how many patients and appointments each campaign brought in"
       ]
     },
     "differentiators": {
@@ -411,7 +415,7 @@
       "items": [
         {
           "title": "You know which ad each patient came from",
-          "description": "The conversation reaches WhatsApp already knowing which ad the patient clicked. No spreadsheets, no guessing.",
+          "description": "When a patient comes from a WhatsApp ad, the conversation already knows which ad it was. No spreadsheets, no guessing.",
           "tag": "\"September promotion\""
         },
         {
@@ -420,7 +424,7 @@
           "tag": "Live in minutes, no waiting"
         },
         {
-          "title": "The AI already tells who wants to book from who's just asking",
+          "title": "The AI tells who wants to book from who's just asking",
           "description": "Each inbox has its own AI, which classifies the patient on its own.",
           "hot": "Hot",
           "warm": "Warm",
@@ -445,18 +449,18 @@
     },
     "about": {
       "eyebrow": "Who we are",
-      "title": "A platform built to talk to millions",
+      "title": "Technology proven in Brazil, the country where 147 million people use WhatsApp",
       "stats": [
         {
-          "value": "+2M",
+          "value": "+650K",
           "label": "messages processed"
         },
         {
-          "value": "+50K",
-          "label": "patients served"
+          "value": "+55K",
+          "label": "contacts served"
         },
         {
-          "value": "+120K",
+          "value": "+75K",
           "label": "automated sends"
         }
       ],
@@ -466,17 +470,58 @@
       "carouselToggle": "Pause or resume the carousel",
       "videoLabel": "Team video (placeholder)",
       "videoCaption": "Short clip (6 to 7 s) from an event or fair.",
-      "text": "We were born in Brazil, a country of 220 million people and one of the heaviest WhatsApp users in the world. We built a platform ready to talk to millions of people, and now we're bringing our technology to Europe."
+      "text": "We were born in Brazil, a country of 220 million people and one of the heaviest WhatsApp users in the world. There, our platform already handles hundreds of thousands of messages, and now we're bringing that technology to Europe."
     },
     "results": {
       "eyebrow": "Results",
       "title": "How much you invested, how much you sold and where each patient came from",
-      "subtitle": "Ad spend, sales and return for the period on a single screen. No spreadsheets, no manual math.",
+      "subtitle": "Ad spend, contacts and patients for the period on a single screen. No spreadsheets, no manual math.",
       "bullets": [
         "Spend and sales per day, side by side",
-        "The full funnel: from ad reach to purchase",
-        "Where each sale came from: Meta ad, Google, Instagram or direct access"
+        "The full funnel: from ad reach to appointment",
+        "Where each sale came from: Meta ad, Instagram or direct access"
       ]
     }
+  },
+  "leadForm": {
+    "title": {
+      "demo": "We'll show you Sales Flow in 15 minutes",
+      "whatsapp": "Talk to us on WhatsApp",
+      "subscribe": "Get started with the Professional plan",
+      "sales": "Let's talk about the Scale plan"
+    },
+    "subtitle": "Leave your details and we'll continue the conversation on WhatsApp.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your full name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@clinic.com",
+    "phoneLabel": "Phone (WhatsApp)",
+    "phonePlaceholder": "+34 600 000 000",
+    "consent": "I agree that Sales Flow may use this information to contact me about the service, as described in the <link>privacy policy</link>.",
+    "consentPlain": "I agree that Sales Flow may use this information to contact me about the service, as described in the privacy policy.",
+    "submit": "Continue on WhatsApp",
+    "errors": {
+      "name": "Enter your name",
+      "email": "Check your email",
+      "phone": "Check the number, including the country code (e.g. +34)",
+      "consent": "We need your permission to contact you"
+    },
+    "successTitle": "All set, {name}!",
+    "successBody": "We opened WhatsApp in a new tab to continue the conversation. If it didn't open, use the button.",
+    "openWhatsapp": "Open WhatsApp",
+    "close": "Close",
+    "floatLabel": "Chat with us on WhatsApp",
+    "whatsappText": {
+      "demo": "Hi, I'm {name}. I'd like to see the Sales Flow demo.",
+      "whatsapp": "Hi, I'm {name}. I'm coming from the Sales Flow website.",
+      "subscribe": "Hi, I'm {name}. I'd like to sign up for the Sales Flow Professional plan.",
+      "sales": "Hi, I'm {name}. I'd like to talk about the Sales Flow Scale plan."
+    }
+  },
+  "cookieBanner": {
+    "label": "Cookie notice",
+    "text": "We use our own and third-party cookies (Google and Meta) to measure visits and see which ads work. You can accept or reject them. Learn more in our <link>privacy policy</link>.",
+    "reject": "Reject",
+    "accept": "Accept"
   }
 }

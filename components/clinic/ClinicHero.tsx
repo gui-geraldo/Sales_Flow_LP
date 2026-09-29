@@ -70,6 +70,7 @@ export function ClinicHero() {
               <CtaLink
                 href="#cta"
                 source="clinic_hero_Clinic"
+                intent="demo"
                 className="inline-flex h-12 items-center justify-center rounded bg-brand-500 px-6 text-[15px] font-semibold text-gray-950 transition-[background-color,transform] duration-200 ease-out hover:bg-brand-400 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950"
               >
                 {t("ctaPrimary")}

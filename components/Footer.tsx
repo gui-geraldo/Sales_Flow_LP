@@ -1,9 +1,11 @@
 import { useTranslations } from "next-intl";
 import { Container } from "./Container";
 import { Logo } from "./Logo";
+import { CookieSettingsLink } from "./CookieBanner";
 
 export function Footer() {
   const t = useTranslations("footer");
+  const privacyHref = "/privacy";
 
   const columns = [
     {
@@ -20,7 +22,10 @@ export function Footer() {
       links: [
         { label: t("links.faq"), href: "#faq" },
         { label: t("links.talkToUs"), href: "#cta" },
+        { label: t("links.privacy"), href: privacyHref },
+        { label: t("links.terms"), href: "/terms" },
       ],
+      cookieSettings: true,
     },
   ];
 
@@ -56,6 +61,11 @@ export function Footer() {
                     </a>
                   </li>
                 ))}
+                {column.cookieSettings && (
+                  <li>
+                    <CookieSettingsLink label={t("links.cookies")} />
+                  </li>
+                )}
               </ul>
             </div>
           ))}

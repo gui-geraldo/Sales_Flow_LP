@@ -31,6 +31,7 @@ export function Hero() {
               <CtaLink
                 href="#cta"
                 source="hero"
+                intent="demo"
                 className="inline-flex h-12 items-center justify-center rounded bg-brand-500 px-6 text-[15px] font-semibold text-gray-950 transition-colors hover:bg-brand-400"
               >
                 {t("ctaPrimary")}

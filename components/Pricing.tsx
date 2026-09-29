@@ -1,10 +1,10 @@
-import { cookies } from "next/headers";
 import { getTranslations } from "next-intl/server";
 import { Container } from "./Container";
 import { Reveal } from "./Reveal";
 import { CtaLink } from "./CtaLink";
 import { Check, Info } from "lucide-react";
-import { getCurrencyConfig, type Currency } from "@/lib/pricing";
+import { getCurrencyConfig } from "@/lib/pricing";
+import { getRequestCurrency } from "@/lib/request-currency";
 
 type Plan = {
   name: string;
@@ -20,9 +20,10 @@ export async function Pricing() {
   const t = await getTranslations("pricing");
   const plans = t.raw("plans") as Plan[];
 
-  const cookieStore = await cookies();
-  const currency = (cookieStore.get("NEXT_CURRENCY")?.value as Currency) || "BRL";
-  const { amount, checkoutUrl, isPlaceholder, automationFee } = getCurrencyConfig(currency);
+  const currency = await getRequestCurrency();
+  // Sem checkout direto: em todas as moedas os botões abrem o formulário
+  // curto antes do WhatsApp. A nota de custo por automação aparece sempre.
+  const { amount, isPlaceholder, automationFee } = getCurrencyConfig(currency);
 
   return (
     <section id="precos" className="border-b border-white/10 bg-gray-950 py-10 md:py-12">
@@ -31,7 +32,7 @@ export async function Pricing() {
           <h2 className="text-3xl font-bold tracking-tight text-white">
             {t("title")}
           </h2>
-          <p className="mx-auto mt-3 w-fit whitespace-nowrap text-gray-400">
+          <p className="mx-auto mt-3 w-fit text-gray-400 md:whitespace-nowrap">
             {t("subtitle")}
           </p>
         </Reveal>
@@ -95,8 +96,9 @@ export async function Pricing() {
                 </ul>
 
                 <CtaLink
-                  href={isHighlighted && checkoutUrl ? checkoutUrl : "#cta"}
+                  href="#cta"
                   source={`pricing_${plan.name.toLowerCase()}_${currency}`}
+                  intent={isHighlighted ? "subscribe" : "sales"}
                   className={`mt-7 flex h-10 items-center justify-center rounded px-4 text-sm font-semibold transition-colors ${
                     isHighlighted
                       ? "bg-brand-500 text-gray-950 hover:bg-brand-400"
