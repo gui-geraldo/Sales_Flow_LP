@@ -1,7 +1,8 @@
 import { useTranslations } from "next-intl";
 import { Container } from "./Container";
-import { Logo } from "./Logo";
+import { Logo, Wordmark } from "./Logo";
 import { CookieSettingsLink } from "./CookieBanner";
+import { COMPANY } from "@/lib/legal";
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -36,9 +37,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2.5">
               <Logo size={28} />
-              <span className="text-[15px] font-semibold tracking-tight text-white">
-                Sales Flow
-              </span>
+              <Wordmark />
             </div>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-gray-500">
               {t("description")}
@@ -73,7 +72,7 @@ export function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-sm text-gray-500 md:flex-row">
           <p>
-            &copy; {new Date().getFullYear()} Sales Flow. {t("rights")}
+            &copy; {new Date().getFullYear()} {COMPANY.name}. {t("rights")}
           </p>
         </div>
       </Container>

@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Container } from "./Container";
-import { Logo } from "./Logo";
+import { Logo, Wordmark } from "./Logo";
 import { CtaLink } from "./CtaLink";
 
 export function Header() {
@@ -11,9 +11,7 @@ export function Header() {
       <Container className="flex h-16 items-center justify-between">
         <div className="flex items-center gap-2.5">
           <Logo size={30} />
-          <span className="text-[15px] font-semibold tracking-tight text-white">
-            Sales Flow
-          </span>
+          <Wordmark compact />
         </div>
 
         <nav className="hidden items-center gap-8 text-sm font-medium text-gray-400 md:flex">

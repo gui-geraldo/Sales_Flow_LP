@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Sales Flow | Del anuncio a la venta, en una sola conversación de WhatsApp",
+    "title": "Sales Flow by Talker Flow | Del anuncio a la venta, en una sola conversación de WhatsApp",
     "description": "CRM, atención e IA en un solo lugar. Sabé de qué anuncio vino cada cliente y no vuelvas a perder el hilo de la conversación en WhatsApp."
   },
   "clinic": {
     "meta": {
-      "title": "Sales Flow | El anuncio trae al paciente, tu clínica no pierde el hilo",
+      "title": "Sales Flow by Talker Flow | El anuncio trae al paciente, tu clínica no pierde el hilo",
       "description": "CRM, atención e IA para clínicas. Cada consulta que llega por WhatsApp ya sabe de qué anuncio vino, con historial completo del paciente."
     },
     "hero": {
@@ -504,5 +504,8 @@
     "text": "Usamos cookies propias y de terceros (Google y Meta) para medir las visitas y saber qué anuncios funcionan. Puedes aceptarlas o rechazarlas. Más información en la <link>política de privacidad</link>.",
     "reject": "Rechazar",
     "accept": "Aceptar"
+  },
+  "demo": {
+    "note": "Demostración ilustrativa de la plataforma, con nombres y cifras ficticios."
   }
 }

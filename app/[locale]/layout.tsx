@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Analytics } from "@/components/Analytics";
 import { CookieBanner } from "@/components/CookieBanner";
+import { BRAND, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -31,9 +32,27 @@ export async function generateMetadata({
     namespace: locale === "es" || locale === "en" ? "clinic.meta" : "meta",
   });
 
+  const ogLocale = { pt: "pt_BR", es: "es_ES", en: "en_US" }[locale] ?? "en_US";
+
   return {
+    metadataBase: new URL(SITE_URL),
     title: t("title"),
     description: t("description"),
+    applicationName: BRAND,
+    openGraph: {
+      type: "website",
+      siteName: BRAND,
+      title: t("title"),
+      description: t("description"),
+      locale: ogLocale,
+      images: [{ url: "/og.png", width: 1200, height: 630, alt: BRAND }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+      images: ["/og.png"],
+    },
   };
 }
 

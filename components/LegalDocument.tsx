@@ -1,5 +1,5 @@
 import { Container } from "@/components/Container";
-import { Logo } from "@/components/Logo";
+import { Logo, Wordmark } from "@/components/Logo";
 import { COMPANY, LEGAL_UPDATED_AT, type LegalDoc, type LegalVariant } from "@/lib/legal";
 
 // Página de texto legal (política de privacidade e termos de uso): cabeçalho
@@ -35,7 +35,7 @@ export function LegalDocument({ doc, variant }: { doc: LegalDoc; variant: LegalV
         <Container className="flex h-16 items-center justify-between">
           <a href="/" className="flex items-center gap-2.5">
             <Logo size={30} />
-            <span className="text-[15px] font-semibold tracking-tight text-white">Sales Flow</span>
+            <Wordmark compact />
           </a>
           <a href="/" className="text-sm text-gray-400 hover:text-white">
             {doc.back}

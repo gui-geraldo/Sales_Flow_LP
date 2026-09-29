@@ -13,7 +13,7 @@ async function variantFor(params: Promise<{ locale: string }>) {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { variant } = await variantFor(params);
-  return { title: PRIVACY[variant].metaTitle };
+  return { title: PRIVACY[variant].metaTitle, alternates: { canonical: "/privacy" } };
 }
 
 export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {

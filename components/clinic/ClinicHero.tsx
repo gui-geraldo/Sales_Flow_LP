@@ -1,5 +1,6 @@
 "use client";
 
+import { DemoCaption } from "@/components/DemoCaption";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Container } from "../Container";
@@ -94,7 +95,8 @@ export function ClinicHero() {
           className="hero-bleed-right"
         >
           {/* Mockup animado da bandeja real da plataforma (components/mockup). */}
-          <figure className="overflow-hidden rounded-lg border border-white/10 bg-gray-900 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.55)]">
+          <figure data-nosnippet className="overflow-hidden rounded-lg border border-white/10 bg-gray-900 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.55)]">
+            <DemoCaption />
             <PlatformMockup />
           </figure>
         </motion.div>

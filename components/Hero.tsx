@@ -1,3 +1,4 @@
+import { DemoCaption } from "@/components/DemoCaption";
 import { useTranslations } from "next-intl";
 import { Container } from "./Container";
 import { Reveal } from "./Reveal";
@@ -50,7 +51,8 @@ export function Hero() {
         {/* Mockup animado da bandeja real da plataforma (components/mockup),
             avançando pela margem direita no desktop como no Hero de clínica. */}
         <Reveal delay={0.15} className="hero-bleed-right">
-          <figure className="overflow-hidden rounded-lg border border-white/10 bg-gray-900 shadow-lg">
+          <figure data-nosnippet className="overflow-hidden rounded-lg border border-white/10 bg-gray-900 shadow-lg">
+            <DemoCaption />
             <PlatformMockup />
           </figure>
         </Reveal>

@@ -12,7 +12,7 @@ async function variantFor(params: Promise<{ locale: string }>) {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { variant } = await variantFor(params);
-  return { title: TERMS[variant].metaTitle };
+  return { title: TERMS[variant].metaTitle, alternates: { canonical: "/terms" } };
 }
 
 export default async function TermsPage({ params }: { params: Promise<{ locale: string }> }) {
