@@ -7,7 +7,7 @@ export const COMPANY = {
   site: "talkerflow.me",
 };
 
-export const LEGAL_UPDATED_AT = "2026-09-29";
+export const LEGAL_UPDATED_AT = "2026-09-30";
 
 // Qual texto legal mostrar: pt do Brasil (LGPD), pt de Portugal (pt com EUR,
 // RGPD), espanhol (RGPD + LSSI) ou inglês.

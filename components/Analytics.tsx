@@ -7,9 +7,13 @@ import { CONSENT_DEFAULT_SNIPPET, CONSENT_EVENT, hasConsent } from "@/lib/consen
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
 const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
+// Umami Cloud (cloud.umami.is), site "www.talkerflow.me". Público (vai no
+// HTML de toda página), então fica no código, não em variável da Vercel.
+const UMAMI_WEBSITE_ID = "0772d7f3-4be0-4ebb-817f-677ee73898eb";
 
 // Google carrega sempre, mas em Consent Mode v2: sem consentimento não grava
 // cookies (lib/consent.ts). O Pixel da Meta só carrega depois do "Aceitar".
+// O Umami (sem cookies) carrega sempre.
 export function Analytics() {
   const [metaAllowed, setMetaAllowed] = useState(false);
 
@@ -42,6 +46,18 @@ export function Analytics() {
             strategy="afterInteractive"
           />
         </>
+      )}
+
+      {/* Umami Cloud: sem cookies e sem dado pessoal, então mede desde a
+          primeira visita (não depende do banner). data-domains: só conta no
+          domínio de produção; localhost e prévias da Vercel ficam de fora. */}
+      {UMAMI_WEBSITE_ID && (
+        <Script
+          src="https://cloud.umami.is/script.js"
+          data-website-id={UMAMI_WEBSITE_ID}
+          data-domains="talkerflow.me,www.talkerflow.me"
+          strategy="afterInteractive"
+        />
       )}
 
       {META_PIXEL_ID && metaAllowed && (
