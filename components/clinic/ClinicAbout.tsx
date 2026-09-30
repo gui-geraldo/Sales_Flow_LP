@@ -72,17 +72,19 @@ export function ClinicAbout() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px", amount: 0.3 }}
           transition={{ duration: 0.55, delay: 0.08, ease: EASE_OUT_EXPO }}
-          className="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-4"
+          className="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-2 sm:gap-4"
         >
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="rounded-lg border border-white/10 bg-white/[0.03] px-4 py-6 text-center"
+              className="rounded-lg border border-white/10 bg-white/[0.03] px-2 py-5 text-center sm:px-4 sm:py-6"
             >
-              <p className="text-2xl font-bold tracking-[-0.02em] text-white sm:text-3xl">
+              {/* No celular (3 colunas de ~100px) o "+650 mil" quebrava em
+                  duas linhas e o rótulo vazava do cartão. */}
+              <p className="whitespace-nowrap text-xl font-bold tracking-[-0.02em] text-white sm:text-3xl">
                 {stat.value}
               </p>
-              <p className="mt-1.5 text-xs leading-snug text-gray-400 sm:text-sm">
+              <p className="mt-1.5 text-[11px] leading-snug text-gray-400 sm:text-sm">
                 {stat.label}
               </p>
             </div>

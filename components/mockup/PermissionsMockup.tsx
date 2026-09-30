@@ -34,7 +34,8 @@ const CYCLE_MS = 6500;
 
 export function PermissionsMockup({ freezeAt }: { freezeAt?: number }) {
   const t = useTranslations("permissionsMockup");
-  const { ref, scale } = useFitScale(DESIGN_W);
+  // No celular a tabela é desenhada com 440px, não encolhida a partir de 680px.
+  const { ref, scale, designW, isNarrow } = useFitScale(DESIGN_W, { below: 560, designW: 440 });
   const { count, cycle, rootRef } = useTimeline(TIMES, CYCLE_MS, freezeAt);
   const toggled = count >= 1;
   // A tabela tem altura de conteúdo: mede a "tela" sem escala (offsetHeight
@@ -43,7 +44,9 @@ export function PermissionsMockup({ freezeAt }: { freezeAt?: number }) {
   const [designH, setDesignH] = useState(DESIGN_H);
   useLayoutEffect(() => {
     if (innerRef.current) setDesignH(innerRef.current.offsetHeight);
-  }, [scale]);
+  }, [scale, designW]);
+  // Colunas dos perfis mais justas no celular.
+  const cell = isNarrow ? "px-1" : "px-3";
 
   return (
     <div ref={rootRef}>
@@ -59,7 +62,7 @@ export function PermissionsMockup({ freezeAt }: { freezeAt?: number }) {
               position: "absolute",
               top: 0,
               left: 0,
-              width: DESIGN_W,
+              width: designW,
               transform: `scale(${scale})`,
               transformOrigin: "top left",
             }}
@@ -70,12 +73,14 @@ export function PermissionsMockup({ freezeAt }: { freezeAt?: number }) {
                 <p className="mt-1 text-sm text-slate-500">{t("subtitle")}</p>
 
                 <table className="mt-5 w-full text-sm">
-                  <thead className="border-b border-slate-200 text-left text-xs uppercase text-slate-500">
+                  <thead
+                    className={`border-b border-slate-200 text-left uppercase text-slate-500 ${isNarrow ? "text-[10px]" : "text-xs"}`}
+                  >
                     <tr>
                       <th className="py-2 pr-4 font-medium">{t("feature")}</th>
-                      <th className="px-3 py-2 text-center font-medium">{t("roles.admin")}</th>
-                      <th className="px-3 py-2 text-center font-medium">{t("roles.manager")}</th>
-                      <th className="px-3 py-2 text-center font-medium">{t("roles.agent")}</th>
+                      <th className={`${cell} py-2 text-center font-medium`}>{t("roles.admin")}</th>
+                      <th className={`${cell} py-2 text-center font-medium`}>{t("roles.manager")}</th>
+                      <th className={`${cell} py-2 text-center font-medium`}>{t("roles.agent")}</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100">
@@ -87,13 +92,13 @@ export function PermissionsMockup({ freezeAt }: { freezeAt?: number }) {
                           <td className="py-2.5 pr-4">
                             <div className="font-medium">{t(`features.${f.key}`)}</div>
                           </td>
-                          <td className="px-3 py-2.5 text-center">
+                          <td className={`${cell} py-2.5 text-center`}>
                             <Box checked disabled />
                           </td>
-                          <td className="px-3 py-2.5 text-center">
+                          <td className={`${cell} py-2.5 text-center`}>
                             <Box checked={f.manager} disabled={f.locked} />
                           </td>
-                          <td className="px-3 pt-2.5 text-center">
+                          <td className={`${cell} pt-2.5 text-center`}>
                             <motion.span
                               key={`${f.key}-${cycle}-${changed}`}
                               initial={changed ? { scale: 0.7 } : false}

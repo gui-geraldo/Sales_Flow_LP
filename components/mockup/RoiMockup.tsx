@@ -27,6 +27,8 @@ import {
 // dias, em loop, e tudo se recalcula animado.
 
 const DESIGN_W = 860;
+const NARROW_W = 440;
+const NARROW_BELOW = 560;
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
 /** Alternância do filtro: 7 dias → (clique) 30 dias → (clique) 7 dias… */
@@ -57,7 +59,11 @@ function useFitScale() {
     return () => observer.disconnect();
   }, []);
 
-  return { outerRef, innerRef, scale: width ? width / DESIGN_W : null, contentH };
+  // Celular: o painel se reorganiza em 440px (uma coluna, cartões 2×2),
+  // como o app real no celular, em vez de encolher a versão de 860px.
+  const narrow = width !== null && width < NARROW_BELOW;
+  const designW = narrow ? NARROW_W : DESIGN_W;
+  return { outerRef, innerRef, scale: width ? width / designW : null, contentH, narrow, designW };
 }
 
 /** Número que conta até o valor novo (a partir do anterior) — pula direto com "reduzir movimento". */
@@ -99,7 +105,7 @@ export function RoiMockup({
   const currency = t("currency");
   const factor = Number(t("moneyFactor")) || 1;
   const reduceMotion = useReducedMotion();
-  const { outerRef, innerRef, scale, contentH } = useFitScale();
+  const { outerRef, innerRef, scale, contentH, narrow, designW } = useFitScale();
   const inView = useInView(outerRef, { once: true, amount: 0.25 });
 
   const [period, setPeriod] = useState<RoiPeriod>(staticPeriod ?? "7d");
@@ -156,24 +162,27 @@ export function RoiMockup({
           position: "absolute",
           top: 0,
           left: 0,
-          width: DESIGN_W,
+          width: designW,
           transform: `scale(${scale ?? 0})`,
           transformOrigin: "top left",
           visibility: scale ? "visible" : "hidden",
         }}
       >
-        <main ref={innerRef} className="select-none space-y-5 bg-slate-50 p-6 font-sans text-slate-900 dark:bg-slate-950">
+        <main
+          ref={innerRef}
+          className={`select-none space-y-5 bg-slate-50 font-sans text-slate-900 dark:bg-slate-950 ${narrow ? "p-4" : "p-6"}`}
+        >
           {/* Cabeçalho + 1ª linha do seletor de período, na mesma altura do título */}
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="text-2xl font-semibold dark:text-slate-100">{t("title")}</p>
             <PeriodChips active={period} pressed={pressed} onPick={pick} t={t} />
           </div>
 
-          <SummaryCards data={data} started={started} t={t} fmt={fmt} locale={locale} />
+          <SummaryCards data={data} started={started} t={t} fmt={fmt} locale={locale} narrow={narrow} />
           {/* (sem a linha "vs. período anterior", sem "Ver como tabla" e sem os
               textos de apoio do funil/origens — versão enxuta pra LP) */}
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className={`grid gap-4 ${narrow ? "grid-cols-1" : "grid-cols-2"}`}>
             <div className="flex flex-col gap-4">
               <div className="rounded-[12px] border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
                 <p className="mb-2 text-sm font-medium dark:text-slate-100">{t("charts.spend")}</p>
@@ -204,7 +213,7 @@ export function RoiMockup({
             <Funnel values={started ? data.funnel : [0, 0, 0, 0]} t={t} locale={locale} />
           </div>
 
-          <Origins data={data} started={started} t={t} fmt={fmt} period={period} />
+          <Origins data={data} started={started} t={t} fmt={fmt} period={period} narrow={narrow} />
         </main>
       </div>
     </div>
@@ -281,16 +290,19 @@ function SummaryCards({
   t,
   fmt,
   locale,
+  narrow,
 }: {
   data: RoiData;
   started: boolean;
   t: T;
   fmt: Fmt;
   locale: string;
+  /** celular: cartões em 2×2 */
+  narrow?: boolean;
 }) {
   const v = (n: number) => (started ? n : 0);
   return (
-    <div className="grid grid-cols-4 gap-3">
+    <div className={`grid gap-3 ${narrow ? "grid-cols-2" : "grid-cols-4"}`}>
       <Card
         label={t("cards.sales")}
         value={<CountUp value={v(data.sales)} format={fmt.int} />}
@@ -611,12 +623,15 @@ function Origins({
   t,
   fmt,
   period,
+  narrow,
 }: {
   data: RoiData;
   started: boolean;
   t: T;
   fmt: Fmt;
   period: RoiPeriod;
+  /** celular: o balão sobe pra cima do cartão (no canto ele cobria o título) */
+  narrow?: boolean;
 }) {
   const max = Math.max(1, ...data.origins.map((r) => r.count));
   const pct = (count: number) => (data.sales > 0 ? Math.round((count / data.sales) * 100) : 0);
@@ -635,7 +650,7 @@ function Origins({
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4, delay: 0.9, ease: EASE_OUT }}
-            className="absolute right-4 top-4 flex items-center gap-2 whitespace-nowrap rounded-full bg-slate-900 py-1 pl-1 pr-3 text-[12px] text-white shadow-[0_8px_22px_-8px_rgba(15,23,42,0.5)]"
+            className={`absolute right-4 ${narrow ? "-top-4" : "top-4"} flex items-center gap-2 whitespace-nowrap rounded-full bg-slate-900 py-1 pl-1 pr-3 text-[12px] text-white shadow-[0_8px_22px_-8px_rgba(15,23,42,0.5)]`}
           >
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand-500/20 text-[11px] text-brand-400">✓</span>
             <span className="font-semibold">{t("notes.origins")}</span>

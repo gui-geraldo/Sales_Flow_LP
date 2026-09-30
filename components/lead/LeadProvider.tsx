@@ -187,7 +187,8 @@ function LeadDialog({
   const privacyHref = "/privacy";
   const hasError = (field: FieldError) => errors.includes(field);
   const inputClass = (field: FieldError) =>
-    `mt-1.5 block h-11 w-full rounded border bg-gray-950 px-3 text-[15px] text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-brand-400 ${
+    // 16px: abaixo disso o iPhone dá zoom na página ao tocar no campo (e não volta).
+    `mt-1.5 block h-11 w-full rounded border bg-gray-950 px-3 text-base text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-brand-400 ${
       hasError(field) ? "border-red-400" : "border-white/15"
     }`;
 
@@ -199,7 +200,9 @@ function LeadDialog({
         if (e.target === dialogRef.current) onClose();
       }}
       aria-labelledby="lead-title"
-      className="lead-dialog w-[calc(100%-2rem)] max-w-md rounded-xl border border-white/10 bg-gray-900 p-0 text-gray-200 backdrop:bg-black/70 backdrop:backdrop-blur-sm"
+      // Com o teclado aberto no celular sobra pouca altura: o formulário
+      // rola por dentro (sem arrastar a página de trás junto).
+      className="lead-dialog max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-md overflow-y-auto overscroll-contain rounded-xl border border-white/10 bg-gray-900 p-0 text-gray-200 backdrop:bg-black/70 backdrop:backdrop-blur-sm"
     >
       <div className="p-6">
         <div className="flex items-start justify-between gap-4">

@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import { useFitScale } from "./useMockup";
 import { useTranslations } from "next-intl";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { CYCLE_MS, QUEUE, STEPS, type MockMessage, type MockTag, type QueueRow, type Temperature } from "./script";
@@ -25,6 +26,9 @@ import { ChevronDownIcon, FilterIcon, MicIcon, PaperclipIcon, PlayIcon, SearchIc
 const DESIGN_W = 760;
 const DESIGN_H = 676;
 const LIST_W = 320;
+// Celular: só a conversa, estreita como o chat real no celular.
+const NARROW_W = 420;
+const NARROW_H = 700;
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
@@ -99,29 +103,6 @@ function useScript(freezeAt?: number) {
   return { state: deriveState(stepCount), cycle };
 }
 
-/** Escala a "tela" de DESIGN_W×DESIGN_H pra largura disponível. */
-function useFitScale() {
-  const ref = useRef<HTMLDivElement>(null);
-  // Guarda só a largura medida; a escala sai dela a cada render — nunca fica
-  // presa a um DESIGN_W antigo (ex.: depois de um hot reload).
-  const [width, setWidth] = useState<number | null>(null);
-
-  useLayoutEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    // offsetWidth = largura de layout, sem transform: o Hero entra com um
-    // scale(0.98)→1, e medir durante essa animação (getBoundingClientRect)
-    // deixaria o mockup 2% mais estreito que a moldura pra sempre.
-    const update = () => setWidth(el.offsetWidth);
-    update();
-    const observer = new ResizeObserver(update);
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  return { ref, scale: width ? width / DESIGN_W : null };
-}
-
 export function PlatformMockup({
   theme = "light",
   className,
@@ -132,18 +113,22 @@ export function PlatformMockup({
   freezeAt?: number;
 }) {
   const t = useTranslations("mockup");
-  const { ref, scale } = useFitScale();
+  // Celular: só a conversa (sem a lista lateral), desenhada com 420px em vez
+  // de encolher a tela de 760px até o texto sumir.
+  const { ref, scale, designW, isNarrow } = useFitScale(DESIGN_W, { below: 560, designW: NARROW_W });
   const { state, cycle } = useScript(freezeAt);
   const view: View = {
     ...state,
+    listHidden: state.listHidden || isNarrow,
     contactName: t(state.nameCaptured ? "contact.capturedName" : "contact.initialName"),
   };
+  const designH = isNarrow ? NARROW_H : DESIGN_H;
 
   return (
     <div
       ref={ref}
       className={`relative w-full ${className ?? ""}`}
-      style={{ height: scale ? DESIGN_H * scale : undefined, aspectRatio: scale ? undefined : `${DESIGN_W} / ${DESIGN_H}` }}
+      style={{ height: scale ? designH * scale : undefined, aspectRatio: scale ? undefined : `${DESIGN_W} / ${DESIGN_H}` }}
       aria-hidden
     >
       {scale && (
@@ -153,8 +138,8 @@ export function PlatformMockup({
             position: "absolute",
             top: 0,
             left: 0,
-            width: DESIGN_W,
-            height: DESIGN_H,
+            width: designW,
+            height: designH,
             transform: `scale(${scale})`,
             transformOrigin: "top left",
           }}
@@ -177,8 +162,9 @@ export function PlatformMockup({
             <ChatPanel view={view} t={t} />
 
             {/* Balão apontando pra classificação que a IA acabou de fazer na linha da conversa. */}
+            {/* No celular a lista não aparece, então o balão que aponta pra ela também não. */}
             <AnimatePresence>
-              {view.identified && (
+              {view.identified && !isNarrow && (
                 <motion.div
                   key={`identified-${cycle}`}
                   initial={{ opacity: 0, x: -8, scale: 0.96 }}
@@ -548,10 +534,10 @@ function NameSuggestion({ pressed, t }: { pressed: boolean; t: T }) {
       exit={{ opacity: 0, y: -4, transition: { duration: 0.2 } }}
       transition={{ duration: 0.4, ease: EASE_OUT }}
       style={{ transformOrigin: "top left" }}
-      className="absolute left-3 top-[58px] z-20"
+      className="absolute left-3 right-3 top-[58px] z-20"
     >
       <span className="absolute -top-1 left-6 h-2.5 w-2.5 rotate-45 border-l border-t border-amber-200 bg-amber-50 dark:border-amber-900 dark:bg-amber-950" />
-      <section className="flex items-center gap-2.5 whitespace-nowrap rounded-[8px] border border-amber-200 bg-amber-50 px-3 py-2 text-sm shadow-[0_10px_28px_-10px_rgba(15,23,42,0.35)] dark:border-amber-900 dark:bg-amber-950">
+      <section className="flex w-fit max-w-full flex-wrap items-center gap-x-2.5 gap-y-1 rounded-[8px] border border-amber-200 bg-amber-50 px-3 py-2 text-sm shadow-[0_10px_28px_-10px_rgba(15,23,42,0.35)] dark:border-amber-900 dark:bg-amber-950">
         <span className="flex items-center gap-1.5 text-xs font-semibold uppercase text-amber-800 dark:text-amber-300">
           <SparkleIcon className="h-3 w-3" />
           {t("ui.suggestionTitle")}
@@ -635,7 +621,8 @@ function AiNote({ note, t }: { note: Extract<MockMessage, { kind: "ai-note" }>; 
         : "bg-amber-400/20 text-amber-300";
   return (
     <motion.div layout="position" {...bubbleEnter} className="flex justify-center py-1">
-      <span className="flex items-center gap-2 whitespace-nowrap rounded-full bg-slate-900 py-1 pl-1 pr-3 text-[12px] leading-snug text-white shadow-[0_8px_22px_-8px_rgba(15,23,42,0.5)]">
+      {/* Quebra linha se não couber (versão estreita do celular). */}
+      <span className="flex max-w-full items-center gap-2 rounded-[14px] bg-slate-900 py-1 pl-1 pr-3 text-[12px] leading-snug text-white shadow-[0_8px_22px_-8px_rgba(15,23,42,0.5)]">
         <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] ${tone}`}>
           {note.icon === "audio" ? <MicIcon className="h-3 w-3" /> : note.icon === "check" ? "✓" : <SparkleIcon className="h-3 w-3" />}
         </span>

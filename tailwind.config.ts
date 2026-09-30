@@ -1,6 +1,9 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  // `hover:` só vale com mouse/trackpad ((hover: hover)); no celular o toque
+  // não deixa mais o estado de hover "grudado" no botão depois do tap.
+  future: { hoverOnlyWhenSupported: true },
   // Only the platform mockup (components/mockup) uses `dark:` — it mirrors the
   // real app's light/dark themes by toggling a `.dark` class on its own root.
   darkMode: "class",

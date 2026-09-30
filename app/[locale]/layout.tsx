@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Instrument_Serif } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -16,6 +16,13 @@ const instrumentSerif = Instrument_Serif({
   style: ["normal", "italic"],
   variable: "--font-serif",
 });
+
+// Barra de status e barra do navegador no celular com a cor do topo da
+// página (o cabeçalho escuro), em vez de branca. O site é só escuro.
+export const viewport: Viewport = {
+  themeColor: "#0A0C0E",
+  colorScheme: "dark",
+};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

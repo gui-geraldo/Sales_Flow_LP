@@ -27,7 +27,7 @@ export function Showcase({
           left ? "md:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]" : "md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]"
         }`}
       >
-        <Reveal className={`order-2 ${left ? "bleed-left md:order-1" : "hero-bleed-right md:order-2"}`}>
+        <Reveal className={`order-2 min-w-0 ${left ? "bleed-left md:order-1" : "hero-bleed-right md:order-2"}`}>
           <figure
             data-nosnippet
             className="overflow-hidden rounded-lg border border-white/10 bg-gray-900 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.55)]"

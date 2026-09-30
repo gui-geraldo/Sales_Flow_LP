@@ -107,7 +107,9 @@ export function SeoHero({
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "-40px", amount: 0.2 }}
           transition={{ duration: 0.6, delay: 0.12, ease: EASE_OUT_EXPO }}
-          className="hero-bleed-right"
+          // min-w-0: sem ele, o funil rolável do celular (mais largo que a
+          // tela) alargava a coluna do grid e cortava o texto do hero.
+          className="hero-bleed-right min-w-0"
         >
           <figure
             data-nosnippet

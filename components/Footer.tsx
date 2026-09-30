@@ -92,7 +92,9 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-sm text-gray-500 md:flex-row">
+        {/* pb-24 no celular: o botão flutuante do WhatsApp (canto inferior
+            direito) cobria o copyright no fim da página. */}
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pb-24 pt-6 text-sm text-gray-500 md:flex-row md:pb-6">
           <p>
             &copy; {new Date().getFullYear()} {COMPANY.name}. {t("rights")}
           </p>

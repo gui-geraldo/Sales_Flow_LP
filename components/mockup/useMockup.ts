@@ -6,8 +6,13 @@ import { useReducedMotion } from "framer-motion";
 // Peças comuns dos mockups novos (FunnelMockup, TeamMockup): mesma lógica
 // do PlatformMockup, separada pra não repetir em cada tela.
 
-/** Escala a "tela" de largura fixa (designW) pra largura disponível. */
-export function useFitScale(designW: number) {
+/**
+ * Escala a "tela" de largura fixa (designW) pra largura disponível.
+ * `narrow`: abaixo de `below` px de moldura (celular), a tela é desenhada
+ * numa largura menor (`designW`), como o app real se reorganiza no celular,
+ * em vez de encolher a versão de desktop até o texto ficar ilegível.
+ */
+export function useFitScale(designW: number, narrow?: { below: number; designW: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState<number | null>(null);
 
@@ -23,7 +28,9 @@ export function useFitScale(designW: number) {
     return () => observer.disconnect();
   }, []);
 
-  return { ref, scale: width ? width / designW : null };
+  const isNarrow = !!narrow && width !== null && width < narrow.below;
+  const w = isNarrow ? narrow.designW : designW;
+  return { ref, scale: width ? width / w : null, designW: w, isNarrow };
 }
 
 /**

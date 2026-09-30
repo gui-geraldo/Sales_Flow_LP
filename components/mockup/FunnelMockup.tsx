@@ -1,7 +1,8 @@
 "use client";
 
+import { useEffect } from "react";
 import { useTranslations } from "next-intl";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { EASE_OUT, useFitScale, useTimeline } from "./useMockup";
 
 // Réplica viva da tela /funil da plataforma (auto_agendador, apps/web,
@@ -67,14 +68,30 @@ function deriveBoard(count: number) {
   return { cards, lifted, wonBalloon };
 }
 
+// Menor escala em que o texto dos cartões ainda é legível no celular.
+const MIN_SCALE = 0.8;
+
 const colX = (i: number) => i * (COL_W + GAP);
 const cardY = (row: number) => COL_HEAD + CARD_GAP + row * (CARD_H + CARD_GAP);
 
 export function FunnelMockup({ freezeAt }: { freezeAt?: number }) {
   const t = useTranslations("funnelMockup");
-  const { ref, scale } = useFitScale(DESIGN_W);
+  const { ref, scale: fit } = useFitScale(DESIGN_W);
   const { count, cycle, rootRef } = useTimeline(TIMES, CYCLE_MS, freezeAt);
   const { cards, lifted, wonBalloon } = deriveBoard(count);
+
+  // Celular: 4 colunas espremidas em ~330px ficam ilegíveis. Abaixo de
+  // MIN_SCALE o quadro fica nesse tamanho e rola de lado (como o kanban real
+  // no celular), e o roteiro leva a rolagem até a coluna onde a ação acontece.
+  const scrolling = fit !== null && fit < MIN_SCALE;
+  const scale = fit === null ? null : Math.max(fit, MIN_SCALE);
+  const reduceMotion = useReducedMotion();
+  useEffect(() => {
+    const el = ref.current;
+    if (!scrolling || !el || scale === null) return;
+    const col = count >= 3 ? 2 : count >= 1 ? 1 : 0;
+    el.scrollTo({ left: col === 0 ? 0 : (PAD + colX(col) - 8) * scale, behavior: reduceMotion ? "auto" : "smooth" });
+  }, [count, cycle, scrolling, scale, reduceMotion, ref]);
 
   const money = (value: number) =>
     // useGrouping "always": o es-ES não separa milhar com 4 dígitos ("3600 €").
@@ -86,11 +103,15 @@ export function FunnelMockup({ freezeAt }: { freezeAt?: number }) {
     <div ref={rootRef}>
       <div
         ref={ref}
-        className="relative w-full"
+        className={`relative w-full ${
+          scrolling ? "overflow-x-auto overscroll-x-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" : ""
+        }`}
         style={{ height: scale ? DESIGN_H * scale : undefined, aspectRatio: scale ? undefined : `${DESIGN_W} / ${DESIGN_H}` }}
         aria-hidden
       >
         {scale && (
+          // Espaço do tamanho da tela escalada: é o que dá a largura rolável.
+          <div className="relative" style={{ width: DESIGN_W * scale, height: DESIGN_H * scale }}>
           <div
             style={{
               position: "absolute",
@@ -214,6 +235,7 @@ export function FunnelMockup({ freezeAt }: { freezeAt?: number }) {
                 </AnimatePresence>
               </div>
             </main>
+          </div>
           </div>
         )}
       </div>

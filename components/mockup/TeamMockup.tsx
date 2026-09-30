@@ -15,6 +15,8 @@ import { EASE_OUT, initials, useFitScale, useTimeline } from "./useMockup";
 
 const DESIGN_W = 760;
 const DESIGN_H = 590;
+// Mais estreita no celular, os balões quebram em mais linhas: um pouco mais alta.
+const DESIGN_H_NARROW = 640;
 
 type Msg =
   | { id: string; kind: "in"; time: string }
@@ -68,7 +70,10 @@ type T = ReturnType<typeof useTranslations>;
 
 export function TeamMockup({ freezeAt }: { freezeAt?: number }) {
   const t = useTranslations("teamMockup");
-  const { ref, scale } = useFitScale(DESIGN_W);
+  // No celular a conversa é desenhada com 420px (como o chat real no
+  // celular), e não encolhida a partir de 760px.
+  const { ref, scale, designW, isNarrow } = useFitScale(DESIGN_W, { below: 560, designW: 420 });
+  const designH = isNarrow ? DESIGN_H_NARROW : DESIGN_H;
   const { count, cycle, rootRef } = useTimeline(TIMES, CYCLE_MS, freezeAt);
   const state = deriveState(count);
   const contact = t("contact");
@@ -78,7 +83,7 @@ export function TeamMockup({ freezeAt }: { freezeAt?: number }) {
       <div
         ref={ref}
         className="relative w-full"
-        style={{ height: scale ? DESIGN_H * scale : undefined, aspectRatio: scale ? undefined : `${DESIGN_W} / ${DESIGN_H}` }}
+        style={{ height: scale ? designH * scale : undefined, aspectRatio: scale ? undefined : `${DESIGN_W} / ${DESIGN_H}` }}
         aria-hidden
       >
         {scale && (
@@ -87,8 +92,8 @@ export function TeamMockup({ freezeAt }: { freezeAt?: number }) {
               position: "absolute",
               top: 0,
               left: 0,
-              width: DESIGN_W,
-              height: DESIGN_H,
+              width: designW,
+              height: designH,
               transform: `scale(${scale})`,
               transformOrigin: "top left",
             }}
@@ -152,7 +157,7 @@ export function TeamMockup({ freezeAt }: { freezeAt?: number }) {
                     style={{ transformOrigin: "top right" }}
                     className="absolute right-6 top-[78px] z-20"
                   >
-                    <div className="relative flex items-center gap-2 whitespace-nowrap rounded-[10px] bg-slate-900 px-3 py-2 text-[13px] text-white shadow-[0_10px_28px_-8px_rgba(15,23,42,0.55)]">
+                    <div className="relative flex max-w-[340px] items-center gap-2 rounded-[10px] bg-slate-900 px-3 py-2 text-[13px] leading-snug text-white shadow-[0_10px_28px_-8px_rgba(15,23,42,0.55)]">
                       <span className="absolute -top-1 right-14 h-2.5 w-2.5 rotate-45 bg-slate-900" />
                       <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-500/20 text-[11px] text-brand-400">
                         ✓

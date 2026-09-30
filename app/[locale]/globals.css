@@ -4,6 +4,27 @@
 
 html {
   scroll-behavior: smooth;
+  /* Celular: sem o flash cinza/azul do navegador ao tocar (cada botão tem o
+     seu :active) e sem aumentar a fonte sozinho ao virar de lado. */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Toque responde na hora (sem a espera do duplo toque) e segurar o dedo
+   num botão não seleciona o texto dele. Links de texto continuam
+   selecionáveis; só controles perdem a seleção. */
+a,
+button,
+[role="button"],
+summary {
+  touch-action: manipulation;
+}
+button,
+[role="button"],
+summary {
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 body {
@@ -17,13 +38,6 @@ body {
 .bg-grid {
   background-image: radial-gradient(circle, rgba(17, 24, 39, 0.08) 1px, transparent 1px);
   background-size: 24px 24px;
-}
-
-.text-gradient {
-  background: linear-gradient(90deg, #16A34A, #0D9488);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
 }
 
 @keyframes float {
