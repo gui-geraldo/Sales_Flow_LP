@@ -10,13 +10,11 @@ type CurrencyConfig = {
   automationFee: string;
 };
 
-const SYMBOL: Record<Currency, string> = {
-  BRL: "R$",
-  EUR: "€",
-  USD: "US$",
-};
-
-const DEFAULTS: Record<Currency, string> = {
+// Preço do plano Profissional por moeda. Fonte única: mudou o preço, muda
+// aqui e faz commit. Não vem de variável de ambiente (é público e igual em
+// todo ambiente; ter o valor em dois lugares já fez a Vercel manter o antigo).
+// BRL: Brasil · EUR: Espanha e Portugal · USD: resto do mundo (incl. América Latina hispânica)
+const PRICE: Record<Currency, string> = {
   BRL: "R$ 599",
   EUR: "€ 149",
   USD: "US$ 149",
@@ -28,32 +26,12 @@ const AUTOMATION_FEE: Record<Currency, string> = {
   USD: "US$ 0.02",
 };
 
-const ENV_PRICE: Record<Currency, string | undefined> = {
-  BRL: process.env.NEXT_PUBLIC_PRICE_BRL,
-  EUR: process.env.NEXT_PUBLIC_PRICE_EUR,
-  USD: process.env.NEXT_PUBLIC_PRICE_USD,
-};
-
-const ENV_CHECKOUT_URL: Record<Currency, string | undefined> = {
-  BRL: process.env.NEXT_PUBLIC_CHECKOUT_URL_BRL,
-  EUR: process.env.NEXT_PUBLIC_CHECKOUT_URL_EUR,
-  USD: process.env.NEXT_PUBLIC_CHECKOUT_URL_USD,
-};
-
-// Na Vercel o preço pode vir só como número ("149"); aí o símbolo entra aqui.
-function formatPrice(currency: Currency, raw: string | undefined): string | null {
-  const value = raw?.trim();
-  if (!value) return null;
-  return /^\d+([.,]\d+)?$/.test(value) ? `${SYMBOL[currency]} ${value}` : value;
-}
-
 export function getCurrencyConfig(currency: Currency): CurrencyConfig {
-  const amount = formatPrice(currency, ENV_PRICE[currency]) ?? DEFAULTS[currency];
-
   return {
-    amount,
-    checkoutUrl: ENV_CHECKOUT_URL[currency] || null,
-    isPlaceholder: amount.includes("---"),
+    amount: PRICE[currency],
+    // Sem checkout na LP: todos os botões abrem o formulário antes do WhatsApp.
+    checkoutUrl: null,
+    isPlaceholder: false,
     automationFee: AUTOMATION_FEE[currency],
   };
 }

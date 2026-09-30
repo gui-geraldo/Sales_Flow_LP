@@ -1,10 +1,8 @@
-// Número de WhatsApp comercial das saídas de contato. Configurável na
-// Vercel; o Brasil pode ter um número próprio (NEXT_PUBLIC_WHATSAPP_NUMBER_BRL)
-// e, sem ele, usa o mesmo das outras moedas.
-const digits = (value: string) => value.replace(/\D/g, "");
-
-const WHATSAPP_NUMBER = digits(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "34641337143");
-const WHATSAPP_NUMBER_BRL = digits(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER_BRL || "") || WHATSAPP_NUMBER;
+// Número de WhatsApp comercial das saídas de contato (só dígitos, com código
+// do país). Fonte única: mudou o número, muda aqui e faz commit. Não vem de
+// variável de ambiente (é público e igual em todo ambiente).
+const WHATSAPP_NUMBER = "34641337143"; // Espanha e todo o resto (fora do Brasil)
+const WHATSAPP_NUMBER_BRL = "5511985223431"; // Brasil
 
 export function whatsappUrl(text: string, currency: string) {
   const number = currency === "BRL" ? WHATSAPP_NUMBER_BRL : WHATSAPP_NUMBER;
