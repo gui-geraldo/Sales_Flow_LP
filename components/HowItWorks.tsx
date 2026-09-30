@@ -1,11 +1,12 @@
 import { useTranslations } from "next-intl";
 import { Container } from "./Container";
 import { Reveal } from "./Reveal";
+import { PAGE_LINKS } from "./seo/links";
 
 type Step = { title: string; description: string };
 
-export function HowItWorks() {
-  const t = useTranslations("howItWorks");
+export function HowItWorks({ namespace = "howItWorks" }: { namespace?: string }) {
+  const t = useTranslations(namespace);
   const steps = t.raw("steps") as Step[];
 
   return (
@@ -30,7 +31,7 @@ export function HowItWorks() {
                 {step.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-gray-400">
-                {step.description}
+                {t.rich(`steps.${i}.description`, PAGE_LINKS)}
               </p>
             </Reveal>
           ))}

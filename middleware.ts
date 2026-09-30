@@ -2,6 +2,7 @@ import createMiddleware from "next-intl/middleware";
 import { NextRequest } from "next/server";
 import { routing } from "./i18n/routing";
 import { CURRENCY_HEADER } from "./lib/pricing";
+import { isSpanishOnlyPath } from "./lib/site";
 
 const VALID_CURRENCIES = new Set(["BRL", "EUR", "USD"]);
 const VALID_LOCALES = new Set<string>(routing.locales);
@@ -54,8 +55,16 @@ export default function middleware(request: NextRequest) {
     resolveFromCountry(request.headers.get("x-vercel-ip-country")) ??
     resolveFromAcceptLanguage(request.headers.get("accept-language") ?? "");
   const override = resolveOverride(request);
-  const locale = override.locale ?? fromGeo.locale;
-  const currency = override.currency ?? fromGeo.currency;
+  let locale = override.locale ?? fromGeo.locale;
+  let currency = override.currency ?? fromGeo.currency;
+
+  // /crm-whatsapp e /whatsapp-multiagente só existem em espanhol: idioma
+  // travado em es pra qualquer país, e moeda como a do espanhol (EUR onde já
+  // é EUR, USD no resto). ?currency= continua forçando.
+  if (isSpanishOnlyPath(request.nextUrl.pathname)) {
+    locale = "es";
+    currency = override.currency ?? (fromGeo.currency === "EUR" ? "EUR" : "USD");
+  }
 
   // O next-intl decide o idioma pelo cookie NEXT_LOCALE da requisição; aqui
   // ele é sempre substituído pelo resolvido, e a moeda vai num header que o

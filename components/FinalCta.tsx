@@ -3,8 +3,14 @@ import { Container } from "./Container";
 import { Reveal } from "./Reveal";
 import { CtaLink } from "./CtaLink";
 
-export function FinalCta() {
-  const t = useTranslations("finalCta");
+export function FinalCta({
+  namespace = "finalCta",
+  source = "final_cta",
+}: {
+  namespace?: string;
+  source?: string;
+}) {
+  const t = useTranslations(namespace);
 
   return (
     <section id="cta" className="border-t border-white/10 bg-gray-950 py-10 md:py-12">
@@ -14,7 +20,7 @@ export function FinalCta() {
           <p className="mt-3 text-gray-400">{t("subtitle")}</p>
           <CtaLink
             href="#"
-            source="final_cta"
+            source={source}
             intent="demo"
             className="mt-8 inline-flex h-12 items-center justify-center rounded bg-brand-500 px-8 text-[15px] font-semibold text-gray-950 transition-colors hover:bg-brand-400"
           >

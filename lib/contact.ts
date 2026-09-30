@@ -3,7 +3,7 @@
 // e, sem ele, usa o mesmo das outras moedas.
 const digits = (value: string) => value.replace(/\D/g, "");
 
-const WHATSAPP_NUMBER = digits(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "34624387902");
+const WHATSAPP_NUMBER = digits(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "34641337143");
 const WHATSAPP_NUMBER_BRL = digits(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER_BRL || "") || WHATSAPP_NUMBER;
 
 export function whatsappUrl(text: string, currency: string) {

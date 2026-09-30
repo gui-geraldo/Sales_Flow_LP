@@ -34,6 +34,13 @@ export function langAlternates(path = "/"): Record<string, string> {
   };
 }
 
+// Páginas de busca da Espanha (blueprint SEO de 29/09): existem só em
+// espanhol, pra qualquer país. Uma URL só, sem ?lang= e sem versões pt/en.
+export const SPANISH_ONLY_PAGES = ["/crm-whatsapp", "/whatsapp-multiagente"] as const;
+
+export const isSpanishOnlyPath = (pathname: string) =>
+  (SPANISH_ONLY_PAGES as readonly string[]).includes(pathname.replace(/\/$/, ""));
+
 // Canonical: a versão de idioma pedida (sem a moeda) ou a URL sem parâmetro.
 export function canonicalFor(path: string, query: Record<string, string | string[] | undefined>) {
   const lang = typeof query.lang === "string" ? query.lang.toLowerCase() : null;

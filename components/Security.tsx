@@ -2,13 +2,14 @@ import { useTranslations } from "next-intl";
 import { Container } from "./Container";
 import { Reveal } from "./Reveal";
 import { Lock, Globe2, UserCog } from "lucide-react";
+import { PAGE_LINKS } from "./seo/links";
 
 const icons = [Lock, Globe2, UserCog];
 
 type Item = { title: string; description: string };
 
-export function Security() {
-  const t = useTranslations("security");
+export function Security({ namespace = "security" }: { namespace?: string }) {
+  const t = useTranslations(namespace);
   const items = t.raw("items") as Item[];
 
   return (
@@ -39,7 +40,7 @@ export function Security() {
                       {item.title}
                     </h3>
                     <p className="mt-1 text-sm leading-relaxed text-gray-400">
-                      {item.description}
+                      {t.rich(`items.${i}.description`, PAGE_LINKS)}
                     </p>
                   </div>
                 </div>

@@ -17,7 +17,7 @@ const SYMBOL: Record<Currency, string> = {
 };
 
 const DEFAULTS: Record<Currency, string> = {
-  BRL: "R$ 497",
+  BRL: "R$ 599",
   EUR: "€ 149",
   USD: "US$ 149",
 };

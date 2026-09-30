@@ -11,8 +11,8 @@ const withoutIcons = [FileWarning, Users, HelpCircle];
 const WithIcon = CheckCheck;
 const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
 
-export function ClinicProblem() {
-  const t = useTranslations("clinic.problem");
+export function ClinicProblem({ namespace = "clinic.problem" }: { namespace?: string }) {
+  const t = useTranslations(namespace);
   const withoutItems = t.raw("withoutItems") as string[];
   const withItems = t.raw("withItems") as string[];
 

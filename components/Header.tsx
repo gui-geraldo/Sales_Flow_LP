@@ -9,10 +9,10 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-gray-950/85 backdrop-blur">
       <Container className="flex h-16 items-center justify-between">
-        <div className="flex items-center gap-2.5">
+        <a href="/" className="flex items-center gap-2.5">
           <Logo size={30} />
           <Wordmark />
-        </div>
+        </a>
 
         <nav className="hidden items-center gap-8 text-sm font-medium text-gray-400 md:flex">
           <a href="#diferenciais" className="hover:text-white">

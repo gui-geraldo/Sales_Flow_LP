@@ -40,6 +40,8 @@ It is not related to salesflow.io (a LinkedIn outreach tool with a similar name)
 ## Pages
 
 ${LANGS.map((lang) => `- [${LANGUAGE_NAMES[lang]}](${SITE_URL}${langPath("/", lang)})`).join("\n")}
+- [CRM para WhatsApp (Spanish)](${SITE_URL}/crm-whatsapp): what a WhatsApp CRM is and how ${PRODUCT} turns conversations into managed opportunities (history, lead origin, owner, sales pipeline, AI).
+- [WhatsApp multiagente (Spanish)](${SITE_URL}/whatsapp-multiagente): several people answering the same WhatsApp number, with an owner per conversation, internal notes, shared history and role permissions (Administrator, Manager, Agent).
 - Prices are shown in the visitor's currency (BRL in Brazil, EUR in Spain and Portugal, USD elsewhere).
 - [Privacy policy](${SITE_URL}/privacy)
 - [Terms of use](${SITE_URL}/terms)

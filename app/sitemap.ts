@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { LEGAL_UPDATED_AT } from "@/lib/legal";
-import { LANGS, SITE_URL, langAlternates, langPath } from "@/lib/site";
+import { LANGS, SITE_URL, SPANISH_ONLY_PAGES, langAlternates, langPath } from "@/lib/site";
 
 // Só as URLs que queremos indexadas: a raiz (x-default), uma por idioma e
 // as páginas legais. Combinações de moeda não entram: o texto é o mesmo.
@@ -21,6 +21,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages },
   }));
 
+  // Páginas de busca só em espanhol: uma URL, hreflang es + x-default.
+  const spanishOnly = SPANISH_ONLY_PAGES.map((path) => ({
+    url: `${SITE_URL}${path}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+    alternates: { languages: { es: `${SITE_URL}${path}`, "x-default": `${SITE_URL}${path}` } },
+  }));
+
   const legal = ["/privacy", "/terms"].map((path) => ({
     url: `${SITE_URL}${path}`,
     lastModified: new Date(`${LEGAL_UPDATED_AT}T12:00:00Z`),
@@ -28,5 +37,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.3,
   }));
 
-  return [...home, ...legal];
+  return [...home, ...spanishOnly, ...legal];
 }

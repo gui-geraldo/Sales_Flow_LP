@@ -10,7 +10,7 @@ import { ORGANIZATION, PRODUCT, SITE_URL, SOCIAL_PROFILES } from "@/lib/site";
 
 type FaqItem = { question: string; answer: string };
 
-// "€ 149" / "R$ 497" / "US$ 149" → "149"
+// "€ 149" / "R$ 599" / "US$ 149" → "149"
 const numericPrice = (amount: string) => amount.replace(/[^\d.,]/g, "").replace(",", ".");
 
 // Onde cada preço vale (regra de moeda por país do middleware). O USD vale

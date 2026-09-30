@@ -1,4 +1,5 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { PAGE_HREFS } from "./seo/links";
 import { Container } from "./Container";
 import { Logo, Wordmark } from "./Logo";
 import { CookieSettingsLink } from "./CookieBanner";
@@ -6,9 +7,26 @@ import { COMPANY } from "@/lib/legal";
 
 export function Footer() {
   const t = useTranslations("footer");
+  const locale = useLocale();
   const privacyHref = "/privacy";
 
-  const columns = [
+  // As páginas de busca só existem em espanhol; no pt e no en a coluna não aparece.
+  const solutions =
+    locale === "es"
+      ? [
+          {
+            title: t("solutionsColumn"),
+            links: [
+              { label: t("links.clinics"), href: PAGE_HREFS.home },
+              { label: t("links.crm"), href: PAGE_HREFS.crm },
+              { label: t("links.multi"), href: PAGE_HREFS.multi },
+            ],
+          },
+        ]
+      : [];
+
+  const columns: { title: string; links: { label: string; href: string }[]; cookieSettings?: boolean }[] = [
+    ...solutions,
     {
       title: t("productColumn"),
       links: [
@@ -33,8 +51,12 @@ export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-gray-950 pt-14">
       <Container>
-        <div className="grid gap-10 pb-12 md:grid-cols-[1.4fr_1fr_1fr]">
-          <div>
+        <div
+          className={`grid gap-10 pb-12 ${
+            solutions.length ? "sm:grid-cols-3 md:grid-cols-[1.4fr_1fr_1fr_1fr]" : "md:grid-cols-[1.4fr_1fr_1fr]"
+          }`}
+        >
+          <div className={solutions.length ? "sm:col-span-3 md:col-span-1" : undefined}>
             <div className="flex items-center gap-2.5">
               <Logo size={28} />
               <Wordmark withCompany />

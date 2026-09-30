@@ -200,7 +200,7 @@
       },
       {
         "title": "Sigue todo desde un solo panel",
-        "description": "Del clic en el anuncio a la cita, sin cambiar de herramienta ni perder información por el camino."
+        "description": "Del clic en el anuncio a la cita, con un <crm>CRM para WhatsApp</crm> que guarda todo el historial, sin cambiar de herramienta ni perder información por el camino."
       }
     ]
   },
@@ -219,7 +219,7 @@
       },
       {
         "title": "Tú controlas quién ve qué",
-        "description": "Define niveles de acceso para cada persona del equipo: no todos necesitan ver todo."
+        "description": "Define niveles de acceso para cada persona del equipo: no todos necesitan ver todo. Así funciona un <multi>WhatsApp multiagente</multi> ordenado."
       }
     ]
   },
@@ -293,7 +293,11 @@
     "description": "Atención, CRM e IA en un solo lugar, del anuncio a la cita, por WhatsApp.",
     "productColumn": "Producto",
     "companyColumn": "Empresa",
+    "solutionsColumn": "Soluciones",
     "links": {
+      "clinics": "Para clínicas",
+      "crm": "CRM para WhatsApp",
+      "multi": "WhatsApp multiagente",
       "whatItDoes": "Qué hace",
       "howItWorks": "Cómo funciona",
       "pricing": "Precios",
@@ -507,5 +511,483 @@
   },
   "demo": {
     "note": "Demostración ilustrativa de la plataforma, con nombres y cifras ficticios."
+  },
+  "seoSecurity": {
+    "eyebrow": "Datos sensibles, tratados en serio",
+    "title": "Tus clientes te confían sus datos. Nosotros los protegemos",
+    "subtitle": "Las conversaciones de WhatsApp guardan nombres, teléfonos y, a veces, información delicada. Por eso la seguridad no es un extra.",
+    "items": [
+      {
+        "title": "Datos cifrados y aislados",
+        "description": "Los mensajes y datos personales quedan cifrados en la base de datos, y los datos de cada cuenta están aislados de los demás clientes."
+      },
+      {
+        "title": "Alojado en la Unión Europea",
+        "description": "Los datos se alojan en servidores de Alemania, dentro del marco europeo de protección de datos (RGPD)."
+      },
+      {
+        "title": "Tú controlas quién ve qué",
+        "description": "Tres perfiles (Administrador, Gerente y Agente) y cajas de entrada asignadas a cada persona: nadie ve más de lo que necesita."
+      }
+    ]
+  },
+  "crmPage": {
+    "meta": {
+      "title": "CRM para WhatsApp: gestiona leads y ventas | Sales Flow",
+      "description": "Sales Flow es un CRM para WhatsApp: historial completo, origen de cada lead, responsable, embudo de ventas e IA en cada conversación. Pide una demo."
+    },
+    "breadcrumb": "CRM para WhatsApp",
+    "hero": {
+      "badge": "CRM para WhatsApp",
+      "titleStart": "CRM para WhatsApp:",
+      "titleEmphasis": "convierte conversaciones en oportunidades",
+      "titleEnd": "que tu equipo puede gestionar",
+      "subtitle": "Sales Flow une el WhatsApp de tu empresa con un CRM. Cada conversación queda con su historial, su origen, quién la atiende y en qué etapa del embudo está. Para equipos que venden y atienden por WhatsApp cada día.",
+      "ctaPrimary": "Quiero una demo",
+      "ctaSecondary": "Ver cómo funciona",
+      "note": "Implantación en 48 h. Sin permanencia"
+    },
+    "definition": {
+      "question": "¿Qué es un CRM para WhatsApp?",
+      "answer": "Un CRM para WhatsApp es un sistema que convierte cada conversación de WhatsApp en un contacto con historial, origen, responsable y etapa de venta. Así el equipo no solo responde mensajes: sabe qué oportunidades tiene abiertas, en qué punto está cada una y cuál es la siguiente acción.",
+      "layers": [
+        {
+          "label": "WhatsApp",
+          "text": "Envía y recibe mensajes. Cada conversación vive en un móvil y el contexto depende de quién la lleve."
+        },
+        {
+          "label": "<multi>WhatsApp multiagente</multi>",
+          "text": "Varias personas atienden el mismo número, con historial compartido y un responsable por conversación."
+        },
+        {
+          "label": "CRM para WhatsApp",
+          "text": "Cada conversación pasa a ser una oportunidad: origen, etapa en el embudo, tareas de seguimiento y resultado.",
+          "current": true
+        }
+      ]
+    },
+    "problem": {
+      "title": "WhatsApp no es un CRM, y no tiene por qué serlo",
+      "subtitle": "WhatsApp es perfecto para conversar. Pero conversar no es lo mismo que gestionar oportunidades: cuando el volumen crece, nadie sabe qué lead sigue abierto, quién lo lleva ni qué falta para cerrarlo.",
+      "withoutLabel": "Solo WhatsApp",
+      "withoutItems": [
+        "Los leads se pierden entre chats personales y grupos",
+        "Cada persona atiende a su manera y el historial se queda en su móvil",
+        "No sabes qué conversaciones acabaron en venta ni de dónde vinieron"
+      ],
+      "withLabel": "WhatsApp + CRM",
+      "withItems": [
+        "Cada conversación es un contacto con historial completo, visible para el equipo",
+        "Cada oportunidad tiene responsable, etapa y próxima acción",
+        "Ves qué anuncios de Meta traen contactos y ventas"
+      ]
+    },
+    "flow": {
+      "title": "Qué cambia cuando WhatsApp y CRM trabajan juntos",
+      "subtitle": "El mensaje deja de ser un chat suelto y pasa a tener un camino hasta el resultado",
+      "steps": [
+        { "label": "Mensaje", "text": "Llega por WhatsApp a la bandeja del equipo" },
+        { "label": "Contacto", "text": "Se guarda con nombre, historial y tus propios campos" },
+        { "label": "Origen", "text": "Si vino de un anuncio de Meta, sabes de cuál" },
+        { "label": "Responsable", "text": "Una persona del equipo se hace cargo" },
+        { "label": "Etapa", "text": "La oportunidad avanza por el embudo" },
+        { "label": "Próxima acción", "text": "Tareas, notas internas y mensajes programados" },
+        { "label": "Resultado", "text": "La venta ganada entra en el panel, sin duplicar" }
+      ]
+    },
+    "features": {
+      "eyebrow": "Qué hace",
+      "title": "Todo lo que un CRM para WhatsApp necesita, en un solo lugar",
+      "subtitle": "Sin programador y sin saltar de una herramienta a otra",
+      "items": [
+        {
+          "icon": "history",
+          "title": "Historial completo, aunque cambie quien atiende",
+          "description": "Toda la conversación queda guardada y visible para el equipo. Si alguien sale de turno, el siguiente sigue desde donde se quedó."
+        },
+        {
+          "icon": "kanban",
+          "title": "Embudo de ventas por etapas",
+          "description": "Cada oportunidad está en una etapa y el equipo la mueve con un clic. Ves cuántas hay en cada una y cuánto valen."
+        },
+        {
+          "icon": "tasks",
+          "title": "Seguimiento que no depende de la memoria",
+          "description": "Tareas de seguimiento para el equipo, notas internas en la conversación y mensajes programados para el día y la hora que elijas."
+        },
+        {
+          "icon": "ads",
+          "title": "Sabes de qué anuncio vino cada lead",
+          "description": "Las conversaciones que llegan desde anuncios de Meta traen el anuncio de origen. El panel de resultados muestra inversión, contactos, ventas y retorno."
+        },
+        {
+          "icon": "ai",
+          "title": "IA dentro del CRM, no un chatbot aparte",
+          "description": "Cada bandeja tiene su IA configurable: responde, clasifica la temperatura del lead, transcribe audios y capta el nombre. Cuando el cliente pide una persona, resume la conversación y el equipo toma el control al momento."
+        },
+        {
+          "icon": "team",
+          "title": "Todo el equipo en el mismo número",
+          "description": "Cada persona entra con su usuario, cada conversación tiene un responsable y cada perfil ve solo lo que necesita. Te lo contamos en <multi>WhatsApp multiagente</multi>."
+        }
+      ]
+    },
+    "clinics": {
+      "eyebrow": "Para clínicas",
+      "title": "¿Tienes una clínica?",
+      "text": "Tenemos una versión pensada para clínicas: pacientes que llegan por anuncios, recepción con varios turnos y citas en Google Calendar. Descubre el <home>CRM de WhatsApp con IA para clínicas</home>.",
+      "proof": "Más de 1.000 citas agendadas por WhatsApp con IA en una clínica dental",
+      "points": [
+        "La IA consulta tu Google Calendar y reserva la cita solo en un hueco libre",
+        "El historial del paciente, a la vista de toda la recepción",
+        "Trabaja junto a tu software de gestión, no en su lugar"
+      ],
+      "link": "Ver Sales Flow para clínicas"
+    },
+    "howItWorks": {
+      "title": "Cómo funciona",
+      "subtitle": "Tres pasos, sin complicaciones",
+      "steps": [
+        {
+          "title": "Conectamos tu WhatsApp y tus anuncios",
+          "description": "Nuestro equipo hace la implantación contigo en 48 h: conecta el WhatsApp, crea las bandejas y enlaza tus cuentas de anuncios de Meta."
+        },
+        {
+          "title": "Ajustamos el embudo a tu forma de vender",
+          "description": "Definimos contigo las etapas de venta, invitas a las personas del equipo y decides qué ve cada perfil."
+        },
+        {
+          "title": "Cada conversación avanza hasta el resultado",
+          "description": "La IA ayuda a responder y a clasificar, el equipo mueve cada oportunidad por el embudo y el panel muestra lo que vendiste."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre CRM para WhatsApp",
+      "items": [
+        {
+          "question": "¿Qué es un CRM para WhatsApp?",
+          "answer": "Es un sistema que guarda cada conversación de WhatsApp como un contacto con historial, origen, responsable y etapa de venta. Sirve para que el equipo gestione oportunidades, no solo mensajes."
+        },
+        {
+          "question": "¿WhatsApp Business es un CRM?",
+          "answer": "No. WhatsApp Business tiene etiquetas, respuestas rápidas y catálogo, pero no tiene embudo de ventas, responsables por conversación, historial compartido por todo un equipo ni informes de resultados. Un CRM para WhatsApp añade esa capa de gestión."
+        },
+        {
+          "question": "¿Pueden varias personas atender el mismo WhatsApp?",
+          "answer": "Sí. Cada persona entra con su propio usuario, cada conversación puede tener un responsable y todos ven el mismo historial. Te lo explicamos en detalle en <multi>WhatsApp multiagente</multi>."
+        },
+        {
+          "question": "¿El CRM guarda el historial?",
+          "answer": "Sí. Toda la conversación queda guardada en el contacto, junto con las notas internas del equipo, aunque cambie la persona que atiende."
+        },
+        {
+          "question": "¿Se puede automatizar el seguimiento?",
+          "answer": "Puedes programar mensajes para el día y la hora que elijas, usar plantillas con texto, imagen o vídeo y crear tareas de seguimiento para el equipo. Además, la IA de cada bandeja responde y clasifica los contactos que llegan."
+        },
+        {
+          "question": "¿Cómo sé de qué anuncio viene un lead?",
+          "answer": "Cuando alguien escribe desde un anuncio de Meta que abre WhatsApp, la conversación llega con el anuncio de origen. En el panel de resultados ves la inversión, los contactos, las ventas y el retorno del período."
+        },
+        {
+          "question": "¿Sales Flow sustituye a mi software de gestión?",
+          "answer": "No. Sales Flow gestiona las conversaciones, los leads y el embudo de venta de WhatsApp. Tu software de facturación o de gestión sigue haciendo su trabajo."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "¿Quieres ver tu WhatsApp funcionando como un CRM?",
+      "subtitle": "Te enseñamos en 15 minutos cómo Sales Flow organiza tus conversaciones, leads y seguimiento",
+      "cta": "Quiero una demo"
+    }
+  },
+  "multiPage": {
+    "meta": {
+      "title": "WhatsApp multiagente: varios usuarios, un número | Sales Flow",
+      "description": "Varios usuarios en el mismo WhatsApp: cada conversación con responsable, historial compartido, notas internas y control de acceso por perfil. Pide una demo."
+    },
+    "breadcrumb": "WhatsApp multiagente",
+    "hero": {
+      "badge": "WhatsApp multiagente",
+      "titleStart": "WhatsApp multiagente:",
+      "titleEmphasis": "todo tu equipo atiende",
+      "titleEnd": "sin perder contexto, historial ni control",
+      "subtitle": "Varios usuarios en el mismo número de WhatsApp, cada uno con su acceso. Cada conversación tiene un responsable, el historial es de todo el equipo y quien retoma una conversación sabe exactamente dónde se quedó.",
+      "ctaPrimary": "Quiero una demo",
+      "ctaSecondary": "Ver cómo funciona",
+      "note": "Implantación en 48 h. Sin permanencia"
+    },
+    "definition": {
+      "question": "¿Qué es un WhatsApp multiagente?",
+      "answer": "Un WhatsApp multiagente permite que varias personas de un equipo atiendan las conversaciones de un mismo número desde una bandeja compartida, cada una con su propio usuario. En Sales Flow, además, cada conversación tiene un responsable, el historial y las notas internas quedan a la vista del equipo y cada perfil accede solo a lo que necesita.",
+      "layers": [
+        {
+          "label": "WhatsApp",
+          "text": "Un número abierto en uno o varios dispositivos. Todos ven todo y nadie sabe quién respondió."
+        },
+        {
+          "label": "WhatsApp multiagente",
+          "text": "Cada persona con su usuario, un responsable por conversación, historial compartido y permisos por perfil.",
+          "current": true
+        },
+        {
+          "label": "<crm>CRM para WhatsApp</crm>",
+          "text": "Además de quién atiende, qué pasa con cada lead: origen, embudo, seguimiento y resultado."
+        }
+      ]
+    },
+    "problem": {
+      "title": "Un número, varias personas y nadie sabe quién respondió",
+      "subtitle": "Es lo típico cuando el WhatsApp de la empresa crece: turnos distintos, mensajes duplicados y conversaciones sin dueño. Y el cliente lo nota enseguida.",
+      "withoutLabel": "WhatsApp compartido",
+      "withoutItems": [
+        "Dos personas contestan al mismo cliente, o no contesta nadie",
+        "Al cambiar de turno se pierde el contexto de la conversación",
+        "Todo el equipo ve todos los chats y todos los datos"
+      ],
+      "withLabel": "Con Sales Flow",
+      "withItems": [
+        "Cada conversación tiene un responsable y cada persona filtra las suyas",
+        "Notas internas e historial completo para quien retoma la conversación",
+        "Cada perfil accede solo a lo que necesita"
+      ]
+    },
+    "compare": {
+      "title": "Varios usuarios no es lo mismo que una operación multiagente",
+      "subtitle": "Abrir el mismo WhatsApp en varios ordenadores da acceso, pero no organiza nada",
+      "withoutLabel": "Compartir el acceso",
+      "withLabel": "Multiagente con Sales Flow",
+      "rows": [
+        {
+          "aspect": "Responsable",
+          "without": "Nadie sabe quién lleva cada conversación",
+          "with": "Cada conversación tiene un responsable y cada persona ve las suyas con el filtro «Mías»"
+        },
+        {
+          "aspect": "Historial",
+          "without": "Depende del dispositivo y de lo que cada uno recuerde",
+          "with": "Historial completo y notas internas, visibles para todo el equipo"
+        },
+        {
+          "aspect": "Organización",
+          "without": "Todos los chats mezclados en una sola lista",
+          "with": "Cajas de entrada separadas, por ejemplo Comercial y Soporte"
+        },
+        {
+          "aspect": "Seguimiento",
+          "without": "Si nadie se acuerda, el lead se enfría",
+          "with": "Tareas, mensajes programados y embudo de ventas"
+        },
+        {
+          "aspect": "Control de acceso",
+          "without": "Quien tiene el móvil lo ve todo",
+          "with": "Perfiles Administrador, Gerente y Agente, con cajas asignadas a cada persona"
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Qué hace",
+      "title": "Todo lo que un equipo necesita para atender el mismo WhatsApp",
+      "subtitle": "Para recepción, ventas y soporte trabajando a la vez",
+      "items": [
+        {
+          "icon": "owner",
+          "title": "Siempre está claro quién atiende",
+          "description": "Cada conversación tiene un responsable. Cada persona filtra las suyas con «Mías» y puedes asignarte varias conversaciones de una vez."
+        },
+        {
+          "icon": "note",
+          "title": "Notas internas que el cliente no ve",
+          "description": "Deja contexto al compañero dentro de la conversación: qué pidió el cliente, qué falta y cuándo volver a escribirle."
+        },
+        {
+          "icon": "history",
+          "title": "Cambio de turno sin perder el hilo",
+          "description": "El historial completo está en la conversación, no en el móvil de nadie. Quien entra al turno sigue desde donde se quedó el anterior."
+        },
+        {
+          "icon": "inbox",
+          "title": "Cajas separadas por equipo",
+          "description": "Comercial y Soporte no se mezclan, aunque sea el mismo contacto. Cada Agente ve solo las cajas que tiene asignadas."
+        },
+        {
+          "icon": "ai",
+          "title": "IA por caja, con el equipo al mando",
+          "description": "La IA de cada caja responde, clasifica y transcribe audios. Cuando el cliente pide una persona, resume la conversación y el equipo toma el control al momento."
+        },
+        {
+          "icon": "filter",
+          "title": "Nadie se queda sin respuesta",
+          "description": "Filtra por responsable, por leídas y no leídas o por estado de la IA para ver de un vistazo qué conversaciones esperan respuesta."
+        }
+      ]
+    },
+    "permissions": {
+      "eyebrow": "Permisos",
+      "title": "No todo el mundo necesita ver todo",
+      "subtitle": "El Administrador decide qué puede hacer cada perfil. Por defecto, el Agente atiende conversaciones y trabaja el embudo, pero no edita la IA, no hace envíos masivos ni ve la facturación.",
+      "bullets": [
+        "Tres perfiles: Administrador, Gerente y Agente",
+        "Cada permiso se activa o desactiva con un clic",
+        "Cada Agente ve solo las cajas de entrada que le asignas",
+        "El equipo y los permisos, siempre en manos del Administrador"
+      ]
+    },
+    "toCrm": {
+      "eyebrow": "Del multiagente al CRM",
+      "title": "El multiagente resuelve quién atiende. El CRM, qué pasa con el lead después",
+      "text": "Cuando la pregunta deja de ser «quién responde» y pasa a ser «cómo gestionamos esta oportunidad», entra el <crm>CRM para WhatsApp</crm>: origen de cada lead, embudo de ventas, seguimiento y resultado, en la misma herramienta.",
+      "points": [
+        "Sabes de qué anuncio de Meta vino cada conversación",
+        "Cada oportunidad avanza por las etapas del embudo",
+        "El panel muestra inversión, contactos, ventas y retorno"
+      ],
+      "link": "Ver CRM para WhatsApp"
+    },
+    "clinics": {
+      "eyebrow": "Para clínicas",
+      "title": "En una clínica, el WhatsApp lo atienden varias personas",
+      "text": "Recepción de mañana y de tarde, el equipo que presenta los tratamientos y, a veces, el propio doctor. Con Sales Flow cada paciente tiene un responsable, el historial está a la vista y la IA puede reservar la cita en tu Google Calendar. Descubre <home>Sales Flow para clínicas</home>.",
+      "proof": "Más de 1.000 citas agendadas por WhatsApp con IA en una clínica dental",
+      "points": [
+        "Recepción y comercial en cajas separadas",
+        "Cambio de turno sin perder el historial del paciente",
+        "Trabaja junto a tu software de gestión, no en su lugar"
+      ],
+      "link": "Ver Sales Flow para clínicas"
+    },
+    "howItWorks": {
+      "title": "Cómo funciona",
+      "subtitle": "Tres pasos, sin complicaciones",
+      "steps": [
+        {
+          "title": "Conectamos tu WhatsApp",
+          "description": "Nuestro equipo hace la implantación contigo en 48 h y crea las cajas de entrada que necesitas, por ejemplo Comercial y Soporte."
+        },
+        {
+          "title": "Invitas a tu equipo",
+          "description": "Cada persona entra con su usuario y su perfil, Gerente o Agente. Tú decides qué cajas ve cada una."
+        },
+        {
+          "title": "Cada conversación con su responsable",
+          "description": "El equipo asigna conversaciones, deja notas internas y retoma cualquier conversación con todo el historial a la vista."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre WhatsApp multiagente",
+      "items": [
+        {
+          "question": "¿Qué es WhatsApp multiagente?",
+          "answer": "Es una forma de atender un mismo número de WhatsApp entre varias personas, cada una con su propio usuario, desde una bandeja compartida. Lo importante no es solo el acceso: es saber quién lleva cada conversación y no perder el historial."
+        },
+        {
+          "question": "¿Cómo usar WhatsApp Business con varios usuarios?",
+          "answer": "La aplicación de WhatsApp Business permite abrir la cuenta en algunos dispositivos vinculados, pero todos ven todo y nada indica quién responde. Con Sales Flow cada persona entra con su usuario, cada conversación tiene responsable y el historial queda a la vista de todo el equipo."
+        },
+        {
+          "question": "¿Varias personas pueden responder desde el mismo número?",
+          "answer": "Sí. Todo el equipo responde desde el mismo número de WhatsApp de la empresa, y en cada mensaje enviado queda el nombre de quien lo escribió."
+        },
+        {
+          "question": "¿Cómo evitar que dos personas respondan al mismo cliente?",
+          "answer": "Cada conversación tiene un responsable asignado y cada persona filtra las suyas con «Mías». Así el equipo sabe de un vistazo quién lleva a cada cliente."
+        },
+        {
+          "question": "¿Se mantiene el historial cuando cambia el agente?",
+          "answer": "Sí. El historial completo y las notas internas se quedan en la conversación. Si cambias el responsable, la nueva persona ve todo lo que pasó antes."
+        },
+        {
+          "question": "¿Puedo controlar qué ve cada usuario?",
+          "answer": "Sí. Hay tres perfiles (Administrador, Gerente y Agente) y el Administrador decide qué funciones tiene cada uno. Además, a cada Agente le asignas las cajas de entrada que puede ver."
+        },
+        {
+          "question": "¿Cuántas personas pueden usarlo?",
+          "answer": "El plan Profesional incluye hasta 10 personas del equipo. Para equipos más grandes está el plan Escala, con límites a medida."
+        },
+        {
+          "question": "¿Cuál es la diferencia entre WhatsApp multiagente y un CRM?",
+          "answer": "El multiagente resuelve quién atiende y cómo se reparte el trabajo. Un <crm>CRM para WhatsApp</crm> añade lo que pasa después: origen del lead, embudo, seguimiento y resultado. En Sales Flow tienes las dos cosas."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "¿Quieres ver a tu equipo atendiendo el mismo WhatsApp sin caos?",
+      "subtitle": "Te enseñamos en 15 minutos cómo tu equipo puede gestionar WhatsApp sin perder conversaciones ni contexto",
+      "cta": "Quiero una demo"
+    }
+  },
+  "funnelMockup": {
+    "title": "Embudo",
+    "subtitle": "En qué punto está cada negocio",
+    "stages": {
+      "new": "Nuevo lead",
+      "talking": "En conversación",
+      "proposal": "Propuesta",
+      "won": "Ganado"
+    },
+    "cards": {
+      "c1": { "name": "Andrea Gil", "title": "Pidió información" },
+      "c2": { "name": "Pablo Serrano", "title": "Vino de un anuncio" },
+      "c3": { "name": "Lucía Romero", "title": "Plan anual" },
+      "c4": { "name": "Diego Martín", "title": "Pack 10 sesiones" },
+      "c5": { "name": "Sara Núñez", "title": "Presupuesto" },
+      "c6": { "name": "Javier Ortiz", "title": "Renovación" }
+    },
+    "balloonTitle": "Venta ganada:",
+    "balloonBody": "{value}, contada una sola vez"
+  },
+  "teamMockup": {
+    "contact": "Lucía Romero",
+    "inbox": "WhatsApp · Comercial",
+    "assignedTo": "Asignado a:",
+    "nobody": "Nadie",
+    "agents": {
+      "marta": "Marta",
+      "carlos": "Carlos"
+    },
+    "today": "Hoy",
+    "noteLabel": "Nota interna",
+    "modes": {
+      "reply": "Responder",
+      "note": "Nota interna",
+      "schedule": "Programar"
+    },
+    "composer": "Escribe un mensaje…",
+    "notePlaceholder": "Escribe una nota interna, solo tú y tu equipo la verán",
+    "messages": {
+      "m1": "Hola, vi vuestro anuncio. ¿Me contáis cómo funciona el plan anual?",
+      "m2": "¡Hola, Lucía! Soy Marta. El plan anual sale más barato que pagar mes a mes. ¿Te llamo o seguimos por aquí?",
+      "m3": "Mejor por aquí. Esta tarde os digo algo 😊",
+      "n1": "Le interesa el plan anual y responde esta tarde. Se lo paso a Carlos, que está de tarde",
+      "m4": "Hola, ya lo he pensado: me quedo con el plan anual",
+      "m5": "¡Genial, Lucía! Soy Carlos, compañero de Marta. Te envío ahora el enlace para cerrarlo"
+    },
+    "balloons": {
+      "assigned": { "title": "Responsable:", "body": "Marta" },
+      "handover": { "title": "Cambio de turno:", "body": "Carlos sigue con todo el historial" }
+    }
+  },
+  "permissionsMockup": {
+    "title": "Perfiles y permisos",
+    "subtitle": "Define a qué puede acceder cada perfil. El Administrador siempre tiene acceso a todo.",
+    "feature": "Funcionalidad",
+    "roles": {
+      "admin": "Administrador",
+      "manager": "Gerente",
+      "agent": "Agente"
+    },
+    "features": {
+      "crm": "Embudo, tareas y seguimientos",
+      "ai_edit": "Editar la IA",
+      "broadcasts": "Envíos masivos",
+      "automations": "Automatizaciones",
+      "sales_ads": "Ventas y Anuncios",
+      "billing": "Plan, saldo y consumo",
+      "integrations": "Conectar canales e integraciones",
+      "team": "Equipo y permisos"
+    },
+    "changed": "modificado",
+    "alwaysOn": "Siempre disponibles para todos los perfiles: Inicio, Conversaciones, Contactos, Campos y etiquetas y Mi perfil."
   }
 }
