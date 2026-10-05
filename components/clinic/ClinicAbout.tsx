@@ -26,9 +26,21 @@ const mediaSlots: { type: "photo" | "video"; src?: string; poster?: string }[] =
   { type: "photo", src: "/team/Photo_7.jpg" },
 ];
 
-export function ClinicAbout() {
-  const t = useTranslations("clinic.about");
+export function ClinicAbout({
+  namespace = "clinic.about",
+  excludeMedia = [],
+}: {
+  // es/en: "clinic.about"; pt: "about" (sem a linha "Quem somos", sem título
+  // e sem o texto de "nascemos no Brasil", que não faz sentido pra quem está
+  // no Brasil).
+  namespace?: "clinic.about" | "about";
+  // caminhos de mídia que não entram neste idioma (ex.: Video_2 no pt)
+  excludeMedia?: string[];
+}) {
+  const t = useTranslations(namespace);
   const stats = t.raw("stats") as Stat[];
+  const hasHeader = t.has("eyebrow") || t.has("title");
+  const slots = mediaSlots.filter((slot) => !slot.src || !excludeMedia.includes(slot.src));
   const [paused, setPaused] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
 
@@ -51,20 +63,28 @@ export function ClinicAbout() {
   return (
     <section className="border-b border-white/10 bg-gray-950 py-10 md:py-12">
       <Container>
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px", amount: 0.3 }}
-          transition={{ duration: 0.55, ease: EASE_OUT_EXPO }}
-          className="mx-auto max-w-3xl text-center"
-        >
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
-            {t("eyebrow")}
-          </p>
-          <h2 className="mt-4 text-balance text-3xl font-bold tracking-[-0.02em] text-white">
-            {t("title")}
-          </h2>
-        </motion.div>
+        {/* Linha "Quem somos" e título são opcionais (o pt não tem nenhum
+            dos dois: a seção começa direto nos números). */}
+        {hasHeader && (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px", amount: 0.3 }}
+            transition={{ duration: 0.55, ease: EASE_OUT_EXPO }}
+            className="mx-auto max-w-3xl text-center"
+          >
+            {t.has("eyebrow") && (
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
+                {t("eyebrow")}
+              </p>
+            )}
+            {t.has("title") && (
+              <h2 className="mt-4 text-balance text-3xl font-bold tracking-[-0.02em] text-white">
+                {t("title")}
+              </h2>
+            )}
+          </motion.div>
+        )}
 
         <motion.div
           ref={statsRef}
@@ -72,7 +92,7 @@ export function ClinicAbout() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px", amount: 0.3 }}
           transition={{ duration: 0.55, delay: 0.08, ease: EASE_OUT_EXPO }}
-          className="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-2 sm:gap-4"
+          className={`mx-auto grid max-w-3xl grid-cols-3 gap-2 sm:gap-4 ${hasHeader ? "mt-10" : ""}`}
         >
           {stats.map((stat) => (
             <div
@@ -119,7 +139,7 @@ export function ClinicAbout() {
             className={`animate-marquee-right flex w-max cursor-pointer ${paused ? "is-paused" : ""}`}
           >
             {[0, 1].map((copy) =>
-              mediaSlots.map((slot, i) => (
+              slots.map((slot, i) => (
                 <div
                   key={`${copy}-${i}`}
                   aria-hidden={copy === 1 || undefined}
@@ -139,15 +159,17 @@ export function ClinicAbout() {
           </div>
         </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px", amount: 0.3 }}
-          transition={{ duration: 0.55, delay: 0.24, ease: EASE_OUT_EXPO }}
-          className="mx-auto mt-10 max-w-5xl text-center text-[15px] leading-relaxed text-gray-400"
-        >
-          {t("text")}
-        </motion.p>
+        {t.has("text") && (
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px", amount: 0.3 }}
+            transition={{ duration: 0.55, delay: 0.24, ease: EASE_OUT_EXPO }}
+            className="mx-auto mt-10 max-w-5xl text-center text-[15px] leading-relaxed text-gray-400"
+          >
+            {t("text")}
+          </motion.p>
+        )}
       </Container>
     </section>
   );

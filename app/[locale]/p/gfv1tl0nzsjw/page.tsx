@@ -5,6 +5,10 @@ import { PartnerPricing } from "@/components/partner/PartnerPricing";
 // esta URL aleatória, que não tem link em lugar nenhum do site. Fora do
 // sitemap, bloqueada no robots.txt (pelo prefixo /p/, sem expor a URL) e
 // com noindex aqui e no header X-Robots-Tag (next.config.js).
+//
+// Onde abrir (só comentário, não aparece no site):
+//   Localhost:      http://localhost:3000/p/gfv1tl0nzsjw?lang=es&currency=EUR
+//   Depois do push: https://sales-flow-lp-2026.vercel.app/p/gfv1tl0nzsjw
 export const metadata: Metadata = {
   title: "Planes",
   robots: {

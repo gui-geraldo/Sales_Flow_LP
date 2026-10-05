@@ -373,6 +373,44 @@
       "origins": "Origem de cada venda, identificada automaticamente"
     }
   },
+  "about": {
+    "stats": [
+      { "value": "+650 mil", "label": "mensagens processadas" },
+      { "value": "+55 mil", "label": "contatos atendidos" },
+      { "value": "+75 mil", "label": "envios automatizados" }
+    ],
+    "photoLabel": "Foto da equipe",
+    "photoCaption": "Foto da equipe ou de um evento recente.",
+    "photoAlt": "Equipe do Sales Flow",
+    "carouselToggle": "Pausar ou retomar o carrossel",
+    "videoLabel": "Vídeo da equipe",
+    "videoCaption": "Clipe curto de um evento ou feira."
+  },
+  "ecosystem": {
+    "eyebrow": "Tudo em um só lugar",
+    "title": "Seus anúncios, seu site e seu WhatsApp no mesmo lugar",
+    "toggleWithout": "Sem Sales Flow",
+    "toggleWith": "Com Sales Flow",
+    "centerCaption": "Um só painel",
+    "sources": [
+      { "label": "WhatsApp", "lost": "Só no celular do atendimento", "gain": "Toda a conversa" },
+      { "label": "Meta Ads", "lost": "Você não sabe qual anúncio funcionou", "gain": "Anúncio de origem" },
+      { "label": "Formulário do site", "lost": "Fica parado no e-mail", "gain": "Contato na hora" },
+      { "label": "Google Ads", "lost": "Mais um painel para olhar", "gain": "Campanha de origem" },
+      { "label": "Excel", "lost": "Copiar e colar na mão", "gain": "Sua base importada" },
+      { "label": "Seu site", "lost": "Você não sabe de onde veio a visita", "gain": "Origem de cada visita" }
+    ],
+    "outputs": [
+      { "title": "Reunião confirmada", "detail": "Cliente do Meta Ads, terça às 10:30" },
+      { "title": "Formulário recebido", "detail": "Follow-up programado para daqui a 3 dias" },
+      { "title": "Cliente pronto para comprar", "detail": "A IA avisou o time de vendas" },
+      { "title": "Relatório da campanha", "detail": "Enviados, lidos e respostas" },
+      { "title": "Respondido às 22:04", "detail": "A IA atendeu fora do horário" },
+      { "title": "Lembrete enviado", "detail": "Amanhã às 9:00, pelo WhatsApp" }
+    ],
+    "captionWithout": "Cada canal para um lado. Ninguém vê o caminho completo do cliente",
+    "captionWith": "Tudo chega no mesmo painel. E dali saem sozinhos os agendamentos, os relatórios e os follow-ups"
+  },
   "results": {
     "eyebrow": "Resultados",
     "title": "Quanto você investiu, quanto vendeu e de onde veio cada cliente",

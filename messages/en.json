@@ -408,6 +408,31 @@
         "You know how many patients and appointments each campaign brought in"
       ]
     },
+    "ecosystem": {
+      "eyebrow": "All in one place",
+      "title": "Your ads, your website and your WhatsApp in one place",
+      "toggleWithout": "Without Sales Flow",
+      "toggleWith": "With Sales Flow",
+      "centerCaption": "One single panel",
+      "sources": [
+        { "label": "WhatsApp", "lost": "Only on the front desk phone", "gain": "The whole conversation" },
+        { "label": "Meta Ads", "lost": "You don't know which ad worked", "gain": "Source ad" },
+        { "label": "Web form", "lost": "Stuck in the email inbox", "gain": "Contact right away" },
+        { "label": "Google Ads", "lost": "One more dashboard to check", "gain": "Source campaign" },
+        { "label": "Excel", "lost": "Copy and paste by hand", "gain": "Your contacts imported" },
+        { "label": "Your website", "lost": "You don't know where the visit came from", "gain": "Source of every visit" }
+      ],
+      "outputs": [
+        { "title": "Appointment confirmed", "detail": "Meta Ads patient, Tuesday 10:30" },
+        { "title": "Form received", "detail": "Follow-up scheduled in 3 days" },
+        { "title": "Patient ready to book", "detail": "The virtual assistant alerted the front desk" },
+        { "title": "Birthday campaign report", "detail": "Sent, read and replies" },
+        { "title": "Answered at 10:04 pm", "detail": "The virtual assistant replied after hours" },
+        { "title": "Appointment reminder sent", "detail": "Tomorrow at 9:00, via WhatsApp" }
+      ],
+      "captionWithout": "Each channel on its own. Nobody sees the patient's full journey",
+      "captionWith": "Everything lands in the same panel. And from there, appointments, reports and follow-ups go out on their own"
+    },
     "differentiators": {
       "eyebrow": "Why Sales Flow",
       "title": "Everything your clinic needs to stop losing patients along the way",

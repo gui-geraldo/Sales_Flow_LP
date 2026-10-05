@@ -13,6 +13,7 @@ import { ClinicAbout } from "@/components/clinic/ClinicAbout";
 import { ClinicResults } from "@/components/clinic/ClinicResults";
 import { ClinicProblem } from "@/components/clinic/ClinicProblem";
 import { ClinicDifferentiators } from "@/components/clinic/ClinicDifferentiators";
+import { ClinicEcosystem } from "@/components/clinic/ClinicEcosystem";
 import { LeadProvider } from "@/components/lead/LeadProvider";
 import { SeoLinks } from "@/components/SeoLinks";
 import { StructuredData } from "@/components/StructuredData";
@@ -50,6 +51,7 @@ export default async function Home({
           <ClinicAbout />
           <ClinicResults />
           <ClinicProblem />
+          <ClinicEcosystem />
           <ClinicDifferentiators />
           <HowItWorks />
           <Security />
@@ -62,9 +64,10 @@ export default async function Home({
     );
   }
 
-  // Português: página genérica de sempre, só com os dois mockups da
-  // plataforma (conversa no Hero, Resultados logo abaixo). Sem "Quiénes
-  // somos"/carrossel e sem a faixa de prova social (removida a pedido).
+  // Português: página genérica, com os dois mockups da plataforma (conversa
+  // no Hero, Resultados logo abaixo). "Quem somos" com números e carrossel,
+  // mas sem título, sem o texto de "nascemos no Brasil" e sem o Video_2.
+  // Sem a faixa de prova social (removida a pedido).
   return (
     <LeadProvider enabled locale={locale} currency={currency}>
       <main>
@@ -72,8 +75,10 @@ export default async function Home({
         <StructuredData locale={locale} canonical={canonicalFor("/", query)} />
         <Header />
         <Hero />
+        <ClinicAbout namespace="about" excludeMedia={["/team/Video_2.mp4"]} />
         <ClinicResults namespace="results" />
         <Problem />
+        <ClinicEcosystem namespace="ecosystem" />
         <Differentiators />
         <HowItWorks />
         <Security />

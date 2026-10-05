@@ -37,6 +37,31 @@
         "Sabes cuántos pacientes y citas trajo cada campaña"
       ]
     },
+    "ecosystem": {
+      "eyebrow": "Todo en un solo lugar",
+      "title": "Tus anuncios, tu web y tu WhatsApp en el mismo lugar",
+      "toggleWithout": "Sin Sales Flow",
+      "toggleWith": "Con Sales Flow",
+      "centerCaption": "Un solo panel",
+      "sources": [
+        { "label": "WhatsApp", "lost": "Solo en el móvil de recepción", "gain": "Toda la conversación" },
+        { "label": "Meta Ads", "lost": "No sabes qué anuncio funcionó", "gain": "Anuncio de origen" },
+        { "label": "Formulario web", "lost": "Se queda en el correo", "gain": "Contacto al instante" },
+        { "label": "Google Ads", "lost": "Otro panel más que revisar", "gain": "Campaña de origen" },
+        { "label": "Excel", "lost": "Copiar y pegar a mano", "gain": "Tu base importada" },
+        { "label": "Tu sitio web", "lost": "No sabes de dónde vino la visita", "gain": "Origen de cada visita" }
+      ],
+      "outputs": [
+        { "title": "Cita confirmada", "detail": "Paciente de Meta Ads, martes 10:30" },
+        { "title": "Formulario recibido", "detail": "Seguimiento programado en 3 días" },
+        { "title": "Paciente listo para pedir cita", "detail": "El asistente virtual avisó a recepción" },
+        { "title": "Informe de la campaña de cumpleaños", "detail": "Enviados, leídos y respuestas" },
+        { "title": "Respondido a las 22:04", "detail": "El asistente virtual atendió fuera de horario" },
+        { "title": "Recordatorio de cita enviado", "detail": "Mañana a las 9:00, por WhatsApp" }
+      ],
+      "captionWithout": "Cada canal por su lado. Nadie ve el recorrido completo del paciente",
+      "captionWith": "Todo llega al mismo panel. Y de ahí salen solos las citas, los informes y los seguimientos"
+    },
     "differentiators": {
       "eyebrow": "Por qué Sales Flow",
       "title": "Todo lo que tu clínica necesita para no perder pacientes en el camino",
@@ -682,6 +707,10 @@
           "answer": "Sí. Toda la conversación queda guardada en el contacto, junto con las notas internas del equipo, aunque cambie la persona que atiende."
         },
         {
+          "question": "¿Puedo usar mi número actual de WhatsApp?",
+          "answer": "Sí. Mantienes el número de WhatsApp que ya usas, no necesitas cambiarlo."
+        },
+        {
           "question": "¿Se puede automatizar el seguimiento?",
           "answer": "Puedes programar mensajes para el día y la hora que elijas, usar plantillas con texto, imagen o vídeo y crear tareas de seguimiento para el equipo. Además, la IA de cada bandeja responde y clasifica los contactos que llegan."
         },
@@ -888,6 +917,10 @@
         {
           "question": "¿Varias personas pueden responder desde el mismo número?",
           "answer": "Sí. Todo el equipo responde desde el mismo número de WhatsApp de la empresa, y en cada mensaje enviado queda el nombre de quien lo escribió."
+        },
+        {
+          "question": "¿Necesito cambiar mi número de WhatsApp?",
+          "answer": "No. Mantienes el número de WhatsApp que ya usas."
         },
         {
           "question": "¿Cómo evitar que dos personas respondan al mismo cliente?",
