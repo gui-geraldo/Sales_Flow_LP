@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
 
-// Fora do índice: a API do formulário e as páginas de teste/mockup, que
-// duplicariam ou confundiriam o conteúdo da home.
-const PRIVATE = ["/api/", "/v1", "/vnew", "/mockup_plataforma", "/mockup_roi"];
+// Fora do índice: a API do formulário, as páginas de teste/mockup, que
+// duplicariam ou confundiriam o conteúdo da home, e /p/ (páginas privadas
+// por URL aleatória; só o prefixo aparece aqui, nunca a URL inteira).
+const PRIVATE = ["/api/", "/v1", "/vnew", "/mockup_plataforma", "/mockup_roi", "/p/"];
 
 // Google, Bing e a busca do ChatGPT (OAI-SearchBot) ganham grupo explícito.
 // Um robô com grupo próprio ignora o grupo "*", então as mesmas proibições
