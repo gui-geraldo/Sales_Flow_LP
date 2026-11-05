@@ -21,7 +21,7 @@ const PRICE: Record<Currency, string> = {
 };
 
 const AUTOMATION_FEE: Record<Currency, string> = {
-  BRL: "R$ 0,05",
+  BRL: "R$ 0,10",
   EUR: "€ 0,02",
   USD: "US$ 0.02",
 };

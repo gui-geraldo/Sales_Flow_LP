@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Presenter } from "@/components/apresentacao/Presenter";
 import { ClinicSlides } from "@/components/apresentacao/ClinicSlides";
 
 // Material para a Pamela (revenda) mostrar às clínicas, em espanhol, privado:
@@ -37,7 +38,9 @@ export default function ClinicSlidesPage() {
           .slide:last-child { break-after: auto; page-break-after: auto; }
         }
       `}</style>
-      <ClinicSlides />
+      <Presenter>
+        <ClinicSlides />
+      </Presenter>
     </main>
   );
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Presenter } from "@/components/apresentacao/Presenter";
 import { DanceSlides } from "@/components/apresentacao/DanceSlides";
 
 // Apresentação para escolas de dança (o Marçal apresenta), privada: só abre
@@ -37,7 +38,9 @@ export default function DanceSlidesPage() {
           .slide:last-child { break-after: auto; page-break-after: auto; }
         }
       `}</style>
-      <DanceSlides />
+      <Presenter>
+        <DanceSlides />
+      </Presenter>
     </main>
   );
 }

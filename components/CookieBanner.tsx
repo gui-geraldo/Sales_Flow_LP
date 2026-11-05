@@ -14,7 +14,7 @@ import { isPortugal } from "@/lib/contact";
 
 // Páginas sem aviso de cookies: apresentações privadas em /p/ que não são
 // vistas como site (sem o aviso, também não há consentimento nem medição).
-const NO_BANNER_PATHS = ["/p/4ulpi65c2z3x", "/p/c0qpokw26lih"];
+const NO_BANNER_PATHS = ["/p/4ulpi65c2z3x", "/p/c0qpokw26lih", "/p/fnv7o7559fir", "/p/ywdm8tc61uah"];
 
 // Aparece até a pessoa escolher (e de novo pelo link "Cookies" do rodapé).
 // Recusar fica tão à mão quanto aceitar, como pede a AEPD.
