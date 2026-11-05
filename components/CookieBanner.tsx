@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import {
   CONSENT_OPEN_EVENT,
@@ -11,9 +12,19 @@ import {
 } from "@/lib/consent";
 import { isPortugal } from "@/lib/contact";
 
+// Páginas sem aviso de cookies: apresentações privadas em /p/ que não são
+// vistas como site (sem o aviso, também não há consentimento nem medição).
+const NO_BANNER_PATHS = ["/p/4ulpi65c2z3x", "/p/c0qpokw26lih"];
+
 // Aparece até a pessoa escolher (e de novo pelo link "Cookies" do rodapé).
 // Recusar fica tão à mão quanto aceitar, como pede a AEPD.
 export function CookieBanner() {
+  const pathname = usePathname();
+  if (NO_BANNER_PATHS.some((p) => pathname.endsWith(p))) return null;
+  return <CookieBannerInner />;
+}
+
+function CookieBannerInner() {
   const locale = useLocale();
   const [open, setOpen] = useState(false);
   const [portugal, setPortugal] = useState(false);
