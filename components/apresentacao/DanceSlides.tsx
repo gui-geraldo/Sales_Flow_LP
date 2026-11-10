@@ -1,4 +1,5 @@
 import { Logo } from "@/components/Logo";
+import { WHATSAPP_DISPLAY_BRL } from "@/lib/contact";
 import { QR_PATH, QR_SIZE } from "./qr";
 
 // Apresentação para donos de escolas de dança (o Marçal apresenta).
@@ -845,7 +846,7 @@ function SlideNextStep() {
         </p>
         <p className="mt-4 text-[28px] text-gray-300">para as primeiras escolas</p>
         <p className="mt-12 text-[22px] text-gray-400">Entre em contato</p>
-        <p className="mt-1 whitespace-nowrap text-[42px] font-semibold tabular-nums tracking-tight">(11) 98522-3431</p>
+        <p className="mt-1 whitespace-nowrap text-[42px] font-semibold tabular-nums tracking-tight">{WHATSAPP_DISPLAY_BRL}</p>
         <p className="mt-2 text-[22px] text-gray-400">Guilherme, Sales Flow</p>
       </TextColumn>
 

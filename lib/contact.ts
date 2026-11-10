@@ -1,12 +1,27 @@
-// Número de WhatsApp comercial das saídas de contato (só dígitos, com código
-// do país). Fonte única: mudou o número, muda aqui e faz commit. Não vem de
-// variável de ambiente (é público e igual em todo ambiente).
-const WHATSAPP_NUMBER = "34641337143"; // Espanha e todo o resto (fora do Brasil)
-const WHATSAPP_NUMBER_BRL = "5511985223431"; // Brasil
+// NÚMEROS DE WHATSAPP COMERCIAL: fonte única para a LP, o formulário e as
+// apresentações. Nenhum outro arquivo escreve número à mão; todos importam
+// daqui. Não vem de variável de ambiente (é público e igual em todo ambiente).
+// Trocou um número? Mude as duas linhas dele (dígitos + como aparece escrito)
+// e, se for o BRL, gere de novo o QR das apresentações
+// (python -I .claude/tmp/qr.py .claude/tmp/pylib, que lê o número daqui).
 
+// BRL: Brasil (pt + R$)
+export const WHATSAPP_NUMBER_BRL = "551152280448"; // desde 10/11/2026; antes 5511985223431
+export const WHATSAPP_DISPLAY_BRL = "(11) 5228-0448";
+
+// ES: Espanha e todo o resto fora do Brasil (es/en, € e US$)
+export const WHATSAPP_NUMBER_ES = "34641337143";
+export const WHATSAPP_DISPLAY_ES = "+34 641 33 71 43";
+
+const waLink = (number: string, text?: string) =>
+  `https://wa.me/${number}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
+
+export const whatsappLinkBrl = (text?: string) => waLink(WHATSAPP_NUMBER_BRL, text);
+export const whatsappLinkEs = (text?: string) => waLink(WHATSAPP_NUMBER_ES, text);
+
+// Escolhe o número pela moeda da visita: R$ = Brasil, qualquer outra = ES.
 export function whatsappUrl(text: string, currency: string) {
-  const number = currency === "BRL" ? WHATSAPP_NUMBER_BRL : WHATSAPP_NUMBER;
-  return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
+  return currency === "BRL" ? whatsappLinkBrl(text) : whatsappLinkEs(text);
 }
 
 // Português de Portugal (pt com EUR) tem textos próprios no formulário, no
