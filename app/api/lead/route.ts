@@ -1,13 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
 import { normalizePhone } from "@/lib/phone";
 
-// Recebe o formulário curto (nome, e-mail, telefone) e repassa ao webhook
-// configurado na Vercel (LEAD_WEBHOOK_URL), junto com tudo o que o navegador
-// coletou (lib/lead.ts) e a geolocalização que a Vercel anexa na borda.
-// A URL do webhook nunca vai pro navegador.
+// Recebe o formulário curto (nome, e-mail, telefone) e repassa a DOIS
+// webhooks configurados na Vercel, em paralelo e independentes:
+// 1. n8n (LEAD_WEBHOOK_URL + LEAD_WEBHOOK_SECRET): tudo o que o navegador
+//    coletou (lib/lead.ts) + geolocalização da Vercel, no formato do Studio.
+// 2. Plataforma Sales Flow (SALESFLOW_WEBHOOK_URL + SALESFLOW_WEBHOOK_TOKEN):
+//    só o contato (name, phone, email, id, occurred_at).
+// As URLs e tokens nunca vão pro navegador.
 
 const WEBHOOK_URL = process.env.LEAD_WEBHOOK_URL;
 const WEBHOOK_SECRET = process.env.LEAD_WEBHOOK_SECRET;
+const SALESFLOW_WEBHOOK_URL = process.env.SALESFLOW_WEBHOOK_URL;
+const SALESFLOW_WEBHOOK_TOKEN = process.env.SALESFLOW_WEBHOOK_TOKEN;
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const INTENTS = new Set(["demo", "whatsapp", "subscribe", "sales"]);
@@ -183,12 +188,33 @@ export async function POST(req: NextRequest) {
     suspeitaRobo: fillMs > 0 && fillMs < 2000,
   };
 
+  // Dois destinos, disparados JUNTOS e independentes: o n8n (de sempre) e a
+  // plataforma Sales Flow (a mais, desde 10/11/2026). Um não espera nem
+  // derruba o outro; a resposta ao navegador continua dependendo só do n8n.
+  const [n8n] = await Promise.all([
+    sendToN8n(payload),
+    sendToSalesFlow({
+      name,
+      // Só dígitos com o código do país (ex.: 5511999998888), como pede a plataforma.
+      phone: (phone ?? "").replace(/\D/g, ""),
+      email,
+      id: leadId,
+      occurred_at: payload.recebidoEm,
+    }),
+  ]);
+  if (n8n === "failed") {
+    return NextResponse.json({ ok: false, error: "webhook_failed" }, { status: 502 });
+  }
+  return NextResponse.json({ ok: true, delivered: n8n === "sent" });
+}
+
+// Webhook 1 (n8n, de sempre): igual ao que já funcionava.
+async function sendToN8n(payload: Obj): Promise<"sent" | "skipped" | "failed"> {
   if (!WEBHOOK_URL) {
     // Sem webhook configurado (ex.: localhost): registra no log pra conferir.
     console.warn("[lead] LEAD_WEBHOOK_URL não configurada; lead não enviado:\n" + JSON.stringify(payload, null, 2));
-    return NextResponse.json({ ok: true, delivered: false });
+    return "skipped";
   }
-
   try {
     const res = await fetch(WEBHOOK_URL, {
       method: "POST",
@@ -204,10 +230,39 @@ export async function POST(req: NextRequest) {
       signal: AbortSignal.timeout(8000),
     });
     if (!res.ok) throw new Error(`webhook respondeu ${res.status}`);
+    return "sent";
   } catch (err) {
     console.error("[lead] falha ao enviar ao webhook:", err, JSON.stringify(payload));
-    return NextResponse.json({ ok: false, error: "webhook_failed" }, { status: 502 });
+    return "failed";
   }
+}
 
-  return NextResponse.json({ ok: true, delivered: true });
+// Webhook 2 (plataforma Sales Flow, entrada de contatos). Só name e phone são
+// obrigatórios; sem "amount" (não é venda). Falha aqui só vai pro log: nunca
+// muda a resposta ao visitante nem o envio ao n8n.
+async function sendToSalesFlow(contact: {
+  name: string;
+  phone: string;
+  email: string;
+  id: string;
+  occurred_at: string;
+}): Promise<void> {
+  if (!SALESFLOW_WEBHOOK_URL || !SALESFLOW_WEBHOOK_TOKEN) {
+    console.warn("[lead] Sales Flow: SALESFLOW_WEBHOOK_URL/TOKEN não configurados; contato não enviado à plataforma.");
+    return;
+  }
+  try {
+    const res = await fetch(SALESFLOW_WEBHOOK_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${SALESFLOW_WEBHOOK_TOKEN}`,
+      },
+      body: JSON.stringify(contact),
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!res.ok) throw new Error(`Sales Flow respondeu ${res.status}: ${(await res.text()).slice(0, 300)}`);
+  } catch (err) {
+    console.error("[lead] falha ao enviar à plataforma Sales Flow:", err, JSON.stringify({ id: contact.id }));
+  }
 }
