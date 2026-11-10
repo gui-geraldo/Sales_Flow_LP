@@ -1,8 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { normalizePhone } from "@/lib/phone";
-import { getCurrencyConfig, type Currency } from "@/lib/pricing";
-
-const VALID_CURRENCIES = new Set(["BRL", "EUR", "USD"]);
 
 // Recebe o formulário curto (nome, e-mail, telefone) e repassa ao webhook
 // configurado na Vercel (LEAD_WEBHOOK_URL), junto com tudo o que o navegador
@@ -32,6 +29,92 @@ function str(value: unknown, max: number): string {
   return typeof value === "string" ? value.trim().slice(0, max) : "";
 }
 
+type Obj = Record<string, unknown>;
+const obj = (value: unknown): Obj => (value && typeof value === "object" ? (value as Obj) : {});
+
+// "/caminho?query" de uma URL completa ("" se não der pra ler).
+function pathAndQuery(url: unknown): string {
+  if (typeof url !== "string" || !url) return "";
+  try {
+    const u = new URL(url);
+    return (u.pathname + u.search).slice(0, 1000);
+  } catch {
+    return "";
+  }
+}
+
+// De onde veio o tráfego, em uma palavra (como o Studio manda: "google").
+function trafficSource(origin: string, utmSource: string, referrer: string): string {
+  if (origin === "google_ads" || origin === "google_organic") return "google";
+  if (origin === "meta_ads" || origin === "facebook") return "facebook";
+  if (origin === "instagram") return "instagram";
+  if (origin === "tiktok_ads") return "tiktok";
+  if (origin === "bing_ads") return "bing";
+  if (origin === "other_utm" && utmSource) return utmSource.toLowerCase();
+  if (origin === "referral" && referrer) {
+    try {
+      return new URL(referrer).hostname.replace(/^www\./, "");
+    } catch {
+      return "referral";
+    }
+  }
+  return "direto";
+}
+
+// Monta o corpo no formato do Studio das Pedras, a partir do que o navegador
+// coletou (lib/lead.ts) e da geolocalização que a Vercel anexa na borda.
+function buildStudioPayload(body: Obj, name: string, email: string, req: NextRequest) {
+  const context = obj(body.context);
+  const attribution = obj(context.attribution);
+  const page = obj(context.page);
+  const lastTouch = obj(context.lastTouch);
+  const firstTouch = obj(context.firstTouch);
+  const device = obj(context.device);
+  const a = (key: string) => (typeof attribution[key] === "string" ? (attribution[key] as string) : "");
+
+  // Página de entrada com a query da campanha: a atual, se ainda tem
+  // parâmetros; senão a última visita com campanha; senão a primeira.
+  const currentUrl = typeof page.url === "string" ? page.url : "";
+  const landingUrl = currentUrl.includes("?")
+    ? currentUrl
+    : (lastTouch.url as string) || (firstTouch.url as string) || currentUrl;
+  const referrer =
+    (typeof page.referrer === "string" && page.referrer) ||
+    (typeof lastTouch.referrer === "string" && lastTouch.referrer) ||
+    "";
+
+  const cityHeader = req.headers.get("x-vercel-ip-city");
+  const city = cityHeader ? decodeURIComponent(cityHeader) : "";
+  const region = req.headers.get("x-vercel-ip-country-region") ?? "";
+
+  return {
+    nome: name,
+    telefone: str(body.phone, 40),
+    cidade: city ? (region ? `${city} - ${region}` : city) : "",
+    email,
+    pedra: "",
+    mensagem: "",
+    origem: typeof page.path === "string" ? page.path : "/",
+    canal: "whatsapp",
+    origemTrafego: trafficSource(str(context.origin, 40), a("utm_source"), referrer),
+    referrer,
+    landing: pathAndQuery(landingUrl),
+    utm: {
+      source: a("utm_source"),
+      medium: a("utm_medium"),
+      campaign: a("utm_campaign"),
+      content: a("utm_content"),
+      term: a("utm_term"),
+    },
+    gclid: a("gclid"),
+    gbraid: a("gbraid"),
+    wbraid: a("wbraid"),
+    userAgent:
+      (typeof device.userAgent === "string" && device.userAgent) || req.headers.get("user-agent") || "",
+    recebidoEm: new Date().toISOString(),
+  };
+}
+
 export async function POST(req: NextRequest) {
   let body: Record<string, unknown>;
   try {
@@ -51,7 +134,6 @@ export async function POST(req: NextRequest) {
   const email = str(body.email, 200).toLowerCase();
   const phone = normalizePhone(str(body.phone, 40), locale, currency);
   const intent = str(body.intent, 20);
-  const fillMs = Number(body.fillMs) || 0;
 
   const errors: string[] = [];
   if (name.length < 2) errors.push("name");
@@ -69,55 +151,36 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, error: "rate_limited" }, { status: 429 });
   }
 
+  // Payload no MESMO formato do site do Studio das Pedras (pedido do usuário
+  // em 10/11/2026), para o n8n tratar os dois sites com o mesmo fluxo. Campos
+  // que a LP não tem ("pedra", "mensagem") vão vazios; nunca omitir chave.
+  // Depois das chaves do Studio, 5 a mais (aprovado pelo usuário em 10/11):
+  // o fluxo do Studio ignora, o da LP usa.
+  const fillMs = Number(body.fillMs) || 0;
   // Chave criada quando o formulário abriu: o mesmo lead enviado duas vezes
-  // chega com a mesma chave (o n8n usa pra não duplicar).
+  // chega com a mesma chave (serve pra não duplicar no n8n).
   const clientKey = str(body.idempotencyKey, 64);
   const leadId = /^[\w-]{8,64}$/.test(clientKey) ? clientKey : crypto.randomUUID();
-
-  // A origem calculada no navegador sobe pro topo do payload (fácil de filtrar no n8n).
-  const { origin: rawOrigin, ...clientContext } = (body.context ?? {}) as Record<string, unknown>;
-  const origin = typeof rawOrigin === "string" ? rawOrigin : null;
-  const context = body.context ? clientContext : null;
-
-  // Plano do botão clicado (demo e WhatsApp não são de um plano) e o preço
-  // do Profissional que a página mostrou nessa moeda.
-  const plan = intent === "subscribe" ? "profissional" : intent === "sales" ? "escala" : null;
-  const priceShown = VALID_CURRENCIES.has(currency)
-    ? getCurrencyConfig(currency as Currency).amount
-    : null;
-
-  const city = req.headers.get("x-vercel-ip-city");
-  // Todos os campos vão sempre; o que não existe vai como null.
+  const BUTTONS: Record<string, string> = {
+    demo: "demo",
+    whatsapp: "whatsapp",
+    subscribe: "assinar",
+    sales: "vendas",
+  };
   const payload = {
-    event: "lead",
+    ...buildStudioPayload(body, name, email, req),
+    // País da visita (Vercel); sem ele, pela moeda. O mesmo webhook recebe
+    // Brasil e Espanha: é por aqui que o n8n separa.
+    pais: req.headers.get("x-vercel-ip-country") || (currency === "BRL" ? "BR" : ""),
+    // Prova de consentimento (LGPD/GDPR): o texto que a pessoa aceitou e quando.
+    consentimento: {
+      texto: str(body.consentText, 500),
+      aceitoEm: new Date().toISOString(),
+    },
+    botao: BUTTONS[intent] ?? intent,
     leadId,
-    receivedAt: new Date().toISOString(),
-    lead: {
-      name,
-      email,
-      phone,
-      phoneAsTyped: str(body.phone, 40) || null,
-      consent: true,
-      consentText: str(body.consentText, 500) || null,
-    },
-    origin,
-    intent,
-    plan,
-    priceShown,
-    source: str(body.source, 80) || null,
-    locale,
-    currency,
-    // Menos de 2 s entre abrir e enviar é suspeito de robô: vai marcado, não barrado.
-    formFillSeconds: Math.round(fillMs / 100) / 10,
-    suspectedBot: fillMs > 0 && fillMs < 2000,
-    context,
-    server: {
-      ip: ip || null,
-      country: req.headers.get("x-vercel-ip-country"),
-      region: req.headers.get("x-vercel-ip-country-region"),
-      city: city ? decodeURIComponent(city) : null,
-      timezone: req.headers.get("x-vercel-ip-timezone"),
-    },
+    // Menos de 2 s entre abrir e enviar o formulário: provável robô (vai marcado, não barrado).
+    suspeitaRobo: fillMs > 0 && fillMs < 2000,
   };
 
   if (!WEBHOOK_URL) {
@@ -131,8 +194,11 @@ export async function POST(req: NextRequest) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "X-Idempotency-Key": leadId,
-        ...(WEBHOOK_SECRET ? { "X-Webhook-Secret": WEBHOOK_SECRET } : {}),
+        // Igual ao Studio: Authorization Bearer. O X-Webhook-Secret antigo vai
+        // junto até o n8n da LP passar a conferir o Bearer (não atrapalha).
+        ...(WEBHOOK_SECRET
+          ? { Authorization: `Bearer ${WEBHOOK_SECRET}`, "X-Webhook-Secret": WEBHOOK_SECRET }
+          : {}),
       },
       body: JSON.stringify(payload),
       signal: AbortSignal.timeout(8000),
