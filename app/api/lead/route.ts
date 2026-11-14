@@ -136,13 +136,15 @@ export async function POST(req: NextRequest) {
   const locale = str(body.locale, 5) || "es";
   const currency = str(body.currency, 3) || "EUR";
   const name = str(body.name, 120);
-  const email = str(body.email, 200).toLowerCase();
+  // E-mail opcional desde 14/11/2026 (o formulário não pede mais): se vier e
+  // for válido, segue; senão vai vazio (chave mantida no payload do n8n).
+  const rawEmail = str(body.email, 200).toLowerCase();
+  const email = EMAIL_RE.test(rawEmail) ? rawEmail : "";
   const phone = normalizePhone(str(body.phone, 40), locale, currency);
   const intent = str(body.intent, 20);
 
   const errors: string[] = [];
   if (name.length < 2) errors.push("name");
-  if (!EMAIL_RE.test(email)) errors.push("email");
   if (!phone) errors.push("phone");
   if (body.consent !== true) errors.push("consent");
   if (!INTENTS.has(intent)) errors.push("intent");
@@ -197,7 +199,8 @@ export async function POST(req: NextRequest) {
       name,
       // Só dígitos com o código do país (ex.: 5511999998888), como pede a plataforma.
       phone: (phone ?? "").replace(/\D/g, ""),
-      email,
+      // A plataforma só exige nome e telefone: e-mail só vai se houver.
+      ...(email ? { email } : {}),
       id: leadId,
       occurred_at: payload.recebidoEm,
     }),
@@ -243,7 +246,7 @@ async function sendToN8n(payload: Obj): Promise<"sent" | "skipped" | "failed"> {
 async function sendToSalesFlow(contact: {
   name: string;
   phone: string;
-  email: string;
+  email?: string;
   id: string;
   occurred_at: string;
 }): Promise<void> {

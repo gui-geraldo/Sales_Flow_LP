@@ -141,13 +141,13 @@ export function trackLeadFormOpen(source: string) {
 export function trackLeadSubmit(
   source: string,
   intent: string,
-  user?: { email: string; phone: string | null },
+  user?: { email?: string; phone: string | null },
 ) {
   if (typeof window === "undefined") return;
 
-  if (user) {
+  if (user && (user.email || user.phone)) {
     window.gtag?.("set", "user_data", {
-      email: user.email,
+      ...(user.email ? { email: user.email } : {}),
       ...(user.phone ? { phone_number: user.phone } : {}),
     });
   }

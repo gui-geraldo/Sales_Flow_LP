@@ -92,14 +92,14 @@ export function LeadProvider({
   );
 }
 
-type FieldError = "name" | "email" | "phone";
-
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+// Sem e-mail desde 14/11/2026: a conversa segue pelo WhatsApp e o telefone
+// basta (a plataforma só exige nome e telefone; o n8n recebe e-mail vazio,
+// como nas LPs do Studio das Pedras). Menos um campo, menos desistência.
+type FieldError = "name" | "phone";
 
 function validate(form: FormData): FieldError[] {
   const errors: FieldError[] = [];
   if (String(form.get("name") ?? "").trim().length < 2) errors.push("name");
-  if (!EMAIL_RE.test(String(form.get("email") ?? "").trim())) errors.push("email");
   const digits = String(form.get("phone") ?? "").replace(/\D/g, "");
   if (digits.length < 8 || digits.length > 15) errors.push("phone");
   return errors;
@@ -158,7 +158,6 @@ function LeadDialog({
     const body = {
       idempotencyKey: idempotencyKey.current,
       name,
-      email: String(form.get("email")).trim(),
       phone: String(form.get("phone")).trim(),
       consent: true,
       consentText: t("consentPlain"),
@@ -181,7 +180,7 @@ function LeadDialog({
     trackLeadSubmit(
       request.source,
       request.intent,
-      hasConsent() ? { email: body.email, phone: normalizePhone(body.phone, locale, currency) } : undefined,
+      hasConsent() ? { phone: normalizePhone(body.phone, locale, currency) } : undefined,
     );
 
     // Abre o WhatsApp ainda dentro do clique (senão o navegador bloqueia o
@@ -257,22 +256,6 @@ function LeadDialog({
                   className={inputClass("name")}
                 />
                 {hasError("name") && <p className="mt-1 text-xs text-red-400">{t("errors.name")}</p>}
-              </div>
-              <div>
-                <label htmlFor="lead-email" className="text-sm font-medium text-gray-300">
-                  {t("emailLabel")}
-                </label>
-                <input
-                  id="lead-email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  inputMode="email"
-                  placeholder={t("emailPlaceholder")}
-                  aria-invalid={hasError("email")}
-                  className={inputClass("email")}
-                />
-                {hasError("email") && <p className="mt-1 text-xs text-red-400">{t("errors.email")}</p>}
               </div>
               <div>
                 <label htmlFor="lead-phone" className="text-sm font-medium text-gray-300">
