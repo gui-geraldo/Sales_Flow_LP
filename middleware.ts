@@ -2,7 +2,7 @@ import createMiddleware from "next-intl/middleware";
 import { NextRequest } from "next/server";
 import { routing } from "./i18n/routing";
 import { CURRENCY_HEADER } from "./lib/pricing";
-import { isSpanishOnlyPath } from "./lib/site";
+import { isPortugueseOnlyPath, isSpanishOnlyPath } from "./lib/site";
 
 const VALID_CURRENCIES = new Set(["BRL", "EUR", "USD"]);
 const VALID_LOCALES = new Set<string>(routing.locales);
@@ -66,6 +66,13 @@ export default function middleware(request: NextRequest) {
     currency = override.currency ?? (fromGeo.currency === "EUR" ? "EUR" : "USD");
   }
 
+  // Páginas dos anúncios do Brasil: idioma travado em pt (pt-BR) e moeda
+  // em R$, salvo Portugal (EUR) ou ?currency= na URL.
+  if (isPortugueseOnlyPath(request.nextUrl.pathname)) {
+    locale = "pt";
+    currency = override.currency ?? (fromGeo.currency === "EUR" ? "EUR" : "BRL");
+  }
+
   // O next-intl decide o idioma pelo cookie NEXT_LOCALE da requisição; aqui
   // ele é sempre substituído pelo resolvido, e a moeda vai num header que o
   // visitante não controla (lib/request-currency.ts).
@@ -87,5 +94,7 @@ export default function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
+  // "api/" com barra: só as rotas de API (/api/lead) ficam de fora; sem a
+  // barra, /api-oficial-whatsapp também ficava sem idioma e dava 404.
+  matcher: ["/((?!api/|_next|_vercel|.*\\..*).*)"],
 };

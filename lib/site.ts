@@ -41,6 +41,18 @@ export const SPANISH_ONLY_PAGES = ["/crm-whatsapp", "/whatsapp-multiagente"] as 
 export const isSpanishOnlyPath = (pathname: string) =>
   (SPANISH_ONLY_PAGES as readonly string[]).includes(pathname.replace(/\/$/, ""));
 
+// Páginas dos anúncios do Google no Brasil (14/11/2026): uma por grupo de
+// anúncio, só em português do Brasil, pra qualquer país. Endereços próprios
+// em português; as páginas em espanhol acima não mudam.
+export const PORTUGUESE_ONLY_PAGES = [
+  "/api-oficial-whatsapp",
+  "/crm-para-whatsapp",
+  "/whatsapp-multiatendimento",
+] as const;
+
+export const isPortugueseOnlyPath = (pathname: string) =>
+  (PORTUGUESE_ONLY_PAGES as readonly string[]).includes(pathname.replace(/\/$/, ""));
+
 // Canonical: a versão de idioma pedida (sem a moeda) ou a URL sem parâmetro.
 export function canonicalFor(path: string, query: Record<string, string | string[] | undefined>) {
   const lang = typeof query.lang === "string" ? query.lang.toLowerCase() : null;

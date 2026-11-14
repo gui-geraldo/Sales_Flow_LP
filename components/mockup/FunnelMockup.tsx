@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { EASE_OUT, useFitScale, useTimeline } from "./useMockup";
 
@@ -93,9 +93,16 @@ export function FunnelMockup({ freezeAt }: { freezeAt?: number }) {
     el.scrollTo({ left: col === 0 ? 0 : (PAD + colX(col) - 8) * scale, behavior: reduceMotion ? "auto" : "smooth" });
   }, [count, cycle, scrolling, scale, reduceMotion, ref]);
 
+  // pt (páginas do Brasil, 14/11/2026) em reais; o resto continua em euro.
+  const brl = useLocale() === "pt";
   const money = (value: number) =>
     // useGrouping "always": o es-ES não separa milhar com 4 dígitos ("3600 €").
-    value.toLocaleString("es-ES", { style: "currency", currency: "EUR", maximumFractionDigits: 0, useGrouping: "always" });
+    value.toLocaleString(brl ? "pt-BR" : "es-ES", {
+      style: "currency",
+      currency: brl ? "BRL" : "EUR",
+      maximumFractionDigits: 0,
+      useGrouping: "always",
+    });
 
   const byStage = (stage: StageKey) => cards.filter((c) => c.stage === stage);
 

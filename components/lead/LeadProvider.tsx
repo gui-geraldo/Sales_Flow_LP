@@ -13,7 +13,7 @@ import {
 import { isPortugal, whatsappUrl } from "@/lib/contact";
 import { CONSENT_EVENT, hasConsent, type Consent } from "@/lib/consent";
 import { normalizePhone } from "@/lib/phone";
-import { trackLeadFormOpen, trackLeadSubmit } from "@/lib/track";
+import { startEngagementEvents, trackLeadFormOpen, trackLeadSubmit } from "@/lib/track";
 
 // Em todas as moedas, toda saída de contato (botões de demo, preço e o botão
 // flutuante de WhatsApp) abre este formulário curto antes do WhatsApp,
@@ -42,6 +42,13 @@ export function LeadProvider({
   children: React.ReactNode;
 }) {
   const [request, setRequest] = useState<{ intent: LeadIntent; source: string } | null>(null);
+
+  // Seção vista e tempo na página (Umami, sem dado pessoal): vale em todas
+  // as páginas com formulário, sem depender do aviso de cookies.
+  useEffect(() => {
+    if (!enabled) return;
+    return startEngagementEvents();
+  }, [enabled]);
 
   // A origem da visita só fica guardada no navegador com consentimento de
   // cookies; a rolagem é medida sempre, em memória.

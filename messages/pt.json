@@ -8,7 +8,7 @@
     "howItWorks": "Como funciona",
     "pricing": "Preços",
     "faq": "Dúvidas",
-    "ctaFree": "Teste hoje mesmo"
+    "ctaFree": "Ver demonstração"
   },
   "hero": {
     "badge": "CRM para WhatsApp com IA",
@@ -16,9 +16,9 @@
     "titleEmphasis": "numa conversa só",
     "titleEnd": "de WhatsApp",
     "subtitle": "Pare de perder cliente que clicou no seu anúncio e sumiu no WhatsApp. O Sales Flow junta atendimento, CRM e IA num único lugar, pensado pra negócios que vendem todo dia pelo WhatsApp.",
-    "ctaPrimary": "Teste hoje mesmo",
+    "ctaPrimary": "Ver demonstração de 15 min",
     "ctaSecondary": "Ver como funciona",
-    "noCreditCard": "Sem cartão de crédito para começar a testar.",
+    "noCreditCard": "Demonstração ao vivo com a nossa equipe, sem compromisso",
     "screenshotBrief": "Ideal: print real do painel de conversas, mostrando a etiqueta do anúncio de origem numa conversa e a classificação de temperatura da IA na lista ao lado.",
     "phone": {
       "contactName": "Comercial",
@@ -150,7 +150,7 @@
           "IA por caixa, com follow-up automático",
           "Automações de pagamento e cobrança"
         ],
-        "cta": "Teste hoje mesmo"
+        "cta": "Ver demonstração de 15 min"
       },
       {
         "name": "Escala",
@@ -194,8 +194,8 @@
   },
   "finalCta": {
     "title": "Pronto pra parar de perder cliente no WhatsApp?",
-    "subtitle": "Comece a testar agora.",
-    "cta": "Teste hoje mesmo"
+    "subtitle": "Em 15 minutos mostramos o Sales Flow funcionando no WhatsApp",
+    "cta": "Ver demonstração de 15 min"
   },
   "footer": {
     "description": "Marketing, atendimento e CRM num lugar só, do anúncio à venda, via WhatsApp.",
@@ -503,5 +503,685 @@
   },
   "demo": {
     "note": "Demonstração ilustrativa da plataforma, com nomes e números fictícios."
+  },
+  "apiPage": {
+    "meta": {
+      "title": "API oficial do WhatsApp: ativação, custos e CRM | Sales Flow",
+      "description": "A gente ativa a API oficial do WhatsApp para a sua empresa, com CRM, IA e atendimento da equipe num só lugar. Veja quanto custa: plano fixo e mensagens pagas direto à Meta."
+    },
+    "breadcrumb": "API oficial do WhatsApp",
+    "hero": {
+      "badge": "API oficial do WhatsApp",
+      "titleStart": "API oficial do WhatsApp:",
+      "titleEmphasis": "a gente ativa para você",
+      "titleEnd": "e entrega com CRM e IA",
+      "subtitle": "Sem precisar de programador. Nossa equipe conecta o seu número à API oficial da Meta e você já começa com atendimento da equipe, histórico de cada cliente, IA e disparos com modelos aprovados. As mensagens você paga direto à Meta, sem percentual nosso.",
+      "ctaPrimary": "Ver demonstração de 15 min",
+      "ctaSecondary": "Ver como funciona",
+      "note": "Implantação em até 48 h com a nossa equipe"
+    },
+    "definition": {
+      "question": "O que é a API oficial do WhatsApp?",
+      "answer": "É a forma oficial, mantida pela própria Meta, de uma empresa usar o WhatsApp através de um sistema, e não pelo aplicativo no celular. Com ela, várias pessoas atendem o mesmo número, você envia mensagens com modelos aprovados pela Meta e conecta o WhatsApp a um CRM. A cobrança é feita pela Meta, por mensagem entregue.",
+      "layers": [
+        {
+          "label": "App do WhatsApp Business",
+          "text": "Funciona no celular. Bom para começar, mas tudo fica num aparelho e depende de quem está com ele."
+        },
+        {
+          "label": "Conexão não oficial",
+          "text": "Liga o número a um sistema sem passar pela Meta. Começa rápido, mas sem a garantia de uma integração oficial."
+        },
+        {
+          "label": "API oficial com Sales Flow",
+          "text": "Integração oficial da Meta, com equipe, CRM, IA e disparos com modelos aprovados. No Sales Flow você também pode começar pela conexão não oficial e migrar depois.",
+          "current": true
+        }
+      ]
+    },
+    "costs": {
+      "eyebrow": "Quanto custa",
+      "title": "O que você paga a nós e o que você paga à Meta",
+      "subtitle": "Separado, sem letra miúda. A Meta cobra as mensagens direto no seu cartão e a gente não coloca nenhum percentual em cima",
+      "items": [
+        {
+          "label": "Plano Profissional do Sales Flow",
+          "value": "R$ 599 por mês",
+          "detail": "Atendimento, CRM, IA por caixa e rastreamento de anúncios, para até 10 pessoas da equipe. A ativação da API oficial é feita pela nossa equipe."
+        },
+        {
+          "label": "Mensagens de atendimento",
+          "value": "1.000 por mês sem custo",
+          "detail": "Respostas a quem escreveu para a sua empresa: as primeiras 1.000 do mês, por número, não são cobradas pela Meta. Acima disso, a Meta cobra por mensagem."
+        },
+        {
+          "label": "Cliente que veio de anúncio de clique para o WhatsApp",
+          "value": "Até 7 dias sem custo",
+          "detail": "Quando a pessoa chama a partir de um anúncio da Meta que abre o WhatsApp, as mensagens trocadas nessa janela não são cobradas pela Meta."
+        },
+        {
+          "label": "Disparos e avisos (marketing, utilidade e autenticação)",
+          "value": "Pago direto à Meta",
+          "detail": "Cada mensagem entregue tem o preço da tabela oficial, que muda conforme o tipo de mensagem e o país. Veja a <meta>tabela de preços da Meta</meta>."
+        },
+        {
+          "label": "Automações do Sales Flow",
+          "value": "R$ 0,10 cada",
+          "detail": "Cada automação executada (webhook acionado, disparo ou follow-up enviado) sai de uma carteira pré-paga na plataforma. Você recarrega quando quiser."
+        }
+      ],
+      "note": "Regras de cobrança da Meta conferidas na tabela oficial em novembro de 2026. A Meta pode mudar os preços; vale sempre a <meta>tabela oficial</meta>."
+    },
+    "problem": {
+      "title": "Quando o WhatsApp da empresa cresce, o celular não dá conta",
+      "subtitle": "Mais gente atendendo, mais conversas vindo de anúncio e mais mensagens para disparar. No aplicativo, isso vira fila, conversa perdida e ninguém sabe o que deu resultado.",
+      "withoutLabel": "Só o aplicativo",
+      "withoutItems": [
+        "Um celular para a equipe toda, ou várias pessoas no mesmo aparelho",
+        "Sem modelos aprovados, cada disparo é um risco para o número",
+        "Você não sabe de qual anúncio veio cada cliente"
+      ],
+      "withLabel": "API oficial com Sales Flow",
+      "withItems": [
+        "Cada pessoa com seu acesso, no mesmo número",
+        "Disparos com modelos aprovados pela Meta, respeitando quem pediu para sair",
+        "A conversa chega sabendo de qual anúncio da Meta o cliente veio"
+      ]
+    },
+    "compare": {
+      "title": "API oficial sozinha não é atendimento",
+      "subtitle": "A API é o cano por onde passam as mensagens. Para vender, a equipe precisa de onde trabalhar",
+      "withoutLabel": "Só a API",
+      "withLabel": "API oficial com Sales Flow",
+      "rows": [
+        {
+          "aspect": "Onde a equipe atende",
+          "without": "Precisa de um sistema ou de programação própria",
+          "with": "Caixa de entrada pronta, com cada pessoa no seu usuário"
+        },
+        {
+          "aspect": "Ativação",
+          "without": "Você mesmo configura na Meta",
+          "with": "Nossa equipe conecta o número e acompanha a aprovação"
+        },
+        {
+          "aspect": "Histórico do cliente",
+          "without": "Mensagens soltas",
+          "with": "Contato com histórico, campos próprios e notas internas"
+        },
+        {
+          "aspect": "Origem do cliente",
+          "without": "Não aparece",
+          "with": "A conversa chega com o anúncio da Meta de origem"
+        },
+        {
+          "aspect": "Resposta fora do horário",
+          "without": "Ninguém responde",
+          "with": "IA por caixa, que responde, classifica e chama a equipe"
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "O que faz",
+      "title": "Tudo o que você precisa em cima da API oficial",
+      "subtitle": "Sem programador e sem juntar várias ferramentas",
+      "items": [
+        {
+          "icon": "team",
+          "title": "Equipe toda no mesmo número",
+          "description": "Cada pessoa entra com seu usuário, cada conversa tem um responsável e cada perfil vê só o que precisa. Mais em <multibr>WhatsApp multiatendimento</multibr>."
+        },
+        {
+          "icon": "ads",
+          "title": "Disparos com modelos aprovados",
+          "description": "Modelos com texto, imagem ou vídeo, enviados pela API oficial e respeitando quem pediu para não receber mais mensagens."
+        },
+        {
+          "icon": "ai",
+          "title": "IA em cada caixa de atendimento",
+          "description": "Responde, classifica a temperatura do lead, transcreve áudio e capta o nome. Quando o cliente pede uma pessoa, resume a conversa e a equipe assume."
+        },
+        {
+          "icon": "history",
+          "title": "Histórico de cada cliente",
+          "description": "A conversa inteira fica no contato, visível para a equipe, mesmo quando muda quem atende."
+        },
+        {
+          "icon": "kanban",
+          "title": "CRM junto, não em outra aba",
+          "description": "Cada conversa vira uma oportunidade com etapa, responsável e próxima ação. Mais em <crmbr>CRM para WhatsApp</crmbr>."
+        },
+        {
+          "icon": "filter",
+          "title": "Sabe de qual anúncio veio",
+          "description": "As conversas que chegam de anúncios da Meta trazem o anúncio de origem, e o painel mostra investimento, contatos e vendas."
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "Como funciona a ativação",
+      "subtitle": "Três passos, com a nossa equipe do lado",
+      "steps": [
+        {
+          "title": "Escolhemos o número juntos",
+          "description": "Pode ser um número novo ou um que você já tem. Para entrar na API oficial, o número sai do aplicativo do WhatsApp. Muita empresa prefere começar com um número novo."
+        },
+        {
+          "title": "Conectamos à API oficial",
+          "description": "Nossa equipe liga o número à sua conta empresarial da Meta e ao Sales Flow. O nome que aparece para os clientes passa pela aprovação da Meta."
+        },
+        {
+          "title": "Sua equipe começa a atender",
+          "description": "Criamos as caixas de atendimento, configuramos a IA e você convida a equipe. A partir daí, cada conversa chega com histórico e origem."
+        }
+      ]
+    },
+    "toCrm": {
+      "eyebrow": "Depois da ativação",
+      "title": "A API resolve como a mensagem chega. O CRM resolve o que acontece depois",
+      "text": "Com o <crmbr>CRM para WhatsApp</crmbr> do Sales Flow, cada conversa tem etapa, responsável, próxima ação e resultado. Você vê o que os seus anúncios venderam, não só quantas mensagens chegaram.",
+      "points": [
+        "Funil de vendas por etapa",
+        "Tarefas, notas internas e mensagens agendadas",
+        "Painel com investimento, contatos e vendas"
+      ],
+      "link": "Ver CRM para WhatsApp"
+    },
+    "faq": {
+      "title": "Dúvidas sobre a API oficial do WhatsApp",
+      "items": [
+        {
+          "question": "Quanto custa a API oficial do WhatsApp?",
+          "answer": "São dois custos separados. O Sales Flow custa R$ 599 por mês no plano Profissional, com a ativação feita pela nossa equipe. As mensagens são cobradas pela Meta, direto no seu cartão, por mensagem entregue: as primeiras 1.000 mensagens de atendimento do mês, por número, não são cobradas, e o valor dos disparos depende do tipo de mensagem. A gente não coloca nenhum percentual em cima."
+        },
+        {
+          "question": "Como a Meta cobra as mensagens?",
+          "answer": "Por mensagem entregue, desde julho de 2025. Mensagens de marketing, utilidade e autenticação têm preço por mensagem. Respostas a quem escreveu para você têm 1.000 mensagens sem custo por mês, por número. Quando o cliente chega por um anúncio de clique para o WhatsApp, as mensagens ficam sem custo por até 7 dias. Os valores estão na <meta>tabela oficial da Meta</meta>."
+        },
+        {
+          "question": "Vocês ativam a API oficial para mim?",
+          "answer": "Sim. Nossa equipe conecta o número à API oficial e ao Sales Flow, cria as caixas de atendimento e configura a IA com você. Você não precisa de programador."
+        },
+        {
+          "question": "Posso usar o número que já tenho?",
+          "answer": "Pode. Para entrar na API oficial, o número deixa de funcionar no aplicativo do WhatsApp e passa a ser usado pelo sistema. Por isso muita empresa prefere começar com um número novo e manter o antigo enquanto faz a troca."
+        },
+        {
+          "question": "Quanto tempo leva para ativar?",
+          "answer": "A implantação com a nossa equipe leva até 48 horas. O nome que aparece para os clientes passa pela aprovação da Meta, que tem o prazo dela."
+        },
+        {
+          "question": "Preciso da API oficial para começar a usar o Sales Flow?",
+          "answer": "Não. Você também pode começar pela conexão não oficial, com o número que já usa, e migrar para a API oficial quando fizer sentido."
+        },
+        {
+          "question": "Dá para disparar mensagens em massa pela API oficial?",
+          "answer": "Dá, com modelos aprovados pela Meta (texto, imagem ou vídeo). O Sales Flow respeita quem pediu para não receber mais mensagens. Cada disparo entregue é cobrado pela Meta conforme a tabela oficial."
+        },
+        {
+          "question": "Meus dados ficam seguros?",
+          "answer": "Sim. Mensagens e dados pessoais ficam cifrados, os dados de cada conta são isolados dos demais clientes e tudo fica hospedado na União Europeia."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Quer ver a API oficial funcionando com a sua equipe?",
+      "subtitle": "Em 15 minutos mostramos a ativação, o atendimento e quanto você pagaria por mês",
+      "cta": "Ver demonstração de 15 min"
+    }
+  },
+  "crmPageBr": {
+    "meta": {
+      "title": "CRM para WhatsApp: organize leads e vendas | Sales Flow",
+      "description": "Sales Flow é um CRM para WhatsApp: histórico completo, origem de cada lead, responsável, funil de vendas e IA em cada conversa. Peça uma demonstração."
+    },
+    "breadcrumb": "CRM para WhatsApp",
+    "hero": {
+      "badge": "CRM para WhatsApp",
+      "titleStart": "CRM para WhatsApp:",
+      "titleEmphasis": "transforme conversas em vendas",
+      "titleEnd": "que a sua equipe consegue acompanhar",
+      "subtitle": "O Sales Flow junta o WhatsApp da sua empresa com um CRM. Cada conversa fica com histórico, origem, quem está atendendo e em que etapa da venda está. Para equipes que vendem e atendem pelo WhatsApp todo dia.",
+      "ctaPrimary": "Ver demonstração de 15 min",
+      "ctaSecondary": "Ver como funciona",
+      "note": "Implantação em até 48 h com a nossa equipe"
+    },
+    "definition": {
+      "question": "O que é um CRM para WhatsApp?",
+      "answer": "É um sistema que transforma cada conversa do WhatsApp num contato com histórico, origem, responsável e etapa de venda. Assim a equipe não só responde mensagens: sabe quais oportunidades estão abertas, em que ponto está cada uma e qual é o próximo passo.",
+      "layers": [
+        {
+          "label": "WhatsApp",
+          "text": "Envia e recebe mensagens. Cada conversa fica num celular e o contexto depende de quem está com ela."
+        },
+        {
+          "label": "<multibr>WhatsApp multiatendimento</multibr>",
+          "text": "Várias pessoas atendem o mesmo número, com histórico compartilhado e um responsável por conversa."
+        },
+        {
+          "label": "CRM para WhatsApp",
+          "text": "Cada conversa vira uma oportunidade: origem, etapa do funil, tarefas de follow-up e resultado.",
+          "current": true
+        }
+      ]
+    },
+    "problem": {
+      "title": "WhatsApp não é CRM, e nem precisa ser",
+      "subtitle": "O WhatsApp é ótimo para conversar. Mas conversar não é o mesmo que acompanhar oportunidades: quando o volume cresce, ninguém sabe qual lead segue aberto, quem está com ele e o que falta para fechar.",
+      "withoutLabel": "Só WhatsApp",
+      "withoutItems": [
+        "Os leads se perdem entre conversas pessoais e grupos",
+        "Cada pessoa atende do seu jeito e o histórico fica no celular dela",
+        "Você não sabe quais conversas viraram venda nem de onde vieram"
+      ],
+      "withLabel": "WhatsApp + CRM",
+      "withItems": [
+        "Cada conversa é um contato com histórico completo, visível para a equipe",
+        "Cada oportunidade tem responsável, etapa e próxima ação",
+        "Você vê quais anúncios da Meta trazem contatos e vendas"
+      ]
+    },
+    "flow": {
+      "title": "O que muda quando WhatsApp e CRM trabalham juntos",
+      "subtitle": "A mensagem deixa de ser uma conversa solta e passa a ter um caminho até o resultado",
+      "steps": [
+        { "label": "Mensagem", "text": "Chega pelo WhatsApp na caixa da equipe" },
+        { "label": "Contato", "text": "Fica salvo com nome, histórico e seus próprios campos" },
+        { "label": "Origem", "text": "Se veio de um anúncio da Meta, você sabe de qual" },
+        { "label": "Responsável", "text": "Uma pessoa da equipe assume" },
+        { "label": "Etapa", "text": "A oportunidade avança pelo funil" },
+        { "label": "Próxima ação", "text": "Tarefas, notas internas e mensagens agendadas" },
+        { "label": "Resultado", "text": "A venda ganha entra no painel, sem duplicar" }
+      ]
+    },
+    "features": {
+      "eyebrow": "O que faz",
+      "title": "Tudo o que um CRM para WhatsApp precisa, num lugar só",
+      "subtitle": "Sem programador e sem pular de uma ferramenta para outra",
+      "items": [
+        {
+          "icon": "history",
+          "title": "Histórico completo, mesmo quando muda quem atende",
+          "description": "A conversa inteira fica salva e visível para a equipe. Se alguém sai do turno, o próximo continua de onde parou."
+        },
+        {
+          "icon": "kanban",
+          "title": "Funil de vendas por etapa",
+          "description": "Cada oportunidade está numa etapa e a equipe muda com um clique. Você vê quantas há em cada uma e quanto valem."
+        },
+        {
+          "icon": "tasks",
+          "title": "Follow-up que não depende da memória",
+          "description": "Tarefas de follow-up para a equipe, notas internas na conversa e mensagens agendadas para o dia e a hora que você escolher."
+        },
+        {
+          "icon": "ads",
+          "title": "Sabe de qual anúncio veio cada lead",
+          "description": "As conversas que chegam de anúncios da Meta trazem o anúncio de origem. O painel de resultados mostra investimento, contatos, vendas e retorno."
+        },
+        {
+          "icon": "ai",
+          "title": "IA dentro do CRM, não um robô à parte",
+          "description": "Cada caixa tem sua IA configurável: responde, classifica a temperatura do lead, transcreve áudio e capta o nome. Quando o cliente pede uma pessoa, resume a conversa e a equipe assume na hora."
+        },
+        {
+          "icon": "team",
+          "title": "Equipe toda no mesmo número",
+          "description": "Cada pessoa entra com seu usuário, cada conversa tem um responsável e cada perfil vê só o que precisa. Mais em <multibr>WhatsApp multiatendimento</multibr>."
+        }
+      ]
+    },
+    "toApi": {
+      "eyebrow": "API oficial",
+      "title": "Quer usar a API oficial do WhatsApp?",
+      "text": "O Sales Flow funciona com a conexão não oficial e com a <api>API oficial do WhatsApp</api>. A gente faz a ativação e explica quanto você paga a nós e quanto paga à Meta.",
+      "points": [
+        "Ativação feita pela nossa equipe",
+        "Mensagens pagas direto à Meta, sem percentual nosso",
+        "Disparos com modelos aprovados"
+      ],
+      "link": "Ver API oficial"
+    },
+    "howItWorks": {
+      "title": "Como funciona",
+      "subtitle": "Três passos, sem complicação",
+      "steps": [
+        {
+          "title": "Conectamos seu WhatsApp e seus anúncios",
+          "description": "Nossa equipe faz a implantação com você em até 48 h: conecta o WhatsApp, cria as caixas de atendimento e liga suas contas de anúncio da Meta."
+        },
+        {
+          "title": "Ajustamos o funil ao seu jeito de vender",
+          "description": "Definimos com você as etapas da venda, você convida a equipe e decide o que cada perfil vê."
+        },
+        {
+          "title": "Cada conversa avança até o resultado",
+          "description": "A IA ajuda a responder e classificar, a equipe move cada oportunidade pelo funil e o painel mostra o que você vendeu."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Dúvidas sobre CRM para WhatsApp",
+      "items": [
+        {
+          "question": "O que é um CRM para WhatsApp?",
+          "answer": "É um sistema que guarda cada conversa do WhatsApp como um contato com histórico, origem, responsável e etapa de venda. Serve para a equipe acompanhar oportunidades, não só mensagens."
+        },
+        {
+          "question": "O WhatsApp Business é um CRM?",
+          "answer": "Não. O WhatsApp Business tem etiquetas, respostas rápidas e catálogo, mas não tem funil de vendas, responsável por conversa, histórico compartilhado pela equipe nem relatório de resultados. Um CRM para WhatsApp acrescenta essa camada de gestão."
+        },
+        {
+          "question": "Várias pessoas podem atender o mesmo WhatsApp?",
+          "answer": "Sim. Cada pessoa entra com seu próprio usuário, cada conversa pode ter um responsável e todos veem o mesmo histórico. Explicamos em detalhe em <multibr>WhatsApp multiatendimento</multibr>."
+        },
+        {
+          "question": "O CRM guarda o histórico?",
+          "answer": "Sim. A conversa inteira fica salva no contato, junto com as notas internas da equipe, mesmo quando muda a pessoa que atende."
+        },
+        {
+          "question": "Posso usar meu número atual de WhatsApp?",
+          "answer": "Sim. Você mantém o número que já usa, sem precisar trocar. Se quiser usar a <api>API oficial do WhatsApp</api>, a gente explica como fica o número."
+        },
+        {
+          "question": "Dá para automatizar o follow-up?",
+          "answer": "Você pode agendar mensagens para o dia e a hora que escolher, usar modelos com texto, imagem ou vídeo e criar tarefas de follow-up para a equipe. Além disso, a IA de cada caixa responde e classifica os contatos que chegam."
+        },
+        {
+          "question": "Como sei de qual anúncio veio um lead?",
+          "answer": "Quando alguém chama a partir de um anúncio da Meta que abre o WhatsApp, a conversa chega com o anúncio de origem. No painel de resultados você vê investimento, contatos, vendas e retorno do período."
+        },
+        {
+          "question": "O Sales Flow substitui o meu sistema de gestão?",
+          "answer": "Não. O Sales Flow cuida das conversas, dos leads e do funil de vendas do WhatsApp. O seu sistema de gestão ou de faturamento continua fazendo o trabalho dele."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Quer ver o seu WhatsApp funcionando como um CRM?",
+      "subtitle": "Em 15 minutos mostramos como o Sales Flow organiza suas conversas, seus leads e o follow-up",
+      "cta": "Ver demonstração de 15 min"
+    }
+  },
+  "multiPageBr": {
+    "meta": {
+      "title": "WhatsApp multiatendimento: vários atendentes, 1 número | Sales Flow",
+      "description": "Vários atendentes no mesmo WhatsApp: cada conversa com responsável, histórico compartilhado, notas internas e acesso controlado por perfil. Peça uma demonstração."
+    },
+    "breadcrumb": "WhatsApp multiatendimento",
+    "hero": {
+      "badge": "WhatsApp multiatendimento",
+      "titleStart": "WhatsApp multiatendimento:",
+      "titleEmphasis": "sua equipe toda atende",
+      "titleEnd": "sem perder contexto, histórico nem controle",
+      "subtitle": "Vários atendentes no mesmo número de WhatsApp, cada um com seu acesso. Cada conversa tem um responsável, o histórico é da equipe toda e quem pega uma conversa sabe exatamente onde ela parou.",
+      "ctaPrimary": "Ver demonstração de 15 min",
+      "ctaSecondary": "Ver como funciona",
+      "note": "Implantação em até 48 h com a nossa equipe"
+    },
+    "definition": {
+      "question": "O que é WhatsApp multiatendimento?",
+      "answer": "É quando várias pessoas da equipe atendem as conversas de um mesmo número a partir de uma caixa de entrada compartilhada, cada uma com seu usuário. No Sales Flow, além disso, cada conversa tem um responsável, o histórico e as notas internas ficam à vista da equipe e cada perfil acessa só o que precisa.",
+      "layers": [
+        {
+          "label": "WhatsApp",
+          "text": "Um número aberto em um ou vários aparelhos. Todo mundo vê tudo e ninguém sabe quem respondeu."
+        },
+        {
+          "label": "WhatsApp multiatendimento",
+          "text": "Cada pessoa com seu usuário, um responsável por conversa, histórico compartilhado e permissões por perfil.",
+          "current": true
+        },
+        {
+          "label": "<crmbr>CRM para WhatsApp</crmbr>",
+          "text": "Além de quem atende, o que acontece com cada lead: origem, funil, follow-up e resultado."
+        }
+      ]
+    },
+    "problem": {
+      "title": "Um número, várias pessoas e ninguém sabe quem respondeu",
+      "subtitle": "É o que acontece quando o WhatsApp da empresa cresce: turnos diferentes, mensagens repetidas e conversas sem dono. E o cliente percebe na hora.",
+      "withoutLabel": "WhatsApp compartilhado",
+      "withoutItems": [
+        "Duas pessoas respondem o mesmo cliente, ou ninguém responde",
+        "Na troca de turno, o contexto da conversa se perde",
+        "A equipe toda vê todas as conversas e todos os dados"
+      ],
+      "withLabel": "Com Sales Flow",
+      "withItems": [
+        "Cada conversa tem um responsável e cada pessoa filtra as suas",
+        "Notas internas e histórico completo para quem pega a conversa",
+        "Cada perfil acessa só o que precisa"
+      ]
+    },
+    "compare": {
+      "title": "Vários usuários não é o mesmo que multiatendimento de verdade",
+      "subtitle": "Abrir o mesmo WhatsApp em vários computadores dá acesso, mas não organiza nada",
+      "withoutLabel": "Compartilhar o acesso",
+      "withLabel": "Multiatendimento com Sales Flow",
+      "rows": [
+        {
+          "aspect": "Responsável",
+          "without": "Ninguém sabe quem está com cada conversa",
+          "with": "Cada conversa tem um responsável e cada pessoa vê as suas com o filtro \"Minhas\""
+        },
+        {
+          "aspect": "Histórico",
+          "without": "Depende do aparelho e do que cada um lembra",
+          "with": "Histórico completo e notas internas, visíveis para a equipe toda"
+        },
+        {
+          "aspect": "Organização",
+          "without": "Todas as conversas misturadas numa lista só",
+          "with": "Caixas de entrada separadas, por exemplo Comercial e Suporte"
+        },
+        {
+          "aspect": "Follow-up",
+          "without": "Se ninguém lembra, o lead esfria",
+          "with": "Tarefas, mensagens agendadas e funil de vendas"
+        },
+        {
+          "aspect": "Controle de acesso",
+          "without": "Quem está com o celular vê tudo",
+          "with": "Perfis Administrador, Gerente e Agente, com caixas definidas para cada pessoa"
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "O que faz",
+      "title": "Tudo o que uma equipe precisa para atender o mesmo WhatsApp",
+      "subtitle": "Para atendimento, vendas e suporte trabalhando ao mesmo tempo",
+      "items": [
+        {
+          "icon": "owner",
+          "title": "Sempre fica claro quem atende",
+          "description": "Cada conversa tem um responsável. Cada pessoa filtra as suas com \"Minhas\" e dá para assumir várias conversas de uma vez."
+        },
+        {
+          "icon": "note",
+          "title": "Notas internas que o cliente não vê",
+          "description": "Deixe o contexto para o colega dentro da conversa: o que o cliente pediu, o que falta e quando voltar a falar com ele."
+        },
+        {
+          "icon": "history",
+          "title": "Troca de turno sem perder o fio",
+          "description": "O histórico completo fica na conversa, não no celular de ninguém. Quem entra no turno continua de onde o anterior parou."
+        },
+        {
+          "icon": "inbox",
+          "title": "Caixas separadas por equipe",
+          "description": "Comercial e Suporte não se misturam, mesmo sendo o mesmo contato. Cada Agente vê só as caixas que tem atribuídas."
+        },
+        {
+          "icon": "ai",
+          "title": "IA por caixa, com a equipe no comando",
+          "description": "A IA de cada caixa responde, classifica e transcreve áudio. Quando o cliente pede uma pessoa, resume a conversa e a equipe assume na hora."
+        },
+        {
+          "icon": "filter",
+          "title": "Ninguém fica sem resposta",
+          "description": "Filtre por responsável, por lidas e não lidas ou pelo estado da IA para ver de relance quais conversas esperam resposta."
+        }
+      ]
+    },
+    "permissions": {
+      "eyebrow": "Permissões",
+      "title": "Nem todo mundo precisa ver tudo",
+      "subtitle": "O Administrador decide o que cada perfil pode fazer. Por padrão, o Agente atende conversas e trabalha o funil, mas não edita a IA, não faz disparos em massa nem vê o faturamento.",
+      "bullets": [
+        "Três perfis: Administrador, Gerente e Agente",
+        "Cada permissão liga ou desliga com um clique",
+        "Cada Agente vê só as caixas de entrada que você atribui",
+        "Equipe e permissões sempre nas mãos do Administrador"
+      ]
+    },
+    "toCrm": {
+      "eyebrow": "Do multiatendimento ao CRM",
+      "title": "O multiatendimento resolve quem atende. O CRM, o que acontece com o lead depois",
+      "text": "Quando a pergunta deixa de ser \"quem responde\" e passa a ser \"como acompanhamos essa oportunidade\", entra o <crmbr>CRM para WhatsApp</crmbr>: origem de cada lead, funil de vendas, follow-up e resultado, na mesma ferramenta.",
+      "points": [
+        "Você sabe de qual anúncio da Meta veio cada conversa",
+        "Cada oportunidade avança pelas etapas do funil",
+        "O painel mostra investimento, contatos, vendas e retorno"
+      ],
+      "link": "Ver CRM para WhatsApp"
+    },
+    "howItWorks": {
+      "title": "Como funciona",
+      "subtitle": "Três passos, sem complicação",
+      "steps": [
+        {
+          "title": "Conectamos seu WhatsApp",
+          "description": "Nossa equipe faz a implantação com você em até 48 h e cria as caixas de entrada que você precisa, por exemplo Comercial e Suporte."
+        },
+        {
+          "title": "Você convida a equipe",
+          "description": "Cada pessoa entra com seu usuário e seu perfil, Gerente ou Agente. Você decide quais caixas cada uma vê."
+        },
+        {
+          "title": "Cada conversa com seu responsável",
+          "description": "A equipe distribui as conversas, deixa notas internas e retoma qualquer conversa com todo o histórico à vista."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Dúvidas sobre WhatsApp multiatendimento",
+      "items": [
+        {
+          "question": "O que é WhatsApp multiatendimento?",
+          "answer": "É uma forma de várias pessoas atenderem o mesmo número de WhatsApp, cada uma com seu usuário, a partir de uma caixa de entrada compartilhada. O importante não é só o acesso: é saber quem está com cada conversa e não perder o histórico."
+        },
+        {
+          "question": "Como usar o WhatsApp Business com vários atendentes?",
+          "answer": "O aplicativo do WhatsApp Business deixa abrir a conta em alguns aparelhos conectados, mas todo mundo vê tudo e nada indica quem respondeu. Com o Sales Flow, cada pessoa entra com seu usuário, cada conversa tem responsável e o histórico fica à vista da equipe toda."
+        },
+        {
+          "question": "Várias pessoas podem responder do mesmo número?",
+          "answer": "Sim. A equipe toda responde do mesmo número de WhatsApp da empresa, e em cada mensagem enviada fica o nome de quem escreveu."
+        },
+        {
+          "question": "Preciso trocar meu número de WhatsApp?",
+          "answer": "Não. Você mantém o número que já usa."
+        },
+        {
+          "question": "Como evitar que duas pessoas respondam o mesmo cliente?",
+          "answer": "Cada conversa tem um responsável e cada pessoa filtra as suas com \"Minhas\". Assim a equipe sabe de relance quem está com cada cliente."
+        },
+        {
+          "question": "O histórico continua quando muda o atendente?",
+          "answer": "Sim. O histórico completo e as notas internas ficam na conversa. Se você troca o responsável, a nova pessoa vê tudo o que aconteceu antes."
+        },
+        {
+          "question": "Posso controlar o que cada usuário vê?",
+          "answer": "Sim. Há três perfis (Administrador, Gerente e Agente) e o Administrador decide quais funções cada um tem. Além disso, para cada Agente você define as caixas de entrada que ele pode ver."
+        },
+        {
+          "question": "Quantas pessoas podem usar?",
+          "answer": "O plano Profissional inclui até 10 pessoas da equipe. Para equipes maiores existe o plano Escala, com limites sob medida."
+        },
+        {
+          "question": "Qual a diferença entre multiatendimento e CRM?",
+          "answer": "O multiatendimento resolve quem atende e como o trabalho é dividido. Um <crmbr>CRM para WhatsApp</crmbr> acrescenta o que acontece depois: origem do lead, funil, follow-up e resultado. No Sales Flow você tem as duas coisas."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Quer ver sua equipe atendendo o mesmo WhatsApp sem bagunça?",
+      "subtitle": "Em 15 minutos mostramos como a sua equipe atende pelo WhatsApp sem perder conversa nem contexto",
+      "cta": "Ver demonstração de 15 min"
+    }
+  },
+  "funnelMockup": {
+    "title": "Funil",
+    "subtitle": "Em que ponto está cada negócio",
+    "stages": {
+      "new": "Novo lead",
+      "talking": "Em conversa",
+      "proposal": "Proposta",
+      "won": "Ganho"
+    },
+    "cards": {
+      "c1": { "name": "Ana Souza", "title": "Pediu informação" },
+      "c2": { "name": "Pedro Lima", "title": "Veio de um anúncio" },
+      "c3": { "name": "Luciana Rocha", "title": "Plano anual" },
+      "c4": { "name": "Diego Martins", "title": "Pacote 10 sessões" },
+      "c5": { "name": "Sara Nunes", "title": "Orçamento" },
+      "c6": { "name": "João Ortiz", "title": "Renovação" }
+    },
+    "balloonTitle": "Venda ganha:",
+    "balloonBody": "{value}, contada uma vez só"
+  },
+  "teamMockup": {
+    "contact": "Luciana Rocha",
+    "inbox": "WhatsApp · Comercial",
+    "assignedTo": "Responsável:",
+    "nobody": "Ninguém",
+    "agents": {
+      "marta": "Marta",
+      "carlos": "Carlos"
+    },
+    "today": "Hoje",
+    "noteLabel": "Nota interna",
+    "modes": {
+      "reply": "Responder",
+      "note": "Nota interna",
+      "schedule": "Agendar"
+    },
+    "composer": "Digite uma mensagem...",
+    "notePlaceholder": "Escreva uma nota interna, só você e sua equipe vão ver",
+    "messages": {
+      "m1": "Oi, vi o anúncio de vocês. Como funciona o plano anual?",
+      "m2": "Oi, Luciana! Aqui é a Marta. O plano anual sai mais barato que pagar mês a mês. Te ligo ou seguimos por aqui?",
+      "m3": "Melhor por aqui. À tarde te falo",
+      "n1": "Ela quer o plano anual e responde à tarde. Passo para o Carlos, que está no turno da tarde",
+      "m4": "Oi, já pensei: vou ficar com o plano anual",
+      "m5": "Ótimo, Luciana! Aqui é o Carlos, colega da Marta. Já te mando o link para fechar"
+    },
+    "balloons": {
+      "assigned": { "title": "Responsável:", "body": "Marta" },
+      "handover": { "title": "Troca de turno:", "body": "Carlos continua com todo o histórico" }
+    }
+  },
+  "permissionsMockup": {
+    "title": "Perfis e permissões",
+    "subtitle": "Defina o que cada perfil pode acessar. O Administrador sempre tem acesso a tudo.",
+    "feature": "Funcionalidade",
+    "roles": {
+      "admin": "Administrador",
+      "manager": "Gerente",
+      "agent": "Agente"
+    },
+    "features": {
+      "crm": "Funil, tarefas e follow-ups",
+      "ai_edit": "Editar a IA",
+      "broadcasts": "Disparos em massa",
+      "automations": "Automações",
+      "sales_ads": "Vendas e Anúncios",
+      "billing": "Plano, saldo e consumo",
+      "integrations": "Conectar canais e integrações",
+      "team": "Equipe e permissões"
+    },
+    "changed": "alterado",
+    "alwaysOn": "Sempre disponíveis para todos os perfis: Início, Conversas, Contatos, Campos e etiquetas e Meu perfil."
   }
 }

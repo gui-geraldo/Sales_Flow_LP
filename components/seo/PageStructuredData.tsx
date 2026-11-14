@@ -7,7 +7,15 @@ type FaqItem = { question: string; answer: string };
 // JSON-LD das páginas de busca: WebPage (sobre o Sales Flow, o mesmo
 // #salesflow da home), BreadcrumbList (Inicio › página) e o FAQPage com as
 // perguntas que aparecem na própria página. Só o que está visível nela.
-export async function PageStructuredData({ path, namespace }: { path: string; namespace: string }) {
+export async function PageStructuredData({
+  path,
+  namespace,
+  inLanguage = "es",
+}: {
+  path: string;
+  namespace: string;
+  inLanguage?: string;
+}) {
   const t = await getTranslations(namespace);
   const url = `${SITE_URL}${path}`;
   const faq = t.raw("faq.items") as FaqItem[];
@@ -19,7 +27,7 @@ export async function PageStructuredData({ path, namespace }: { path: string; na
       url,
       name: t("meta.title"),
       description: t("meta.description"),
-      inLanguage: "es",
+      inLanguage,
       isPartOf: { "@id": `${SITE_URL}/#website` },
       about: { "@id": `${SITE_URL}/#salesflow` },
       breadcrumb: { "@id": `${url}#breadcrumb` },
@@ -36,7 +44,7 @@ export async function PageStructuredData({ path, namespace }: { path: string; na
       "@type": "FAQPage",
       "@id": `${url}#faq`,
       url,
-      inLanguage: "es",
+      inLanguage,
       mainEntity: faq.map((item) => ({
         "@type": "Question",
         name: item.question,
