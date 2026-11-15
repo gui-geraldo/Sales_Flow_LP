@@ -188,6 +188,8 @@ export async function POST(req: NextRequest) {
     leadId,
     // Menos de 2 s entre abrir e enviar o formulário: provável robô (vai marcado, não barrado).
     suspeitaRobo: fillMs > 0 && fillMs < 2000,
+    // Modo teste (?teste=1 no aparelho): o n8n filtra; não é lead real.
+    is_test: body.isTest === true,
   };
 
   // Dois destinos, disparados JUNTOS e independentes: o n8n (de sempre) e a
@@ -196,7 +198,8 @@ export async function POST(req: NextRequest) {
   const [n8n] = await Promise.all([
     sendToN8n(payload),
     sendToSalesFlow({
-      name,
+      // No teste o contato entra na plataforma (para conferir a integração), marcado no nome.
+      name: body.isTest === true ? `[TESTE] ${name}` : name,
       // Só dígitos com o código do país (ex.: 5511999998888), como pede a plataforma.
       phone: (phone ?? "").replace(/\D/g, ""),
       // A plataforma só exige nome e telefone: e-mail só vai se houver.

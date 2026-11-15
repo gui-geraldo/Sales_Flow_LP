@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Script from "next/script";
 import { CONSENT_DEFAULT_SNIPPET, CONSENT_EVENT, hasConsent } from "@/lib/consent";
+import { isTestMode, syncTestMode } from "@/lib/testMode";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
@@ -16,6 +17,15 @@ const UMAMI_WEBSITE_ID = "0772d7f3-4be0-4ebb-817f-677ee73898eb";
 // O Umami (sem cookies) carrega sempre.
 export function Analytics() {
   const [metaAllowed, setMetaAllowed] = useState(false);
+  // O Umami lê "umami.disabled" ao carregar: grava o modo teste antes.
+  const [umamiReady, setUmamiReady] = useState(false);
+  const [testMode, setTestMode] = useState(false);
+
+  useEffect(() => {
+    syncTestMode();
+    setTestMode(isTestMode());
+    setUmamiReady(true);
+  }, []);
 
   useEffect(() => {
     setMetaAllowed(hasConsent());
@@ -51,7 +61,7 @@ export function Analytics() {
       {/* Umami Cloud: sem cookies e sem dado pessoal, então mede desde a
           primeira visita (não depende do banner). data-domains: só conta no
           domínio de produção; localhost e prévias da Vercel ficam de fora. */}
-      {UMAMI_WEBSITE_ID && (
+      {UMAMI_WEBSITE_ID && umamiReady && (
         <Script
           src="https://cloud.umami.is/script.js"
           data-website-id={UMAMI_WEBSITE_ID}
@@ -75,6 +85,12 @@ export function Analytics() {
             fbq('track', 'PageView');
           `}
         </Script>
+      )}
+
+      {testMode && (
+        <div className="fixed left-0 top-0 z-[60] w-full bg-yellow-400 py-1 text-center text-xs font-bold text-black">
+          MODO TESTE: este aparelho não conta no Umami nem como lead real (?teste=0 desliga)
+        </div>
       )}
     </>
   );

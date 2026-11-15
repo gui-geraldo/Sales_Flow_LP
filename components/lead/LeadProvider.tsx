@@ -13,7 +13,8 @@ import {
 import { isPortugal, whatsappUrl } from "@/lib/contact";
 import { CONSENT_EVENT, hasConsent, type Consent } from "@/lib/consent";
 import { normalizePhone } from "@/lib/phone";
-import { startEngagementEvents, trackLeadFormOpen, trackLeadSubmit } from "@/lib/track";
+import { startEngagementEvents, trackFormEvent, trackLeadFormOpen, trackLeadSubmit } from "@/lib/track";
+import { isTestMode } from "@/lib/testMode";
 
 // Em todas as moedas, toda saída de contato (botões de demo, preço e o botão
 // flutuante de WhatsApp) abre este formulário curto antes do WhatsApp,
@@ -65,7 +66,7 @@ export function LeadProvider({
   }, [enabled]);
 
   const open = useCallback((intent: LeadIntent, source: string) => {
-    trackLeadFormOpen(source);
+    if (!isTestMode()) trackLeadFormOpen(source);
     setRequest({ intent, source });
   }, []);
 
@@ -124,6 +125,7 @@ function LeadDialog({
   const idempotencyKey = useRef("");
   const [errors, setErrors] = useState<FieldError[]>([]);
   const [done, setDone] = useState<{ name: string; url: string } | null>(null);
+  const started = useRef(false);
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -134,6 +136,7 @@ function LeadDialog({
         crypto.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(36).slice(2)}`;
       setErrors([]);
       setDone(null);
+      started.current = false;
       dialog.showModal();
     } else if (!request && dialog.open) {
       dialog.close();
@@ -149,6 +152,7 @@ function LeadDialog({
     const found = validate(form);
     setErrors(found);
     if (found.length) {
+      trackFormEvent("form_erro", { campos: found.join(","), source: request.source });
       const first = event.currentTarget.querySelector<HTMLElement>(`[name="${found[0]}"]`);
       first?.focus();
       return;
@@ -168,6 +172,7 @@ function LeadDialog({
       currency,
       fillMs: Date.now() - openedAt.current,
       context: collectLeadContext(),
+      isTest: isTestMode(),
     };
 
     // keepalive: o envio termina mesmo que a pessoa já esteja no WhatsApp.
@@ -177,11 +182,13 @@ function LeadDialog({
       body: JSON.stringify(body),
       keepalive: true,
     }).catch(() => {});
-    trackLeadSubmit(
-      request.source,
-      request.intent,
-      hasConsent() ? { phone: normalizePhone(body.phone, locale, currency) } : undefined,
-    );
+    if (!body.isTest) {
+      trackLeadSubmit(
+        request.source,
+        request.intent,
+        hasConsent() ? { phone: normalizePhone(body.phone, locale, currency) } : undefined,
+      );
+    }
 
     // Abre o WhatsApp ainda dentro do clique (senão o navegador bloqueia o
     // popup) e deixa na tela um botão pra quem teve o popup barrado.
@@ -201,9 +208,14 @@ function LeadDialog({
   return (
     <dialog
       ref={dialogRef}
-      onClose={onClose}
+      onClose={() => {
+        if (!done && request) {
+          trackFormEvent("form_fechar", { source: request.source, comecou: started.current ? "sim" : "nao" });
+        }
+        onClose();
+      }}
       onClick={(e) => {
-        if (e.target === dialogRef.current) onClose();
+        if (e.target === dialogRef.current) dialogRef.current?.close();
       }}
       aria-labelledby="lead-title"
       // Com o teclado aberto no celular sobra pouca altura: o formulário
@@ -217,7 +229,7 @@ function LeadDialog({
           </h2>
           <button
             type="button"
-            onClick={onClose}
+            onClick={() => dialogRef.current?.close()}
             aria-label={t("close")}
             className="-mr-2 -mt-1 rounded p-2 text-gray-500 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400"
           >
@@ -242,7 +254,16 @@ function LeadDialog({
         ) : (
           <>
             <p className="mt-2 text-[15px] leading-relaxed text-gray-400">{t("subtitle")}</p>
-            <form onSubmit={handleSubmit} noValidate className="mt-5 space-y-4">
+            <form
+              onSubmit={handleSubmit}
+              onFocus={() => {
+                if (started.current || !request) return;
+                started.current = true;
+                trackFormEvent("form_inicio", { source: request.source });
+              }}
+              noValidate
+              className="mt-5 space-y-4"
+            >
               <div>
                 <label htmlFor="lead-name" className="text-sm font-medium text-gray-300">
                   {t("nameLabel")}

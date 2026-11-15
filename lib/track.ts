@@ -157,3 +157,11 @@ export function trackLeadSubmit(
   // Sem e-mail nem telefone: o Umami não recebe dado pessoal.
   umamiEvent("lead", { source, intent });
 }
+
+// Etapas do formulário (15/11/2026): form_inicio (1º campo tocado),
+// form_erro (envio com campo inválido; dado = nomes dos campos),
+// form_fechar (fechou sem enviar). Sem dado pessoal.
+export function trackFormEvent(event: "form_inicio" | "form_erro" | "form_fechar", data: Record<string, string>) {
+  if (typeof window === "undefined") return;
+  umamiEvent(event, data);
+}
