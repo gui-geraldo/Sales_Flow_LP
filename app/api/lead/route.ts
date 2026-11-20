@@ -135,6 +135,9 @@ export async function POST(req: NextRequest) {
 
   const locale = str(body.locale, 5) || "es";
   const currency = str(body.currency, 3) || "EUR";
+
+  if (body.tipo === "clique_whatsapp") return handleWhatsappClick(body, currency, req);
+
   const name = str(body.name, 120);
   // E-mail opcional desde 14/11/2026 (o formulário não pede mais): se vier e
   // for válido, segue; senão vai vazio (chave mantida no payload do n8n).
@@ -190,6 +193,10 @@ export async function POST(req: NextRequest) {
     suspeitaRobo: fillMs > 0 && fillMs < 2000,
     // Modo teste (?teste=1 no aparelho): o n8n filtra; não é lead real.
     is_test: body.isTest === true,
+    // Desde 20/11/2026 o mesmo webhook recebe também o clique no botão
+    // flutuante de WhatsApp (tipo "clique_whatsapp", ver handleWhatsappClick).
+    tipo: "formulario",
+    codigo: "",
   };
 
   // Dois destinos, disparados JUNTOS e independentes: o n8n (de sempre) e a
@@ -208,6 +215,41 @@ export async function POST(req: NextRequest) {
       occurred_at: payload.recebidoEm,
     }),
   ]);
+  if (n8n === "failed") {
+    return NextResponse.json({ ok: false, error: "webhook_failed" }, { status: 502 });
+  }
+  return NextResponse.json({ ok: true, delivered: n8n === "sent" });
+}
+
+// Clique no botão flutuante que abre o WhatsApp direto (20/11/2026): sem nome
+// nem telefone (a pessoa ainda não escreveu nada). Vai só para o n8n, no
+// mesmo formato, com "tipo" e o "codigo" que aparece no fim da mensagem do
+// WhatsApp; o comercial cruza a conversa com este registro pelo código (e
+// pelo horário, se dois cliques tiverem o mesmo). Não vai para a plataforma:
+// ela exige nome e telefone.
+async function handleWhatsappClick(body: Obj, currency: string, req: NextRequest) {
+  const ip =
+    req.headers.get("x-forwarded-for")?.split(",")[0].trim() || req.headers.get("x-real-ip") || "";
+  if (ip && rateLimited(ip)) {
+    return NextResponse.json({ ok: false, error: "rate_limited" }, { status: 429 });
+  }
+
+  const rawCode = str(body.codigo, 8).toUpperCase();
+  const payload = {
+    ...buildStudioPayload(body, "", "", req),
+    telefone: "",
+    pais: req.headers.get("x-vercel-ip-country") || (currency === "BRL" ? "BR" : ""),
+    // Sem formulário, não há texto aceito.
+    consentimento: { texto: "", aceitoEm: "" },
+    botao: "whatsapp_direto",
+    leadId: crypto.randomUUID(),
+    suspeitaRobo: false,
+    is_test: body.isTest === true,
+    tipo: "clique_whatsapp",
+    codigo: /^[A-Z0-9]{4}$/.test(rawCode) ? rawCode : "",
+  };
+
+  const n8n = await sendToN8n(payload);
   if (n8n === "failed") {
     return NextResponse.json({ ok: false, error: "webhook_failed" }, { status: 502 });
   }

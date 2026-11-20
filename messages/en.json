@@ -539,7 +539,8 @@
       "demo": "Hi, I'm {name}. I'd like to see the Sales Flow demo.",
       "whatsapp": "Hi, I'm {name}. I'm coming from the Sales Flow website.",
       "subscribe": "Hi, I'm {name}. I'd like to sign up for the Sales Flow Professional plan.",
-      "sales": "Hi, I'm {name}. I'd like to talk about the Sales Flow Scale plan."
+      "sales": "Hi, I'm {name}. I'd like to talk about the Sales Flow Scale plan.",
+      "direct": "Hi, I came from the website and want to see Sales Flow ({code})"
     }
   },
   "cookieBanner": {

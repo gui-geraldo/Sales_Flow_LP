@@ -13,12 +13,20 @@ import {
 import { isPortugal, whatsappUrl } from "@/lib/contact";
 import { CONSENT_EVENT, hasConsent, type Consent } from "@/lib/consent";
 import { normalizePhone } from "@/lib/phone";
-import { startEngagementEvents, trackFormEvent, trackLeadFormOpen, trackLeadSubmit } from "@/lib/track";
+import {
+  startEngagementEvents,
+  trackFormEvent,
+  trackLeadFormOpen,
+  trackLeadSubmit,
+  trackWhatsappDirect,
+} from "@/lib/track";
 import { isTestMode } from "@/lib/testMode";
+import { sendWhatsappClick, whatsappDirectCode } from "@/lib/whatsappDirect";
 
-// Em todas as moedas, toda saída de contato (botões de demo, preço e o botão
-// flutuante de WhatsApp) abre este formulário curto antes do WhatsApp,
-// no mesmo formato do widget da plataforma usado na dentistaon.
+// Em todas as moedas, os botões de demo e de preço abrem este formulário
+// curto antes do WhatsApp, no mesmo formato do widget da plataforma usado na
+// dentistaon. O botão flutuante de WhatsApp, desde 20/11/2026, abre o
+// WhatsApp direto, com um código na mensagem (lib/whatsappDirect.ts).
 
 type LeadApi = {
   enabled: boolean;
@@ -70,6 +78,30 @@ export function LeadProvider({
     setRequest({ intent, source });
   }, []);
 
+  const tFloat = useTranslations(isPortugal(locale, currency) ? "leadFormPT" : "leadForm");
+
+  // Abre o WhatsApp ainda dentro do clique (senão o navegador bloqueia) e só
+  // depois registra o clique e os eventos.
+  const openWhatsappDirect = useCallback(() => {
+    const source = "whatsapp_float";
+    const isTest = isTestMode();
+    const context = collectLeadContext();
+    const code = whatsappDirectCode(context, currency);
+    const text = tFloat("whatsappText.direct", { code });
+    window.open(whatsappUrl(isTest ? `[TESTE] ${text}` : text, currency), "_blank", "noopener");
+
+    sendWhatsappClick({ code, context, locale, currency, source, isTest });
+    if (!isTest) {
+      trackWhatsappDirect({
+        source,
+        codigo: code,
+        pagina: context.page.path,
+        origem: context.origin,
+        utm_content: context.attribution.utm_content ?? "",
+      });
+    }
+  }, [tFloat, locale, currency]);
+
   return (
     <LeadCtx.Provider value={{ enabled, open }}>
       {children}
@@ -84,7 +116,7 @@ export function LeadProvider({
           {!request && (
             <WhatsAppFloat
               label={isPortugal(locale, currency) ? "leadFormPT" : "leadForm"}
-              onClick={() => open("whatsapp", "whatsapp_float")}
+              onClick={openWhatsappDirect}
             />
           )}
         </>

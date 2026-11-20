@@ -452,7 +452,8 @@
       "demo": "Olá, sou {name}. Quero ver a demonstração do Sales Flow.",
       "whatsapp": "Olá, sou {name}. Vim pelo site do Sales Flow.",
       "subscribe": "Olá, sou {name}. Quero contratar o plano Profissional do Sales Flow.",
-      "sales": "Olá, sou {name}. Quero falar sobre o plano Escala do Sales Flow."
+      "sales": "Olá, sou {name}. Quero falar sobre o plano Escala do Sales Flow.",
+      "direct": "Olá, vim pelo site e quero ver o Sales Flow ({code})"
     }
   },
   "cookieBanner": {
@@ -498,7 +499,8 @@
       "demo": "Olá, sou {name}. Quero ver a demo do Sales Flow.",
       "whatsapp": "Olá, sou {name}. Venho do site do Sales Flow.",
       "subscribe": "Olá, sou {name}. Quero contratar o plano Profissional do Sales Flow.",
-      "sales": "Olá, sou {name}. Quero falar sobre o plano Escala do Sales Flow."
+      "sales": "Olá, sou {name}. Quero falar sobre o plano Escala do Sales Flow.",
+      "direct": "Olá, venho do site e quero ver o Sales Flow ({code})"
     }
   },
   "demo": {

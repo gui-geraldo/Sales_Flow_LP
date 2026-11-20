@@ -525,7 +525,8 @@
       "demo": "Hola, soy {name}. Quiero ver la demo de Sales Flow.",
       "whatsapp": "Hola, soy {name}. Vengo de la web de Sales Flow.",
       "subscribe": "Hola, soy {name}. Quiero contratar el plan Profesional de Sales Flow.",
-      "sales": "Hola, soy {name}. Quiero hablar sobre el plan Escala de Sales Flow."
+      "sales": "Hola, soy {name}. Quiero hablar sobre el plan Escala de Sales Flow.",
+      "direct": "Hola, vengo de la web y quiero ver Sales Flow ({code})"
     }
   },
   "cookieBanner": {

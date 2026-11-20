@@ -135,6 +135,23 @@ export function trackLeadFormOpen(source: string) {
   umamiEvent("lead_form_open", { source });
 }
 
+// Botão flutuante que abre o WhatsApp direto (20/11/2026). Conta na MESMA
+// conversão secundária do Google da abertura do formulário; a principal
+// (envio do formulário) não muda. Sem dado pessoal.
+export function trackWhatsappDirect(data: {
+  source: string;
+  codigo: string;
+  pagina: string;
+  origem: string;
+  utm_content: string;
+}) {
+  if (typeof window === "undefined") return;
+
+  window.gtag?.("event", "whatsapp_direct", { source: data.source, codigo: data.codigo });
+  adsConversion(ADS_FORM_OPEN_LABEL);
+  umamiEvent("whatsapp_direto", data);
+}
+
 // Envio do formulário (que já abre o WhatsApp). E-mail e telefone vão como
 // enhanced conversions do Google: o gtag faz o hash antes de enviar, e só
 // com consentimento de cookies (sem ele o Consent Mode descarta).
